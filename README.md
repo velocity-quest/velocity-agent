@@ -11,6 +11,8 @@ velocity-agent --version
 
 The package is distributed through GitHub releases, not the npm registry. Product CI builds and checks the package, then distribution CI publishes it with a SHA-256 checksum on an `agent-vVERSION` tag. The product repository and its workspace package remain private; the public distribution contains only the compiled package and release materials.
 
+Maintainers relay a successful **Agent CLI** workflow artifact with `node packages/agent/scripts/release-from-ci.mjs RUN_ID` from the exact checked commit, using their existing GitHub sign-in. The relay never uploads a locally built package or publishes a release; distribution CI verifies the artifact and publishes it. This flow needs no registry credential or cross-repository CI secret.
+
 Create a workspace token in **Settings → MCP**, with `mcp:read` and `mcp:write`. Set `VELOCITY_MCP_TOKEN` in your shell or secret manager and `VELOCITY_WORKSPACE` to the workspace slug. The legacy `VELOCITY_API_KEY` variable also works. Keep tokens out of repository files.
 
 ## Claude Code worker
