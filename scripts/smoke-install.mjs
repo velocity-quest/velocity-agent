@@ -16,6 +16,7 @@ const file = join(config, 'velocity', 'credentials.json');
 const code = 'a'.repeat(64);
 const user = { id: 'smoke-user', email: 'smoke@example.test' };
 const workspace = { id: 'smoke-workspace-id', name: 'Smoke workspace', slug: 'smoke-workspace' };
+let multi = false;
 let calls = 0, refreshes = 0, refresh = 'vel_rt_smoke_initial', access = 'vel_at_smoke_initial', revoked = false, authorize;
 const server = createServer(async (request, response) => {
   let data = '';
@@ -36,7 +37,8 @@ const server = createServer(async (request, response) => {
       return send({ access_token: access, refresh_token: refresh, expires_in: 3600, token_type: 'bearer' });
     }
     if (path === '/api/oauth/revoke') { assert.equal(new URLSearchParams(data).get('token'), refresh); revoked = true; return send({}); }
-    assert.equal(path, '/api/mcp'); assert.equal(request.headers['x-workspace-slug'], undefined);
+    if (path === '/api/cli/identity') return multi ? send({user, workspaces:[workspace, {...workspace, id:'second-id',slug:'second-workspace'}]}) : send({ error: 'old server' }, 404);
+    assert.equal(path, '/api/mcp');
     const token = request.headers.authorization;
     if (token !== 'Bearer vel_mcp_smoke_only' && (revoked || token !== 'Bearer ' + access)) return send({ error: 'unauthorized' }, 401);
     const rpc = JSON.parse(data);
@@ -45,7 +47,8 @@ const server = createServer(async (request, response) => {
     else if (rpc.params.name === 'get_workspace') result = workspace;
     else {
       assert.equal(rpc.params.name, 'get_pending_agent_runs');
-      if (rpc.params.arguments.tier === 'claude_code') assert.equal(rpc.params.arguments.team, 'TEST');
+      assert.ok([workspace.slug, ...(multi ? ['second-workspace'] : [])].includes(request.headers['x-workspace-slug']));
+      if (rpc.params.arguments.tier === 'claude_code' || rpc.params.arguments.agent === 'codex') assert.equal(rpc.params.arguments.team, 'TEST');
       calls++; result = { runs: [] };
     }
     send({ jsonrpc: '2.0', id: rpc.id, result: { content: [{ type: 'text', text: JSON.stringify(result) }] } });
@@ -84,6 +87,9 @@ try {
   assert.equal(await run(['--version']), version);
   assert.match(await run(['run', '--help']), /--executor/);
   assert.match(await run(['login', '--help']), /--no-browser/);
+  assert.match(await run(['run', '--help']), /--agent/);
+  assert.match(await run(['status', '--agent', 'codex', '--team', 'TEST', '--base-url', url], { key: 'vel_mcp_smoke_only' }), /Pending agent runs: 0/);
+  await run(['run', '--once', '--agent', 'codex', '--repo', prefix, '--team', 'TEST', '--base-url', url], { key: 'vel_mcp_smoke_only' });
   assert.match(await run(['status', '--base-url', url], { key: 'vel_mcp_smoke_only' }), /Pending agent runs: 0/);
   await run(['run', '--once', '--executor', 'claude-code', '--repo', prefix, '--team', 'TEST', '--base-url', url], { key: 'vel_mcp_smoke_only' });
   assert.match(await run(['login', '--no-browser', '--base-url', url], { login: true }), /"signedIn": true/);
@@ -97,6 +103,15 @@ try {
   assert.match(await run(['logout', '--base-url', url]), /grant was revoked/);
   assert.deepEqual(JSON.parse(await readFile(file, 'utf8')).credentials, {}); assert.equal(revoked, true);
   await assert.rejects(run(['whoami', '--base-url', url]), /velocity-agent login/);
-  assert.equal(calls, 4);
-  console.log(`Clean install passed: Node ${process.versions.node}, velocity-agent ${version}, token and browser-code authentication, private storage, workspace discovery, concurrent refresh, logout, and Claude Code without an Anthropic API key.`);
+  assert.equal(calls, 6);
+  multi = true; calls = 0;
+  await run(['status', '--base-url', url], {key:'vel_mcp_smoke_only'});
+  await run(['run', '--once', '--executor', 'claude-code', '--repo', prefix, '--team', 'TEST', '--base-url', url], {key:'vel_mcp_smoke_only'});
+  assert.equal(calls,4);
+  await run(['status', '--workspace', 'second-workspace', '--base-url', url], {key:'vel_mcp_smoke_only'});
+  await run(['run', '--once', '--executor', 'claude-code', '--workspace', 'second-id', '--repo', prefix, '--team', 'TEST', '--base-url', url], {key:'vel_mcp_smoke_only'});
+  assert.equal(calls,6);
+  await assert.rejects(run(['status', '--workspace', 'unapproved', '--base-url', url], {key:'vel_mcp_smoke_only'}), /does not authorize/);
+  assert.equal(calls,6);
+  console.log(`Clean install passed: Node ${process.versions.node}, velocity-agent ${version}, token and browser-code authentication, private storage, workspace discovery, concurrent refresh, logout, and provider/team-bound native workers without an Anthropic API key.`);
 } finally { server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); await rm(config, { recursive: true, force: true }); }
