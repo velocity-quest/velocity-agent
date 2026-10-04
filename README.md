@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.2.0/velocity-agent-0.2.0.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.3.0/velocity-agent-0.3.0.tgz
 velocity-agent --version
 ```
 
@@ -13,7 +13,19 @@ The package is distributed through GitHub releases, not the npm registry. Produc
 
 Maintainers relay a successful **Agent CLI** workflow artifact with `node packages/agent/scripts/release-from-ci.mjs RUN_ID` from the exact checked commit, using their existing GitHub sign-in. The relay never uploads a locally built package or publishes a release; distribution CI verifies the artifact and publishes it. This flow needs no registry credential or cross-repository CI secret.
 
-Create a workspace token in **Settings → MCP**, with `mcp:read` and `mcp:write`. Set `VELOCITY_MCP_TOKEN` in your shell or secret manager and `VELOCITY_WORKSPACE` to the workspace slug. The legacy `VELOCITY_API_KEY` variable also works. Keep tokens out of repository files.
+Sign in to Velocity and choose the workspace in your browser:
+
+```sh
+velocity-agent login
+velocity-agent whoami
+velocity-agent status
+```
+
+Login opens a browser and listens on an ephemeral 127.0.0.1 port. If the browser cannot reach that port, paste the full redirected URL into the terminal. For SSH, containers, or a browser on another machine, use `velocity-agent login --no-browser` and paste the value shown on Velocity's code page. SSH sessions automatically use this flow. Terminal input is hidden, and login expires after five minutes.
+
+Saved credentials belong to the chosen workspace. `run` and `status` use them without a key or workspace flag, refresh automatically, and serialize refresh across CLI processes. Tokens are stored per server origin in `$XDG_CONFIG_HOME/velocity/credentials.json` (default `~/.config/velocity/credentials.json`) with mode 0600. `velocity-agent logout` revokes that server's grant and removes its entry; other server entries are preserved. Use the same `--base-url` for login, run, whoami, and logout on another instance.
+
+For automation, create a workspace token in **Settings → MCP**, with `mcp:read` and `mcp:write`, and set `VELOCITY_MCP_TOKEN` privately. The legacy `VELOCITY_API_KEY` variable also works. An explicit key takes precedence over browser credentials. `--workspace` or `VELOCITY_WORKSPACE` is optional; if supplied it must match the credential's workspace. Keep tokens out of repository files.
 
 ## Claude Code worker
 
