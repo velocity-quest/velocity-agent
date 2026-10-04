@@ -1,0 +1,40 @@
+name: Publish agent release
+on:
+  repository_dispatch:
+    types: ['agent-release']
+permissions:
+  contents: read
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        node: ['18.20.8', '22']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Prepare CI artifact and verify checksum
+        env:
+          RELEASE_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+        run: node scripts/prepare-dispatch.mjs
+      - run: npm install --prefix "$RUNNER_TEMP/agent-install" --ignore-scripts "$GITHUB_WORKSPACE/release/velocity-agent-$(cat version.txt).tgz"
+      - run: node scripts/smoke-install.mjs "$RUNNER_TEMP/agent-install" "$(cat version.txt)"
+  publish:
+    needs: install
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare verified artifact
+        env:
+          RELEASE_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+        run: node scripts/prepare-dispatch.mjs
+      - name: Publish verified public package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "agent-v$(cat version.txt)" "release/velocity-agent-$(cat version.txt).tgz" "release/velocity-agent-$(cat version.txt).tgz.sha256" --target "$GITHUB_SHA" --title "Velocity agent $(cat version.txt)" --notes-file release-notes.txt
