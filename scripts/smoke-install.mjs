@@ -11,6 +11,9 @@ const binary = resolve(prefix, 'node_modules/velocity-agent/dist/index.js');
 const manifest = JSON.parse(await readFile(resolve(prefix, 'node_modules/velocity-agent/package.json'), 'utf8'));
 assert.equal(manifest.version, version);
 assert.equal(manifest.private, false);
+assert.ok((await readFile(resolve(prefix, 'node_modules/velocity-agent/README.md'), 'utf8'))
+  .includes(`npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v${version}/velocity-agent-${version}.tgz`),
+  'Installed README must document this immutable package version');
 const config = join(prefix, 'smoke-config');
 const file = join(config, 'velocity', 'credentials.json');
 const code = 'a'.repeat(64);
@@ -78,6 +81,7 @@ async function run(args, { key = '', login = false } = {}) {
       try {
         const combined = output + errors;
         assert.ok(!combined.includes(code) && !combined.includes('vel_at_') && !combined.includes('vel_rt_'), 'CLI printed a secret');
+        assert.ok(!errors.includes('[DEP0040]'), 'CLI startup loaded deprecated Node punycode');
         status === 0 ? resolve(output.trim()) : reject(new Error(combined));
       } catch (error) { reject(error); }
     });
