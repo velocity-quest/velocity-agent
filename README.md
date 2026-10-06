@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.1/velocity-agent-0.5.1.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.2/velocity-agent-0.5.2.tgz
 velocity-agent --version
 ```
 
@@ -26,6 +26,11 @@ velocity-agent status
 Login opens a browser and listens on an ephemeral 127.0.0.1 port. If the browser cannot reach that port, paste the full redirected URL into the terminal. For SSH, containers, or a browser on another machine, use `velocity-agent login --no-browser` and paste the value shown on Velocity's code page. SSH sessions automatically use this flow. Terminal input is hidden, and login expires after five minutes.
 
 Saved credentials authorize exactly the selected workspace set. `run` and `status` process all currently authorized workspaces by default; `--workspace <id-or-slug>` focuses on one. They use saved sign-ins without a key, refresh automatically, and serialize refresh across CLI processes. Tokens are stored per server origin in `$XDG_CONFIG_HOME/velocity/credentials.json` (default `~/.config/velocity/credentials.json`) with mode 0600. `velocity-agent logout` revokes that server's grant and removes its entry; other server entries are preserved. Use the same `--base-url` for login, run, whoami, and logout on another instance.
+
+Concurrent commands retry if a credential-lock owner releases or replaces its
+lock during the ownership check. A genuinely abandoned credential lock requires
+explicit recovery: close other Velocity commands, remove only the lock path
+shown in the error, then retry. Locks are never reclaimed automatically.
 
 For automation, create a workspace token in **Settings → MCP**, with `mcp:read` and `mcp:write`, and set `VELOCITY_MCP_TOKEN` privately. The legacy `VELOCITY_API_KEY` variable also works. An explicit key takes precedence over browser credentials. `--workspace` or `VELOCITY_WORKSPACE` is optional; if supplied it must be among the currently authorized workspaces. Keep tokens out of repository files.
 
