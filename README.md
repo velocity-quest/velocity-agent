@@ -5,13 +5,11 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.2/velocity-agent-0.5.2.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.3/velocity-agent-0.5.3.tgz
 velocity-agent --version
 ```
 
 The package is distributed through GitHub releases, not the npm registry. Product CI builds and checks the package, then distribution CI publishes it with a SHA-256 checksum on an `agent-vVERSION` tag. The product repository and its workspace package remain private; the public distribution contains only the compiled package and release materials.
-
-Maintainers relay a successful **Agent CLI** workflow artifact with `node packages/agent/scripts/release-from-ci.mjs RUN_ID` from the exact checked commit, using their existing GitHub sign-in. The relay never uploads a locally built package or publishes a release; distribution CI verifies the artifact and publishes it. This flow needs no registry credential or cross-repository CI secret.
 
 Version 0.5 adds multiple workspace consent. Sign in again to expand an existing single-workspace grant; refresh never adds access automatically. Removed memberships stop working immediately.
 
@@ -61,6 +59,14 @@ VELOCITY_WORKSPACE=your-workspace velocity-agent run \
 Enable Claude Code execution and select it as the desired execution method in Velocity. The worker only selects pending issue runs for the specified team and workspace. It uses a branch in the repository you select, edits and runs checks in that writable checkout, and preserves unrelated changes. Without `--allow-delivery`, commits remain local. Add `--allow-delivery` to authorize pushing and opening a PR. Git/GitHub authentication must be available locally for delivery.
 
 Native Claude Code does not implement Velocity's optional approval checkpoint. A workspace that requires that checkpoint cannot dispatch work to this worker; use the API executor for that policy. No checkpoint is required by default.
+
+## LandingBoost fixes
+
+Mapped LandingBoost fixes require the 0.5.3 worker (or later) with its approved GitHub checkout. The public installation above supports these tasks; older workers leave them pending.
+
+In Velocity's LandingBoost settings, map the exact page, its approved `org/repo`, and Claude Code or Codex. Enable assignment events for that native agent. With **Manual handoff**, load delivery status and choose **Queue agent fix** for a current ready finding; automatic work can remain off. To start fixes as callbacks arrive, choose **Queue a native agent** and also enable automatic work. Saved plans that need input or review and monitoring notifications do not schedule fixes. Ordinary issue assignment remains available.
+
+The worker verifies `origin` before claiming a task or editing and uses a clean, writable checkout. Existing changes are preserved. The platform rechecks the latest saved report at claim and stops revoked connections, mappings or permissions; manual handoff also requires the initiating person's current workspace admin access. Repeated findings reuse one run across manual clicks, callback retries and reconnects. Inspect the linked issue for actual checks, commits and proposed changes, and the LandingBoost delivery panel for run status. A failed fix can explicitly retry the same run twice; retries do not start new scans or deploy changes.
 
 ## Anthropic API worker
 
