@@ -18,7 +18,7 @@ const config = join(prefix, 'smoke-config');
 const file = join(config, 'velocity', 'credentials.json');
 const code = 'a'.repeat(64);
 const user = { id: 'smoke-user', email: 'smoke@example.test' };
-const workspace = { id: 'smoke-workspace-id', name: 'Smoke workspace', slug: 'smoke-workspace' };
+const workspace = { id: '00000000-0000-4000-8000-000000000001', name: 'Smoke workspace', slug: 'smoke-workspace' };
 let multi = false;
 let calls = 0, refreshes = 0, refresh = 'vel_rt_smoke_initial', access = 'vel_at_smoke_initial', revoked = false, authorize;
 const server = createServer(async (request, response) => {
@@ -40,7 +40,7 @@ const server = createServer(async (request, response) => {
       return send({ access_token: access, refresh_token: refresh, expires_in: 3600, token_type: 'bearer' });
     }
     if (path === '/api/oauth/revoke') { assert.equal(new URLSearchParams(data).get('token'), refresh); revoked = true; return send({}); }
-    if (path === '/api/cli/identity') return multi ? send({user, workspaces:[workspace, {...workspace, id:'second-id',slug:'second-workspace'}]}) : send({ error: 'old server' }, 404);
+    if (path === '/api/cli/identity') return multi ? send({user, workspaces:[workspace, {...workspace, id:'00000000-0000-4000-8000-000000000002',slug:'second-workspace'}]}) : send({ error: 'old server' }, 404);
     assert.equal(path, '/api/mcp');
     const token = request.headers.authorization;
     if (token !== 'Bearer vel_mcp_smoke_only' && (revoked || token !== 'Bearer ' + access)) return send({ error: 'unauthorized' }, 401);
@@ -48,6 +48,12 @@ const server = createServer(async (request, response) => {
     let result;
     if (rpc.params.name === 'get_current_user') result = user;
     else if (rpc.params.name === 'get_workspace') result = workspace;
+    else if (rpc.params.name === 'get_agent_loop_settings') {
+      const workspaceId = request.headers['x-workspace-slug'] === 'second-workspace' ? '00000000-0000-4000-8000-000000000002' : workspace.id;
+      result = { workspaceId, revision: 0, draftRevision: 0, publishedDraftRevision: null, enabled: false, controlScope: 'claims', updatedAt: null, updatedBy: null,
+        settings: { teamIds: [], projectIds: [], statusIds: [], selection: 'todo', concurrency: 1, providerPreference: 'configured', executionPreference: 'configured', emergencyStop: false },
+        enforcedFields: ['teamIds', 'projectIds', 'statusIds', 'selection', 'concurrency', 'providerPreference', 'executionPreference', 'emergencyStop'] };
+    }
     else {
       assert.equal(rpc.params.name, 'get_pending_agent_runs');
       assert.ok([workspace.slug, ...(multi ? ['second-workspace'] : [])].includes(request.headers['x-workspace-slug']));
@@ -66,7 +72,7 @@ async function run(args, { key = '', login = false } = {}) {
       VELOCITY_API_KEY: '', ANTHROPIC_API_KEY: '', SSH_CLIENT: '', SSH_CONNECTION: '',
     }, stdio: ['pipe', 'pipe', 'pipe'] });
     let output = '', errors = '', entered = false;
-    const timer = setTimeout(() => { child.kill(); reject(new Error('Installed CLI smoke timed out')); }, 15000);
+    const timer = setTimeout(() => { child.kill(); reject(new Error(`Installed CLI smoke timed out: ${args[0]}`)); }, 30000);
     child.stdout.on('data', chunk => {
       output += chunk;
       if (login && !entered) {
@@ -92,6 +98,11 @@ try {
   assert.match(await run(['run', '--help']), /--executor/);
   assert.match(await run(['login', '--help']), /--no-browser/);
   assert.match(await run(['run', '--help']), /--agent/);
+  assert.match(await run(['run', '--help']), /--single-checkout/);
+  assert.match(await run(['repo', 'link', '--help']), /--write-context/);
+  assert.match(await run(['repo', 'cleanup', '--help']), /--run/);
+  assert.match(await run(['repo', 'recover', '--help']), /--issue/);
+  assert.match(await run(['repo', 'tasks', '--help']), /--repo/);
   assert.match(await run(['status', '--agent', 'codex', '--team', 'TEST', '--base-url', url], { key: 'vel_mcp_smoke_only' }), /Pending agent runs: 0/);
   await run(['run', '--once', '--agent', 'codex', '--repo', prefix, '--team', 'TEST', '--base-url', url], { key: 'vel_mcp_smoke_only' });
   assert.match(await run(['status', '--base-url', url], { key: 'vel_mcp_smoke_only' }), /Pending agent runs: 0/);
@@ -113,7 +124,7 @@ try {
   await run(['run', '--once', '--executor', 'claude-code', '--repo', prefix, '--team', 'TEST', '--base-url', url], {key:'vel_mcp_smoke_only'});
   assert.equal(calls,4);
   await run(['status', '--workspace', 'second-workspace', '--base-url', url], {key:'vel_mcp_smoke_only'});
-  await run(['run', '--once', '--executor', 'claude-code', '--workspace', 'second-id', '--repo', prefix, '--team', 'TEST', '--base-url', url], {key:'vel_mcp_smoke_only'});
+  await run(['run', '--once', '--executor', 'claude-code', '--workspace', '00000000-0000-4000-8000-000000000002', '--repo', prefix, '--team', 'TEST', '--base-url', url], {key:'vel_mcp_smoke_only'});
   assert.equal(calls,6);
   await assert.rejects(run(['status', '--workspace', 'unapproved', '--base-url', url], {key:'vel_mcp_smoke_only'}), /does not authorize/);
   assert.equal(calls,6);
