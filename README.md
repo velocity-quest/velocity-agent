@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.6/velocity-agent-0.5.6.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.7/velocity-agent-0.5.7.tgz
 velocity-agent --version
 ```
 
@@ -69,7 +69,7 @@ Use `recover` only after stopping the worker. It checks that the recorded PID is
 
 ## Shared workspace controls
 
-Worker 0.5.6 reads **Settings → Agents → Loops** at startup and immediately before each claim. Emergency stop and a different provider or hosted execution preference leave this local worker waiting, without claiming or failing queued work. Disabling shared controls preserves the existing provider configuration; it does not requeue stopped runs. The runner never switches providers, models or billing methods automatically.
+Worker 0.5.7 reads **Settings → Agents → Loops** at startup and immediately before each claim. Emergency stop and a different provider or hosted execution preference leave this local worker waiting, without claiming or failing queued work. Disabling shared controls preserves the existing provider configuration; it does not requeue stopped runs. The runner never switches providers, models or billing methods automatically.
 
 Each authorized workspace has a separate settings snapshot and journal cursor. The host checks committed policy invalidations at five-second heartbeat/safe boundaries, rereads after an expired cursor or journal failure, and refreshes settings at least every 30 seconds while polling. The queue interval is capped at 30 seconds; requests have a 10-second deadline. Unreadable, revoked or incompatible controls stop new work; an active task is interrupted and its changes remain available for recovery. Before commit, delivery or a final result, controls are read again. The server still enforces current scope, concurrency, integration permissions and cancellation atomically.
 
@@ -130,3 +130,6 @@ The API executor discovers its issue and planning schemas through authenticated 
 The API executor can also request metered planning proposals. It presents generated proposals for human review and cannot apply them in the same execution, including by creating an ordinary issue. Apply the selected changes in a subsequent explicitly requested manual run. Cost estimates alone do not create proposals. Native workers expose manual planning tools, without enabling the platform's AI proposal tools. Planning writes remain subject to current role/scope, run policy, emergency stop and server validation; restricted automation and source-bound LandingBoost fixes cannot use them to expand their scope. Platform AI plan, credit and budget rules remain in force.
 
 Use `--base-url https://your-velocity-instance.example` for a different server, `--once` for one batch, and `velocity-agent run --help` for all options. `velocity-agent status` reports pending local API runs; it does not prove that a native worker is online. Enable a worker only for repositories and team work you authorize it to process.
+
+
+Shared execution controls require worker 0.5.7 or later. **Require isolated worktrees** keeps workers with `--single-checkout` and API-only workers idle. **Local changes only** overrides `--allow-delivery`: the host keeps and links local commits without pushing or opening a PR. Existing delivery permissions still require local `--allow-delivery`; shared settings never grant it. Controls refresh before delivery, and restrictions changing in flight preserve your local changes. Delivery eligibility can only narrow during a run; lifting local-only controls applies to a subsequent attempt after fresh repository verification. Older workers cannot claim work while these restrictions are active. Private draft preferences are not activated by upgrading.
