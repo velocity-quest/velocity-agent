@@ -50,9 +50,9 @@ const server = createServer(async (request, response) => {
     else if (rpc.params.name === 'get_workspace') result = workspace;
     else if (rpc.params.name === 'get_agent_loop_settings') {
       const workspaceId = request.headers['x-workspace-slug'] === 'second-workspace' ? '00000000-0000-4000-8000-000000000002' : workspace.id;
-      result = { workspaceId, revision: 0, draftRevision: 0, publishedDraftRevision: null, enabled: false, controlScope: 'claims', updatedAt: null, updatedBy: null,
-        settings: { teamIds: [], projectIds: [], statusIds: [], selection: 'todo', concurrency: 1, providerPreference: 'configured', executionPreference: 'configured', emergencyStop: false },
-        enforcedFields: ['teamIds', 'projectIds', 'statusIds', 'selection', 'concurrency', 'providerPreference', 'executionPreference', 'emergencyStop'] };
+      result = { workspaceId, revision: 0, draftRevision: 0, publishedDraftRevision: null, enabled: false, protocolVersion: 2, controlScope: 'claims_and_execution', updatedAt: null, updatedBy: null,
+        settings: { teamIds: [], projectIds: [], statusIds: [], selection: 'todo', concurrency: 1, providerPreference: 'configured', executionPreference: 'configured', emergencyStop: false, worktrees: false, deliveryMode: 'inherit' },
+        enforcedFields: ['teamIds', 'projectIds', 'statusIds', 'selection', 'concurrency', 'providerPreference', 'executionPreference', 'emergencyStop', 'worktrees', 'deliveryMode'] };
     }
     else {
       assert.equal(rpc.params.name, 'get_pending_agent_runs');
