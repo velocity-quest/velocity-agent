@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.5.10 — 2026-10-15
+
+- Validate explicit Claude Code model/effort overrides against the exact native
+  runtime before fetching repository refs or claiming work. Unavailable or
+  incompatible metadata leaves queued work pending.
+- Pin the advertised resolved model and executable through execution and result
+  attribution. Supported Claude effort overrides require an explicit model;
+  runs with no overrides retain native defaults.
+- Add `velocity-agent claude models --repo PATH` for metadata-only discovery
+  without Velocity sign-in, inference or raw account details. Catalogs describe
+  capabilities, not account entitlement or funded inference.
+
 ## 0.5.9 — 2026-10-15
 
 - Verify the local Anthropic API model through the execution client before

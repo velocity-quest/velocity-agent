@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.9/velocity-agent-0.5.9.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.10/velocity-agent-0.5.10.tgz
 velocity-agent --version
 ```
 
@@ -123,6 +123,30 @@ VELOCITY_WORKSPACE=your-workspace velocity-agent run \
 Enable Claude Code execution and select it as the desired execution method in Velocity. The worker only selects pending issue runs for the specified team and workspace. It uses an owned writable worktree for each task, edits and runs checks there, and preserves the source checkout. The runner commits any remaining task edits, links the actual SHAs, and handles authorized delivery after rechecking the server lease and repository mapping. Without `--allow-delivery`, commits remain local. Add `--allow-delivery` to authorize pushing and opening a PR. Git/GitHub authentication must be available locally for delivery.
 
 Native Claude Code does not implement Velocity's optional approval checkpoint. A workspace that requires that checkpoint cannot dispatch work to this worker; use the API executor for that policy. No checkpoint is required by default.
+
+Worker 0.5.10 validates explicit `--model` and `--effort` choices before Git
+fetches, claims or checkout changes. A listed alias resolves to one model ID,
+and the same native executable, resolved model and optional effort are used for
+execution and result attribution. Claude effort overrides require an explicit
+model so the worker can verify the pair; omit both flags to retain native
+configured defaults. Invalid choices, unavailable/old metadata and cancellation
+leave work pending. Correct the flags or upgrade Claude Code and retry.
+Advertised long-context suffixes such as `[1m]` are retained when resolving an alias.
+
+```sh
+velocity-agent claude models --repo /path/to/repository
+velocity-agent run --executor claude-code --team YOUR_TEAM --model LISTED_MODEL --effort high
+```
+
+The local catalog command requires no Velocity sign-in and sends no user prompt
+or inference request. It uses Claude Code's metadata-only SDK initialize
+exchange, safe mode, disabled tools/hooks/MCP and no persistent session. Only
+model IDs and supported efforts are displayed, with `entitlementVerified: false`;
+account details and raw runtime diagnostics are discarded. The read has a
+15-second deadline and honors cancellation. Catalog compatibility does not
+guarantee provider access or quota. `VELOCITY_CLAUDE_BIN` selects the native
+executable; otherwise it is resolved from PATH. Custom/older runtimes must
+support safe-mode initialization with resolved model metadata to use overrides.
 
 ## LandingBoost fixes
 
