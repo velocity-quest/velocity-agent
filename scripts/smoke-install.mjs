@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
 import { createHash } from 'node:crypto';
-import { readFile, writeFile, stat, rm } from 'node:fs/promises';
+import { readFile, writeFile, stat, rm, mkdir } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
 import { resolve, join } from 'node:path';
 
 const prefix = resolve(process.argv[2]);
@@ -19,7 +20,7 @@ const file = join(config, 'velocity', 'credentials.json');
 const code = 'a'.repeat(64);
 const user = { id: 'smoke-user', email: 'smoke@example.test' };
 const workspace = { id: '00000000-0000-4000-8000-000000000001', name: 'Smoke workspace', slug: 'smoke-workspace' };
-let multi = false;
+let multi = false, nativePending = false, lifecycleWrites = 0;
 let calls = 0, refreshes = 0, refresh = 'vel_rt_smoke_initial', access = 'vel_at_smoke_initial', revoked = false, authorize;
 const server = createServer(async (request, response) => {
   let data = '';
@@ -45,6 +46,7 @@ const server = createServer(async (request, response) => {
     const token = request.headers.authorization;
     if (token !== 'Bearer vel_mcp_smoke_only' && (revoked || token !== 'Bearer ' + access)) return send({ error: 'unauthorized' }, 401);
     const rpc = JSON.parse(data);
+    if (rpc.params.name === 'update_agent_run') lifecycleWrites++;
     let result;
     if (rpc.params.name === 'get_current_user') result = user;
     else if (rpc.params.name === 'get_workspace') result = workspace;
@@ -58,7 +60,8 @@ const server = createServer(async (request, response) => {
       assert.equal(rpc.params.name, 'get_pending_agent_runs');
       assert.ok([workspace.slug, ...(multi ? ['second-workspace'] : [])].includes(request.headers['x-workspace-slug']));
       if (rpc.params.arguments.tier === 'claude_code' || rpc.params.arguments.agent === 'codex') assert.equal(rpc.params.arguments.team, 'TEST');
-      calls++; result = { runs: [] };
+      calls++; result = { runs: nativePending ? [{ id: '00000000-0000-4000-8000-000000000010', agent: 'codex', tier: 'local_agent',
+        triggerType: 'assignment', triggerEntityType: 'issue', triggerEntityId: '00000000-0000-4000-8000-000000000011', createdAt: '', metadata: {} }] : [] };
     }
     send({ jsonrpc: '2.0', id: rpc.id, result: { content: [{ type: 'text', text: JSON.stringify(result) }] } });
   } catch (error) { send({ error: String(error) }, 500); }
@@ -70,6 +73,7 @@ async function run(args, { key = '', login = false } = {}) {
     const child = spawn(process.execPath, [binary, ...args], { env: {
       ...process.env, XDG_CONFIG_HOME: config, VELOCITY_MCP_TOKEN: key, VELOCITY_WORKSPACE: '',
       VELOCITY_API_KEY: '', ANTHROPIC_API_KEY: '', SSH_CLIENT: '', SSH_CONNECTION: '',
+      CODEX_HOME: join(prefix, 'smoke-codex'), XDG_DATA_HOME: join(prefix, 'smoke-data'), VELOCITY_CODEX_BIN: '',
     }, stdio: ['pipe', 'pipe', 'pipe'] });
     let output = '', errors = '', entered = false;
     const timer = setTimeout(() => { child.kill(); reject(new Error(`Installed CLI smoke timed out: ${args[0]}`)); }, 30000);
@@ -94,11 +98,13 @@ async function run(args, { key = '', login = false } = {}) {
   });
 }
 try {
+  await mkdir(join(prefix, 'smoke-codex'), { recursive: true });
   assert.equal(await run(['--version']), version);
   assert.match(await run(['run', '--help']), /--executor/);
   assert.match(await run(['login', '--help']), /--no-browser/);
   assert.match(await run(['run', '--help']), /--agent/);
   assert.match(await run(['run', '--help']), /--single-checkout/);
+  assert.match(await run(['codex', 'models', '--help']), /entitlement\s+check/);
   assert.match(await run(['repo', 'link', '--help']), /--write-context/);
   assert.match(await run(['repo', 'cleanup', '--help']), /--run/);
   assert.match(await run(['repo', 'recover', '--help']), /--issue/);
@@ -126,7 +132,22 @@ try {
   await run(['status', '--workspace', 'second-workspace', '--base-url', url], {key:'vel_mcp_smoke_only'});
   await run(['run', '--once', '--executor', 'claude-code', '--workspace', '00000000-0000-4000-8000-000000000002', '--repo', prefix, '--team', 'TEST', '--base-url', url], {key:'vel_mcp_smoke_only'});
   assert.equal(calls,6);
+  const catalog = JSON.parse(await run(['codex', 'models', '--repo', prefix]));
+  assert.equal(catalog.entitlementVerified, false);
+  assert.ok(catalog.models.length > 0 && catalog.models.every(model => model.supportedEfforts.length > 0));
+  assert.deepEqual(Object.keys(catalog).sort(), ['configuredEffort', 'configuredModel', 'configuredModelListed', 'entitlementVerified', 'models']);
+  assert.equal(calls,6, 'Local catalog must never call Velocity');
+  const repository = join(prefix, 'smoke-native-repo'); await mkdir(repository);
+  const git = args => execFileSync('git', ['-C', repository, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+  git(['init']); git(['config', 'user.name', 'Smoke']); git(['config', 'user.email', 'smoke@example.test']);
+  await writeFile(join(repository, 'owned.txt'), 'unchanged\n'); git(['add', '.']); git(['commit', '-m', 'Initial']);
+  const before = git(['rev-parse', 'HEAD']); nativePending = true;
+  await assert.rejects(run(['run', '--once', '--agent', 'codex', '--workspace', workspace.slug, '--model', 'velocity-owned-unsupported-model', '--effort', 'low', '--team', 'TEST', '--repo', repository, '--base-url', url], { key: 'vel_mcp_smoke_only' }), /absent from this runtime catalog/);
+  nativePending = false;
+  assert.equal(git(['rev-parse', 'HEAD']), before); assert.equal(git(['status', '--porcelain']), '');
+  assert.equal((git(['worktree', 'list', '--porcelain']).match(/^worktree /gm) || []).length, 1);
   await assert.rejects(run(['status', '--workspace', 'unapproved', '--base-url', url], {key:'vel_mcp_smoke_only'}), /does not authorize/);
-  assert.equal(calls,6);
-  console.log(`Clean install passed: Node ${process.versions.node}, velocity-agent ${version}, token and browser-code authentication, private storage, workspace discovery, concurrent refresh, logout, and provider/team-bound native workers without an Anthropic API key.`);
-} finally { server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); await rm(config, { recursive: true, force: true }); }
+  assert.equal(calls,7); assert.equal(lifecycleWrites,0, 'Invalid model must not claim or fail queued work');
+  console.log(`Clean install passed: Node ${process.versions.node}, velocity-agent ${version}, authentication/refresh/revocation, provider/team scope, native catalog without Velocity calls, and unsupported model left pending without claims or checkout changes.`);
+} finally { server.closeAllConnections(); await new Promise(resolve => server.close(resolve));
+  for (const name of [config, join(prefix, 'smoke-codex'), join(prefix, 'smoke-data'), join(prefix, 'smoke-native-repo')]) await rm(name, { recursive: true, force: true }); }

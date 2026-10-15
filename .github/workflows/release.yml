@@ -1,7 +1,7 @@
 name: Publish agent release
 on:
-  repository_dispatch:
-    types: ['agent-release']
+  push:
+    branches: ['release/agent-v*']
 permissions:
   contents: read
 jobs:
@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
+      fail-fast: false
       matrix:
         node: ['18.20.8', '22']
     steps:
@@ -16,10 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - name: Prepare CI artifact and verify checksum
-        env:
-          RELEASE_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
-        run: node scripts/prepare-dispatch.mjs
+      - name: Verify immutable CI candidate
+        run: node scripts/prepare-candidate.mjs
       - run: npm install --prefix "$RUNNER_TEMP/agent-install" --ignore-scripts "$GITHUB_WORKSPACE/release/velocity-agent-$(cat version.txt).tgz"
       - run: node scripts/smoke-install.mjs "$RUNNER_TEMP/agent-install" "$(cat version.txt)"
   publish:
@@ -30,10 +29,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Prepare verified artifact
-        env:
-          RELEASE_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
-        run: node scripts/prepare-dispatch.mjs
+      - run: node scripts/prepare-candidate.mjs
       - name: Publish verified public package
         env:
           GH_TOKEN: ${{ github.token }}

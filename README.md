@@ -5,13 +5,13 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.7/velocity-agent-0.5.7.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.8/velocity-agent-0.5.8.tgz
 velocity-agent --version
 ```
 
 The package is distributed through GitHub releases, not the npm registry. Product CI builds and checks the package, then distribution CI publishes it with a SHA-256 checksum on an `agent-vVERSION` tag. The product repository and its workspace package remain private; the public distribution contains only the compiled package and release materials.
 
-Maintainers relay a successful **Agent CLI** workflow artifact with `node packages/agent/scripts/release-from-ci.mjs RUN_ID` from the exact checked commit, using their existing GitHub sign-in. The relay never uploads a locally built package or publishes a release; distribution CI verifies the artifact and publishes it. This flow needs no registry credential or cross-repository CI secret.
+Maintainers relay a successful main **Agent CLI** workflow artifact with `node packages/agent/scripts/release-from-ci.mjs RUN_ID ENGIN-ISSUE_NUMBER` from the exact checked commit, using their existing GitHub sign-in. The relay stages that checksummed archive on a new immutable `release/agent-vVERSION` branch in the public distribution repository. It never uploads a locally built package, overwrites a candidate or publishes a release; distribution CI verifies the artifact and its branch/version identity, checks clean installs and publishes it. This avoids dispatch payload size limits and needs no registry credential or cross-repository CI secret.
 
 For a trusted main release, maintainers can run the same workflow on temporary Linux x64 self-hosted runners labeled `velocity-agent-release`: `gh workflow run agent.yml --ref main -f runner=self-hosted`. Repository administrators must register the runners, keep them available for the package job and both Node installation jobs, and remove their registration and work directories afterward. Ephemeral runners accept one job each. PRs, pushes and dispatches of other refs always use GitHub-hosted runners. Both routes require every check and the verified artifact to succeed before relaying a release; this option does not change account billing or publish a locally built package.
 
@@ -89,6 +89,27 @@ The worker only claims Codex issue runs in the selected team and authorized work
 Commits stay local by default. `--allow-delivery` authorizes the runner to push its branch and open a linked PR; it needs local Git authentication and Velocity's GitHub repository mapping. The runner does not merge or mark the issue Done. Native execution is unattended, bounded to 30 minutes and renews its lease; stale recovery fails abandoned work. Velocity's optional action checkpoint is unsupported for native workers and off by default.
 
 Codex uses your own account and configured model/effort, without Velocity AI metering. `--model` and `--effort` are optional explicit overrides; omit both to preserve native defaults. `VELOCITY_CODEX_BIN` can select an installed compatible Codex binary. The package includes the Codex SDK's native runtime. One runner executes one task at a time; independent runners use separate owned worktrees. See recovery below for interrupted tasks.
+
+Worker 0.5.8 checks an explicit Codex override against that exact execution
+runtime's catalog before claiming a run or changing a checkout. An omitted
+model or effort comes from the selected repository's native configuration (or
+the runtime's default when unconfigured). The verified pair and provider carry
+into the task worktree; the worker never silently changes to a different pair.
+Unsupported choices or unavailable metadata leave queued work pending. Correct
+the flags/native configuration and restart, or remove both overrides to use the
+existing native default behavior.
+
+```sh
+velocity-agent codex models --repo /path/to/repository
+```
+
+This local command needs no Velocity sign-in and starts no thread or inference.
+It displays model/effort/default metadata only, with `entitlementVerified: false`.
+The runtime catalog may be cached and is not proof that your account can use a
+model. Normal execution still handles provider authentication and access errors.
+Catalog reads time out after 15 seconds and honor cancellation; older or custom
+Codex binaries must support the read-only app-server config/model methods to
+validate explicit overrides. Claude and API workers are unchanged.
 
 ## Claude Code worker
 

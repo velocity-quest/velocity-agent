@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.5.8 — 2026-10-15
+
+- Check explicit Codex model/effort overrides against the exact execution
+  runtime's model catalog before claiming work or changing a checkout.
+  Unsupported or unreadable settings leave queued work pending.
+- Resolve omitted choices from the selected repository's native configuration;
+  carry the verified model, effort and provider into the task worktree.
+  Runs with neither override retain the existing native defaults.
+- Add `velocity-agent codex models --repo PATH` for a bounded read-only catalog
+  without Velocity sign-in or inference. Catalog entries are capabilities, not
+  proof of account entitlement; no account details or credentials are displayed.
+
 ## 0.5.3 — 2026-10-08
 
 - Support source-bound LandingBoost runs for Codex and Claude Code in the
