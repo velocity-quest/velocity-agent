@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.8/velocity-agent-0.5.8.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.9/velocity-agent-0.5.9.tgz
 velocity-agent --version
 ```
 
@@ -139,6 +139,8 @@ Set your `ANTHROPIC_API_KEY` and enable Local API execution in Velocity:
 ```sh
 VELOCITY_WORKSPACE=your-workspace velocity-agent run --executor anthropic
 ```
+
+Worker 0.5.9 verifies the configured model through the same API client before claiming a run. A valid alias resolves to one model ID used for every turn and the run result; each subsequent attempt checks again. Invalid models, unavailable metadata, missing credentials and cancellation leave queued work pending. The metadata check has a ten-second deadline with no automatic retry and does not run inference or guarantee remaining credits. Use `--model MODEL_ID` to select an available model; the worker never falls back to another model. Idle polling, status and native workers do not make this API check.
 
 This method calls the Anthropic API and uses API billing. It is not Claude Code subscription execution. Your Anthropic key stays on your machine.
 

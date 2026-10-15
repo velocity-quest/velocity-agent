@@ -21,6 +21,7 @@ const code = 'a'.repeat(64);
 const user = { id: 'smoke-user', email: 'smoke@example.test' };
 const workspace = { id: '00000000-0000-4000-8000-000000000001', name: 'Smoke workspace', slug: 'smoke-workspace' };
 let multi = false, nativePending = false, lifecycleWrites = 0;
+let apiPending = false, modelStatus = 200, modelReads = 0, inferenceCalls = 0, verifiedModel = false, modelLifecycle = 'active';
 let calls = 0, refreshes = 0, refresh = 'vel_rt_smoke_initial', access = 'vel_at_smoke_initial', revoked = false, authorize;
 const server = createServer(async (request, response) => {
   let data = '';
@@ -28,6 +29,17 @@ const server = createServer(async (request, response) => {
   const send = (value, status = 200) => { response.writeHead(status, { 'Content-Type': 'application/json' }); response.end(JSON.stringify(value)); };
   try {
     const path = new URL(request.url, url).pathname;
+    if (path.startsWith('/v1/')) {
+      assert.equal(request.headers['x-api-key'], 'smoke-anthropic-key');
+      if (path === '/v1/models/smoke-alias') {
+        assert.equal(request.method, 'GET'); modelReads++;
+        if (modelStatus !== 200) return send({ type: 'error', error: { type: 'not_found_error', message: 'private-provider-secret' } }, modelStatus);
+        verifiedModel = true; return send({ type: 'model', id: 'smoke-model-v1', lifecycle: modelLifecycle, display_name: 'Owned smoke model', created_at: '2026-10-15T00:00:00Z' });
+      }
+      assert.equal(path, '/v1/messages'); assert.equal(request.method, 'POST');
+      assert.ok(verifiedModel); assert.equal(JSON.parse(data).model, 'smoke-model-v1'); inferenceCalls++;
+      return send({ id: 'msg_owned', type: 'message', role: 'assistant', model: 'smoke-model-v1', content: [{ type: 'text', text: 'Owned smoke result' }], stop_reason: 'end_turn', stop_sequence: null, usage: { input_tokens: 1, output_tokens: 1 } });
+    }
     if (path === '/.well-known/oauth-authorization-server') return send({ issuer: url, authorization_endpoint: url + '/api/oauth/authorize', token_endpoint: url + '/api/oauth/token' });
     if (path === '/api/oauth/token') {
       const params = new URLSearchParams(data); assert.equal(params.get('client_id'), 'velocity-cli');
@@ -46,10 +58,22 @@ const server = createServer(async (request, response) => {
     const token = request.headers.authorization;
     if (token !== 'Bearer vel_mcp_smoke_only' && (revoked || token !== 'Bearer ' + access)) return send({ error: 'unauthorized' }, 401);
     const rpc = JSON.parse(data);
+    if (rpc.method === 'tools/list') return send({ jsonrpc: '2.0', id: rpc.id, result: { tools: [
+      { name: 'get_issue', description: 'Read the owned issue', inputSchema: { type: 'object', properties: {} } },
+    ] } });
     if (rpc.params.name === 'update_agent_run') lifecycleWrites++;
     let result;
     if (rpc.params.name === 'get_current_user') result = user;
     else if (rpc.params.name === 'get_workspace') result = workspace;
+    else if (apiPending && rpc.params.name === 'update_agent_run') {
+      assert.ok(verifiedModel, 'Metadata must precede any claim');
+      if (rpc.params.arguments.status === 'completed') assert.equal(rpc.params.arguments.model, 'smoke-model-v1');
+      result = { id: rpc.params.arguments.runId, status: rpc.params.arguments.status };
+    }
+    else if (apiPending && ['get_issue_context', 'add_comment'].includes(rpc.params.name)) result = { ok: true };
+    else if (rpc.params.name === 'list_workspace_events') result = {
+      events: [], nextCursor: `v1:${workspace.id}:${workspace.id}:1:smoke`, hasMore: false, snapshotRequired: false,
+    };
     else if (rpc.params.name === 'get_agent_loop_settings') {
       const workspaceId = request.headers['x-workspace-slug'] === 'second-workspace' ? '00000000-0000-4000-8000-000000000002' : workspace.id;
       result = { workspaceId, revision: 0, draftRevision: 0, publishedDraftRevision: null, enabled: false, protocolVersion: 2, controlScope: 'claims_and_execution', updatedAt: null, updatedBy: null,
@@ -61,18 +85,18 @@ const server = createServer(async (request, response) => {
       assert.ok([workspace.slug, ...(multi ? ['second-workspace'] : [])].includes(request.headers['x-workspace-slug']));
       if (rpc.params.arguments.tier === 'claude_code' || rpc.params.arguments.agent === 'codex') assert.equal(rpc.params.arguments.team, 'TEST');
       calls++; result = { runs: nativePending ? [{ id: '00000000-0000-4000-8000-000000000010', agent: 'codex', tier: 'local_agent',
-        triggerType: 'assignment', triggerEntityType: 'issue', triggerEntityId: '00000000-0000-4000-8000-000000000011', createdAt: '', metadata: {} }] : [] };
+        triggerType: 'assignment', triggerEntityType: 'issue', triggerEntityId: '00000000-0000-4000-8000-000000000011', createdAt: '', metadata: {} }] : apiPending ? [{ id: 'owned-api-run', agent: 'claude', triggerType: 'mention', triggerEntityType: 'issue', triggerEntityId: 'owned-issue', createdAt: '', metadata: {} }] : [] };
     }
     send({ jsonrpc: '2.0', id: rpc.id, result: { content: [{ type: 'text', text: JSON.stringify(result) }] } });
   } catch (error) { send({ error: String(error) }, 500); }
 });
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const url = `http://127.0.0.1:${server.address().port}`;
-async function run(args, { key = '', login = false } = {}) {
+async function run(args, { key = '', login = false, api = false } = {}) {
   return await new Promise((resolve, reject) => {
     const child = spawn(process.execPath, [binary, ...args], { env: {
       ...process.env, XDG_CONFIG_HOME: config, VELOCITY_MCP_TOKEN: key, VELOCITY_WORKSPACE: '',
-      VELOCITY_API_KEY: '', ANTHROPIC_API_KEY: '', SSH_CLIENT: '', SSH_CONNECTION: '',
+      VELOCITY_API_KEY: '', ANTHROPIC_API_KEY: api ? 'smoke-anthropic-key' : '', ANTHROPIC_BASE_URL: url, SSH_CLIENT: '', SSH_CONNECTION: '',
       CODEX_HOME: join(prefix, 'smoke-codex'), XDG_DATA_HOME: join(prefix, 'smoke-data'), VELOCITY_CODEX_BIN: '',
     }, stdio: ['pipe', 'pipe', 'pipe'] });
     let output = '', errors = '', entered = false;
@@ -90,8 +114,9 @@ async function run(args, { key = '', login = false } = {}) {
       clearTimeout(timer);
       try {
         const combined = output + errors;
-        assert.ok(!combined.includes(code) && !combined.includes('vel_at_') && !combined.includes('vel_rt_'), 'CLI printed a secret');
-        assert.ok(!errors.includes('[DEP0040]'), 'CLI startup loaded deprecated Node punycode');
+        assert.ok(!combined.includes(code) && !combined.includes('vel_at_') && !combined.includes('vel_rt_') && !combined.includes('smoke-anthropic-key') && !combined.includes('private-provider-secret'), 'CLI printed a secret');
+        // Actual API runs intentionally load the legacy SDK transport; idle/native commands must not.
+        if (!api) assert.ok(!errors.includes('[DEP0040]'), 'CLI startup loaded deprecated Node punycode');
         status === 0 ? resolve(output.trim()) : reject(new Error(combined));
       } catch (error) { reject(error); }
     });
@@ -148,6 +173,25 @@ try {
   assert.equal((git(['worktree', 'list', '--porcelain']).match(/^worktree /gm) || []).length, 1);
   await assert.rejects(run(['status', '--workspace', 'unapproved', '--base-url', url], {key:'vel_mcp_smoke_only'}), /does not authorize/);
   assert.equal(calls,7); assert.equal(lifecycleWrites,0, 'Invalid model must not claim or fail queued work');
-  console.log(`Clean install passed: Node ${process.versions.node}, velocity-agent ${version}, authentication/refresh/revocation, provider/team scope, native catalog without Velocity calls, and unsupported model left pending without claims or checkout changes.`);
+  apiPending = true;
+  const apiArgs = ['run', '--once', '--executor', 'anthropic', '--workspace', workspace.slug, '--model', 'smoke-alias', '--base-url', url];
+  for (const status of [401, 404, 429, 500]) {
+    modelStatus = status; const reads = modelReads;
+    await assert.rejects(run(apiArgs, { key: 'vel_mcp_smoke_only', api: true }), /Could not verify the Anthropic API model/);
+    assert.equal(modelReads, reads + 1, 'Metadata must not retry');
+    assert.equal(lifecycleWrites, 0, 'Failed metadata must preserve pending work'); assert.equal(inferenceCalls, 0);
+  }
+  modelStatus = 200;
+  modelLifecycle = 'retired';
+  await assert.rejects(run(apiArgs, { key: 'vel_mcp_smoke_only', api: true }), /Could not verify the Anthropic API model/);
+  assert.equal(modelReads, 5); assert.equal(lifecycleWrites, 0); assert.equal(inferenceCalls, 0);
+  modelLifecycle = 'active';
+  await run(apiArgs, { key: 'vel_mcp_smoke_only', api: true });
+  assert.equal(modelReads, 6); assert.equal(inferenceCalls, 1); assert.equal(lifecycleWrites, 2);
+  modelStatus = 401; verifiedModel = false;
+  await assert.rejects(run(apiArgs, { key: 'vel_mcp_smoke_only', api: true }), /Could not verify the Anthropic API model/);
+  assert.equal(modelReads, 7); assert.equal(inferenceCalls, 1); assert.equal(lifecycleWrites, 2);
+  apiPending = false;
+  console.log(`Clean install passed: Node ${process.versions.node}, velocity-agent ${version}, authentication/refresh/revocation, provider/team scope, native catalog without Velocity calls, unsupported models left pending without checkout changes, and API metadata failure/no retries/alias pinning before claims.`);
 } finally { server.closeAllConnections(); await new Promise(resolve => server.close(resolve));
   for (const name of [config, join(prefix, 'smoke-codex'), join(prefix, 'smoke-data'), join(prefix, 'smoke-native-repo')]) await rm(name, { recursive: true, force: true }); }

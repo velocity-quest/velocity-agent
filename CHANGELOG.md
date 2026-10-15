@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.9 — 2026-10-15
+
+- Verify the local Anthropic API model through the execution client before
+  claiming work, resolving aliases to one model ID for the whole attempt.
+- Leave queued work pending on invalid models, missing credentials, provider
+  metadata failures or cancellation. Metadata reads have a ten-second deadline
+  and no automatic retries; later attempts revalidate.
+- Preserve native defaults and idle/status behavior. Metadata does not prove
+  that inference quota or credits are available.
+
 ## 0.5.8 — 2026-10-15
 
 - Check explicit Codex model/effort overrides against the exact execution
