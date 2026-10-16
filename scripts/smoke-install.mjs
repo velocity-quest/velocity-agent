@@ -23,6 +23,7 @@ const workspace = { id: '00000000-0000-4000-8000-000000000001', name: 'Smoke wor
 let multi = false, nativePending = false, lifecycleWrites = 0;
 let nativeClaudePending = false;
 const claudeStatuses=[];
+const progressCodes=[];
 let apiPending = false, modelStatus = 200, modelReads = 0, inferenceCalls = 0, verifiedModel = false, modelLifecycle = 'active';
 let calls = 0, refreshes = 0, refresh = 'vel_rt_smoke_initial', access = 'vel_at_smoke_initial', revoked = false, authorize;
 const server = createServer(async (request, response) => {
@@ -65,7 +66,18 @@ const server = createServer(async (request, response) => {
     ] } });
     if (rpc.params.name === 'update_agent_run') lifecycleWrites++;
     let result;
-    if (rpc.params.name === 'get_current_user') result = user;
+    if (rpc.params.name === 'append_agent_run_events') {
+      const args=rpc.params.arguments;
+      assert.equal(request.headers['x-velocity-agent-run'],args.runId);
+      assert.equal(request.headers['x-velocity-agent-execution'],args.executionId);
+      assert.ok(args.events.length > 0 && args.events.length <= 20);
+      for (const event of args.events) {
+        assert.deepEqual(Object.keys(event).sort(),['at','code','sequence']);
+        progressCodes.push(event.code);
+      }
+      result={acceptedSequence:args.events.at(-1).sequence};
+    }
+    else if (rpc.params.name === 'get_current_user') result = user;
     else if (rpc.params.name === 'get_workspace') result = workspace;
     else if (nativeClaudePending && rpc.params.name === 'update_agent_run') {
       claudeStatuses.push(rpc.params.arguments.status);
@@ -138,6 +150,7 @@ try {
   await mkdir(join(prefix, 'smoke-codex'), { recursive: true });
   assert.equal(await run(['--version']), version);
   assert.match(await run(['run', '--help']), /--executor/);
+  assert.match(await run(['run', '--help']), /--verbosity/);
   assert.match(await run(['login', '--help']), /--no-browser/);
   assert.match(await run(['run', '--help']), /--agent/);
   assert.match(await run(['run', '--help']), /--single-checkout/);
@@ -180,12 +193,18 @@ try {
   git(['init']); git(['config', 'user.name', 'Smoke']); git(['config', 'user.email', 'smoke@example.test']);
   await writeFile(join(repository, 'owned.txt'), 'unchanged\n'); git(['add', '.']); git(['commit', '-m', 'Initial']);
   const before = git(['rev-parse', 'HEAD']); nativePending = true;
-  await assert.rejects(run(['run', '--once', '--agent', 'codex', '--workspace', workspace.slug, '--model', 'velocity-owned-unsupported-model', '--effort', 'low', '--team', 'TEST', '--repo', repository, '--base-url', url], { key: 'vel_mcp_smoke_only' }), /absent from this runtime catalog/);
+  const invalidCodex = ['run', '--once', '--agent', 'codex', '--workspace', workspace.slug, '--model', 'velocity-owned-unsupported-model', '--effort', 'low', '--team', 'TEST', '--repo', repository, '--base-url', url];
+  await assert.rejects(run(invalidCodex, { key: 'vel_mcp_smoke_only' }), error => {
+    assert.match(error.message, /Worker operation failed.*--verbosity FULL/);
+    assert.ok(!error.message.includes('velocity-owned-unsupported-model') && !error.message.includes('00000000-0000-4000-8000-000000000010'));
+    return true;
+  });
+  await assert.rejects(run([...invalidCodex, '--verbosity', 'FULL'], { key: 'vel_mcp_smoke_only' }), /absent from this runtime catalog/);
   nativePending = false;
   assert.equal(git(['rev-parse', 'HEAD']), before); assert.equal(git(['status', '--porcelain']), '');
   assert.equal((git(['worktree', 'list', '--porcelain']).match(/^worktree /gm) || []).length, 1);
   await assert.rejects(run(['status', '--workspace', 'unapproved', '--base-url', url], {key:'vel_mcp_smoke_only'}), /does not authorize/);
-  assert.equal(calls,7); assert.equal(lifecycleWrites,0, 'Invalid model must not claim or fail queued work');
+  assert.equal(calls,8); assert.equal(lifecycleWrites,0, 'Invalid model must not claim or fail queued work');
   const claudeDirectory=join(prefix,'smoke-claude');await mkdir(claudeDirectory);
   const claude=join(claudeDirectory,'claude');
   await writeFile(claude,`#!/usr/bin/env node
@@ -199,25 +218,26 @@ if(args.includes('--input-format')){
  });
 }else{
  assert.equal(args[args.indexOf('--model')+1],'claude-owned-model[1m]');assert.equal(args[args.indexOf('--effort')+1],'high');
- process.stdin.resume();process.stdin.on('end',()=>{fs.writeFileSync('owned.txt','native Claude changed this owned fixture\\n');console.log(JSON.stringify({result:'Owned native Claude result',usage:{input_tokens:1,output_tokens:1}}));});
+ process.stdin.resume();process.stdin.on('end',()=>{fs.writeFileSync('owned.txt','native Claude changed this owned fixture\\n');console.log(JSON.stringify({type:'result',result:'Owned native Claude result',usage:{input_tokens:1,output_tokens:1}}));});
 }
 `);await chmod(claude,0o700);
   const beforeClaudeCalls=calls;
   const claudeCatalog=JSON.parse(await run(['claude','models','--repo',repository],{claude}));
   assert.equal(claudeCatalog.entitlementVerified,false);assert.equal(claudeCatalog.models[0].model,'sonnet[1m]');assert.equal(calls,beforeClaudeCalls);
   nativeClaudePending=true;
-  const claudeArgs=['run','--once','--executor','claude-code','--workspace',workspace.slug,'--team','TEST','--repo',repository,'--base-url',url];
+  const claudeArgs=['run','--once','--executor','claude-code','--workspace',workspace.slug,'--team','TEST','--repo',repository,'--base-url',url,'--verbosity','FULL'];
   await assert.rejects(run([...claudeArgs,'--model','unknown'],{key:'vel_mcp_smoke_only',claude}),/absent or ambiguous/);
   await assert.rejects(run([...claudeArgs,'--model','haiku','--effort','high'],{key:'vel_mcp_smoke_only',claude}),/does not support/);
   assert.equal(lifecycleWrites,0);assert.equal(git(['rev-parse','HEAD']),before);assert.equal(git(['status','--porcelain']),'');
   await run([...claudeArgs,'--model','sonnet[1m]','--effort','high'],{key:'vel_mcp_smoke_only',claude});
   assert.ok(lifecycleWrites>=2);assert.equal(claudeStatuses.filter(status=>status==='completed').length,1);
   assert.equal(claudeStatuses.at(-1),'completed');assert.ok(claudeStatuses.slice(0,-1).every(status=>status==='running'));
+  assert.ok(progressCodes.includes('preparing') && progressCodes.includes('claude_started') && progressCodes.includes('execution_completed'));
   assert.equal(git(['rev-parse','HEAD']),before);assert.equal(git(['status','--porcelain']),'');
   assert.equal((git(['worktree','list','--porcelain']).match(/^worktree /gm)||[]).length,2);
   nativeClaudePending=false;lifecycleWrites=0;
   apiPending = true;
-  const apiArgs = ['run', '--once', '--executor', 'anthropic', '--workspace', workspace.slug, '--model', 'smoke-alias', '--base-url', url];
+  const apiArgs = ['run', '--once', '--executor', 'anthropic', '--workspace', workspace.slug, '--model', 'smoke-alias', '--base-url', url, '--verbosity', 'FULL'];
   for (const status of [401, 404, 429, 500]) {
     modelStatus = status; const reads = modelReads;
     await assert.rejects(run(apiArgs, { key: 'vel_mcp_smoke_only', api: true }), /Could not verify the Anthropic API model/);
