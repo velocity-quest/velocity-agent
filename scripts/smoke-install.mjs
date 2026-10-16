@@ -23,6 +23,7 @@ const workspace = { id: '00000000-0000-4000-8000-000000000001', name: 'Smoke wor
 let multi = false, nativePending = false, lifecycleWrites = 0;
 let nativeClaudePending = false;
 const claudeStatuses=[];
+const progressCodes=[];
 let apiPending = false, modelStatus = 200, modelReads = 0, inferenceCalls = 0, verifiedModel = false, modelLifecycle = 'active';
 let calls = 0, refreshes = 0, refresh = 'vel_rt_smoke_initial', access = 'vel_at_smoke_initial', revoked = false, authorize;
 const server = createServer(async (request, response) => {
@@ -65,7 +66,18 @@ const server = createServer(async (request, response) => {
     ] } });
     if (rpc.params.name === 'update_agent_run') lifecycleWrites++;
     let result;
-    if (rpc.params.name === 'get_current_user') result = user;
+    if (rpc.params.name === 'append_agent_run_events') {
+      const args=rpc.params.arguments;
+      assert.equal(request.headers['x-velocity-agent-run'],args.runId);
+      assert.equal(request.headers['x-velocity-agent-execution'],args.executionId);
+      assert.ok(args.events.length > 0 && args.events.length <= 20);
+      for (const event of args.events) {
+        assert.deepEqual(Object.keys(event).sort(),['at','code','sequence']);
+        progressCodes.push(event.code);
+      }
+      result={acceptedSequence:args.events.at(-1).sequence};
+    }
+    else if (rpc.params.name === 'get_current_user') result = user;
     else if (rpc.params.name === 'get_workspace') result = workspace;
     else if (nativeClaudePending && rpc.params.name === 'update_agent_run') {
       claudeStatuses.push(rpc.params.arguments.status);
@@ -199,7 +211,7 @@ if(args.includes('--input-format')){
  });
 }else{
  assert.equal(args[args.indexOf('--model')+1],'claude-owned-model[1m]');assert.equal(args[args.indexOf('--effort')+1],'high');
- process.stdin.resume();process.stdin.on('end',()=>{fs.writeFileSync('owned.txt','native Claude changed this owned fixture\\n');console.log(JSON.stringify({result:'Owned native Claude result',usage:{input_tokens:1,output_tokens:1}}));});
+ process.stdin.resume();process.stdin.on('end',()=>{fs.writeFileSync('owned.txt','native Claude changed this owned fixture\\n');console.log(JSON.stringify({type:'result',result:'Owned native Claude result',usage:{input_tokens:1,output_tokens:1}}));});
 }
 `);await chmod(claude,0o700);
   const beforeClaudeCalls=calls;
@@ -213,6 +225,7 @@ if(args.includes('--input-format')){
   await run([...claudeArgs,'--model','sonnet[1m]','--effort','high'],{key:'vel_mcp_smoke_only',claude});
   assert.ok(lifecycleWrites>=2);assert.equal(claudeStatuses.filter(status=>status==='completed').length,1);
   assert.equal(claudeStatuses.at(-1),'completed');assert.ok(claudeStatuses.slice(0,-1).every(status=>status==='running'));
+  assert.ok(progressCodes.includes('preparing') && progressCodes.includes('claude_started') && progressCodes.includes('execution_completed'));
   assert.equal(git(['rev-parse','HEAD']),before);assert.equal(git(['status','--porcelain']),'');
   assert.equal((git(['worktree','list','--porcelain']).match(/^worktree /gm)||[]).length,2);
   nativeClaudePending=false;lifecycleWrites=0;
