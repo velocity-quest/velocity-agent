@@ -21,8 +21,11 @@ const code = 'a'.repeat(64);
 const user = { id: 'smoke-user', email: 'smoke@example.test' };
 const workspace = { id: '00000000-0000-4000-8000-000000000001', name: 'Smoke workspace', slug: 'smoke-workspace' };
 let multi = false, nativePending = false, lifecycleWrites = 0;
+let workerCommand = 'pause'; const workerRegistrations = [];
 let nativeClaudePending = false;
 const claudeStatuses=[];
+const nativeSnapshots=[]; const codexStatuses=[];
+const progressCodes=[];const modelReceipts=[];let issueOverrides=null;
 let apiPending = false, modelStatus = 200, modelReads = 0, inferenceCalls = 0, verifiedModel = false, modelLifecycle = 'active';
 let calls = 0, refreshes = 0, refresh = 'vel_rt_smoke_initial', access = 'vel_at_smoke_initial', revoked = false, authorize;
 const server = createServer(async (request, response) => {
@@ -56,6 +59,16 @@ const server = createServer(async (request, response) => {
     }
     if (path === '/api/oauth/revoke') { assert.equal(new URLSearchParams(data).get('token'), refresh); revoked = true; return send({}); }
     if (path === '/api/cli/identity') return multi ? send({user, workspaces:[workspace, {...workspace, id:'00000000-0000-4000-8000-000000000002',slug:'second-workspace'}]}) : send({ error: 'old server' }, 404);
+    if (path === '/api/agent/sessions') {
+      const token = request.headers.authorization;
+      if (token !== 'Bearer vel_mcp_smoke_only' && (revoked || token !== 'Bearer ' + access)) return send({error:'unauthorized'},401);
+      const inventory = JSON.parse(data); workerRegistrations.push(inventory);
+      assert.equal(inventory.protocolVersion,1);
+      assert.ok(inventory.inventory.some(row=>row.executor==='muse'&&row.availability==='unsupported'));
+      assert.ok(!JSON.stringify(inventory).includes(prefix),'Inventory must omit local paths');
+      const workspaceId = request.headers['x-workspace-slug']==='second-workspace'?'00000000-0000-4000-8000-000000000002':workspace.id;
+      return send({protocolVersion:1,id:'00000000-0000-4000-8000-000000000020',workspaceId,sessionId:inventory.sessionId,revision:1,command:workerCommand,configuration:{}});
+    }
     assert.equal(path, '/api/mcp');
     const token = request.headers.authorization;
     if (token !== 'Bearer vel_mcp_smoke_only' && (revoked || token !== 'Bearer ' + access)) return send({ error: 'unauthorized' }, 401);
@@ -63,16 +76,38 @@ const server = createServer(async (request, response) => {
     if (rpc.method === 'tools/list') return send({ jsonrpc: '2.0', id: rpc.id, result: { tools: [
       { name: 'get_issue', description: 'Read the owned issue', inputSchema: { type: 'object', properties: {} } },
     ] } });
-    if (rpc.params.name === 'update_agent_run') lifecycleWrites++;
+    if (rpc.params.name === 'update_agent_run') { lifecycleWrites++; if(rpc.params.arguments.issueModelSettings)modelReceipts.push(rpc.params.arguments.issueModelSettings); }
     let result;
-    if (rpc.params.name === 'get_current_user') result = user;
+    if (rpc.params.name === 'append_agent_run_events') {
+      const args=rpc.params.arguments;
+      assert.equal(request.headers['x-velocity-agent-run'],args.runId);
+      assert.equal(request.headers['x-velocity-agent-execution'],args.executionId);
+      assert.ok(args.events.length > 0 && args.events.length <= 20);
+      for (const event of args.events) {
+        assert.deepEqual(Object.keys(event).sort(),['at','code','sequence']);
+        progressCodes.push(event.code);
+      }
+      result={acceptedSequence:args.events.at(-1).sequence};
+    }
+    else if (rpc.params.name === 'get_agent_run_model_settings') result={workspaceId:workspace.id,runId:rpc.params.arguments.runId,issueId:'00000000-0000-4000-8000-000000000011',executor:nativePending?'codex':nativeClaudePending?'claudeCode':'anthropic',revision:issueOverrides?1:0,overrides:issueOverrides,selection:null,pinned:false};
+    else if (rpc.params.name === 'get_current_user') result = user;
     else if (rpc.params.name === 'get_workspace') result = workspace;
+    else if (nativePending && rpc.params.name === 'update_agent_run') {
+      const args=rpc.params.arguments;codexStatuses.push(args.status);
+      if(args.nativeUsage)nativeSnapshots.push(args.nativeUsage);
+      if(args.status==='completed') { assert.equal(args.model,'gpt-6.1-sol');assert.equal(args.inputTokens,undefined);assert.equal(args.outputTokens,undefined); }
+      result={id:args.runId,status:args.status,metadata:{},...(args.nativeUsage?{nativeUsageRecorded:true}:{})};
+    }
+    else if (nativePending && rpc.params.name === 'get_issue') result={identifier:'TEST-1'};
+    else if (nativePending && ['get_issue_context','link_commit','add_comment'].includes(rpc.params.name)) result={ok:true};
     else if (nativeClaudePending && rpc.params.name === 'update_agent_run') {
       claudeStatuses.push(rpc.params.arguments.status);
       const proof=JSON.parse(await readFile(join(prefix,'smoke-claude','metadata.json'),'utf8'));
       assert.equal(proof.type,'control_request'); assert.equal(proof.request.subtype,'initialize');
       if(rpc.params.arguments.status==='completed') assert.equal(rpc.params.arguments.model,'claude-owned-model[1m]');
-      result={id:rpc.params.arguments.runId,status:rpc.params.arguments.status,metadata:{}};
+      if(rpc.params.arguments.nativeUsage)nativeSnapshots.push(rpc.params.arguments.nativeUsage);
+      if(rpc.params.arguments.status==='completed') { assert.equal(rpc.params.arguments.inputTokens,undefined);assert.equal(rpc.params.arguments.outputTokens,undefined); }
+      result={id:rpc.params.arguments.runId,status:rpc.params.arguments.status,metadata:{},...(rpc.params.arguments.nativeUsage?{nativeUsageRecorded:true}:{})};
     }
     else if (nativeClaudePending && rpc.params.name === 'get_issue') result={identifier:'TEST-1'};
     else if (nativeClaudePending && ['get_issue_context','link_commit','add_comment'].includes(rpc.params.name)) result={ok:true};
@@ -95,20 +130,20 @@ const server = createServer(async (request, response) => {
       assert.equal(rpc.params.name, 'get_pending_agent_runs');
       assert.ok([workspace.slug, ...(multi ? ['second-workspace'] : [])].includes(request.headers['x-workspace-slug']));
       if (rpc.params.arguments.tier === 'claude_code' || rpc.params.arguments.agent === 'codex') assert.equal(rpc.params.arguments.team, 'TEST');
-      calls++; result = { runs: nativePending ? [{ id: '00000000-0000-4000-8000-000000000010', agent: 'codex', tier: 'local_agent',
-        triggerType: 'assignment', triggerEntityType: 'issue', triggerEntityId: '00000000-0000-4000-8000-000000000011', createdAt: '', metadata: {} }] : nativeClaudePending ? [{id:'00000000-0000-4000-8000-000000000012',agent:'claude',tier:'claude_code',triggerType:'assignment',triggerEntityType:'issue',triggerEntityId:'00000000-0000-4000-8000-000000000011',createdAt:'',metadata:{}}] : apiPending ? [{ id: 'owned-api-run', agent: 'claude', triggerType: 'mention', triggerEntityType: 'issue', triggerEntityId: 'owned-issue', createdAt: '', metadata: {} }] : [] };
+      calls++; result = { issueModelProtocolVersion:1, runs: nativePending ? [{ id: '00000000-0000-4000-8000-000000000010', agent: 'codex', tier: 'local_agent',
+        triggerType: 'assignment', triggerEntityType: 'issue', triggerEntityId: '00000000-0000-4000-8000-000000000011', createdAt: '', metadata: {} }] : nativeClaudePending ? [{id:'00000000-0000-4000-8000-000000000012',agent:'claude',tier:'claude_code',triggerType:'assignment',triggerEntityType:'issue',triggerEntityId:'00000000-0000-4000-8000-000000000011',createdAt:'',metadata:{}}] : apiPending ? [{ id: 'owned-api-run', agent: 'claude', triggerType: 'mention', triggerEntityType: 'issue', triggerEntityId: '00000000-0000-4000-8000-000000000011', createdAt: '', metadata: {} }] : [] };
     }
     send({ jsonrpc: '2.0', id: rpc.id, result: { content: [{ type: 'text', text: JSON.stringify(result) }] } });
   } catch (error) { send({ error: String(error) }, 500); }
 });
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const url = `http://127.0.0.1:${server.address().port}`;
-async function run(args, { key = '', login = false, api = false, claude = '' } = {}) {
+async function run(args, { key = '', login = false, api = false, claude = '', codex = '' } = {}) {
   return await new Promise((resolve, reject) => {
     const child = spawn(process.execPath, [binary, ...args], { env: {
       ...process.env, XDG_CONFIG_HOME: config, VELOCITY_MCP_TOKEN: key, VELOCITY_WORKSPACE: '',
       VELOCITY_API_KEY: '', ANTHROPIC_API_KEY: api ? 'smoke-anthropic-key' : '', ANTHROPIC_BASE_URL: url, SSH_CLIENT: '', SSH_CONNECTION: '',
-      CODEX_HOME: join(prefix, 'smoke-codex'), XDG_DATA_HOME: join(prefix, 'smoke-data'), VELOCITY_CODEX_BIN: '',
+      CODEX_HOME: join(prefix, 'smoke-codex'), XDG_DATA_HOME: join(prefix, 'smoke-data'), VELOCITY_CODEX_BIN: codex,
       VELOCITY_CLAUDE_BIN: claude,
     }, stdio: ['pipe', 'pipe', 'pipe'] });
     let output = '', errors = '', entered = false;
@@ -138,6 +173,7 @@ try {
   await mkdir(join(prefix, 'smoke-codex'), { recursive: true });
   assert.equal(await run(['--version']), version);
   assert.match(await run(['run', '--help']), /--executor/);
+  assert.match(await run(['run', '--help']), /--verbosity/);
   assert.match(await run(['login', '--help']), /--no-browser/);
   assert.match(await run(['run', '--help']), /--agent/);
   assert.match(await run(['run', '--help']), /--single-checkout/);
@@ -162,35 +198,69 @@ try {
   assert.match(await run(['logout', '--base-url', url]), /grant was revoked/);
   assert.deepEqual(JSON.parse(await readFile(file, 'utf8')).credentials, {}); assert.equal(revoked, true);
   await assert.rejects(run(['whoami', '--base-url', url]), /velocity-agent login/);
-  assert.equal(calls, 6);
+  assert.equal(calls, 3);
+  assert.ok(workerRegistrations.length >= 6);
+  assert.match(await run(['run','--once','--base-url',url],{key:'vel_mcp_smoke_only'}), /Waiting/);
   multi = true; calls = 0;
   await run(['status', '--base-url', url], {key:'vel_mcp_smoke_only'});
   await run(['run', '--once', '--executor', 'claude-code', '--repo', prefix, '--team', 'TEST', '--base-url', url], {key:'vel_mcp_smoke_only'});
-  assert.equal(calls,4);
+  assert.equal(calls,2);
   await run(['status', '--workspace', 'second-workspace', '--base-url', url], {key:'vel_mcp_smoke_only'});
   await run(['run', '--once', '--executor', 'claude-code', '--workspace', '00000000-0000-4000-8000-000000000002', '--repo', prefix, '--team', 'TEST', '--base-url', url], {key:'vel_mcp_smoke_only'});
-  assert.equal(calls,6);
+  assert.equal(calls,3);
   const catalog = JSON.parse(await run(['codex', 'models', '--repo', prefix]));
   assert.equal(catalog.entitlementVerified, false);
   assert.ok(catalog.models.length > 0 && catalog.models.every(model => model.supportedEfforts.length > 0));
   assert.deepEqual(Object.keys(catalog).sort(), ['configuredEffort', 'configuredModel', 'configuredModelListed', 'entitlementVerified', 'models']);
-  assert.equal(calls,6, 'Local catalog must never call Velocity');
+  assert.equal(calls,3, 'Local catalog must never call Velocity');
   const repository = join(prefix, 'smoke-native-repo'); await mkdir(repository);
   const git = args => execFileSync('git', ['-C', repository, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
   git(['init']); git(['config', 'user.name', 'Smoke']); git(['config', 'user.email', 'smoke@example.test']);
   await writeFile(join(repository, 'owned.txt'), 'unchanged\n'); git(['add', '.']); git(['commit', '-m', 'Initial']);
+  const codexDirectory=join(prefix,'smoke-codex-bin');await mkdir(codexDirectory);
+  const codex=join(codexDirectory,'codex');
+  await writeFile(codex,`#!/usr/bin/env node
+const fs=require('node:fs');const args=process.argv.slice(2);
+if(args.includes('--version'))console.log('codex-cli 0.160.0');
+else if(args[0]==='login'&&args[1]==='status')console.log('Logged in using ChatGPT');
+else if(args.includes('app-server'))require('node:readline').createInterface({input:process.stdin}).on('line',line=>{
+ const r=JSON.parse(line);if(r.id===undefined)return;
+ const result=r.method==='config/read'?{config:{model:null,model_reasoning_effort:null,model_provider:'openai'}}:r.method==='model/list'?{data:[{model:'gpt-6.1-sol',isDefault:true,defaultReasoningEffort:'medium',supportedReasoningEfforts:[{reasoningEffort:'medium'}]}],nextCursor:null}:{};
+ console.log(JSON.stringify({id:r.id,result}));
+});
+else {require('node:assert/strict').ok(args.includes('--cd'));process.chdir(args[args.indexOf('--cd')+1]);process.stdin.resume();process.stdin.on('end',()=>{
+ fs.writeFileSync('owned.txt','native Codex owned fixture\\n');
+ for(const e of [{type:'thread.started',thread_id:'owned-thread'},{type:'turn.started'},{type:'item.completed',item:{id:'owned-message',type:'agent_message',text:'Owned Codex result'}},{type:'turn.completed',usage:{input_tokens:10,cached_input_tokens:3,cache_write_input_tokens:2,output_tokens:4,reasoning_output_tokens:1}},{type:'turn.started'},{type:'turn.completed',usage:{input_tokens:1,cached_input_tokens:3,cache_write_input_tokens:0,output_tokens:4,reasoning_output_tokens:5}}])console.log(JSON.stringify(e));
+});}
+`);await chmod(codex,0o700);nativePending=true;
+  workerCommand='start';
   const before = git(['rev-parse', 'HEAD']); nativePending = true;
-  await assert.rejects(run(['run', '--once', '--agent', 'codex', '--workspace', workspace.slug, '--model', 'velocity-owned-unsupported-model', '--effort', 'low', '--team', 'TEST', '--repo', repository, '--base-url', url], { key: 'vel_mcp_smoke_only' }), /absent from this runtime catalog/);
+  const invalidCodex = ['run', '--once', '--agent', 'codex', '--workspace', workspace.slug, '--model', 'velocity-owned-unsupported-model', '--effort', 'low', '--team', 'TEST', '--repo', repository, '--base-url', url];
+  await assert.rejects(run(invalidCodex, { key: 'vel_mcp_smoke_only', codex }), error => {
+    assert.match(error.message, /Worker operation failed.*--verbosity FULL/);
+    assert.ok(!error.message.includes('00000000-0000-4000-8000-000000000010'));
+    return true;
+  });
+  await assert.rejects(run([...invalidCodex, '--verbosity', 'FULL'], { key: 'vel_mcp_smoke_only', codex }), /absent from this runtime catalog/);
   nativePending = false;
   assert.equal(git(['rev-parse', 'HEAD']), before); assert.equal(git(['status', '--porcelain']), '');
   assert.equal((git(['worktree', 'list', '--porcelain']).match(/^worktree /gm) || []).length, 1);
   await assert.rejects(run(['status', '--workspace', 'unapproved', '--base-url', url], {key:'vel_mcp_smoke_only'}), /does not authorize/);
-  assert.equal(calls,7); assert.equal(lifecycleWrites,0, 'Invalid model must not claim or fail queued work');
+  assert.equal(calls,5); assert.equal(lifecycleWrites,0, 'Invalid model must not claim or fail queued work');
+  nativePending=true;
+  await run(['run','--once','--agent','codex','--workspace',workspace.slug,'--team','TEST','--repo',repository,'--base-url',url,'--verbosity','FULL'],{key:'vel_mcp_smoke_only',codex});
+  assert.equal(codexStatuses.at(-1),'completed');assert.equal(nativeSnapshots.length,1);
+  assert.deepEqual(nativeSnapshots[0],{version:1,executor:'codex',provider:'openai',model:'gpt-6.1-sol',inputTokens:11,outputTokens:8,
+    samples:[{model:'gpt-6.1-sol',inputTokens:5,cacheReadTokens:3,cacheWriteTokens:2,outputTokens:4,contextUpperBoundTokens:10,reasoningOutputTokens:1},{model:'gpt-6.1-sol',inputTokens:null,cacheReadTokens:null,cacheWriteTokens:null,outputTokens:4,reasoningOutputTokens:null}],
+    limitations:['Native sign-in may use a subscription or API billing; API-equivalent estimates do not determine the marginal subscription charge.','Codex reports aggregate model calls per turn, without per-request context lengths or a provider charge.','Native input/cache counters were inconsistent or unreported; cached categories and context bounds are unavailable.','Cached input breakdown was unavailable; input cannot be priced at the uncached rate.']});
+  nativePending=false;lifecycleWrites=0;
   const claudeDirectory=join(prefix,'smoke-claude');await mkdir(claudeDirectory);
   const claude=join(claudeDirectory,'claude');
   await writeFile(claude,`#!/usr/bin/env node
 const fs=require('node:fs');const path=require('node:path');const assert=require('node:assert/strict');const args=process.argv.slice(2);
-if(args.includes('--input-format')){
+if(args.includes('--version'))console.log('2.1.2 (Claude Code)');
+else if(args[0]==='auth'&&args[1]==='status')console.log(JSON.stringify({loggedIn:true}));
+else if(args.includes('--input-format')){
  assert.ok(args.includes('--safe-mode')&&args.includes('--no-session-persistence')&&args.includes('--strict-mcp-config'));
  assert.equal(args[args.indexOf('--tools')+1],'');
  require('node:readline').createInterface({input:process.stdin}).on('line',line=>{
@@ -199,25 +269,28 @@ if(args.includes('--input-format')){
  });
 }else{
  assert.equal(args[args.indexOf('--model')+1],'claude-owned-model[1m]');assert.equal(args[args.indexOf('--effort')+1],'high');
- process.stdin.resume();process.stdin.on('end',()=>{fs.writeFileSync('owned.txt','native Claude changed this owned fixture\\n');console.log(JSON.stringify({result:'Owned native Claude result',usage:{input_tokens:1,output_tokens:1}}));});
+ process.stdin.resume();process.stdin.on('end',()=>{fs.writeFileSync('owned.txt','native Claude changed this owned fixture\\n');console.log(JSON.stringify({type:'result',result:'Owned native Claude result',usage:{input_tokens:1,output_tokens:1,cache_read_input_tokens:3,cache_creation_input_tokens:2,cache_creation:{ephemeral_5m_input_tokens:2,ephemeral_1h_input_tokens:0}},modelUsage:{'claude-owned-model[1m]':{inputTokens:1,outputTokens:1,cacheReadInputTokens:3,cacheCreationInputTokens:2}},total_cost_usd:0.0001}));});
 }
 `);await chmod(claude,0o700);
   const beforeClaudeCalls=calls;
   const claudeCatalog=JSON.parse(await run(['claude','models','--repo',repository],{claude}));
   assert.equal(claudeCatalog.entitlementVerified,false);assert.equal(claudeCatalog.models[0].model,'sonnet[1m]');assert.equal(calls,beforeClaudeCalls);
   nativeClaudePending=true;
-  const claudeArgs=['run','--once','--executor','claude-code','--workspace',workspace.slug,'--team','TEST','--repo',repository,'--base-url',url];
+  const claudeArgs=['run','--once','--executor','claude-code','--workspace',workspace.slug,'--team','TEST','--repo',repository,'--base-url',url,'--verbosity','FULL'];
   await assert.rejects(run([...claudeArgs,'--model','unknown'],{key:'vel_mcp_smoke_only',claude}),/absent or ambiguous/);
   await assert.rejects(run([...claudeArgs,'--model','haiku','--effort','high'],{key:'vel_mcp_smoke_only',claude}),/does not support/);
   assert.equal(lifecycleWrites,0);assert.equal(git(['rev-parse','HEAD']),before);assert.equal(git(['status','--porcelain']),'');
   await run([...claudeArgs,'--model','sonnet[1m]','--effort','high'],{key:'vel_mcp_smoke_only',claude});
+  assert.equal(nativeSnapshots.length,2);assert.equal(nativeSnapshots[1].inputTokens,6);assert.equal(nativeSnapshots[1].nativeEstimateUsd,'0.000100000000');
+  assert.deepEqual(nativeSnapshots[1].samples,[{model:'claude-owned-model[1m]',inputTokens:1,outputTokens:1,cacheReadTokens:3,cacheWriteTokens:2,cacheWrite5mTokens:2,cacheWrite1hTokens:0}]);
   assert.ok(lifecycleWrites>=2);assert.equal(claudeStatuses.filter(status=>status==='completed').length,1);
   assert.equal(claudeStatuses.at(-1),'completed');assert.ok(claudeStatuses.slice(0,-1).every(status=>status==='running'));
+  assert.ok(progressCodes.includes('preparing') && progressCodes.includes('claude_started') && progressCodes.includes('execution_completed'));
   assert.equal(git(['rev-parse','HEAD']),before);assert.equal(git(['status','--porcelain']),'');
-  assert.equal((git(['worktree','list','--porcelain']).match(/^worktree /gm)||[]).length,2);
+  assert.equal((git(['worktree','list','--porcelain']).match(/^worktree /gm)||[]).length,3);
   nativeClaudePending=false;lifecycleWrites=0;
   apiPending = true;
-  const apiArgs = ['run', '--once', '--executor', 'anthropic', '--workspace', workspace.slug, '--model', 'smoke-alias', '--base-url', url];
+  const apiArgs = ['run', '--once', '--executor', 'anthropic', '--workspace', workspace.slug, '--model', 'smoke-alias', '--base-url', url, '--verbosity', 'FULL'];
   for (const status of [401, 404, 429, 500]) {
     modelStatus = status; const reads = modelReads;
     await assert.rejects(run(apiArgs, { key: 'vel_mcp_smoke_only', api: true }), /Could not verify the Anthropic API model/);
@@ -234,7 +307,15 @@ if(args.includes('--input-format')){
   modelStatus = 401; verifiedModel = false;
   await assert.rejects(run(apiArgs, { key: 'vel_mcp_smoke_only', api: true }), /Could not verify the Anthropic API model/);
   assert.equal(modelReads, 7); assert.equal(inferenceCalls, 1); assert.equal(lifecycleWrites, 2);
+  modelStatus=200;verifiedModel=false;issueOverrides={model:'smoke-alias'};
+  const issueArgs=apiArgs.filter((value,index)=>value!=='--model'&&apiArgs[index-1]!=='--model');
+  await run(issueArgs,{key:'vel_mcp_smoke_only',api:true});
+  assert.equal(inferenceCalls,2);assert.equal(modelReceipts.at(-1).requested.model,'smoke-alias');
+  assert.equal(modelReceipts.at(-1).selection.model,'smoke-model-v1');assert.equal(modelReceipts.at(-1).operator.model,false);
+  issueOverrides={model:'smoke-alias',effort:'high'};const beforeInvalid=lifecycleWrites;
+  await assert.rejects(run(issueArgs,{key:'vel_mcp_smoke_only',api:true}),/Could not verify this issue/);
+  assert.equal(lifecycleWrites,beforeInvalid);assert.equal(inferenceCalls,2);
   apiPending = false;
-  console.log(`Clean install passed: Node ${process.versions.node}, velocity-agent ${version}, authentication/refresh/revocation, provider/team scope, native catalogs without Velocity calls, invalid native choices left pending, Claude resolved model/context/effort execution, and API metadata failure/no retries/alias pinning before claims.`);
+  console.log(`Clean install passed: Node ${process.versions.node}, velocity-agent ${version}, authentication/refresh/revocation, provider/team scope, native catalogs without Velocity calls, invalid native choices left pending, Codex inherited model/cache/reasoning and Claude resolved model/cache/TTL/estimate telemetry with one storage receipt, and authoritative per-issue API selection without operator flags, incompatible issue settings left pending, and API metadata failure/no retries/alias pinning before claims.`);
 } finally { server.closeAllConnections(); await new Promise(resolve => server.close(resolve));
-  for (const name of [config, join(prefix, 'smoke-codex'), join(prefix, 'smoke-claude'), join(prefix, 'smoke-data'), join(prefix, 'smoke-native-repo')]) await rm(name, { recursive: true, force: true }); }
+  for (const name of [config, join(prefix, 'smoke-codex'), join(prefix, 'smoke-codex-bin'), join(prefix, 'smoke-claude'), join(prefix, 'smoke-data'), join(prefix, 'smoke-native-repo')]) await rm(name, { recursive: true, force: true }); }
