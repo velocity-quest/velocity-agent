@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.29 — 2026-10-18
+
+- Retrieve the selected checkout’s linked Vercel project and verified production
+  domains automatically using host-local provider sign-in.
+- Offer an explicit settings import in the Agents deployment workflow, with a
+  domain choice for projects serving several production URLs. Preserve the
+  application’s validation and HTTP acceptance settings.
+- Report actionable setup errors and bounded public metadata without provider
+  credentials, checkout paths or raw API responses. Discovery runs in the
+  background and supports older servers through capability negotiation.
+
 ## 0.5.10 — 2026-10-15
 
 - Validate explicit Claude Code model/effort overrides against the exact native
