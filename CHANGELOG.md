@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.30 — 2026-10-18
+
+- Detect editable validation commands, HTTP health checks and Vercel configuration paths from the selected project without running repository code.
+- Scope monorepo defaults to the selected Vercel application; preserve saved settings, manual edits and explicit CLI choices.
+- Add explicit HTTP 200 acceptance while retaining exact-source, Ready artifact and production alias verification. Negotiate suggestions separately for older-worker/server compatibility.
+
 ## 0.5.10 — 2026-10-15
 
 - Validate explicit Claude Code model/effort overrides against the exact native
