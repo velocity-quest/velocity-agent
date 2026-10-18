@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.32 — 2026-10-18
+
+- Expose issue-scoped monitoring and exact-head GitHub check waits to native Codex, Claude Code and Anthropic workers.
+- Keep bounded waits, execution leases and emergency stops authoritative; callbacks never grant delivery or lifecycle authority.
+- Support resumable issue cursors and document read-after-notification behavior without background model turns.
+
 ## 0.5.30 — 2026-10-18
 
 - Detect editable validation commands, HTTP health checks and Vercel configuration paths from the selected project without running repository code.

@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.30/velocity-agent-0.5.30.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.32/velocity-agent-0.5.32.tgz
 velocity-agent --version
 ```
 
@@ -144,6 +144,14 @@ velocity-agent run --agent codex --repo /path/to/repository --team YOUR_TEAM
 ```
 
 The worker only claims Codex issue runs in the selected team and authorized workspaces. Add `--workspace your-workspace` to focus on one; without it, each approved workspace is polled in turn. Use a writable Git checkout with an initial commit and configured Git author. The default creates an owned writable worktree and task branch without changing the source checkout or its tracked, untracked or ignored files. Retried runs resume their saved branch and recoverable diff. Codex uses `workspace-write` with Velocity MCP tools and tests and edits code there. Issue text and comments are untrusted task data. The runner commits successful changes and links their real SHAs, then posts the final result as the Codex virtual member. Failed or stopped attempts cannot post a success result.
+
+Worker 0.5.31 lets both Codex execution paths report outcomes through their
+authorized Velocity MCP tools without an interactive approval prompt. There is
+no Agents-page approval switch for this. If an older resumable worker says
+`report_agent_outcome` requires approval while approvals are disabled, update
+the worker and restart it. Shell escalation, unrelated MCP tools and interactive
+approval requests remain unavailable. A separate delivery error such as
+`CI_FAILED` must still be corrected before delivery can continue.
 
 Commits stay local by default. `--allow-delivery` authorizes the runner to push its branch and open a linked PR; it needs local Git authentication and Velocity's GitHub repository mapping. The runner does not merge or mark the issue Done. Native execution is unattended, bounded to 30 minutes and renews its lease; stale recovery fails abandoned work. Velocity's optional action checkpoint is unsupported for native workers and off by default.
 
@@ -636,3 +644,7 @@ Interrupting preserves the owned task worktree and provider session. The worker 
 Issue/comment journal events invalidate queue selection at the next task boundary. Priority, due date and age are handled deterministically; comment text cannot grant steering authority, expand scope or become a system instruction.
 
 Provider contracts: [Codex App Server](https://learn.chatgpt.com/docs/app-server), [Claude Agent SDK overview and API authentication](https://code.claude.com/docs/en/agent-sdk/overview), [streaming input](https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode), and [session resume](https://code.claude.com/docs/en/agent-sdk/sessions). Runtime-specific wire fields are checked against the pinned Codex runtime's generated schema.
+
+### Issue monitoring (0.5.32)
+
+Workers can call `monitor_issue` for issue-scoped committed edits, linked integration callbacks and agent status changes. Resume with its cursor and reread issue context before acting. `wait_for_issue_checks` waits up to 20 seconds for the exact linked PR, repository, branches and head; repeat the same call after timeout. Completion can mean failed checks. Neither tool starts a background model turn or grants merge/deployment authority; emergency stops and execution leases still apply.
