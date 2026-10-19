@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.32/velocity-agent-0.5.32.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.33/velocity-agent-0.5.33.tgz
 velocity-agent --version
 ```
 
@@ -648,3 +648,41 @@ Provider contracts: [Codex App Server](https://learn.chatgpt.com/docs/app-server
 ### Issue monitoring (0.5.32)
 
 Workers can call `monitor_issue` for issue-scoped committed edits, linked integration callbacks and agent status changes. Resume with its cursor and reread issue context before acting. `wait_for_issue_checks` waits up to 20 seconds for the exact linked PR, repository, branches and head; repeat the same call after timeout. Completion can mean failed checks. Neither tool starts a background model turn or grants merge/deployment authority; emergency stops and execution leases still apply.
+
+### User configuration for a hosted run
+
+In a pending Claude Code issue run, open **Hosted execution → Run in Instabox**
+and select an optional **Agent configuration** JSON file before queuing. The
+file is an explicit selection for this run; Velocity does not copy the machine
+operator's home or another user's saved settings. For example:
+
+```json
+{
+  "version": 1,
+  "files": [
+    { "path": ".claude/CLAUDE.md", "content": "Use concise explanations." },
+    { "path": ".claude/settings.json", "content": "{\"language\":\"French\",\"alwaysThinkingEnabled\":true}" },
+    { "path": ".claude/skills/review/SKILL.md", "content": "---\nname: review\ndescription: Review changes\n---\nCheck tenant isolation." }
+  ]
+}
+```
+
+Bundles are limited to 6 KB of JSON and 20 files. Supported paths are
+`.claude/CLAUDE.md`, `.claude/settings.json`, and Markdown files under
+`.claude/skills/<skill>/`. User settings accept `language`, `outputStyle`, and
+`alwaysThinkingEnabled`. Authentication, environment, permissions, hooks and
+MCP settings stay controlled by the hosted workflow; credential files are
+rejected. The same bundle can be sent as `agentConfiguration` with the
+browser-authenticated `/api/agent/hosted` `enqueue` action.
+
+The server requires `INTEGRATION_ENCRYPTION_KEY`, encrypts the entire selection
+at rest, and binds it to the submitting user, workspace and run. The guest
+fetches it using the active run capability, installs private files in a fresh
+attempt home under `/run`, and loads only those user settings. Transfer or
+setup failure stops execution and reaches the existing hosted result workflow.
+Raw process logs are disabled for configured runs; diagnostic redactions and
+checkpoint scanning also protect selected file contents. Configuration and
+provider session state for these runs stay ephemeral; repository work and
+sanitized hosted result evidence remain checkpointed. A resumed task must
+install its configuration again with a newly authorized attempt. Existing runs
+without a selection keep their current behavior.
