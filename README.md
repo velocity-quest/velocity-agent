@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.33/velocity-agent-0.5.33.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.34/velocity-agent-0.5.34.tgz
 velocity-agent --version
 ```
 
@@ -117,6 +117,32 @@ velocity-agent repo cleanup --workspace your-workspace --repo /path/to/repositor
 ```
 
 Use `recover` only after stopping the worker. It checks that the recorded PID is dead and releases only that same task lock; live, replaced or invalid locks are refused. `cleanup` removes only a clean inactive registered worktree with matching ownership. Modified, untracked or ignored files and foreign paths/branches are refused. Preserve such files yourself before cleanup. Branches and commits remain for review/recovery; cleanup never force-removes or deletes a branch. An explicitly selected `--single-checkout` keeps the older writable-checkout mode, requires a clean source and serializes workers with the common `.git/velocity-agent.lock`. Never remove that lock until its worker is confirmed stopped. Keep `XDG_DATA_HOME` consistent for task resume/cleanup.
+
+### Temporary storage and validation
+
+Native attempts, host validation and built-in Vercel operations use private
+temporary directories. On Linux the default volume is
+`$XDG_DATA_HOME/velocity-agent/tmp`, or `~/.local/share/velocity-agent/tmp`
+when XDG_DATA_HOME is unset. An explicit host TMPDIR (or TMP/TEMP) takes
+precedence. Each attempt receives its own TMPDIR and Node compile-cache path;
+account configuration, sign-in files and other configured caches stay in place.
+
+The worker checks writable space and free inodes before claiming native work.
+Low capacity leaves work queued and appears as temporary storage needing
+attention on the Agents page. Polling checks again automatically. NORMAL output
+also explains byte/inode exhaustion reported by failed commands. Check both
+`df -h` and `df -i` for the affected volume: free bytes do not imply free inodes.
+To choose another volume, restart with
+`TMPDIR=/path/to/disk-scratch velocity-agent run` and your normal options.
+
+An attempt removes only its own scratch directory after success, failure or
+normal cancellation. On Linux and macOS, interrupted validation stops its command group before
+removing scratch; the repository and preserved task worktree remain available.
+Commands that explicitly write elsewhere own those files themselves. A hard
+process or machine kill can leave scratch behind. Verify that the attempt and
+its child processes have stopped before manually removing that directory.
+The worker never sweeps shared /tmp, guesses ownership from a directory's age,
+or deletes another worker's files.
 
 ## Shared workspace controls
 
