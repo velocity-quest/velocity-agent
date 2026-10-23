@@ -14,7 +14,7 @@ const manifest = JSON.parse(await readFile(resolve(prefix, 'node_modules/velocit
 assert.equal(manifest.version, version);
 assert.equal(manifest.private, false);
 // These commands load lazily; --help alone cannot catch workspace-only imports.
-for (const module of ['workflow-defaults', 'workflow-defaults-contract', 'hosted/control-plane', 'hosted/instabox', 'hosted/entry', 'session/codex-app-server', 'session/claude-agent-sdk']) {
+for (const module of ['agent-runtimes', 'native-runtimes', 'additional-readiness', 'workflow-defaults', 'workflow-defaults-contract', 'hosted/control-plane', 'hosted/instabox', 'hosted/entry', 'session/codex-app-server', 'session/claude-agent-sdk']) {
   await import(pathToFileURL(resolve(prefix, 'node_modules/velocity-agent/dist', module + '.js')).href);
 }
 assert.ok((await readFile(resolve(prefix, 'node_modules/velocity-agent/README.md'), 'utf8'))
@@ -77,7 +77,8 @@ const server = createServer(async (request, response) => {
       if (token !== 'Bearer vel_mcp_smoke_only' && (revoked || token !== 'Bearer ' + access)) return send({error:'unauthorized'},401);
       const inventory = JSON.parse(data); workerRegistrations.push(inventory);
       assert.equal(inventory.protocolVersion,1);
-      assert.ok(inventory.inventory.some(row=>row.executor==='muse'&&row.availability==='unsupported'));
+      assert.deepEqual(inventory.inventory.map(row=>row.executor), ['claude-code','codex','anthropic','grok','muse','cursor','antigravity']);
+      for (const executor of ['grok','muse','cursor','antigravity']) assert.ok(inventory.inventory.some(row=>row.executor===executor&&!row.installed&&row.availability==='unavailable'));
       assert.ok(!JSON.stringify(inventory).includes(prefix),'Inventory must omit local paths');
       const workspaceId = request.headers['x-workspace-slug']==='second-workspace'?'00000000-0000-4000-8000-000000000002':workspace.id;
       return send({protocolVersion:1,id:'00000000-0000-4000-8000-000000000020',workspaceId,sessionId:inventory.sessionId,revision:1,command:workerCommand,configuration:{}});
@@ -184,6 +185,9 @@ async function run(args, { key = '', login = false, api = false, claude = '', co
       VELOCITY_API_KEY: '', ANTHROPIC_API_KEY: api ? 'smoke-anthropic-key' : '', ANTHROPIC_BASE_URL: url, SSH_CLIENT: '', SSH_CONNECTION: '',
       CODEX_HOME: join(prefix, 'smoke-codex'), XDG_DATA_HOME: join(prefix, 'smoke-data'), VELOCITY_CODEX_BIN: codex,
       VELOCITY_CLAUDE_BIN: claude,
+      // Keep package checks independent of the host's signed-in native accounts.
+      VELOCITY_GROK_BIN: join(prefix, 'missing-grok'), VELOCITY_MUSE_BIN: join(prefix, 'missing-muse'),
+      VELOCITY_CURSOR_BIN: join(prefix, 'missing-cursor'), VELOCITY_ANTIGRAVITY_BIN: join(prefix, 'missing-antigravity'),
       INSTABOX_API_KEY: hosted ? 'ibk_smoke_only_never_sent' : '',
       VELOCITY_HOSTED_DISPATCH_SECRET: hosted ? 'smoke-hosted-private-dispatch-secret' : '',
     }, stdio: ['pipe', 'pipe', 'pipe'] });
