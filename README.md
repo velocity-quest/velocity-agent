@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.35/velocity-agent-0.5.35.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.36/velocity-agent-0.5.36.tgz
 velocity-agent --version
 ```
 
@@ -322,6 +322,22 @@ command. Successful command output is omitted. For example:
 
 
 Shared execution controls require worker 0.5.7 or later. **Require isolated worktrees** keeps workers with `--single-checkout` and API-only workers idle. **Local changes only** overrides `--allow-delivery`: the host keeps and links local commits without pushing or opening a PR. Existing delivery permissions still require local `--allow-delivery`; shared settings never grant it. Controls refresh before delivery, and restrictions changing in flight preserve your local changes. Delivery eligibility can only narrow during a run; lifting local-only controls applies to a subsequent attempt after fresh repository verification. Older workers cannot claim work while these restrictions are active. Private draft preferences are not activated by upgrading.
+
+### Delivery authorization and recovered runs (0.5.36)
+
+Allow delivery selects what a worker may attempt. Current issue ownership,
+workspace policy, integration approval requirements and the authenticated
+connection still apply. When one prevents delivery, normal output identifies
+the issue/run and explains the specific restriction and where to review it.
+Temporary failures are checked again after 30 seconds; unchanged messages are
+repeated at most every five minutes.
+
+A closed issue, changed source/workflow or superseded execution needs a new
+authorized attempt rather than replaying the old delivery. The worker records
+a local stop and preserves the branch and worktree. When external delivery is
+recorded on an already closed issue, follow its links on the original run page.
+This reconciliation does not rewrite the original model outcome or claim that
+the old worker completed delivery itself.
 
 ### Live run progress
 
