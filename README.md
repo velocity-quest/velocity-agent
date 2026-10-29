@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.39/velocity-agent-0.5.39.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.40/velocity-agent-0.5.40.tgz
 velocity-agent --version
 ```
 
@@ -42,6 +42,20 @@ shown in the error, then retry. Locks are never reclaimed automatically.
 
 For automation, create a workspace token in **Settings → MCP**, with `mcp:read` and `mcp:write`, and set `VELOCITY_MCP_TOKEN` privately. The legacy `VELOCITY_API_KEY` variable also works. An explicit key takes precedence over browser credentials. `--workspace` or `VELOCITY_WORKSPACE` is optional; if supplied it must be among the currently authorized workspaces. Keep tokens out of repository files.
 
+## Complete work that needs no new source changes
+
+Worker 0.5.40 can reuse an earlier accepted native delivery for the same unchanged issue and exact base source. It rechecks the merged PR’s current checks and required reviews, then runs the pinned acceptance verifier when deployment is required. It creates no new commit, PR or deployment. Current authorization and workspace limits still apply.
+
+When automatic proof is unavailable, the run remains blocked with `DELIVERY_NO_CHANGES`. Open **Review existing work** on that run, select an earlier delivery or link the existing PR in **Delivery continuations**, and run the command shown from the linked repository on the original worker host:
+
+```sh
+velocity-agent workflow verify-existing --workspace WORKSPACE --run RUN_ID --reference REFERENCE_ID --reference-kind run
+```
+
+Use `--reference-kind pull_request` for a linked PR. Add `--repo /path/to/checkout` when outside the repository. If the original run used a private workflow, supply the same `--workflow /private/workflow.json`; its command digest must match. The command locks the preserved owned task worktree, reruns validation and only the acceptance verifier, then records fresh proof. It never starts a model, commits, pushes or deploys.
+
+The original requester must explicitly confirm acceptance in the browser within 15 minutes of verification. The issue transition and one completion comment are committed together. The original coding execution, outcome and no-change handoff remain in history, with links to the actual delivery. Changed requirements, assignment, pinned policy, current authority or minimum worker version require review or a new authorized attempt; model prose or an artifact URL alone cannot complete an issue. This flow supports merge and deployment workflows; local and PR handoffs keep their existing stopping behavior.
+
 ## Start now, select execution on the website
 
 Worker 0.5.25 adds direct Agents-page repair, field sources and acknowledged configuration revisions. Install the verified release linked above.
@@ -54,7 +68,7 @@ Only **Anthropic API** execution requires `ANTHROPIC_API_KEY` or `--anthropic-ke
 
 The website shows each field's source. **CLI option** fields are locked and display the explicit value even when setup is incomplete; remove that option when restarting to give the website control. Explicit CLI options always override saved preferences, including explicit false options. Omitted options never select Claude/Anthropic implicitly. `--agent codex` selects native Codex; `--agent claude` selects Claude Code unless an explicit `--executor` accompanies it. `--no-allow-delivery` overrides website push/PR authorization; `--no-single-checkout` requires task worktrees. A local `--workflow` controls delivery instead of website PR handoff. Existing shared policy can restrict these choices.
 
-Worker 0.5.39 reports the selected delivery stop and its source in normal startup output and in **Worker details → Selected delivery stop**. A loaded workflow can select local work, a PR, merge, or deployment independently of the separate push/PR handoff option. This is a reported selection: current issue requirements, enabled saved profiles and protected workspace limits are checked for each run.
+Worker 0.5.40 reports the selected delivery stop and its source in normal startup output and in **Worker details → Selected delivery stop**. A loaded workflow can select local work, a PR, merge, or deployment independently of the separate push/PR handoff option. This is a reported selection: current issue requirements, enabled saved profiles and protected workspace limits are checked for each run.
 
 Saved settings remain pending until the worker checks and acknowledges their revision. **Needs attention** includes specific setup actions, such as selecting a team or signing in locally. During a task, the summary retains the active configuration; changed settings apply after that task, before another claim. Idle workers pick up changes on their next poll without restarting. Offline workers cannot acknowledge changes until reconnected. A conflicting save preserves your edits; **Reload settings** fetches the current revision for review. Older workers that do not report applied revisions show **not reported**; update the worker to obtain acknowledgement.
 
