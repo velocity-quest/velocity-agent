@@ -13,9 +13,14 @@ const binary = resolve(prefix, 'node_modules/velocity-agent/dist/index.js');
 const manifest = JSON.parse(await readFile(resolve(prefix, 'node_modules/velocity-agent/package.json'), 'utf8'));
 assert.equal(manifest.version, version);
 assert.equal(manifest.private, false);
-// These commands load lazily; --help alone cannot catch workspace-only imports.
-for (const module of ['agent-runtimes', 'native-runtimes', 'additional-readiness', 'workflow-defaults', 'workflow-defaults-contract', 'hosted/control-plane', 'hosted/instabox', 'hosted/entry', 'session/codex-app-server', 'session/claude-agent-sdk']) {
-  await import(pathToFileURL(resolve(prefix, 'node_modules/velocity-agent/dist', module + '.js')).href);
+// Load every literal local lazy command from the actual installed entry point.
+// Startup/help alone cannot catch an unpublished workspace-only dependency.
+const entry = await readFile(binary, 'utf8');
+const lazyCommands = [...entry.matchAll(/\bimport\(\s*(["'])(\.\/[^"']+\.js)\1\s*\)/g)].map(match => match[2].slice(2));
+assert.ok(lazyCommands.length > 0, 'Expected lazy command imports in the packaged CLI');
+const modules = new Set([...lazyCommands, ...['agent-runtimes', 'native-runtimes', 'additional-readiness', 'workflow-defaults', 'workflow-defaults-contract', 'hosted/control-plane', 'hosted/instabox', 'hosted/entry', 'session/codex-app-server', 'session/claude-agent-sdk'].map(module => module + '.js')]);
+for (const module of modules) {
+  await import(pathToFileURL(resolve(prefix, 'node_modules/velocity-agent/dist', module)).href);
 }
 assert.ok((await readFile(resolve(prefix, 'node_modules/velocity-agent/README.md'), 'utf8'))
   .includes(`npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v${version}/velocity-agent-${version}.tgz`),
