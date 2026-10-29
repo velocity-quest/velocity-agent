@@ -140,7 +140,12 @@ const server = createServer(async (request, response) => {
     else if (nativePending && rpc.params.name === 'update_agent_run') {
       const args=rpc.params.arguments;codexStatuses.push(args.status);
       if(args.nativeUsage)nativeSnapshots.push(args.nativeUsage);
-      if(args.status==='completed') { assert.equal(args.model,'gpt-6.1-sol');assert.equal(args.inputTokens,undefined);assert.equal(args.outputTokens,undefined); }
+      if(args.status==='completed') {
+        assert.equal(args.model,'gpt-6.1-sol');assert.equal(args.inputTokens,undefined);assert.equal(args.outputTokens,undefined);
+        assert.match(args.resultSummary,/^\*\*Local handoff\.\*\*/);
+        assert.match(args.reviewBody,/Owned Codex result[\s\S]*\*\*Local handoff\.\*\*/);
+        assert.ok(args.reviewBody.includes('This issue stays open'));
+      }
       result={id:args.runId,status:args.status,metadata:{},...(args.nativeUsage?{nativeUsageRecorded:true}:{})};
     }
     else if (nativePending && rpc.params.name === 'get_issue') result={identifier:'TEST-1'};
@@ -151,7 +156,11 @@ const server = createServer(async (request, response) => {
       assert.equal(proof.type,'control_request'); assert.equal(proof.request.subtype,'initialize');
       if(rpc.params.arguments.status==='completed') assert.equal(rpc.params.arguments.model,'claude-owned-model[1m]');
       if(rpc.params.arguments.nativeUsage)nativeSnapshots.push(rpc.params.arguments.nativeUsage);
-      if(rpc.params.arguments.status==='completed') { assert.equal(rpc.params.arguments.inputTokens,undefined);assert.equal(rpc.params.arguments.outputTokens,undefined); }
+      if(rpc.params.arguments.status==='completed') {
+        assert.equal(rpc.params.arguments.inputTokens,undefined);assert.equal(rpc.params.arguments.outputTokens,undefined);
+        assert.match(rpc.params.arguments.resultSummary,/^\*\*Local handoff\.\*\*/);
+        assert.ok(rpc.params.arguments.reviewBody.includes('This issue stays open'));
+      }
       result={id:rpc.params.arguments.runId,status:rpc.params.arguments.status,metadata:{},...(rpc.params.arguments.nativeUsage?{nativeUsageRecorded:true}:{})};
     }
     else if (nativeClaudePending && rpc.params.name === 'get_issue') result={identifier:'TEST-1'};
