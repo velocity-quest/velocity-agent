@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.38/velocity-agent-0.5.38.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.39/velocity-agent-0.5.39.tgz
 velocity-agent --version
 ```
 
@@ -53,6 +53,8 @@ Discovery checks Claude Code and the exact Codex runtime used by the adapter wit
 Only **Anthropic API** execution requires `ANTHROPIC_API_KEY` or `--anthropic-key` locally. Selecting Claude Code or Codex uses that runtime's existing authentication. Missing authentication, unavailable executors, incompatible model/effort settings and missing repository links leave queued work pending and show a waiting reason. Correct settings or sign in with the runtime's own CLI; discovery retries every minute.
 
 The website shows each field's source. **CLI option** fields are locked and display the explicit value even when setup is incomplete; remove that option when restarting to give the website control. Explicit CLI options always override saved preferences, including explicit false options. Omitted options never select Claude/Anthropic implicitly. `--agent codex` selects native Codex; `--agent claude` selects Claude Code unless an explicit `--executor` accompanies it. `--no-allow-delivery` overrides website push/PR authorization; `--no-single-checkout` requires task worktrees. A local `--workflow` controls delivery instead of website PR handoff. Existing shared policy can restrict these choices.
+
+Worker 0.5.39 reports the selected delivery stop and its source in normal startup output and in **Worker details → Selected delivery stop**. A loaded workflow can select local work, a PR, merge, or deployment independently of the separate push/PR handoff option. This is a reported selection: current issue requirements, enabled saved profiles and protected workspace limits are checked for each run.
 
 Saved settings remain pending until the worker checks and acknowledges their revision. **Needs attention** includes specific setup actions, such as selecting a team or signing in locally. During a task, the summary retains the active configuration; changed settings apply after that task, before another claim. Idle workers pick up changes on their next poll without restarting. Offline workers cannot acknowledge changes until reconnected. A conflicting save preserves your edits; **Reload settings** fetches the current revision for review. Older workers that do not report applied revisions show **not reported**; update the worker to obtain acknowledgement.
 
