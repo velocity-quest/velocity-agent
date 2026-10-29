@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.41/velocity-agent-0.5.41.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.42/velocity-agent-0.5.42.tgz
 velocity-agent --version
 ```
 
@@ -44,7 +44,7 @@ For automation, create a workspace token in **Settings → MCP**, with `mcp:read
 
 ## Complete work that needs no new source changes
 
-Worker 0.5.41 streams long Claude Code runs without a cumulative output cap. It limits each event to 2 MB and pending tool state to 1,024 tools and 8 MB; malformed or oversized events, cancellation and execution timeouts still stop the run. The release also redacts supported workspace and personal API key formats from diagnostics without requiring local secret registration.
+Worker 0.5.42 streams long Claude Code runs without a cumulative output cap. It limits each event to 2 MB and pending tool state to 1,024 tools and 8 MB; malformed or oversized events, cancellation and execution timeouts still stop the run. The release also redacts supported workspace and personal API key formats from diagnostics without requiring local secret registration.
 
 Worker 0.5.40 can reuse an earlier accepted native delivery for the same unchanged issue and exact base source. It rechecks the merged PR’s current checks and required reviews, then runs the pinned acceptance verifier when deployment is required. It creates no new commit, PR or deployment. Current authorization and workspace limits still apply.
 
