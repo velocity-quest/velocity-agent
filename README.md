@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.37/velocity-agent-0.5.37.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.38/velocity-agent-0.5.38.tgz
 velocity-agent --version
 ```
 
@@ -179,7 +179,7 @@ the worker and restart it. Shell escalation, unrelated MCP tools and interactive
 approval requests remain unavailable. A separate delivery error such as
 `CI_FAILED` must still be corrected before delivery can continue.
 
-Commits stay local by default. `--allow-delivery` authorizes the runner to push its branch and open a linked PR; it needs local Git authentication and Velocity's GitHub repository mapping. The runner does not merge or mark the issue Done. Native execution is unattended, bounded to 30 minutes and renews its lease; stale recovery fails abandoned work. Velocity's optional action checkpoint is unsupported for native workers and off by default.
+Delivery follows the selected host workflow and website settings, within workspace limits. With no delivery configured, commits stay local. `--allow-delivery` explicitly authorizes PR handoff and `--no-allow-delivery` explicitly keeps work local; CLI options override the website. A configured full workflow can also check, merge, deploy and close the issue after its required evidence passes. The model cannot perform those host-owned effects itself; restricted model Git tools do not mean host delivery is disabled. Native execution is unattended, bounded to 30 minutes and renews its lease; stale recovery fails abandoned work. Velocity's optional action checkpoint is unsupported for native workers and off by default.
 
 Codex uses your own account and configured model/effort, without Velocity AI metering. `--model` and `--effort` are optional explicit overrides; omit both to preserve native defaults. `VELOCITY_CODEX_BIN` can select an installed compatible Codex binary. The package includes the Codex SDK's native runtime. One runner executes one task at a time; independent runners use separate owned worktrees. See recovery below for interrupted tasks.
 
@@ -214,7 +214,7 @@ VELOCITY_WORKSPACE=your-workspace velocity-agent run \
   --executor claude-code --repo /path/to/repository --team YOUR_TEAM
 ```
 
-Enable Claude Code execution and select it as the desired execution method in Velocity. The worker only selects pending issue runs for the specified team and workspace. It uses an owned writable worktree for each task, edits and runs checks there, and preserves the source checkout. The runner commits any remaining task edits, links the actual SHAs, and handles authorized delivery after rechecking the server lease and repository mapping. Without `--allow-delivery`, commits remain local. Add `--allow-delivery` to authorize pushing and opening a PR. Git/GitHub authentication must be available locally for delivery.
+Enable Claude Code execution and select it as the desired execution method in Velocity. The worker only selects pending issue runs for the specified team and workspace. It uses an owned writable worktree for each task, edits and runs checks there, and preserves the source checkout. The runner commits any remaining task edits, links the actual SHAs, and handles the effective host delivery workflow after rechecking the server lease, permissions and repository mapping. Configure delivery on the Agents page or use an explicit CLI override. Git/GitHub authentication must be available locally for delivery.
 
 Native Claude Code does not implement Velocity's optional approval checkpoint. A workspace that requires that checkpoint cannot dispatch work to this worker; use the API executor for that policy. No checkpoint is required by default.
 
