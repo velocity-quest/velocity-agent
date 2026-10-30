@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.48",
-  "sourceSha": "9fd88ea206da2fcf9ad77148b97be7f6b3ffb464",
-  "treeSha": "e6a60a6d7ba1f786182346b1f8ce99dd50a3b298",
-  "archiveSha256": "b709e0f47099091d5f4227516c31b959cc3895fc2a78197605aef732d877296b",
-  "completedAt": "2026-10-30T04:40:12.574Z",
+  "version": "0.5.49",
+  "sourceSha": "ccff58d68585a07981831c570e9e04496c5d3c95",
+  "treeSha": "1d7a924822b55f3bb792ead16d40c7c13dad34d5",
+  "archiveSha256": "418a088e766e93923d77e27ae62ea7cf0560e39898019b50d98ccf2374177fdf",
+  "completedAt": "2026-10-30T08:08:43.955Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -13,146 +13,226 @@
   },
   "checks": [
     {
-      "name": "agent-negative-control.json",
+      "name": "negative-finalization.json",
       "passed": true,
-      "logSha256": "eaa64eaf5baadefac9ec4baee90f7df05a9a325b600e3abc9497697cccc11887"
+      "logSha256": "45b63ef1bba8fd64b61d1b447501c6d706a2c5f8085ab4811509871691a3550f"
     },
     {
-      "name": "agent-tests",
+      "name": "ui-history-negative",
       "passed": true,
-      "logSha256": "64b7c0dbbdbaf767863ff484a18e0956f9e6b2830e399da258694a5933d64cc6"
+      "logSha256": "6fa4db81639b66419087e12bb6bbd080249060471acb158cfbf24f61d9a02588"
     },
     {
-      "name": "server-tests-final",
+      "name": "ui-history-positive",
       "passed": true,
-      "logSha256": "acf339c8b0285abf7f0fe6373bbdbeb20369ccea4d0624f7ce7fc5402d0da227"
+      "logSha256": "4ab9e383b1c9ee0cde6f546c8caffd318849921e545d8e06bd2a9ef3a83a605b"
     },
     {
-      "name": "web-tests",
+      "name": "agent-tests-release",
       "passed": true,
-      "logSha256": "065e6d5e583e7aa8098b1a7f89b7044a2bd5934d94bd583933664e9651cf2a44"
+      "logSha256": "fc6024f0cfb302fe2d33739bae4293be558910d7367211bc6d3d31cdc2f8ad9b"
     },
     {
-      "name": "typechecks",
+      "name": "web-tests-history-final",
       "passed": true,
-      "logSha256": "3e869a9c6925c503547a04521c2ec8ac32377a558abc06ff2bfda290c978b06a"
+      "logSha256": "302452932873160a775bbadbe4e49436bc2cd4b0ded36c89e854f52801d3b001"
     },
     {
-      "name": "typecheck-web-final",
+      "name": "server-tests",
       "passed": true,
-      "logSha256": "103272ef063d7fa1538f64c6f06761940d0cb621f397bb48810986f495cb2e18"
+      "logSha256": "43ea5a2e1f5c5669ac74eb6ca749d75a3e3d3a7f91ce29511f75f5d899c55d40"
     },
     {
-      "name": "builds",
+      "name": "typechecks-final",
       "passed": true,
-      "logSha256": "950a23ea578fd991d83671351400721291acaab51e5d0d3b6c9d4359ef852d41"
+      "logSha256": "8ab719cae316e1f973e5e08cc3bb508ac5ec1de39ed3dd6f8fa8b6172d0cde82"
     },
     {
-      "name": "web-build-final",
+      "name": "agent-typecheck-release",
       "passed": true,
-      "logSha256": "9e6e02f3aeafbcf2d1a9d468d298d9c3180a288d7bf16d0202da6c681cd23437"
+      "logSha256": "9452f8207b64ac75f84d1d526e379169ee58ce5c05163086a466e0da406fa163"
     },
     {
-      "name": "build-final-acceptance.json",
+      "name": "server-typecheck",
       "passed": true,
-      "logSha256": "3091be05629a7d9b520aecdacc051ec4711e508ef33c09a3f01d1e2ff1eed47a"
+      "logSha256": "a4af870161f13428e0c93952c3a94e095db3942c9ea5e34f1809605089610013"
     },
     {
-      "name": "timestamp-roundtrip.json",
+      "name": "final-web-typecheck",
       "passed": true,
-      "logSha256": "948c3df41de558a15c0c8624a2f20b3dc63c88d780cbae3990739876952a2fa7"
+      "logSha256": "8ab719cae316e1f973e5e08cc3bb508ac5ec1de39ed3dd6f8fa8b6172d0cde82"
+    },
+    {
+      "name": "agent-build-release",
+      "passed": true,
+      "logSha256": "3d62ab591d82495f2c4e9fe0d5d64604e61446120fa6b213116edc1163853ec8"
+    },
+    {
+      "name": "web-build-history-final",
+      "passed": true,
+      "logSha256": "956f5d8a4b7026de56bcf4b67e0a442e81d064ba147227b82d22d1858806a790"
+    },
+    {
+      "name": "build-docs",
+      "passed": true,
+      "logSha256": "2fd0c9498a2d6276d3bca5bf2f6287ce25d1e2898b693da5272ff15c36079d88"
+    },
+    {
+      "name": "final-build-acceptance.json",
+      "passed": true,
+      "logSha256": "209d0ee8147db69b0c399c09dbeecae63ef580ff8f0f760265c7762100b40b09"
     },
     {
       "name": "sql-checks.json",
       "passed": true,
-      "logSha256": "d82a585461cc17d9c033827e30fa34a4864fcc726cc52e615a3c3d6989a960fd"
+      "logSha256": "de135a368049fe1af564ab0a40e125d32451d5ac4ec53e3f13a70068cdb860fd"
     },
     {
-      "name": "sql-upgrade",
+      "name": "sql-first-check.json",
       "passed": true,
-      "logSha256": "f7aea00d523cf3141f336af1edf11b4dd5f106380016924d6d4c97d5b8fc8c41"
+      "logSha256": "6ebc641b6d52ffa9cff00e4b9e82a6d0c10bfa40bbbb5ada18f4625d564d1394"
     },
     {
-      "name": "sql-wait-race",
+      "name": "sql-race.json",
       "passed": true,
-      "logSha256": "68473b50acece410a8d9d6fd123cc089b9a29a766e8326814a772121ed20e8fd"
+      "logSha256": "051972990ecd340707e645dbc4ceee9027731011ea7f6817f395f46e17fbd6e8"
     },
     {
       "name": "browser-review.json",
       "passed": true,
-      "logSha256": "aa57465a51061ca68a94df4ea5853166a11e4d193a9d4a74240243079485259d"
+      "logSha256": "df5f56585444465166a50a53eaf8577aaf1ca011708675d86d86229ab319f5d8"
     },
     {
-      "name": "lint",
+      "name": "web-lint",
       "passed": true,
-      "logSha256": "850debec924d48e5166db3b44749947bee78efa0336adc5cee002f24892e2d08"
+      "logSha256": "847ba7b152f32c501e6a68f949e4f7f63a5003e64f4988ffaf3e183799e1bf05"
+    },
+    {
+      "name": "final-ui-lint",
+      "passed": true,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "bundle",
       "passed": true,
-      "logSha256": "2ee9ae9df698b4a1231816bd2ee2634f84d2712176d24f2e1e5ef13c7e66b829"
-    },
-    {
-      "name": "dependency-audit",
-      "passed": true,
-      "logSha256": "f09ff9230d0ba7230b04b14fda158c054782c15d31df3babf5ad09a80fd85fa2"
+      "logSha256": "5e69f171f79eb30d755704faf1e33508ee28bfe77360c864c3f117d14d355288"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "5c7faacddc0dc806fc78b2d9385eb1e7fe36184fb0e1ec1d1e5430a356d97f86"
+      "logSha256": "9dc590b95815e65b609f76ba791032e258bf773d357e4fe14dc31c786d673dac"
+    },
+    {
+      "name": "installed-recovery-cli-final",
+      "passed": true,
+      "logSha256": "e58fc4cb84e87b707a5186d275eae940e137816faed1863001e966d1b8c0ba06"
+    },
+    {
+      "name": "input-scope-acceptance.json",
+      "passed": true,
+      "logSha256": "0ab45de2883fbaf5b90f115fe3bbbc17d92f3f671eb89b4159dde5c4b7ef0334"
+    },
+    {
+      "name": "final-review-acceptance.json",
+      "passed": true,
+      "logSha256": "4450671412d7d04ccdbd778a912a3099faebb8c28de0c41ba25b77aa7a864235"
+    },
+    {
+      "name": "final-archive-identity.json",
+      "passed": true,
+      "logSha256": "d57976815527a0db83ba93ef56b4004868d4fcf3722e596f2979cc1909bb262b"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "0ac4c8ead2ef278c25756805b665c2db04ceb7e4fdbcb319a26eb418e24a8416"
+      "logSha256": "278cbfc36a9e5bdaee2e914d5653d4611871968eb0783f28ec496c786e05ab9b"
     }
   ],
   "buildScope": {
     "passed": true,
     "ciWaivedByOwner": true,
-    "agentTests": 999,
+    "agentTests": 1025,
     "serverTests": 3956,
     "serverSkippedTests": 10,
-    "webTests": 3707,
-    "cliTests": 102,
-    "cliScriptTests": 12,
-    "cliCoreTests": 84,
+    "webTests": 3729,
+    "webScriptTests": 8,
+    "sqlChecks": 87,
+    "recoveryRaceAdmittedSuccessors": 1,
+    "browserCases": 6,
+    "browserWidths": [
+      390,
+      1440
+    ],
     "typechecks": [
       "agent",
-      "cli",
       "graphql",
       "web"
     ],
     "builds": [
       "cli-core",
       "agent",
-      "cli",
       "web",
       "docs"
     ],
-    "sqlChecks": 86,
-    "publicFunctionsCompared": 505,
-    "concurrentWaitRaces": 6,
-    "competingRepairAdmittedTurns": 1,
-    "browserModes": [
-      "agents",
-      "usage-free",
-      "usage-business",
-      "dark",
-      "mobile-agents",
-      "mobile-usage"
-    ],
-    "browserActualComponentsWithFixtureData": true,
-    "productionBrowserAuthenticationTested": false,
     "lintErrors": 0,
     "baselineLintWarnings": 762,
     "bundlePassed": true,
-    "productionHighCriticalAdvisories": 0,
-    "cleanArchiveInstallScope": "Linux x64 Node22; macOS/Windows matrices not run",
-    "buildStartedAtSource": "0315caf02e280d389efeace1c948fddc371373bd",
-    "closedPrFixIncludedInFinalWebBuild": true,
-    "buildEnvironment": "Repository CI public fixture values; production uses Vercel settings"
+    "negativeControls": [
+      "schema without native recovery",
+      "late finalization abort",
+      "accepted-successor history"
+    ],
+    "installedRecoveryCliCases": 3,
+    "cleanArchiveInstallScope": "Linux x64 Node22 only; macOS/Windows not run",
+    "testedInputScopes": [
+      {
+        "name": "agent tests and build",
+        "testedSource": "334d667694960610a252f69823bb29d7ab447ad3",
+        "paths": [
+          "packages/agent",
+          "packages/cli-core",
+          "packages/types",
+          "package.json",
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml"
+        ],
+        "unchangedAtFinalSource": true
+      },
+      {
+        "name": "server tests and build inputs",
+        "testedSource": "47d2bcae1fc2cb3b3ea6621fdfef40f9d99e7550",
+        "paths": [
+          "packages/graphql",
+          "packages/types",
+          "package.json",
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml"
+        ],
+        "unchangedAtFinalSource": true
+      },
+      {
+        "name": "Docs build inputs",
+        "testedSource": "47d2bcae1fc2cb3b3ea6621fdfef40f9d99e7550",
+        "paths": [
+          "apps/docs",
+          "packages/ui",
+          "packages/config",
+          "packages/types",
+          "package.json",
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml"
+        ],
+        "unchangedAtFinalSource": true
+      },
+      {
+        "name": "Postgres migration and check inputs",
+        "testedSource": "47d2bcae1fc2cb3b3ea6621fdfef40f9d99e7550",
+        "paths": [
+          "supabase"
+        ],
+        "unchangedAtFinalSource": true
+      }
+    ]
   },
   "limitations": [
     "GitHub Actions did not run because the account is out of budget.",
