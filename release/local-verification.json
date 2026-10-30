@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.44",
-  "sourceSha": "568dcacadeef7c9f14d5624195ba9bb8bae54b79",
-  "treeSha": "a8ba9d35f74579ad40e1aaf203b021b52b37a4e4",
-  "archiveSha256": "731fbda89e25af77c13bc1fac758b8cc3670d41c41d0d67542dd7fc559e65017",
-  "completedAt": "2026-10-30T01:51:03.404Z",
+  "version": "0.5.45",
+  "sourceSha": "ac603ef403977a1e5c395db7133383a3afc8fbb0",
+  "treeSha": "8692546cb40b025af6f59b2fd544c6989c1e8d5b",
+  "archiveSha256": "e7b8ed1233521499f95eba004522e34a75cfa94558ac22f8e3c243f1779869b5",
+  "completedAt": "2026-10-30T02:02:30.116Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -13,76 +13,54 @@
   },
   "checks": [
     {
-      "name": "types-release",
+      "name": "agent-tests",
       "passed": true,
-      "logSha256": "4fc5e143de3e855f69b07853ea8faa5fef3a9aebdd4bc385a5812e33c9b1b137"
+      "logSha256": "846fe22f05c71b2281174880fbfc8c5e3bf51b824e282867cc1ab89c3da666bd"
     },
     {
-      "name": "tests-release",
+      "name": "agent-build-final",
       "passed": true,
-      "logSha256": "56593167c6b04dacca4a5cfc8896dbbfb358d1e9d05a266edda65601652b61f0"
+      "logSha256": "e899bb3ff775493df8ee65512e38e580941d2d3b052d8deee3c0a178dcee3089"
     },
     {
-      "name": "sql-resumed",
+      "name": "server-tests",
       "passed": true,
-      "logSha256": "1b57b4965337a9164152d9cd5336f59fa7f3d9a7bdfef361f6c81b02d1373726"
+      "logSha256": "9f27cea6ce017239e08de8df61f7a8cd7679f08a977320461474645299e27386"
     },
     {
-      "name": "sql-upgrade",
+      "name": "agent-types",
       "passed": true,
-      "logSha256": "7da8164d1180fff0b3ad08eb9f36729f6b7e5a1414709047ab3915942d8ab46c"
+      "logSha256": "ca07822b5a716627f3bf1b0ae93401660133b6850a846745f5a61df81eb7a7cf"
     },
     {
-      "name": "builds-release",
+      "name": "server-types",
       "passed": true,
-      "logSha256": "5dec84d6a9f7ef6003031cded82fccd19d1dd7bd30d86de1929d07ac4d19acc9"
+      "logSha256": "107637dd532af3b224bce5378c779f8871cdffd864a96f7f0fc1394801a45a68"
     },
     {
-      "name": "hold-storage-final",
+      "name": "web-types",
       "passed": true,
-      "logSha256": "7d2c0f8b1e527e39441a234f2b8b1efc2fed0e6cc6fea0c0c9839d0be6748375"
+      "logSha256": "2767adf4572e7fd6b783ff2d56ec0067908bac8f71172c4836d8a1b834a821b6"
     },
     {
-      "name": "agent-final-build",
+      "name": "baseline-validation.json",
       "passed": true,
-      "logSha256": "c6a896665e3a5edd5df228e10a9bb99f5efd8813657f632ebd9247f3d7a4ae0b"
-    },
-    {
-      "name": "web-lint",
-      "passed": true,
-      "logSha256": "e0221313f63a0e214412e2fa01b9622a76c0b6f4fc469aa554163dd92f6a9092"
-    },
-    {
-      "name": "cli-coverage-check",
-      "passed": true,
-      "logSha256": "0e052886a68c0c8df2b14e8961177472a086c0dc909c7f4e5f94fb70fdd2122d"
-    },
-    {
-      "name": "bundle-release",
-      "passed": true,
-      "logSha256": "94d773971104818767bb2c84037376ada14e840932bdf61763c7cca4981adb56"
-    },
-    {
-      "name": "browser-review.json",
-      "passed": true,
-      "logSha256": "11b3fa17d5854f203e12d2b5793761ff8fb83e2ce41a165815dc7bc32a782a11"
-    },
-    {
-      "name": "dependency-audit",
-      "passed": true,
-      "logSha256": "f09ff9230d0ba7230b04b14fda158c054782c15d31df3babf5ad09a80fd85fa2"
+      "logSha256": "330029a1d4ff06104ab36435329fdf76fdae9ad130e2ce1c61f0aa1fa66d5e11"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "883485c45d519b85a41ee5a763b73da9105f72e8db372dcef5d1651c2622453c"
+      "logSha256": "53c084f3b08d78ae617e790c4d38393a80cd06e00bf4fa441ab82010d35d1138"
     }
   ],
   "buildScope": {
-    "allSixProductionBuildsPassed": true,
-    "finalAgentLockMetadataCleanupRebuiltAndTested": true,
-    "finalSourceTypechecked": true,
-    "webAndDocsRequireVercelRebuildBeforePromotion": true
+    "baselineChecks": "PR 338; see baseline-validation.json",
+    "finalAgentTests": 977,
+    "finalWorkerApiTests": 36,
+    "finalAgentBuild": true,
+    "finalAgentServerWebTypechecks": true,
+    "webAndDocsRequireVercelRebuildBeforePromotion": true,
+    "managementCliInputsUnchanged": true
   },
   "limitations": [
     "GitHub Actions did not run because the account is out of budget.",
