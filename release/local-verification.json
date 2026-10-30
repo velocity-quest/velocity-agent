@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.43",
-  "sourceSha": "6d6ae45edf538d84d116eadbda8f071409d23877",
-  "treeSha": "e969168325286c18cc4a77b994853f8d0cda062b",
-  "archiveSha256": "32f73968112ce26b6b8580f45f64cdd8b1f2b5cb918cc068dbe92dde03213d05",
-  "completedAt": "2026-10-30T00:53:54.068Z",
+  "version": "0.5.44",
+  "sourceSha": "568dcacadeef7c9f14d5624195ba9bb8bae54b79",
+  "treeSha": "a8ba9d35f74579ad40e1aaf203b021b52b37a4e4",
+  "archiveSha256": "731fbda89e25af77c13bc1fac758b8cc3670d41c41d0d67542dd7fc559e65017",
+  "completedAt": "2026-10-30T01:51:03.404Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -13,69 +13,80 @@
   },
   "checks": [
     {
-      "name": "local-waiver-types-final",
+      "name": "types-release",
       "passed": true,
-      "logSha256": "4f5f6d9c9040f518ce07cd055ac544cf7576d9d08a9f4eaf769f8cc90d333a01"
+      "logSha256": "4fc5e143de3e855f69b07853ea8faa5fef3a9aebdd4bc385a5812e33c9b1b137"
     },
     {
-      "name": "local-waiver-tests-final",
+      "name": "tests-release",
       "passed": true,
-      "logSha256": "58144c8ea15d617b637af20fe1799aa9e24347f006bbedeb3cac4b7d2b159f02"
+      "logSha256": "56593167c6b04dacca4a5cfc8896dbbfb358d1e9d05a266edda65601652b61f0"
     },
     {
-      "name": "local-waiver-sql-all",
+      "name": "sql-resumed",
       "passed": true,
-      "logSha256": "958c5a68c3af246d4abbbe13d4ba147d5f4c09609190921032bd7517d6700e84"
+      "logSha256": "1b57b4965337a9164152d9cd5336f59fa7f3d9a7bdfef361f6c81b02d1373726"
     },
     {
-      "name": "local-waiver-sql-upgrade",
+      "name": "sql-upgrade",
       "passed": true,
-      "logSha256": "47d8ef8bb3f3f0376a53c3b742695fcb732aab6b5f8fe35fc6bfc86f2326641a"
+      "logSha256": "7da8164d1180fff0b3ad08eb9f36729f6b7e5a1414709047ab3915942d8ab46c"
     },
     {
-      "name": "local-waiver-builds-final",
+      "name": "builds-release",
       "passed": true,
-      "logSha256": "26e983999b9c93d5bb41fcc8bb5c808d206a316725c0463d485490e4af530ab5"
+      "logSha256": "5dec84d6a9f7ef6003031cded82fccd19d1dd7bd30d86de1929d07ac4d19acc9"
     },
     {
-      "name": "raw-lockfile-final",
+      "name": "hold-storage-final",
       "passed": true,
-      "logSha256": "5a4e3e586c7fc630ef7d5667a42264236482c4fa05d1f7dbec7849d6cdaa1333"
+      "logSha256": "7d2c0f8b1e527e39441a234f2b8b1efc2fed0e6cc6fea0c0c9839d0be6748375"
     },
     {
-      "name": "review-fixes-agent",
+      "name": "agent-final-build",
       "passed": true,
-      "logSha256": "482eae0ce3e48f803f8f145f34c468d63c72e4561f70b512f9baaae02edd7a2c"
+      "logSha256": "c6a896665e3a5edd5df228e10a9bb99f5efd8813657f632ebd9247f3d7a4ae0b"
     },
     {
-      "name": "e2e-local",
+      "name": "web-lint",
       "passed": true,
-      "logSha256": "d8663d0a9e29f05cd01429010ea2d622d8d40a59cd28cc0e2a283cdf33ff2f06"
+      "logSha256": "e0221313f63a0e214412e2fa01b9622a76c0b6f4fc469aa554163dd92f6a9092"
     },
     {
-      "name": "local-handoff-final",
+      "name": "cli-coverage-check",
       "passed": true,
-      "logSha256": "59cf9bed7b55cc7dfd14b039fd75aa2dbbea1e0cd359f297fa9d939d56a6bdef"
+      "logSha256": "0e052886a68c0c8df2b14e8961177472a086c0dc909c7f4e5f94fb70fdd2122d"
     },
     {
-      "name": "local-handoff-types-final",
+      "name": "bundle-release",
       "passed": true,
-      "logSha256": "b82aed5b306e4e4b3c7de9011a051611cb299f3df6075fdaafd09ccb694f9fe1"
+      "logSha256": "94d773971104818767bb2c84037376ada14e840932bdf61763c7cca4981adb56"
+    },
+    {
+      "name": "browser-review.json",
+      "passed": true,
+      "logSha256": "11b3fa17d5854f203e12d2b5793761ff8fb83e2ce41a165815dc7bc32a782a11"
+    },
+    {
+      "name": "dependency-audit",
+      "passed": true,
+      "logSha256": "f09ff9230d0ba7230b04b14fda158c054782c15d31df3babf5ad09a80fd85fa2"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "921194cd1bb671616b22952f19f10e464bbb7643a10e7d06a539601ead0a66ba"
+      "logSha256": "883485c45d519b85a41ee5a763b73da9105f72e8db372dcef5d1651c2622453c"
     }
   ],
   "buildScope": {
-    "binaryInputsUnchangedByFinalGraphqlHandoffFix": true,
-    "finalGraphqlHandoffVerifiedByFocusedTestsAndTypecheck": true,
-    "finalWebSourceRebuiltByVercelBeforePromotion": true
+    "allSixProductionBuildsPassed": true,
+    "finalAgentLockMetadataCleanupRebuiltAndTested": true,
+    "finalSourceTypechecked": true,
+    "webAndDocsRequireVercelRebuildBeforePromotion": true
   },
   "limitations": [
     "GitHub Actions did not run because the account is out of budget.",
     "Local Linux checks; macOS and Windows installation matrices were not run."
   ],
-  "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. ENGIN-722 comment 81993957-e03a-458a-91cd-40a615f819f5."
+  "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }
