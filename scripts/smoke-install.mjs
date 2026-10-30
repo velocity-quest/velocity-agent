@@ -231,6 +231,8 @@ async function run(args, { key = '', login = false, api = false, claude = '', co
 try {
   await mkdir(join(prefix, 'smoke-codex'), { recursive: true });
   assert.equal(await run(['--version']), version);
+  assert.match(await run(['workflow', 'verify-release', '--help']), /--release-version/);
+  await assert.rejects(run(['workflow','verify-release','--target','velocity-agent','--release-version','not-a-version','--includes','a'.repeat(40)]), /Choose a stable published version/);
   await run(['hosted-worker', '--base-url', url, '--worker-sha256', 'a'.repeat(64), '--worker-version', version, '--once'], { hosted: true });
   assert.equal(hostedCalls, 2, 'The installed daemon must recover/claim without contacting a provider when no job exists');
   assert.match(await run(['run', '--help']), /--executor/);

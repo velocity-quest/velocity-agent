@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "target": "velocity-agent",
+  "version": "0.5.43",
+  "sourceSha": "6d6ae45edf538d84d116eadbda8f071409d23877",
+  "treeSha": "e969168325286c18cc4a77b994853f8d0cda062b",
+  "archiveSha256": "32f73968112ce26b6b8580f45f64cdd8b1f2b5cb918cc068dbe92dde03213d05",
+  "completedAt": "2026-10-30T00:53:54.068Z",
+  "environment": {
+    "os": "linux",
+    "architecture": "x64",
+    "nodeVersion": "v22.22.1"
+  },
+  "checks": [
+    {
+      "name": "local-waiver-types-final",
+      "passed": true,
+      "logSha256": "4f5f6d9c9040f518ce07cd055ac544cf7576d9d08a9f4eaf769f8cc90d333a01"
+    },
+    {
+      "name": "local-waiver-tests-final",
+      "passed": true,
+      "logSha256": "58144c8ea15d617b637af20fe1799aa9e24347f006bbedeb3cac4b7d2b159f02"
+    },
+    {
+      "name": "local-waiver-sql-all",
+      "passed": true,
+      "logSha256": "958c5a68c3af246d4abbbe13d4ba147d5f4c09609190921032bd7517d6700e84"
+    },
+    {
+      "name": "local-waiver-sql-upgrade",
+      "passed": true,
+      "logSha256": "47d8ef8bb3f3f0376a53c3b742695fcb732aab6b5f8fe35fc6bfc86f2326641a"
+    },
+    {
+      "name": "local-waiver-builds-final",
+      "passed": true,
+      "logSha256": "26e983999b9c93d5bb41fcc8bb5c808d206a316725c0463d485490e4af530ab5"
+    },
+    {
+      "name": "raw-lockfile-final",
+      "passed": true,
+      "logSha256": "5a4e3e586c7fc630ef7d5667a42264236482c4fa05d1f7dbec7849d6cdaa1333"
+    },
+    {
+      "name": "review-fixes-agent",
+      "passed": true,
+      "logSha256": "482eae0ce3e48f803f8f145f34c468d63c72e4561f70b512f9baaae02edd7a2c"
+    },
+    {
+      "name": "e2e-local",
+      "passed": true,
+      "logSha256": "d8663d0a9e29f05cd01429010ea2d622d8d40a59cd28cc0e2a283cdf33ff2f06"
+    },
+    {
+      "name": "local-handoff-final",
+      "passed": true,
+      "logSha256": "59cf9bed7b55cc7dfd14b039fd75aa2dbbea1e0cd359f297fa9d939d56a6bdef"
+    },
+    {
+      "name": "local-handoff-types-final",
+      "passed": true,
+      "logSha256": "b82aed5b306e4e4b3c7de9011a051611cb299f3df6075fdaafd09ccb694f9fe1"
+    },
+    {
+      "name": "agent clean package install and smoke",
+      "passed": true,
+      "logSha256": "921194cd1bb671616b22952f19f10e464bbb7643a10e7d06a539601ead0a66ba"
+    }
+  ],
+  "buildScope": {
+    "binaryInputsUnchangedByFinalGraphqlHandoffFix": true,
+    "finalGraphqlHandoffVerifiedByFocusedTestsAndTypecheck": true,
+    "finalWebSourceRebuiltByVercelBeforePromotion": true
+  },
+  "limitations": [
+    "GitHub Actions did not run because the account is out of budget.",
+    "Local Linux checks; macOS and Windows installation matrices were not run."
+  ],
+  "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. ENGIN-722 comment 81993957-e03a-458a-91cd-40a615f819f5."
+}
