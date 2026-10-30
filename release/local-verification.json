@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.46",
-  "sourceSha": "7560f487bfd506c02b12c6f2ec606ff110bf85f2",
-  "treeSha": "81c121eac945d1500d9ddb840526a95e22397607",
-  "archiveSha256": "0ca862782d2578c6bbc2ca7267bb5c683509195ca3a22aaeea28d5e72d855859",
-  "completedAt": "2026-10-30T02:12:54.396Z",
+  "version": "0.5.47",
+  "sourceSha": "40e907aea62cf9cc2253b9074ca9919404b218d1",
+  "treeSha": "d64c9226a5647c3bb0691e10e565d643eb1a200f",
+  "archiveSha256": "b8c97e4e88f6e5d698aae6cd5b82e137e92ff455d1cfed792c56ef9fcf39d3cf",
+  "completedAt": "2026-10-30T03:31:02.893Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -13,39 +13,104 @@
   },
   "checks": [
     {
-      "name": "agent-tests",
+      "name": "agent-recovery-final",
       "passed": true,
-      "logSha256": "56608cbb33da97f228de58ac76958f7aabe4323fd9e463a863b048479bcd174c"
+      "logSha256": "99461ca86b17981e39721a65b0a31698ee5f6ab9fc23dacdf1de6f1f97abb680"
+    },
+    {
+      "name": "server-recovery-tests",
+      "passed": true,
+      "logSha256": "cde02143e87ec6cedad62fa6832ef40112db1132d8dba213f15f03523fd17cbc"
+    },
+    {
+      "name": "web-recovery-tests",
+      "passed": true,
+      "logSha256": "a75f19e7a1f4e6c8b8f6517539806dcbcdda2143ace4ffdf978a8ce9e8dd848d"
+    },
+    {
+      "name": "types-recovery",
+      "passed": true,
+      "logSha256": "7c7f3c7f13845dd8122f08a035e7a615b1ff291ed1ceb6f30e580fbd7509cffc"
     },
     {
       "name": "agent-build-final",
       "passed": true,
-      "logSha256": "38864d4f37f5a996823eac068c2fd39a5fd2a8010a9e3f14c45af88493b6bea2"
+      "logSha256": "f7848662e92f7818f8c601b6f5660fb118943090ed6ab3bda6a03963602fc1ee"
     },
     {
-      "name": "agent-types",
+      "name": "builds-final",
       "passed": true,
-      "logSha256": "5aecc0af410407316c51dc14ed0e484b7d3b501493ab11b45ebb8bacf094d849"
+      "logSha256": "19528731e5e5e07e564d1ab4864eb16d9543350c09c35af38fcbab39635b4732"
     },
     {
-      "name": "baseline-validation.json",
+      "name": "sql-checks.json",
       "passed": true,
-      "logSha256": "6f9eab5ba87249e77b2b3377efbeae7459fe533aa4bc16d67bc272f6f888fbac"
+      "logSha256": "b9bfa38615acf1e5ab5bc1e78a049546c852a264730ec33a69ad6891af0733c6"
+    },
+    {
+      "name": "sql-upgrade-final",
+      "passed": true,
+      "logSha256": "5d8f0b7baf90d060321e9d458febc154a8671b90f53e9cba95ccb62c1284f06f"
+    },
+    {
+      "name": "identity-race",
+      "passed": true,
+      "logSha256": "008513e379cb98df55f3c8d313e6eeb601f337e0b9cbee845bb632bdf9ba5131"
+    },
+    {
+      "name": "browser-review.json",
+      "passed": true,
+      "logSha256": "2e30134afda3255995c07ef069d3fc83f0de51d94672c632fec2c4268f659104"
+    },
+    {
+      "name": "lint-final",
+      "passed": true,
+      "logSha256": "ab01a1ca1471f27c2126a3dc1009af9fd2ab4e4c06c831dff07282c95578f52a"
+    },
+    {
+      "name": "bundle-final",
+      "passed": true,
+      "logSha256": "23e0bec68d033936eb642fa25e9bb7d012ca10887c107ab3ccb3b9cd26f632d6"
+    },
+    {
+      "name": "dependency-audit",
+      "passed": true,
+      "logSha256": "f09ff9230d0ba7230b04b14fda158c054782c15d31df3babf5ad09a80fd85fa2"
+    },
+    {
+      "name": "package-final-acceptance.json",
+      "passed": true,
+      "logSha256": "58d7643b52e048e75d1d6a76e7d10ccda7081cf0f18c2edd113226030e83e3d1"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "86496b558e8acf8c0e239348ef57d16083415ac786b51ca055142b547274af54"
+      "logSha256": "edebc7e694accd04af14319cbcf588e262cebd57cae29ae67873fc4fee309593"
     }
   ],
   "buildScope": {
-    "baselineChecks": "PRs 338 and 339; see baseline-validation.json",
-    "finalAgentTests": 978,
-    "priorWorkerApiTests": 36,
-    "finalAgentBuild": true,
-    "finalAgentTypecheck": true,
-    "priorServerWebTypechecks": true,
-    "webAndDocsRequireVercelRebuildBeforePromotion": true,
+    "agentTests": 990,
+    "serverTests": 3941,
+    "webTests": 3689,
+    "typechecks": [
+      "agent",
+      "graphql",
+      "web"
+    ],
+    "builds": [
+      "agent",
+      "web",
+      "docs"
+    ],
+    "sqlChecks": 85,
+    "concurrentReconnectRaces": 6,
+    "publicFunctionsCompared": 503,
+    "browserActualComponentsWithFixtures": [
+      "desktop light",
+      "desktop dark",
+      "mobile 390px"
+    ],
+    "productionBrowserAuthenticationTested": false,
     "managementCliInputsUnchanged": true
   },
   "limitations": [
