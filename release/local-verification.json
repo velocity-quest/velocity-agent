@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.45",
-  "sourceSha": "ac603ef403977a1e5c395db7133383a3afc8fbb0",
-  "treeSha": "8692546cb40b025af6f59b2fd544c6989c1e8d5b",
-  "archiveSha256": "e7b8ed1233521499f95eba004522e34a75cfa94558ac22f8e3c243f1779869b5",
-  "completedAt": "2026-10-30T02:02:30.116Z",
+  "version": "0.5.46",
+  "sourceSha": "7560f487bfd506c02b12c6f2ec606ff110bf85f2",
+  "treeSha": "81c121eac945d1500d9ddb840526a95e22397607",
+  "archiveSha256": "0ca862782d2578c6bbc2ca7267bb5c683509195ca3a22aaeea28d5e72d855859",
+  "completedAt": "2026-10-30T02:12:54.396Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -15,50 +15,36 @@
     {
       "name": "agent-tests",
       "passed": true,
-      "logSha256": "846fe22f05c71b2281174880fbfc8c5e3bf51b824e282867cc1ab89c3da666bd"
+      "logSha256": "56608cbb33da97f228de58ac76958f7aabe4323fd9e463a863b048479bcd174c"
     },
     {
       "name": "agent-build-final",
       "passed": true,
-      "logSha256": "e899bb3ff775493df8ee65512e38e580941d2d3b052d8deee3c0a178dcee3089"
-    },
-    {
-      "name": "server-tests",
-      "passed": true,
-      "logSha256": "9f27cea6ce017239e08de8df61f7a8cd7679f08a977320461474645299e27386"
+      "logSha256": "38864d4f37f5a996823eac068c2fd39a5fd2a8010a9e3f14c45af88493b6bea2"
     },
     {
       "name": "agent-types",
       "passed": true,
-      "logSha256": "ca07822b5a716627f3bf1b0ae93401660133b6850a846745f5a61df81eb7a7cf"
-    },
-    {
-      "name": "server-types",
-      "passed": true,
-      "logSha256": "107637dd532af3b224bce5378c779f8871cdffd864a96f7f0fc1394801a45a68"
-    },
-    {
-      "name": "web-types",
-      "passed": true,
-      "logSha256": "2767adf4572e7fd6b783ff2d56ec0067908bac8f71172c4836d8a1b834a821b6"
+      "logSha256": "5aecc0af410407316c51dc14ed0e484b7d3b501493ab11b45ebb8bacf094d849"
     },
     {
       "name": "baseline-validation.json",
       "passed": true,
-      "logSha256": "330029a1d4ff06104ab36435329fdf76fdae9ad130e2ce1c61f0aa1fa66d5e11"
+      "logSha256": "6f9eab5ba87249e77b2b3377efbeae7459fe533aa4bc16d67bc272f6f888fbac"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "53c084f3b08d78ae617e790c4d38393a80cd06e00bf4fa441ab82010d35d1138"
+      "logSha256": "86496b558e8acf8c0e239348ef57d16083415ac786b51ca055142b547274af54"
     }
   ],
   "buildScope": {
-    "baselineChecks": "PR 338; see baseline-validation.json",
-    "finalAgentTests": 977,
-    "finalWorkerApiTests": 36,
+    "baselineChecks": "PRs 338 and 339; see baseline-validation.json",
+    "finalAgentTests": 978,
+    "priorWorkerApiTests": 36,
     "finalAgentBuild": true,
-    "finalAgentServerWebTypechecks": true,
+    "finalAgentTypecheck": true,
+    "priorServerWebTypechecks": true,
     "webAndDocsRequireVercelRebuildBeforePromotion": true,
     "managementCliInputsUnchanged": true
   },
