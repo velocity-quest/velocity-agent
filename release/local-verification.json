@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.51",
-  "sourceSha": "17eef86b39470b95abb5d52182b2875a67514abc",
-  "treeSha": "a3df0a144f1d44ea6565bcfe04638321700ed12f",
-  "archiveSha256": "76d0de1bbe9bd6ce482c2edf85eba70d4b67846f84b55d02bc711830a8f59077",
-  "completedAt": "2026-10-30T23:44:23.692Z",
+  "version": "0.5.52",
+  "sourceSha": "4241e14151c0a401ddf4599f2247aa8004980086",
+  "treeSha": "00e284d6f63165d0a96dc9a1b944451cbfc1d542",
+  "archiveSha256": "f7ab901fe81053ebf91c165f1f43712468f3925eff2654b4ccb3c030d2a2e9a7",
+  "completedAt": "2026-10-31T03:00:56.033Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -13,24 +13,24 @@
   },
   "checks": [
     {
-      "name": "agent-final",
+      "name": "worker-current-acceptance.json",
       "passed": true,
-      "logSha256": "9ae400253c1e40f0a3ffa4f2cd3191f4db472c70c42bd4f284a625cb4270bf0b"
+      "logSha256": "bcb111aadbf6805d5c4f3e36cea60ffe931b05dd9cf73fbfdb97f3b000d3f863"
     },
     {
       "name": "web-final",
       "passed": true,
-      "logSha256": "2f221e9f4478c3a59106b81b5d23a555f311db491849aee30c087bc117fcdbd0"
+      "logSha256": "91c0f23e468dba4057cdf6c13f2d573b8fd405eedc3d498ca5c3e5a37e94f6ab"
     },
     {
       "name": "server-final",
       "passed": true,
-      "logSha256": "20fe41a3eef36e7a749d045559604478c366782c757d6e32da42d4a6ace532c1"
+      "logSha256": "b20b82ee151a5caa3ec3e34474a7cb82faca5b46c8fc967d681bdc21ac5b70f8"
     },
     {
       "name": "types-final",
       "passed": true,
-      "logSha256": "ed3863c5e010f57ab1247134d507383d1a4a190e59beee3a2c61eb830e98c297"
+      "logSha256": "ba99afca46e440fe0867f05ab77b84bf1441b168028c8c4b52ffbca4f4ca4837"
     },
     {
       "name": "web-types-final",
@@ -38,24 +38,19 @@
       "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "name": "reused-check-scopes.json",
-      "passed": true,
-      "logSha256": "f58f627ce2e79e343770d056fa4e94f244fb18f7b4bdd7fb51a670e98e8966e9"
-    },
-    {
       "name": "build-acceptance.json",
       "passed": true,
-      "logSha256": "e4f546b655dc93465d2c7fc7c0983c675e2600431ed1b6d58c0c9049b1811d4a"
+      "logSha256": "881646e429163639bd9a6b9608451b86a3aea5316310b7283c81cc7e3b91fa0b"
     },
     {
       "name": "review-findings-fixed.json",
       "passed": true,
-      "logSha256": "9acae9b477ae0d3305afba9ce948e2fafc8b060275b66fad6831bcab8c3a5fa8"
+      "logSha256": "3154b90794f53fe59971e52c98fa1d31d0c9b13ceaf0c9098e5970f6b6e31ea8"
     },
     {
       "name": "lint-final",
       "passed": true,
-      "logSha256": "650f0e442ea7b13f3c7f48f1fb9e9aa28bc30cf3db5f018616174e28da0df182"
+      "logSha256": "8e9820f44d0e858438e030cf3bc8ddedbaec431a7b4c48e07b2c836c13004681"
     },
     {
       "name": "agentbuild-final",
@@ -65,124 +60,161 @@
     {
       "name": "webbuild-final",
       "passed": true,
-      "logSha256": "6338f7e36a7f5e678939ea1faf29e9a20996b890539e4b7b6fa793865bda23f2"
+      "logSha256": "20b259930816e19126b56aefca5beaa65e94457ac8af866abe97dbb12f000a9e"
     },
     {
       "name": "docsbuild-final",
       "passed": true,
-      "logSha256": "fec36927c343064adb64caa8569ae21e15d413f970edbcd42e33ef53a05c3583"
+      "logSha256": "8ae59690a6f58af44a46bdddfa5c530e22108483ddc26dab01beaa6873cda0b3"
     },
     {
       "name": "bundle",
       "passed": true,
-      "logSha256": "bb199d7bf3eca1ef1f8482031082619af057f26380cada648eee885e8e2f11b0"
+      "logSha256": "a4fb3238d23d16e74810f5d495a9dde305667a314b8968f642a99087c26152a7"
     },
     {
       "name": "sql-acceptance.json",
       "passed": true,
-      "logSha256": "ebf2dfefcf5547d6d74777a3884c4a10dfbe039a1664377c3bef71359e02f70b"
+      "logSha256": "c866e17c6f16ac00f2e15532fdf9add1494ca5065d7ea94dd48068535d785bee"
     },
     {
-      "name": "sql-policy-race",
+      "name": "sql-race-acceptance.json",
       "passed": true,
-      "logSha256": "78bf231d650d292ba3467df1de5494c2faa3f5713aebc1bbf74267e8141b22ca"
+      "logSha256": "39216e8a0868cbba6760803dce22d9db6e199075e4aeef87748be84d924d14b8"
     },
     {
-      "name": "sql-draft-authority-negative",
+      "name": "installed-handoff-acceptance.json",
       "passed": true,
-      "logSha256": "f7997b424d70b7d9e62128ab06fbd3cd44348596214bc225fc2408159a55096b"
-    },
-    {
-      "name": "browser-review.json",
-      "passed": true,
-      "logSha256": "6f13b3e82aab8bac5883bf49d3d17d95ab1722d425525c58847b79b7bf7100ce"
+      "logSha256": "66882d166000177fba2649bead71c8f749226d3b705b0a0b5efb463033f43f84"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "bf1bb0c0e6fd2e18ade8c20a646c01989ef1a286c3f0c841442860b23730d703"
+      "logSha256": "929a78ec12a3b0505f6b85e52a23e434022102cab5ab03612b19d6ec54c24476"
     },
     {
-      "name": "ci-scripts",
+      "name": "package-cli-acceptance.json",
       "passed": true,
-      "logSha256": "79b223269556ca22aeaaf7160cb780d92f0745665f73f09a1d7f8bfbfa1f251e"
+      "logSha256": "d147d2a6e8dd02dfe2fa7fecf5606f33239908086dc8ab30c4a9d206edcc26d5"
+    },
+    {
+      "name": "release-preflight-tests",
+      "passed": true,
+      "logSha256": "85c6c3765f2e6f6190b2d8b350309c9c264f5260672e93b5fe42ef3da635cd79"
+    },
+    {
+      "name": "ci-deps-test",
+      "passed": true,
+      "logSha256": "1a9a18ac752069c0861d6ec787c93ba095dcc9fe54d25c04f885b98276ef0661"
+    },
+    {
+      "name": "mirror-negative-acceptance.json",
+      "passed": true,
+      "logSha256": "b62f9b9f98a62b9f5d95f021c5c855ad1d100690c0d9ecaa604ea2e430c145d8"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "56129db6bf5a449faddff6a92de88e2417b4422a0a538d84f16a0c717a776b3c"
+      "logSha256": "3de9d9b016488802fa58264f39f6044affaaa4d66d661b9176c41996eb6f971c"
+    },
+    {
+      "name": "cli-final",
+      "passed": true,
+      "logSha256": "ab59071febc59f0ec65fcd0d488808d82468581b6c3f31252572f9664eeb4e44"
+    },
+    {
+      "name": "coverage-final",
+      "passed": true,
+      "logSha256": "a5622366871499e137a646e041b720604e72443729880f273d83adeca713d58a"
+    },
+    {
+      "name": "unchanged-input-acceptance.json",
+      "passed": true,
+      "logSha256": "5034ecaf453503c9d8a11c2566e8c9e13639d53a605eca36bcb42291f5df9400"
+    },
+    {
+      "name": "antigravity-host-acceptance.json",
+      "passed": true,
+      "logSha256": "7b3e6880aaec1c73c2416ccd990043e30a5ec498681fe17e31ae9b2fbcbfc842"
+    },
+    {
+      "name": "sql-negative-acceptance.json",
+      "passed": true,
+      "logSha256": "12277be6458fa010296da6ff61c397a75c06ce253e6d78e9ca925c57d9cb7d36"
+    },
+    {
+      "name": "worker-redaction-focused-retry",
+      "passed": true,
+      "logSha256": "0fded51eebca0ef2cbfd4a6240956c17ae7efe7757d9e3b21c810770dafdff13"
+    },
+    {
+      "name": "scoped-claim-delegate-acceptance.json",
+      "passed": true,
+      "logSha256": "3767868c6c930da83e80401ab0f4b359e1f28d559ffcbeb5aaac56f9372c331c"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "3f02c690357962dac57905c134f8f9bfba94cd704c5d0a6974044d01dbc8f928"
+      "logSha256": "e3d761556d90a7983303a7182da59be98a92221eaf8566902d634931324f7dc7"
     }
   ],
   "buildScope": {
     "passed": true,
     "ciWaivedByOwner": true,
-    "agentTests": 1029,
-    "serverTests": 4006,
+    "workerTests": 1076,
+    "workerValidation": {
+      "passed": true,
+      "sourceSha": "410b1b4424a4009eb90984472a4401b9fa567644",
+      "tree": "00e284d6f63165d0a96dc9a1b944451cbfc1d542",
+      "uniqueTestsCovered": 1076,
+      "fullSuite": {
+        "passed": 1075,
+        "failed": 1,
+        "exit": 1,
+        "reason": "one beforeEach fixture setup exceeded 10000ms; product assertion did not run",
+        "logSha256": "07d8c7e48162e4b2dbb8da22803e48d23a4b237fc206ec15dab056d812afb902"
+      },
+      "isolatedRetry": {
+        "file": "verify-existing-command.test.ts",
+        "passed": 6,
+        "exit": 0,
+        "logSha256": "0fded51eebca0ef2cbfd4a6240956c17ae7efe7757d9e3b21c810770dafdff13"
+      },
+      "allRequiredAssertionsAccepted": true,
+      "maxWorkers": 4,
+      "testTimeout": 15000,
+      "hookTimeout": 10000,
+      "productDeadlinesUnchanged": true
+    },
+    "serverTests": 4043,
     "serverSkippedTests": 10,
-    "webTests": 3791,
-    "webScriptTests": 8,
-    "ciScriptTests": 30,
-    "sqlChecks": 89,
-    "sqlRaces": true,
-    "browserCases": 6,
-    "browserWidths": [
-      390,
-      1440
+    "webTests": 3825,
+    "sqlChecks": 92,
+    "sqlRaces": 5,
+    "installedHandoffScenarios": 5,
+    "releasePreflightTests": 7,
+    "mirrorRecoveryFixtures": 6,
+    "cleanArchiveInstallScope": "Linux x64 Node22; macOS/Windows not run",
+    "builds": [
+      "agent",
+      "cli",
+      "cli-core",
+      "web",
+      "docs"
     ],
     "typechecks": [
       "agent",
       "graphql",
+      "docs",
       "web"
     ],
-    "builds": [
-      "cli-core",
-      "agent",
-      "web",
-      "docs"
-    ],
     "lintErrors": 0,
-    "baselineLintWarnings": 761,
-    "bundlePassed": true,
-    "negativeControls": [
-      "original service-role self-approval draft",
-      "forged/changed producer/source/receipt",
-      "canonical annotation boundary"
-    ],
-    "cleanArchiveInstallScope": "Linux x64 Node22; macOS/Windows not run",
-    "testedInputScopes": [
-      {
-        "name": "Docs production build",
-        "testedSource": "8f2f32ac5aacaf73db01445c86a3632e35366f66",
-        "paths": [
-          "apps/docs",
-          "packages/ui",
-          "packages/config",
-          "packages/types",
-          "package.json",
-          "pnpm-lock.yaml",
-          "pnpm-workspace.yaml"
-        ]
-      },
-      {
-        "name": "CI script checks",
-        "testedSource": "8f2f32ac5aacaf73db01445c86a3632e35366f66",
-        "paths": [
-          "scripts/ci-reuse.mjs",
-          "scripts/cli-ci-scope.mjs",
-          "scripts/report-ci-timings.mjs"
-        ]
-      }
-    ],
     "productionBrowserTested": false
   },
   "limitations": [
     "GitHub Actions did not run because the account is out of budget.",
-    "Local Linux checks; macOS and Windows installation matrices were not run."
+    "Local Linux checks; macOS and Windows installation matrices were not run.",
+    "The final worker suite had one ten-second fixture-setup timeout; all six cases in that file passed isolated. See buildScope.workerValidation for retained failure/retry evidence."
   ],
   "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }
