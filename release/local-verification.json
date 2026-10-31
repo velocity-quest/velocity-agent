@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.52",
-  "sourceSha": "4241e14151c0a401ddf4599f2247aa8004980086",
-  "treeSha": "00e284d6f63165d0a96dc9a1b944451cbfc1d542",
-  "archiveSha256": "f7ab901fe81053ebf91c165f1f43712468f3925eff2654b4ccb3c030d2a2e9a7",
-  "completedAt": "2026-10-31T03:00:56.033Z",
+  "version": "0.5.53",
+  "sourceSha": "78bbfd50f8ba5c7991b766749f265f114534b2a7",
+  "treeSha": "6191717e66d4b10cd2fff8992192ebdbddb84303",
+  "archiveSha256": "86deec47e9a8b9d827616737d2249e87c92375edbbf5337ea9ab9d02c952f1bb",
+  "completedAt": "2026-10-31T10:00:26.649Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -13,44 +13,29 @@
   },
   "checks": [
     {
-      "name": "worker-current-acceptance.json",
+      "name": "server-final",
       "passed": true,
-      "logSha256": "bcb111aadbf6805d5c4f3e36cea60ffe931b05dd9cf73fbfdb97f3b000d3f863"
+      "logSha256": "850f7b460937ea0f69fd19a4a7058c8f58606b0cefa597f5adc68a22f4849a87"
     },
     {
       "name": "web-final",
       "passed": true,
-      "logSha256": "91c0f23e468dba4057cdf6c13f2d573b8fd405eedc3d498ca5c3e5a37e94f6ab"
+      "logSha256": "948356ed212d184c7e830bbe324b9e096b95df6e291b1c68908fc35fb0e61e2c"
     },
     {
-      "name": "server-final",
+      "name": "agent-final",
       "passed": true,
-      "logSha256": "b20b82ee151a5caa3ec3e34474a7cb82faca5b46c8fc967d681bdc21ac5b70f8"
+      "logSha256": "e3170abdf854103b589283d4639fafba180225747750340e38ea72f24d744927"
     },
     {
       "name": "types-final",
       "passed": true,
-      "logSha256": "ba99afca46e440fe0867f05ab77b84bf1441b168028c8c4b52ffbca4f4ca4837"
-    },
-    {
-      "name": "web-types-final",
-      "passed": true,
-      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "name": "build-acceptance.json",
-      "passed": true,
-      "logSha256": "881646e429163639bd9a6b9608451b86a3aea5316310b7283c81cc7e3b91fa0b"
-    },
-    {
-      "name": "review-findings-fixed.json",
-      "passed": true,
-      "logSha256": "3154b90794f53fe59971e52c98fa1d31d0c9b13ceaf0c9098e5970f6b6e31ea8"
+      "logSha256": "49e0a09e83eb9d428d2ca7a0031f2368839e7feb9a1aac30beaca4abf8ee11e3"
     },
     {
       "name": "lint-final",
       "passed": true,
-      "logSha256": "8e9820f44d0e858438e030cf3bc8ddedbaec431a7b4c48e07b2c836c13004681"
+      "logSha256": "ac45a348420486aba5badc060d5d1d3b2732f401820c0a996d1ec4f4254d1ad8"
     },
     {
       "name": "agentbuild-final",
@@ -58,146 +43,94 @@
       "logSha256": "a385eb88676e244d4ac696902ffc611345a9dc65d1bd02f3afbab0cb99ff7ba0"
     },
     {
-      "name": "webbuild-final",
-      "passed": true,
-      "logSha256": "20b259930816e19126b56aefca5beaa65e94457ac8af866abe97dbb12f000a9e"
-    },
-    {
       "name": "docsbuild-final",
       "passed": true,
-      "logSha256": "8ae59690a6f58af44a46bdddfa5c530e22108483ddc26dab01beaa6873cda0b3"
+      "logSha256": "0108ca0817906f6206899849d6094defbce4589753cdab6e148197e9ce861551"
+    },
+    {
+      "name": "webbuild-final",
+      "passed": true,
+      "logSha256": "b16c2f8ef4f73e7093abe990c425913cf104650dcf3d251e57e7f90d185b5dae"
     },
     {
       "name": "bundle",
       "passed": true,
-      "logSha256": "a4fb3238d23d16e74810f5d495a9dde305667a314b8968f642a99087c26152a7"
+      "logSha256": "f57c5d72b4284c2f76f602f8aaedd0dfebdc0a5e0e1f2b9b47af75f77449e417"
     },
     {
       "name": "sql-acceptance.json",
       "passed": true,
-      "logSha256": "c866e17c6f16ac00f2e15532fdf9add1494ca5065d7ea94dd48068535d785bee"
+      "logSha256": "24a84220b3861b9c294239b97191d8f3d215238bafe304113647a439fe8a1c19"
     },
     {
-      "name": "sql-race-acceptance.json",
+      "name": "clean-migration-replay.json",
       "passed": true,
-      "logSha256": "39216e8a0868cbba6760803dce22d9db6e199075e4aeef87748be84d924d14b8"
+      "logSha256": "6d98ac65024cd42a218659804654fcff83150f8cef98becb86294acad1d23faa"
     },
     {
-      "name": "installed-handoff-acceptance.json",
+      "name": "database-preflight.json",
       "passed": true,
-      "logSha256": "66882d166000177fba2649bead71c8f749226d3b705b0a0b5efb463033f43f84"
+      "logSha256": "c0499e9ad8e352d847d10817ff67ea06b776874f0c3e2960c5c1c609834f4448"
+    },
+    {
+      "name": "installed-continuation-acceptance.json",
+      "passed": true,
+      "logSha256": "d248112adf7a7f53291063eef017809de351ebfe9548217f79aca579996b872e"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "929a78ec12a3b0505f6b85e52a23e434022102cab5ab03612b19d6ec54c24476"
-    },
-    {
-      "name": "package-cli-acceptance.json",
-      "passed": true,
-      "logSha256": "d147d2a6e8dd02dfe2fa7fecf5606f33239908086dc8ab30c4a9d206edcc26d5"
-    },
-    {
-      "name": "release-preflight-tests",
-      "passed": true,
-      "logSha256": "85c6c3765f2e6f6190b2d8b350309c9c264f5260672e93b5fe42ef3da635cd79"
-    },
-    {
-      "name": "ci-deps-test",
-      "passed": true,
-      "logSha256": "1a9a18ac752069c0861d6ec787c93ba095dcc9fe54d25c04f885b98276ef0661"
-    },
-    {
-      "name": "mirror-negative-acceptance.json",
-      "passed": true,
-      "logSha256": "b62f9b9f98a62b9f5d95f021c5c855ad1d100690c0d9ecaa604ea2e430c145d8"
-    },
-    {
-      "name": "final-review-acceptance.json",
-      "passed": true,
-      "logSha256": "3de9d9b016488802fa58264f39f6044affaaa4d66d661b9176c41996eb6f971c"
-    },
-    {
-      "name": "cli-final",
-      "passed": true,
-      "logSha256": "ab59071febc59f0ec65fcd0d488808d82468581b6c3f31252572f9664eeb4e44"
+      "logSha256": "a9774315ef85129b7eb4ab080a2ce0ac7299868a0f63812aee3b48cd27412b7a"
     },
     {
       "name": "coverage-final",
       "passed": true,
-      "logSha256": "a5622366871499e137a646e041b720604e72443729880f273d83adeca713d58a"
+      "logSha256": "a680515968e6000c72a069e0a8687b56f15fc862f81f7e328ba23b2ccb06561b"
     },
     {
-      "name": "unchanged-input-acceptance.json",
+      "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "5034ecaf453503c9d8a11c2566e8c9e13639d53a605eca36bcb42291f5df9400"
+      "logSha256": "6635295353f9ac6017af5dd499817e1e0c1d99bf17367ab9675798473673f9e0"
     },
     {
-      "name": "antigravity-host-acceptance.json",
+      "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "7b3e6880aaec1c73c2416ccd990043e30a5ec498681fe17e31ae9b2fbcbfc842"
+      "logSha256": "be21f63fe77656986aecb63f86bb417c0a8abd7be1b89486418253b866ebd215"
     },
     {
-      "name": "sql-negative-acceptance.json",
+      "name": "preserved-source-worktrees.json",
       "passed": true,
-      "logSha256": "12277be6458fa010296da6ff61c397a75c06ce253e6d78e9ca925c57d9cb7d36"
+      "logSha256": "94ddddf4e825f147191ac80badc317e532f826810239a77ef019ff2a82461e89"
     },
     {
-      "name": "worker-redaction-focused-retry",
+      "name": "app-build-input-acceptance.json",
       "passed": true,
-      "logSha256": "0fded51eebca0ef2cbfd4a6240956c17ae7efe7757d9e3b21c810770dafdff13"
-    },
-    {
-      "name": "scoped-claim-delegate-acceptance.json",
-      "passed": true,
-      "logSha256": "3767868c6c930da83e80401ab0f4b359e1f28d559ffcbeb5aaac56f9372c331c"
+      "logSha256": "0f7484795da345bafe762ce78d87d60a1da0ea2f9fb67ca76f31556d0de944c9"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "e3d761556d90a7983303a7182da59be98a92221eaf8566902d634931324f7dc7"
+      "logSha256": "ae93b43552085193954264b9e007f4c63d9c34e965ce21683f5eb42f91a9510c"
     }
   ],
   "buildScope": {
     "passed": true,
     "ciWaivedByOwner": true,
-    "workerTests": 1076,
-    "workerValidation": {
-      "passed": true,
-      "sourceSha": "410b1b4424a4009eb90984472a4401b9fa567644",
-      "tree": "00e284d6f63165d0a96dc9a1b944451cbfc1d542",
-      "uniqueTestsCovered": 1076,
-      "fullSuite": {
-        "passed": 1075,
-        "failed": 1,
-        "exit": 1,
-        "reason": "one beforeEach fixture setup exceeded 10000ms; product assertion did not run",
-        "logSha256": "07d8c7e48162e4b2dbb8da22803e48d23a4b237fc206ec15dab056d812afb902"
-      },
-      "isolatedRetry": {
-        "file": "verify-existing-command.test.ts",
-        "passed": 6,
-        "exit": 0,
-        "logSha256": "0fded51eebca0ef2cbfd4a6240956c17ae7efe7757d9e3b21c810770dafdff13"
-      },
-      "allRequiredAssertionsAccepted": true,
-      "maxWorkers": 4,
-      "testTimeout": 15000,
-      "hookTimeout": 10000,
-      "productDeadlinesUnchanged": true
+    "counts": {
+      "server": 4133,
+      "web": 3837,
+      "agent": 1091
     },
-    "serverTests": 4043,
     "serverSkippedTests": 10,
-    "webTests": 3825,
-    "sqlChecks": 92,
-    "sqlRaces": 5,
-    "installedHandoffScenarios": 5,
-    "releasePreflightTests": 7,
-    "mirrorRecoveryFixtures": 6,
-    "cleanArchiveInstallScope": "Linux x64 Node22; macOS/Windows not run",
+    "sqlChecks": 94,
+    "installedScenarios": 3,
+    "linuxX64": true,
+    "node": "v22.22.1",
+    "paidNativeInferenceTested": false,
+    "productionBrowserGrantTested": false,
+    "macOSWindowsTested": false,
     "builds": [
       "agent",
-      "cli",
       "cli-core",
       "web",
       "docs"
@@ -205,16 +138,15 @@
     "typechecks": [
       "agent",
       "graphql",
-      "docs",
       "web"
     ],
     "lintErrors": 0,
-    "productionBrowserTested": false
+    "managementCliUnchanged": true
   },
   "limitations": [
     "GitHub Actions did not run because the account is out of budget.",
     "Local Linux checks; macOS and Windows installation matrices were not run.",
-    "The final worker suite had one ten-second fixture-setup timeout; all six cases in that file passed isolated. See buildScope.workerValidation for retained failure/retry evidence."
+    "Installed continuation uses owned Git/process/HTTP fixtures and a fixture provider/control plane; paid native inference and the production browser approval flow were not exercised."
   ],
   "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }

@@ -5,7 +5,7 @@ Local workers for pending Velocity agent runs. This is separate from the general
 Requires Node 18.20 or newer. Install the compiled package from Velocity's public GitHub release:
 
 ```sh
-npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.52/velocity-agent-0.5.52.tgz
+npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v0.5.53/velocity-agent-0.5.53.tgz
 velocity-agent --version
 ```
 
