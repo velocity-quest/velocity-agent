@@ -1,3 +1,3 @@
-ENGIN-742: velocity-agent 0.5.53
+ENGIN-675: velocity-agent 0.5.54
 
-Owner-approved local release from 78bbfd50f8ba5c7991b766749f265f114534b2a7. Locally verified tree 6191717e66d4b10cd2fff8992192ebdbddb84303. See local-verification.json for checks and actual platform scope. GitHub Actions was not run.
+Owner-approved local release from 84405a8c9cf5b84e7415d85be37e0d9a5fd20b8e. Locally verified tree 608cb5255bb66a9598e29257fce1af68ee89f00a. See local-verification.json for checks and actual platform scope. GitHub Actions was not run.

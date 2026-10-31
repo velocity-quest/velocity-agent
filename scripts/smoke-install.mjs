@@ -49,6 +49,7 @@ const server = createServer(async (request, response) => {
     if (path === '/api/agent/hosted') {
       assert.equal(request.headers.authorization, 'Bearer smoke-hosted-private-dispatch-secret');
       const body = JSON.parse(data); assert.ok(['recover', 'claim'].includes(body.action));
+      assert.equal(body.backendProtocolVersion, 1);
       hostedCalls++;
       return send(body.action === 'recover' ? { recovery: null } : { lease: null });
     }
@@ -202,7 +203,8 @@ async function run(args, { key = '', login = false, api = false, claude = '', co
       // Keep package checks independent of the host's signed-in native accounts.
       VELOCITY_GROK_BIN: join(prefix, 'missing-grok'), VELOCITY_MUSE_BIN: join(prefix, 'missing-muse'),
       VELOCITY_CURSOR_BIN: join(prefix, 'missing-cursor'), VELOCITY_ANTIGRAVITY_BIN: join(prefix, 'missing-antigravity'),
-      INSTABOX_API_KEY: hosted ? 'ibk_smoke_only_never_sent' : '',
+      INSTABOX_API_KEY: '',
+
       VELOCITY_HOSTED_DISPATCH_SECRET: hosted ? 'smoke-hosted-private-dispatch-secret' : '',
     }, stdio: ['pipe', 'pipe', 'pipe'] });
     let output = '', errors = '', entered = false;

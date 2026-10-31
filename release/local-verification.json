@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.53",
-  "sourceSha": "78bbfd50f8ba5c7991b766749f265f114534b2a7",
-  "treeSha": "6191717e66d4b10cd2fff8992192ebdbddb84303",
-  "archiveSha256": "86deec47e9a8b9d827616737d2249e87c92375edbbf5337ea9ab9d02c952f1bb",
-  "completedAt": "2026-10-31T10:00:26.649Z",
+  "version": "0.5.54",
+  "sourceSha": "84405a8c9cf5b84e7415d85be37e0d9a5fd20b8e",
+  "treeSha": "608cb5255bb66a9598e29257fce1af68ee89f00a",
+  "archiveSha256": "211bcab746905b85a26a24498c86183f689f5baf059901166bd3423a2da3b2bc",
+  "completedAt": "2026-10-31T11:59:37.062Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -15,27 +15,42 @@
     {
       "name": "server-final",
       "passed": true,
-      "logSha256": "850f7b460937ea0f69fd19a4a7058c8f58606b0cefa597f5adc68a22f4849a87"
+      "logSha256": "3d91ba15bd535fba47ddde160763c135f7181a2675092d21203d0a73f610adb5"
     },
     {
       "name": "web-final",
       "passed": true,
-      "logSha256": "948356ed212d184c7e830bbe324b9e096b95df6e291b1c68908fc35fb0e61e2c"
+      "logSha256": "435cf12725f5620bda4974c0b8b9715e98f3597e700dcd938fbdaf1b89c2b9ea"
     },
     {
       "name": "agent-final",
       "passed": true,
-      "logSha256": "e3170abdf854103b589283d4639fafba180225747750340e38ea72f24d744927"
+      "logSha256": "87d896877284992eef2b20bb2c8bde36f0d14ed22d84409c7ec7f481b72c40d2"
+    },
+    {
+      "name": "admin-final",
+      "passed": true,
+      "logSha256": "53738dd7b214a158a85999d33ad09298af054433614b46d8d06134984ad32f92"
     },
     {
       "name": "types-final",
       "passed": true,
-      "logSha256": "49e0a09e83eb9d428d2ca7a0031f2368839e7feb9a1aac30beaca4abf8ee11e3"
+      "logSha256": "f3edf479d9fbcf0fc5ccb93a7960ce0dcb05be4fcb97316a8c8fc81131ff7654"
     },
     {
       "name": "lint-final",
       "passed": true,
-      "logSha256": "ac45a348420486aba5badc060d5d1d3b2732f401820c0a996d1ec4f4254d1ad8"
+      "logSha256": "e517424bc93683add28b1d8bc45bbfc7ef10401618660513252a6198b7df4e93"
+    },
+    {
+      "name": "cli-final",
+      "passed": true,
+      "logSha256": "4bfb754e58696cac954efaa42047600c9ec2982b592681f8261f1cd1bb0ec156"
+    },
+    {
+      "name": "coverage-final",
+      "passed": true,
+      "logSha256": "a76ea0fc6fe5c2825f19bf1f7f1fc75311e1b75ffa41070340c6adde7b93c503"
     },
     {
       "name": "agentbuild-final",
@@ -43,110 +58,155 @@
       "logSha256": "a385eb88676e244d4ac696902ffc611345a9dc65d1bd02f3afbab0cb99ff7ba0"
     },
     {
-      "name": "docsbuild-final",
+      "name": "clibuild-final",
       "passed": true,
-      "logSha256": "0108ca0817906f6206899849d6094defbce4589753cdab6e148197e9ce861551"
+      "logSha256": "673c360e21b0ee659820b713f93314590c354b7c691672d24d8b819da03d5f7d"
     },
     {
       "name": "webbuild-final",
       "passed": true,
-      "logSha256": "b16c2f8ef4f73e7093abe990c425913cf104650dcf3d251e57e7f90d185b5dae"
+      "logSha256": "140c044b8333da655c88b4df9ba75bf874b536a93934c1e39ade10f4dc9acfb2"
+    },
+    {
+      "name": "docsbuild-final",
+      "passed": true,
+      "logSha256": "661226e79c7df0a5433105fc5e1e0275e7e1782e4256ac11b8990adcdbb66937"
+    },
+    {
+      "name": "adminbuild-final",
+      "passed": true,
+      "logSha256": "64272cd333c5a79fdebcc33ff65ae988b664ff33c6703698734ce436a46c6ef4"
     },
     {
       "name": "bundle",
       "passed": true,
-      "logSha256": "f57c5d72b4284c2f76f602f8aaedd0dfebdc0a5e0e1f2b9b47af75f77449e417"
+      "logSha256": "11e5299a8232a7f4f1e8fea1fc2ccbd0b277a4b5b712c352d611872ee0657a75"
+    },
+    {
+      "name": "script-tests",
+      "passed": true,
+      "logSha256": "053d07d3a94eea80f5ca4580ded49e3123a7e1d16a07524a4f69008af600de70"
     },
     {
       "name": "sql-acceptance.json",
       "passed": true,
-      "logSha256": "24a84220b3861b9c294239b97191d8f3d215238bafe304113647a439fe8a1c19"
+      "logSha256": "de41516c6ec80905abbb5486acbce414cc22b91ca31823f8f537bbb5e75b99ef"
     },
     {
       "name": "clean-migration-replay.json",
       "passed": true,
-      "logSha256": "6d98ac65024cd42a218659804654fcff83150f8cef98becb86294acad1d23faa"
+      "logSha256": "3e92e88ca960cd4610011cc1d3c1a52a734bca49808e265c790c09cc66a07707"
+    },
+    {
+      "name": "upgrade-final",
+      "passed": true,
+      "logSha256": "ade6b966f23100782999729f7e750deb48eafaa80526689fa1b77f8e08456ecd"
+    },
+    {
+      "name": "delivery-race",
+      "passed": true,
+      "logSha256": "507c94c2a0a59f31456b2ea4ef11e803d6e118208c584dea6212b226e21abf44"
     },
     {
       "name": "database-preflight.json",
       "passed": true,
-      "logSha256": "c0499e9ad8e352d847d10817ff67ea06b776874f0c3e2960c5c1c609834f4448"
+      "logSha256": "d7ac2478f954015d12ab1b6caf7ad56f30fd323f3b07274d3f016b9481c9f84e"
     },
     {
       "name": "installed-continuation-acceptance.json",
       "passed": true,
-      "logSha256": "d248112adf7a7f53291063eef017809de351ebfe9548217f79aca579996b872e"
+      "logSha256": "c2879c08ab042e37c7f3dcd26c84e7a340d325acf7f6d931f895aa3d8adfd054"
+    },
+    {
+      "name": "installed-contract-acceptance.json",
+      "passed": true,
+      "logSha256": "81dc19fbd6410b50afaa1bb2d1cc432f60843865301f6cefef33bc6fcab98c15"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "a9774315ef85129b7eb4ab080a2ce0ac7299868a0f63812aee3b48cd27412b7a"
+      "logSha256": "79f2ec18a9071012eed0f1c4304795c44b8161f4e525c95f9d16b73b8cb31591"
     },
     {
-      "name": "coverage-final",
+      "name": "package-cli-acceptance.json",
       "passed": true,
-      "logSha256": "a680515968e6000c72a069e0a8687b56f15fc862f81f7e328ba23b2ccb06561b"
+      "logSha256": "87937249b669856fedcd72d63352e460730b421175b1a4058b2c3df198b1ef82"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "6635295353f9ac6017af5dd499817e1e0c1d99bf17367ab9675798473673f9e0"
+      "logSha256": "ec978da71035edd373487031410b8fb7c15c7dd57caf6ae801dcd76822390926"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "be21f63fe77656986aecb63f86bb417c0a8abd7be1b89486418253b866ebd215"
+      "logSha256": "58862388d766b5b2833253de83fb3f532029e89da9bd85417dd4b4fd6779f928"
     },
     {
       "name": "preserved-source-worktrees.json",
       "passed": true,
-      "logSha256": "94ddddf4e825f147191ac80badc317e532f826810239a77ef019ff2a82461e89"
+      "logSha256": "fcb3c2ab72214f1828b39a5169a358bef5ac86d9328d720f3bf135d110ddbbb2"
     },
     {
-      "name": "app-build-input-acceptance.json",
+      "name": "build-and-check-input-reuse.json",
       "passed": true,
-      "logSha256": "0f7484795da345bafe762ce78d87d60a1da0ea2f9fb67ca76f31556d0de944c9"
+      "logSha256": "01d5bfca7d60dc5c0fd1710baa05bf63c9b1bbebbbcecf108fa974770b387b8f"
+    },
+    {
+      "name": "ci-workflow-step-local",
+      "passed": true,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "hosted-key-unit",
+      "passed": true,
+      "logSha256": "27cacd3656f47964a4b1ded761c86043bd1802109299a739b7085f29bd183693"
+    },
+    {
+      "name": "admin-key-unit",
+      "passed": true,
+      "logSha256": "76d9a03d643372088a89652fc978b12e83f064f4624fc87565bcf1829346c31d"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "ae93b43552085193954264b9e007f4c63d9c34e965ce21683f5eb42f91a9510c"
+      "logSha256": "418729cde217d5def331a3bb405a4c60e0f62fa45cb400c16b1bd4032f7d5670"
     }
   ],
   "buildScope": {
     "passed": true,
-    "ciWaivedByOwner": true,
-    "counts": {
-      "server": 4133,
-      "web": 3837,
-      "agent": 1091
+    "buildSourceSha": "5f7a3fdc0e6f48f1a62f290cdd74bd2ca99fb566",
+    "buildSourceTree": "78ed43ac0a6dd8f8b144fd4857a7c8afe93c49cd",
+    "sourceInputReuse": {
+      "passed": true,
+      "originalHead": "5f7a3fdc0e6f48f1a62f290cdd74bd2ca99fb566",
+      "originalTree": "78ed43ac0a6dd8f8b144fd4857a7c8afe93c49cd",
+      "finalSourceSha": "54a10800b2fb63298af058df8db60cdfe7bbdc09",
+      "finalTree": "608cb5255bb66a9598e29257fce1af68ee89f00a",
+      "changed": [
+        ".github/workflows/ci.yml"
+      ],
+      "reason": "Two fixture-copy lines only, exercised locally against a fresh Postgres replay; all application and package source bytes are identical."
     },
-    "serverSkippedTests": 10,
-    "sqlChecks": 94,
-    "installedScenarios": 3,
-    "linuxX64": true,
+    "counts": {
+      "server": 4177,
+      "web": 3846,
+      "agent": 1111,
+      "admin": 394
+    },
+    "scriptTests": 84,
+    "sqlChecks": 95,
+    "migrationFunctionComparison": 551,
+    "ciWaivedByOwner": true,
+    "platform": "linux",
+    "architecture": "x64",
     "node": "v22.22.1",
-    "paidNativeInferenceTested": false,
-    "productionBrowserGrantTested": false,
-    "macOSWindowsTested": false,
-    "builds": [
-      "agent",
-      "cli-core",
-      "web",
-      "docs"
-    ],
-    "typechecks": [
-      "agent",
-      "graphql",
-      "web"
-    ],
-    "lintErrors": 0,
-    "managementCliUnchanged": true
+    "paidProviderInferenceTested": false
   },
   "limitations": [
     "GitHub Actions did not run because the account is out of budget.",
     "Local Linux checks; macOS and Windows installation matrices were not run.",
-    "Installed continuation uses owned Git/process/HTTP fixtures and a fixture provider/control plane; paid native inference and the production browser approval flow were not exercised."
+    "Installed fixtures cover lifecycle polling, frozen ownership, backend protocols/factory, Git/process/HTTP delivery continuation and clean installs; paid inference, real provider provisioning and production browser approvals were not exercised."
   ],
   "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }
