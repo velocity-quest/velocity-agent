@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.55",
-  "sourceSha": "dca2d1b1e1e15e554ee7fc7c91a9e075aa5a6fba",
-  "treeSha": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
-  "archiveSha256": "a0c5e9b150864e65182c1c7d6ef007e2e0ddcae2a2a74d17fc5fd472e375c036",
-  "completedAt": "2026-11-02T10:43:03.720Z",
+  "version": "0.5.56",
+  "sourceSha": "f79a449d0c73b5c8f78384ed2788398ac47dc150",
+  "treeSha": "194f2128fcacbc1f29c138bbf1da3a6537c6623e",
+  "archiveSha256": "4ecb5d5e841d22535777f0538cbfa5909b0381ae72ccc78f879ec742b13bf682",
+  "completedAt": "2026-11-02T11:56:52.674Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -15,278 +15,206 @@
     {
       "name": "agent-final",
       "passed": true,
-      "logSha256": "583c5e57dd3730a0373dd21817fbcd8cbdc38cf6858cada30f1929a2d3247bcb"
-    },
-    {
-      "name": "agentbuild-final",
-      "passed": true,
-      "logSha256": "d2153c8d8117b26dc0d0e14a6e2a1aa9009a668ab2d5bf3db48d2fd80ae1a714"
+      "logSha256": "79038d17b5645da9e2a62a3c86cd3763c854ab1f95b06fc028350f7d5eb37d58"
     },
     {
       "name": "server-final",
       "passed": true,
-      "logSha256": "995ca49ecc29495b18368ffad79075d004365909c52d2f8782028d03758de8e6"
+      "logSha256": "d944fe694a886a316241f7ed4bc9144d70ce25f2e8765b4a4272f8507d582cd2"
     },
     {
       "name": "webtests-final",
       "passed": true,
-      "logSha256": "e2b36f552521491ef06f1d78de336a9b203c6ba1003ac49b2a0b45071c20bff0"
+      "logSha256": "5da3aae4b5adfce7c193c486903dbbac164007462e17bc5d0088d220d01e18e8"
+    },
+    {
+      "name": "admin-final",
+      "passed": true,
+      "logSha256": "544237e6833cf4d9c49fbaf32d611449b942aec037197fdf02e6c5ffa42ee970"
+    },
+    {
+      "name": "cli-final",
+      "passed": true,
+      "logSha256": "3cd80f27970d449c3f4d43ec0efe9b95f15a1cee3c68a0cdb7415b16e2a44523"
+    },
+    {
+      "name": "core-final",
+      "passed": true,
+      "logSha256": "8457ba3ee30589688983d7fa5ad23c978d6c9ba484f905d3b4e2846efe113f69"
+    },
+    {
+      "name": "support-final",
+      "passed": true,
+      "logSha256": "701be5d8653e61e01641fb61418d30c98899b1c1b31f16c03042f7341246344b"
     },
     {
       "name": "types-final",
       "passed": true,
-      "logSha256": "afb8c45d9f64c460a2c70c50acbde766792120a1c1c90d35c1f144522e1979d4"
+      "logSha256": "9e0ba8570c33f291e5949aeaf7aa430018a5c146465673131e5b784d46376432"
     },
     {
       "name": "lint-final",
       "passed": true,
-      "logSha256": "f4de6ca75c2609b9e3aca32486225cc5b234683be9444fd620e0b32fb3e2b4cd"
+      "logSha256": "359704928fd1855d2c4e729c5a95fac3bfbb2b8412466c8d77fd88826b597a34"
+    },
+    {
+      "name": "audit-final",
+      "passed": true,
+      "logSha256": "4d512afa467a972e3a8fb6fe774fdddaba50d6a03f67e3690d59a2a6cd552a5c"
+    },
+    {
+      "name": "agentbuild-final",
+      "passed": true,
+      "logSha256": "6ebb7fa54ca58da041230a97bbba8be69ca72d2769706eb0705831d3f915c02b"
+    },
+    {
+      "name": "clibuild-final",
+      "passed": true,
+      "logSha256": "19f439a702a51874934e06d9cb0d9e396466f56e71b907a503082779e41b90e6"
     },
     {
       "name": "webbuild-final",
       "passed": true,
-      "logSha256": "a94e91d70fda21948dac6a8fbffe14317cf9b9caae0c39d2998f76eda58ff95e"
+      "logSha256": "a3985ae0bf8b82e580446d5a4db13d299bfba312bbb400b75aabcd66e7d799c7"
+    },
+    {
+      "name": "adminbuild-final",
+      "passed": true,
+      "logSha256": "c3e1dbde5ab683ad96f9c38ee55d933d199443643ef2a90ef47ea4abafe5a4e3"
+    },
+    {
+      "name": "docsbuild-final",
+      "passed": true,
+      "logSha256": "c27fdcae903eaf1e1343984d45a987d80b4b5cb839c7272182b8e039e49160e9"
     },
     {
       "name": "bundle-final",
       "passed": true,
-      "logSha256": "4f0a16499bb10fbe62f7c0200ebd5f99ee6d0bbdf3c0c1c38e7c5af381fcec3b"
+      "logSha256": "aba95255008a622b0bfe4a2cf07d49c605216948b3c13ac45a6118a78e90aef7"
     },
     {
-      "name": "local-waiver-final.json",
+      "name": "zapiertests-final",
       "passed": true,
-      "logSha256": "61d90248420b353a982bcc4b85560a10c9e9c129a28a5c19a9e7bded0cbc3700"
+      "logSha256": "e5232ed3fb918823a27df763a191850f8be1a1c9c82f79c2f814207375da0355"
+    },
+    {
+      "name": "zapiertoolchain-final",
+      "passed": true,
+      "logSha256": "a75fe5879a5c4dd7194532aa4830f14a202a9bdd85aac102c99baafed29bc6be"
+    },
+    {
+      "name": "zapiervalidate-final",
+      "passed": true,
+      "logSha256": "ea66fb46d7385116505a7ed6ef9618ec34320e2ada70c157ba591c8264a11ccc"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "32c061d9a84f874d61f34024da3bf4ec88821e802452d0e1d6c1b568b10a40a8"
+      "logSha256": "af5b1df6f8b1bcc86d13889de5d03cf2fe241adb63c6a083610c359006bb2e89"
+    },
+    {
+      "name": "package-cli-acceptance.json",
+      "passed": true,
+      "logSha256": "839442ccf7b765c393a2f18e737828d21ad46154ed008cf127eaa71ac1b44a24"
+    },
+    {
+      "name": "linux-node-matrix-acceptance.json",
+      "passed": true,
+      "logSha256": "f4c1cdfe44f8d520be4dbd0542a812b1e30d45ff5d98b3e48808d45e3d502f8e"
+    },
+    {
+      "name": "installed-dependencies-18.20.8.json",
+      "passed": true,
+      "logSha256": "cb659d9d3bcfbd79a77482b0c6eeb894670dbde60e65b3fe960a894ddd25a877"
+    },
+    {
+      "name": "installed-dependencies-20.20.2.json",
+      "passed": true,
+      "logSha256": "1ad7c27dfa670f838b10df51f55c6dc38bbc2ba9e6c87e9a45c46280b54447fc"
+    },
+    {
+      "name": "installed-dependencies-22.22.1.json",
+      "passed": true,
+      "logSha256": "05b63abeb89490852d741d4ccfa5b96b2e83463fba4c89d26b7cf7a675d45ff5"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "b15fdf8e7b3fe325fd0614ff5d187b9db9007490f2c72c28252af92cafef5faa"
+      "logSha256": "ef572578bb076aefff2e18b62d5997141d3d77d21336c417cc173056b75b10be"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "e7d1539b8d30beb00c61cab7591aa831ca1a29e85e675df4f77c3443cc74be46"
+      "logSha256": "21d4a986168d05d5529ef106c4a0b73a6ffcfb9172108065d1346dc7446d44e0"
     },
     {
-      "name": "load-regression-before.json",
+      "name": "final-audit-acceptance.json",
       "passed": true,
-      "logSha256": "5d1e13b5dfb970551f886eda2f496bd02e2591e614bc5f1e7871672bd8e8e3fe"
+      "logSha256": "1091a9e2e266a4e44a5d6f55496c31535106be176d6c6911ce887ad88a868dbb"
     },
     {
-      "name": "fleet-measured-final",
+      "name": "zapier-production-closure-preserved.json",
       "passed": true,
-      "logSha256": "d50efba8390b9762bebc6eba2439c62c6645024aa32e6611ad276f49587d2341"
+      "logSha256": "c143cb4d86beaab402ee3bcf2c1bdb835838bb4cbee42af02ef789c71a3371da"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "a8ed691da2294aa2df973fd8dd1c2e4843cf0ad86cd6b99d6528aa47a62d3371"
+      "logSha256": "8ed1809368aed139f583aabc0fd7000588569975fcd4b32357bc28f8945c12fb"
     }
   ],
   "buildScope": {
-    "passed": true,
-    "checks": {
-      "agentbuild": {
-        "passed": true,
-        "precommit": false,
-        "exit": 0,
-        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
-        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
-        "startedAt": "2026-11-02T10:31:20.383Z",
-        "completedAt": "2026-11-02T10:31:33.931Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/agent",
-          "build"
-        ]
-      },
-      "agent": {
-        "passed": true,
-        "precommit": false,
-        "exit": 0,
-        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
-        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
-        "startedAt": "2026-11-02T10:31:33.938Z",
-        "completedAt": "2026-11-02T10:33:14.631Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/agent",
-          "exec",
-          "vitest",
-          "run",
-          "--maxWorkers=4"
-        ]
-      },
-      "server": {
-        "passed": true,
-        "precommit": false,
-        "exit": 0,
-        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
-        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
-        "startedAt": "2026-11-02T10:31:21.447Z",
-        "completedAt": "2026-11-02T10:32:38.689Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/graphql",
-          "exec",
-          "vitest",
-          "run",
-          "--maxWorkers=6"
-        ]
-      },
-      "types": {
-        "passed": true,
-        "precommit": false,
-        "exit": 0,
-        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
-        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
-        "startedAt": "2026-11-02T10:32:38.696Z",
-        "completedAt": "2026-11-02T10:35:57.267Z",
-        "command": [
-          "pnpm",
-          "exec",
-          "turbo",
-          "run",
-          "typecheck",
-          "--filter=@velocity/graphql",
-          "--filter=@velocity/web",
-          "--filter=@velocity/agent"
-        ]
-      },
-      "lint": {
-        "passed": true,
-        "precommit": false,
-        "exit": 0,
-        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
-        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
-        "startedAt": "2026-11-02T10:35:57.271Z",
-        "completedAt": "2026-11-02T10:36:31.668Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/web",
-          "lint"
-        ]
-      },
-      "webtests": {
-        "passed": true,
-        "precommit": false,
-        "exit": 0,
-        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
-        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
-        "startedAt": "2026-11-02T10:31:22.752Z",
-        "completedAt": "2026-11-02T10:35:05.149Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/web",
-          "exec",
-          "vitest",
-          "run",
-          "--maxWorkers=4"
-        ]
-      },
-      "webbuild": {
-        "passed": true,
-        "precommit": false,
-        "exit": 0,
-        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
-        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
-        "startedAt": "2026-11-02T10:31:23.826Z",
-        "completedAt": "2026-11-02T10:39:16.646Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/web",
-          "build"
-        ]
-      },
-      "bundle": {
-        "passed": true,
-        "precommit": false,
-        "exit": 0,
-        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
-        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
-        "startedAt": "2026-11-02T10:39:16.657Z",
-        "completedAt": "2026-11-02T10:39:19.516Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/web",
-          "bundle-size"
-        ]
-      }
-    },
     "counts": {
-      "worker": 1122,
-      "server": 4261,
-      "web": 3872,
-      "existingServerSkips": 10,
-      "fleetSizes": [
-        20,
-        40
-      ],
-      "apiLoadAndBudget": 6,
-      "admissionRegression": 3
+      "agent": 1126,
+      "server": 4266,
+      "webtests": 3873,
+      "cli": 102,
+      "core": 84,
+      "admin": 394,
+      "support": 298,
+      "zapier": 194
     },
-    "package": {
-      "passed": true,
-      "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
-      "treeSha": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
-      "version": "0.5.55",
-      "archivePath": "/home/kevin/projects/velocity/reviews/fleet-budget-20261102/package-final-c9f99c8d/agent/velocity-agent-0.5.55.tgz",
-      "archiveSha256": "a0c5e9b150864e65182c1c7d6ef007e2e0ddcae2a2a74d17fc5fd472e375c036",
-      "prefix": "/home/kevin/projects/velocity/reviews/fleet-budget-20261102/package-final-c9f99c8d/agent/install",
-      "smokeLogSha256": "a8ed691da2294aa2df973fd8dd1c2e4843cf0ad86cd6b99d6528aa47a62d3371",
-      "installedMaintenance": {
-        "passed": true,
-        "claimThrottlePreserved": true,
-        "version": "0.5.55",
-        "sharedCooldown": true,
-        "retryAfterHonored": true,
-        "responseBodyPrivate": true,
-        "heartbeatCoalesced": true,
-        "boundaryFetchedFresh": true,
-        "shutdownBounded": true,
-        "platform": "linux",
-        "node": "v22.22.1"
-      },
-      "node": "v22.22.1",
-      "platform": "linux",
-      "architecture": "x64",
-      "verifiedAt": "2026-11-02T10:36:02.425Z"
-    },
-    "sourcePreserved": true,
     "binaryTargets": [
       {
         "name": "velocity-agent",
         "inputs": [
           "packages/agent/package.json",
-          "packages/agent/src/online-worker.ts",
-          "packages/agent/src/runner.ts",
-          "packages/agent/src/worker-maintenance.ts"
+          "packages/cli-core/package.json",
+          "pnpm-lock.yaml (packages/agent)"
+        ]
+      },
+      {
+        "name": "velocity-cli",
+        "inputs": [
+          "packages/cli-core/package.json",
+          "packages/cli/package.json",
+          "pnpm-lock.yaml (packages/cli)"
         ]
       }
     ],
-    "workerVersion": "0.5.55",
-    "managementCliUnchanged": true,
-    "lockUnchanged": true,
+    "installationMatrix": {
+      "agent": [
+        "linux x64 Node18.20.8",
+        "linux x64 Node20.20.2",
+        "linux x64 Node22.22.1"
+      ],
+      "cli": [
+        "linux x64 Node20.20.2",
+        "linux x64 Node22.22.1"
+      ]
+    },
+    "untestedPlatforms": [
+      "macos",
+      "windows"
+    ],
+    "zapierRuntimeNodesPreserved": 79,
     "databaseMigrationRequired": false,
-    "githubCiWaivedByOwner": true,
-    "verificationScope": "Local Linux/Node 22 source and clean package smoke plus installed HTTP/admission fixtures. No macOS/Windows install matrix, paid inference or forty simultaneous native executions. General MCP capacity is separately ENGIN-768."
+    "githubCiWaivedByOwner": true
   },
   "limitations": [
     "GitHub Actions did not run because the account is out of budget.",
-    "Local Linux checks; macOS and Windows installation matrices were not run.",
-    "Fleet scheduling uses isolated worker instances, a controlled clock and fixture runtime/queue boundaries; installed retry behavior uses a loopback HTTP fixture. Paid inference and forty simultaneous native executions were not exercised. General MCP capacity remains ENGIN-768."
+    "Linux x64 worker clean installs/runtime checks on Node18.20.8/20.20.2/22.22.1 and management CLI on Node20.20.2/22.22.1; macOS/Windows were not tested.",
+    "Installed fixtures cover real SDK stream/resume/wire contracts, imports, CLI parsers and the full package smoke scenarios. Paid inference, live billing requests and real paid provider provisioning were not performed."
   ],
   "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }
