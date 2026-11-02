@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
 import { createHash } from 'node:crypto';
+import { gzipSync } from 'node:zlib';
 import { readFile, writeFile, stat, rm, mkdir, chmod } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { resolve, join } from 'node:path';
@@ -18,7 +19,7 @@ assert.equal(manifest.private, false);
 const entry = await readFile(binary, 'utf8');
 const lazyCommands = [...entry.matchAll(/\bimport\(\s*(["'])(\.\/[^"']+\.js)\1\s*\)/g)].map(match => match[2].slice(2));
 assert.ok(lazyCommands.length > 0, 'Expected lazy command imports in the packaged CLI');
-const modules = new Set([...lazyCommands, ...['agent-runtimes', 'native-runtimes', 'additional-readiness', 'workflow-defaults', 'workflow-defaults-contract', 'hosted/control-plane', 'hosted/instabox', 'hosted/entry', 'session/codex-app-server', 'session/claude-agent-sdk'].map(module => module + '.js')]);
+const modules = new Set([...lazyCommands, ...['agent-runtimes', 'native-runtimes', 'additional-readiness', 'workflow-defaults', 'workflow-defaults-contract', 'hosted/control-plane', 'hosted/instabox', 'hosted/entry', 'hosted/dispatcher-status', 'hosted/distribution', 'hosted/inventory', 'hosted/maintenance-command', 'hosted/upgrade', 'worker-restart', 'worker-restart-contract', 'session/codex-app-server', 'session/claude-agent-sdk'].map(module => module + '.js')]);
 for (const module of modules) {
   await import(pathToFileURL(resolve(prefix, 'node_modules/velocity-agent/dist', module)).href);
 }
@@ -235,7 +236,20 @@ try {
   assert.equal(await run(['--version']), version);
   assert.match(await run(['workflow', 'verify-release', '--help']), /--release-version/);
   await assert.rejects(run(['workflow','verify-release','--target','velocity-agent','--release-version','not-a-version','--includes','a'.repeat(40)]), /Choose a stable published version/);
-  await run(['hosted-worker', '--base-url', url, '--worker-sha256', 'a'.repeat(64), '--worker-version', version, '--once'], { hosted: true });
+  // A real gzip/ustar package-identity fixture exercises checksum/version
+  // preflight offline. The empty queue never boots or provisions a guest.
+  await mkdir(config, { recursive: true });
+  const guestManifest = Buffer.from(JSON.stringify({ name: 'velocity-agent', version }));
+  const header = Buffer.alloc(512);
+  header.write('package/package.json', 0); header.write('0000644\0', 100);
+  header.write('0000000\0', 108); header.write('0000000\0', 116);
+  header.write(guestManifest.length.toString(8).padStart(11, '0') + '\0', 124);
+  header.write('00000000000\0', 136); header.write('        ', 148);
+  header.write('0', 156); header.write('ustar\0', 257); header.write('00', 263);
+  header.write([...header].reduce((a, b) => a + b, 0).toString(8).padStart(6, '0') + '\0 ', 148);
+  const guest = gzipSync(Buffer.concat([header, guestManifest, Buffer.alloc((512 - guestManifest.length % 512) % 512 + 1024)]));
+  const guestPath = join(config, 'guest-preflight.tgz'); await writeFile(guestPath, guest);
+  await run(['hosted-worker', '--base-url', url, '--worker-archive', guestPath, '--worker-sha256', createHash('sha256').update(guest).digest('hex'), '--worker-version', version, '--once'], { hosted: true });
   assert.equal(hostedCalls, 2, 'The installed daemon must recover/claim without contacting a provider when no job exists');
   assert.match(await run(['run', '--help']), /--executor/);
   assert.match(await run(['run', '--help']), /--verbosity/);

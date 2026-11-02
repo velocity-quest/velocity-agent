@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.56",
-  "sourceSha": "f79a449d0c73b5c8f78384ed2788398ac47dc150",
-  "treeSha": "194f2128fcacbc1f29c138bbf1da3a6537c6623e",
-  "archiveSha256": "4ecb5d5e841d22535777f0538cbfa5909b0381ae72ccc78f879ec742b13bf682",
-  "completedAt": "2026-11-02T11:56:52.674Z",
+  "version": "0.5.57",
+  "sourceSha": "5f9f3371fe6e4c159d4540161a4a538d0ae76543",
+  "treeSha": "11a7023903797de4f54536fc5d60a1b1af1274d4",
+  "archiveSha256": "547665fc36f07bb97e4723ffaa2ff7f32325b6be16d646c5537f1577871344e7",
+  "completedAt": "2026-11-02T13:17:12.637Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -15,47 +15,42 @@
     {
       "name": "agent-final",
       "passed": true,
-      "logSha256": "79038d17b5645da9e2a62a3c86cd3763c854ab1f95b06fc028350f7d5eb37d58"
+      "logSha256": "12b5c83fa122c737c22abb40de1ed68a217c306f09ab27c00de0e1979eecf2d1"
     },
     {
       "name": "server-final",
       "passed": true,
-      "logSha256": "d944fe694a886a316241f7ed4bc9144d70ce25f2e8765b4a4272f8507d582cd2"
+      "logSha256": "f23dcd0032c0c35d95088824526f396d16c375f9aeb408c8d633e30b4c4c1968"
     },
     {
       "name": "webtests-final",
       "passed": true,
-      "logSha256": "5da3aae4b5adfce7c193c486903dbbac164007462e17bc5d0088d220d01e18e8"
+      "logSha256": "06d5b6e6a3c730e702978dc2b394dda2db22a62c7b3726667b95e9494c87adab"
     },
     {
       "name": "admin-final",
       "passed": true,
-      "logSha256": "544237e6833cf4d9c49fbaf32d611449b942aec037197fdf02e6c5ffa42ee970"
+      "logSha256": "47ce8b275d76471d7d17d73436c8c3c0a5d0751ad71a1b6d4d1d29d8137e3cc5"
     },
     {
       "name": "cli-final",
       "passed": true,
-      "logSha256": "3cd80f27970d449c3f4d43ec0efe9b95f15a1cee3c68a0cdb7415b16e2a44523"
+      "logSha256": "98b0eec6416e2d44ca3ea4e62adde537bef9da02ad7e2a001abdf697f82e38d2"
     },
     {
       "name": "core-final",
       "passed": true,
-      "logSha256": "8457ba3ee30589688983d7fa5ad23c978d6c9ba484f905d3b4e2846efe113f69"
-    },
-    {
-      "name": "support-final",
-      "passed": true,
-      "logSha256": "701be5d8653e61e01641fb61418d30c98899b1c1b31f16c03042f7341246344b"
+      "logSha256": "c183891c2116decf909204eb0473105405406566489be1c32337c7b06c3b5df5"
     },
     {
       "name": "types-final",
       "passed": true,
-      "logSha256": "9e0ba8570c33f291e5949aeaf7aa430018a5c146465673131e5b784d46376432"
+      "logSha256": "074074fa6b0f81353ea52b2af3cf659a02b13edb3b79f16fe1e9277002809643"
     },
     {
       "name": "lint-final",
       "passed": true,
-      "logSha256": "359704928fd1855d2c4e729c5a95fac3bfbb2b8412466c8d77fd88826b597a34"
+      "logSha256": "6a27871258225599c1a643bec49ba54dc73ec95c1e0d983ba1eb6156c37b0f15"
     },
     {
       "name": "audit-final",
@@ -65,130 +60,134 @@
     {
       "name": "agentbuild-final",
       "passed": true,
-      "logSha256": "6ebb7fa54ca58da041230a97bbba8be69ca72d2769706eb0705831d3f915c02b"
+      "logSha256": "70279460dd1a036ad6a174d74ae924e0a899cb9b8b23a01e9b15b09296f215d5"
     },
     {
       "name": "clibuild-final",
       "passed": true,
-      "logSha256": "19f439a702a51874934e06d9cb0d9e396466f56e71b907a503082779e41b90e6"
+      "logSha256": "c0339f69a8a56a28755d466ea6119d06c4654ce0c8f921aab1cb9ed9d663de38"
     },
     {
       "name": "webbuild-final",
       "passed": true,
-      "logSha256": "a3985ae0bf8b82e580446d5a4db13d299bfba312bbb400b75aabcd66e7d799c7"
+      "logSha256": "02c1ced13f9ede34df11870ee537e1d00f9b5f52bbcaa4ecbc8ea080d5973034"
     },
     {
       "name": "adminbuild-final",
       "passed": true,
-      "logSha256": "c3e1dbde5ab683ad96f9c38ee55d933d199443643ef2a90ef47ea4abafe5a4e3"
+      "logSha256": "ff898fddcc4a83652245976994720cc5a5bb6614007c7c77ae6daa90f66e7a3d"
     },
     {
       "name": "docsbuild-final",
       "passed": true,
-      "logSha256": "c27fdcae903eaf1e1343984d45a987d80b4b5cb839c7272182b8e039e49160e9"
+      "logSha256": "a25b07fa6c0248b2dceb2271888799178a84d4f29e0ae655e2484c4524b88425"
     },
     {
       "name": "bundle-final",
       "passed": true,
-      "logSha256": "aba95255008a622b0bfe4a2cf07d49c605216948b3c13ac45a6118a78e90aef7"
-    },
-    {
-      "name": "zapiertests-final",
-      "passed": true,
-      "logSha256": "e5232ed3fb918823a27df763a191850f8be1a1c9c82f79c2f814207375da0355"
-    },
-    {
-      "name": "zapiertoolchain-final",
-      "passed": true,
-      "logSha256": "a75fe5879a5c4dd7194532aa4830f14a202a9bdd85aac102c99baafed29bc6be"
-    },
-    {
-      "name": "zapiervalidate-final",
-      "passed": true,
-      "logSha256": "ea66fb46d7385116505a7ed6ef9618ec34320e2ada70c157ba591c8264a11ccc"
+      "logSha256": "59be1242c8a1fee71d876d1719678248d5f29273b95a76113ab34379df031425"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "af5b1df6f8b1bcc86d13889de5d03cf2fe241adb63c6a083610c359006bb2e89"
+      "logSha256": "c4466d139bb3ad22094e480812cedda16987a4b65876e76b3a90caa841cd2cd3"
     },
     {
       "name": "package-cli-acceptance.json",
       "passed": true,
-      "logSha256": "839442ccf7b765c393a2f18e737828d21ad46154ed008cf127eaa71ac1b44a24"
+      "logSha256": "e891d98cd9ac2fd3f984572c710e583f112f8fd86f7173b072e6562e3b723942"
     },
     {
       "name": "linux-node-matrix-acceptance.json",
       "passed": true,
-      "logSha256": "f4c1cdfe44f8d520be4dbd0542a812b1e30d45ff5d98b3e48808d45e3d502f8e"
+      "logSha256": "c33d4b72a34b313bee9ed0b4ede48a13fa1c3fd163c678bbee037fda1325778b"
     },
     {
       "name": "installed-dependencies-18.20.8.json",
       "passed": true,
-      "logSha256": "cb659d9d3bcfbd79a77482b0c6eeb894670dbde60e65b3fe960a894ddd25a877"
+      "logSha256": "fbb841073deb38bd072328a3d590ce81888c00dabe4d4b8273230a94261d74d8"
     },
     {
       "name": "installed-dependencies-20.20.2.json",
       "passed": true,
-      "logSha256": "1ad7c27dfa670f838b10df51f55c6dc38bbc2ba9e6c87e9a45c46280b54447fc"
+      "logSha256": "eb42287c33aeefb685c13cf1f5d5a025322f47ca87031fdfdf434b5b4c2f9094"
     },
     {
       "name": "installed-dependencies-22.22.1.json",
       "passed": true,
-      "logSha256": "05b63abeb89490852d741d4ccfa5b96b2e83463fba4c89d26b7cf7a675d45ff5"
+      "logSha256": "03d755f229f4876a0b5404bedaa89c905e9f8852fda0e43643c2b3b3eb2d6930"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "ef572578bb076aefff2e18b62d5997141d3d77d21336c417cc173056b75b10be"
+      "logSha256": "908758e7593087e706f0ff38d922b93c27f0cce4d17f18298869eb42dcc9de7b"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "21d4a986168d05d5529ef106c4a0b73a6ffcfb9172108065d1346dc7446d44e0"
+      "logSha256": "9a077bf5968776f8c4e96508ca52291217269e457e0fd47bf86dd38ab5643063"
     },
     {
-      "name": "final-audit-acceptance.json",
+      "name": "sql-acceptance.json",
       "passed": true,
-      "logSha256": "1091a9e2e266a4e44a5d6f55496c31535106be176d6c6911ce887ad88a868dbb"
+      "logSha256": "6f9453078eff55c28d905962e14e1b36e205ae5165543861127abb45b9e4353d"
     },
     {
-      "name": "zapier-production-closure-preserved.json",
+      "name": "sql-fresh-acceptance.json",
       "passed": true,
-      "logSha256": "c143cb4d86beaab402ee3bcf2c1bdb835838bb4cbee42af02ef789c71a3371da"
+      "logSha256": "904b6b2423f3a015099c540ca32917986260fa3d03819a8073da5c22f8c5eeb0"
+    },
+    {
+      "name": "checks-input-equivalence.json",
+      "passed": true,
+      "logSha256": "312e9ee474fc7b1ed78406d78693b501ed0f94a8e2478895ca8e759a58d82a68"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "8ed1809368aed139f583aabc0fd7000588569975fcd4b32357bc28f8945c12fb"
+      "logSha256": "bab75d17f7c8d3a2811cd0718a9929590d339891de7788ab37bf4498034f1d51"
     }
   ],
   "buildScope": {
     "counts": {
-      "agent": 1126,
-      "server": 4266,
-      "webtests": 3873,
+      "agent": 1184,
+      "server": 4303,
+      "webtests": 3894,
       "cli": 102,
-      "core": 84,
-      "admin": 394,
-      "support": 298,
-      "zapier": 194
+      "core": 95,
+      "admin": 395
     },
+    "reusedChecksWithUnchangedInputs": [],
     "binaryTargets": [
       {
         "name": "velocity-agent",
         "inputs": [
           "packages/agent/package.json",
+          "packages/agent/scripts/pack-release.mjs",
+          "packages/agent/src/doctor.ts",
+          "packages/agent/src/hosted/control-plane.ts",
+          "packages/agent/src/hosted/dispatcher-status.ts",
+          "packages/agent/src/hosted/distribution.ts",
+          "packages/agent/src/hosted/inventory.ts",
+          "packages/agent/src/hosted/maintenance-command.ts",
+          "packages/agent/src/hosted/upgrade.ts",
+          "packages/agent/src/hosted/worker.ts",
+          "packages/agent/src/index.ts",
+          "packages/agent/src/online-worker.ts",
+          "packages/agent/src/runtime-configuration.ts",
+          "packages/agent/src/worker-identities.ts",
+          "packages/agent/src/worker-restart-contract.ts",
+          "packages/agent/src/worker-restart.ts",
           "packages/cli-core/package.json",
-          "pnpm-lock.yaml (packages/agent)"
+          "packages/cli-core/src/worker-restart.ts"
         ]
       },
       {
         "name": "velocity-cli",
         "inputs": [
           "packages/cli-core/package.json",
-          "packages/cli/package.json",
-          "pnpm-lock.yaml (packages/cli)"
+          "packages/cli-core/src/worker-restart.ts",
+          "packages/cli/package.json"
         ]
       }
     ],
@@ -207,8 +206,7 @@
       "macos",
       "windows"
     ],
-    "zapierRuntimeNodesPreserved": 79,
-    "databaseMigrationRequired": false,
+    "databaseMigrationRequired": true,
     "githubCiWaivedByOwner": true
   },
   "limitations": [
