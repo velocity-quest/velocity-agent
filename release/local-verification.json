@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.54",
-  "sourceSha": "84405a8c9cf5b84e7415d85be37e0d9a5fd20b8e",
-  "treeSha": "608cb5255bb66a9598e29257fce1af68ee89f00a",
-  "archiveSha256": "211bcab746905b85a26a24498c86183f689f5baf059901166bd3423a2da3b2bc",
-  "completedAt": "2026-10-31T11:59:37.062Z",
+  "version": "0.5.55",
+  "sourceSha": "dca2d1b1e1e15e554ee7fc7c91a9e075aa5a6fba",
+  "treeSha": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
+  "archiveSha256": "a0c5e9b150864e65182c1c7d6ef007e2e0ddcae2a2a74d17fc5fd472e375c036",
+  "completedAt": "2026-11-02T10:43:03.720Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -13,200 +13,280 @@
   },
   "checks": [
     {
-      "name": "server-final",
-      "passed": true,
-      "logSha256": "3d91ba15bd535fba47ddde160763c135f7181a2675092d21203d0a73f610adb5"
-    },
-    {
-      "name": "web-final",
-      "passed": true,
-      "logSha256": "435cf12725f5620bda4974c0b8b9715e98f3597e700dcd938fbdaf1b89c2b9ea"
-    },
-    {
       "name": "agent-final",
       "passed": true,
-      "logSha256": "87d896877284992eef2b20bb2c8bde36f0d14ed22d84409c7ec7f481b72c40d2"
-    },
-    {
-      "name": "admin-final",
-      "passed": true,
-      "logSha256": "53738dd7b214a158a85999d33ad09298af054433614b46d8d06134984ad32f92"
-    },
-    {
-      "name": "types-final",
-      "passed": true,
-      "logSha256": "f3edf479d9fbcf0fc5ccb93a7960ce0dcb05be4fcb97316a8c8fc81131ff7654"
-    },
-    {
-      "name": "lint-final",
-      "passed": true,
-      "logSha256": "e517424bc93683add28b1d8bc45bbfc7ef10401618660513252a6198b7df4e93"
-    },
-    {
-      "name": "cli-final",
-      "passed": true,
-      "logSha256": "4bfb754e58696cac954efaa42047600c9ec2982b592681f8261f1cd1bb0ec156"
-    },
-    {
-      "name": "coverage-final",
-      "passed": true,
-      "logSha256": "a76ea0fc6fe5c2825f19bf1f7f1fc75311e1b75ffa41070340c6adde7b93c503"
+      "logSha256": "583c5e57dd3730a0373dd21817fbcd8cbdc38cf6858cada30f1929a2d3247bcb"
     },
     {
       "name": "agentbuild-final",
       "passed": true,
-      "logSha256": "a385eb88676e244d4ac696902ffc611345a9dc65d1bd02f3afbab0cb99ff7ba0"
+      "logSha256": "d2153c8d8117b26dc0d0e14a6e2a1aa9009a668ab2d5bf3db48d2fd80ae1a714"
     },
     {
-      "name": "clibuild-final",
+      "name": "server-final",
       "passed": true,
-      "logSha256": "673c360e21b0ee659820b713f93314590c354b7c691672d24d8b819da03d5f7d"
+      "logSha256": "995ca49ecc29495b18368ffad79075d004365909c52d2f8782028d03758de8e6"
+    },
+    {
+      "name": "webtests-final",
+      "passed": true,
+      "logSha256": "e2b36f552521491ef06f1d78de336a9b203c6ba1003ac49b2a0b45071c20bff0"
+    },
+    {
+      "name": "types-final",
+      "passed": true,
+      "logSha256": "afb8c45d9f64c460a2c70c50acbde766792120a1c1c90d35c1f144522e1979d4"
+    },
+    {
+      "name": "lint-final",
+      "passed": true,
+      "logSha256": "f4de6ca75c2609b9e3aca32486225cc5b234683be9444fd620e0b32fb3e2b4cd"
     },
     {
       "name": "webbuild-final",
       "passed": true,
-      "logSha256": "140c044b8333da655c88b4df9ba75bf874b536a93934c1e39ade10f4dc9acfb2"
+      "logSha256": "a94e91d70fda21948dac6a8fbffe14317cf9b9caae0c39d2998f76eda58ff95e"
     },
     {
-      "name": "docsbuild-final",
+      "name": "bundle-final",
       "passed": true,
-      "logSha256": "661226e79c7df0a5433105fc5e1e0275e7e1782e4256ac11b8990adcdbb66937"
+      "logSha256": "4f0a16499bb10fbe62f7c0200ebd5f99ee6d0bbdf3c0c1c38e7c5af381fcec3b"
     },
     {
-      "name": "adminbuild-final",
+      "name": "local-waiver-final.json",
       "passed": true,
-      "logSha256": "64272cd333c5a79fdebcc33ff65ae988b664ff33c6703698734ce436a46c6ef4"
-    },
-    {
-      "name": "bundle",
-      "passed": true,
-      "logSha256": "11e5299a8232a7f4f1e8fea1fc2ccbd0b277a4b5b712c352d611872ee0657a75"
-    },
-    {
-      "name": "script-tests",
-      "passed": true,
-      "logSha256": "053d07d3a94eea80f5ca4580ded49e3123a7e1d16a07524a4f69008af600de70"
-    },
-    {
-      "name": "sql-acceptance.json",
-      "passed": true,
-      "logSha256": "de41516c6ec80905abbb5486acbce414cc22b91ca31823f8f537bbb5e75b99ef"
-    },
-    {
-      "name": "clean-migration-replay.json",
-      "passed": true,
-      "logSha256": "3e92e88ca960cd4610011cc1d3c1a52a734bca49808e265c790c09cc66a07707"
-    },
-    {
-      "name": "upgrade-final",
-      "passed": true,
-      "logSha256": "ade6b966f23100782999729f7e750deb48eafaa80526689fa1b77f8e08456ecd"
-    },
-    {
-      "name": "delivery-race",
-      "passed": true,
-      "logSha256": "507c94c2a0a59f31456b2ea4ef11e803d6e118208c584dea6212b226e21abf44"
-    },
-    {
-      "name": "database-preflight.json",
-      "passed": true,
-      "logSha256": "d7ac2478f954015d12ab1b6caf7ad56f30fd323f3b07274d3f016b9481c9f84e"
-    },
-    {
-      "name": "installed-continuation-acceptance.json",
-      "passed": true,
-      "logSha256": "c2879c08ab042e37c7f3dcd26c84e7a340d325acf7f6d931f895aa3d8adfd054"
-    },
-    {
-      "name": "installed-contract-acceptance.json",
-      "passed": true,
-      "logSha256": "81dc19fbd6410b50afaa1bb2d1cc432f60843865301f6cefef33bc6fcab98c15"
+      "logSha256": "61d90248420b353a982bcc4b85560a10c9e9c129a28a5c19a9e7bded0cbc3700"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "79f2ec18a9071012eed0f1c4304795c44b8161f4e525c95f9d16b73b8cb31591"
-    },
-    {
-      "name": "package-cli-acceptance.json",
-      "passed": true,
-      "logSha256": "87937249b669856fedcd72d63352e460730b421175b1a4058b2c3df198b1ef82"
+      "logSha256": "32c061d9a84f874d61f34024da3bf4ec88821e802452d0e1d6c1b568b10a40a8"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "ec978da71035edd373487031410b8fb7c15c7dd57caf6ae801dcd76822390926"
+      "logSha256": "b15fdf8e7b3fe325fd0614ff5d187b9db9007490f2c72c28252af92cafef5faa"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "58862388d766b5b2833253de83fb3f532029e89da9bd85417dd4b4fd6779f928"
+      "logSha256": "e7d1539b8d30beb00c61cab7591aa831ca1a29e85e675df4f77c3443cc74be46"
     },
     {
-      "name": "preserved-source-worktrees.json",
+      "name": "load-regression-before.json",
       "passed": true,
-      "logSha256": "fcb3c2ab72214f1828b39a5169a358bef5ac86d9328d720f3bf135d110ddbbb2"
+      "logSha256": "5d1e13b5dfb970551f886eda2f496bd02e2591e614bc5f1e7871672bd8e8e3fe"
     },
     {
-      "name": "build-and-check-input-reuse.json",
+      "name": "fleet-measured-final",
       "passed": true,
-      "logSha256": "01d5bfca7d60dc5c0fd1710baa05bf63c9b1bbebbbcecf108fa974770b387b8f"
-    },
-    {
-      "name": "ci-workflow-step-local",
-      "passed": true,
-      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "name": "hosted-key-unit",
-      "passed": true,
-      "logSha256": "27cacd3656f47964a4b1ded761c86043bd1802109299a739b7085f29bd183693"
-    },
-    {
-      "name": "admin-key-unit",
-      "passed": true,
-      "logSha256": "76d9a03d643372088a89652fc978b12e83f064f4624fc87565bcf1829346c31d"
+      "logSha256": "d50efba8390b9762bebc6eba2439c62c6645024aa32e6611ad276f49587d2341"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "418729cde217d5def331a3bb405a4c60e0f62fa45cb400c16b1bd4032f7d5670"
+      "logSha256": "a8ed691da2294aa2df973fd8dd1c2e4843cf0ad86cd6b99d6528aa47a62d3371"
     }
   ],
   "buildScope": {
     "passed": true,
-    "buildSourceSha": "5f7a3fdc0e6f48f1a62f290cdd74bd2ca99fb566",
-    "buildSourceTree": "78ed43ac0a6dd8f8b144fd4857a7c8afe93c49cd",
-    "sourceInputReuse": {
-      "passed": true,
-      "originalHead": "5f7a3fdc0e6f48f1a62f290cdd74bd2ca99fb566",
-      "originalTree": "78ed43ac0a6dd8f8b144fd4857a7c8afe93c49cd",
-      "finalSourceSha": "54a10800b2fb63298af058df8db60cdfe7bbdc09",
-      "finalTree": "608cb5255bb66a9598e29257fce1af68ee89f00a",
-      "changed": [
-        ".github/workflows/ci.yml"
-      ],
-      "reason": "Two fixture-copy lines only, exercised locally against a fresh Postgres replay; all application and package source bytes are identical."
+    "checks": {
+      "agentbuild": {
+        "passed": true,
+        "precommit": false,
+        "exit": 0,
+        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
+        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
+        "startedAt": "2026-11-02T10:31:20.383Z",
+        "completedAt": "2026-11-02T10:31:33.931Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/agent",
+          "build"
+        ]
+      },
+      "agent": {
+        "passed": true,
+        "precommit": false,
+        "exit": 0,
+        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
+        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
+        "startedAt": "2026-11-02T10:31:33.938Z",
+        "completedAt": "2026-11-02T10:33:14.631Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/agent",
+          "exec",
+          "vitest",
+          "run",
+          "--maxWorkers=4"
+        ]
+      },
+      "server": {
+        "passed": true,
+        "precommit": false,
+        "exit": 0,
+        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
+        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
+        "startedAt": "2026-11-02T10:31:21.447Z",
+        "completedAt": "2026-11-02T10:32:38.689Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/graphql",
+          "exec",
+          "vitest",
+          "run",
+          "--maxWorkers=6"
+        ]
+      },
+      "types": {
+        "passed": true,
+        "precommit": false,
+        "exit": 0,
+        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
+        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
+        "startedAt": "2026-11-02T10:32:38.696Z",
+        "completedAt": "2026-11-02T10:35:57.267Z",
+        "command": [
+          "pnpm",
+          "exec",
+          "turbo",
+          "run",
+          "typecheck",
+          "--filter=@velocity/graphql",
+          "--filter=@velocity/web",
+          "--filter=@velocity/agent"
+        ]
+      },
+      "lint": {
+        "passed": true,
+        "precommit": false,
+        "exit": 0,
+        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
+        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
+        "startedAt": "2026-11-02T10:35:57.271Z",
+        "completedAt": "2026-11-02T10:36:31.668Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/web",
+          "lint"
+        ]
+      },
+      "webtests": {
+        "passed": true,
+        "precommit": false,
+        "exit": 0,
+        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
+        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
+        "startedAt": "2026-11-02T10:31:22.752Z",
+        "completedAt": "2026-11-02T10:35:05.149Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/web",
+          "exec",
+          "vitest",
+          "run",
+          "--maxWorkers=4"
+        ]
+      },
+      "webbuild": {
+        "passed": true,
+        "precommit": false,
+        "exit": 0,
+        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
+        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
+        "startedAt": "2026-11-02T10:31:23.826Z",
+        "completedAt": "2026-11-02T10:39:16.646Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/web",
+          "build"
+        ]
+      },
+      "bundle": {
+        "passed": true,
+        "precommit": false,
+        "exit": 0,
+        "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
+        "tree": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
+        "startedAt": "2026-11-02T10:39:16.657Z",
+        "completedAt": "2026-11-02T10:39:19.516Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/web",
+          "bundle-size"
+        ]
+      }
     },
     "counts": {
-      "server": 4177,
-      "web": 3846,
-      "agent": 1111,
-      "admin": 394
+      "worker": 1122,
+      "server": 4261,
+      "web": 3872,
+      "existingServerSkips": 10,
+      "fleetSizes": [
+        20,
+        40
+      ],
+      "apiLoadAndBudget": 6,
+      "admissionRegression": 3
     },
-    "scriptTests": 84,
-    "sqlChecks": 95,
-    "migrationFunctionComparison": 551,
-    "ciWaivedByOwner": true,
-    "platform": "linux",
-    "architecture": "x64",
-    "node": "v22.22.1",
-    "paidProviderInferenceTested": false
+    "package": {
+      "passed": true,
+      "sourceSha": "c9f99c8dfc101acd0ab355b09eb7b23098d076a4",
+      "treeSha": "23d73fcd3d3db61dd68d5376a7ca4985b4bd06ad",
+      "version": "0.5.55",
+      "archivePath": "/home/kevin/projects/velocity/reviews/fleet-budget-20261102/package-final-c9f99c8d/agent/velocity-agent-0.5.55.tgz",
+      "archiveSha256": "a0c5e9b150864e65182c1c7d6ef007e2e0ddcae2a2a74d17fc5fd472e375c036",
+      "prefix": "/home/kevin/projects/velocity/reviews/fleet-budget-20261102/package-final-c9f99c8d/agent/install",
+      "smokeLogSha256": "a8ed691da2294aa2df973fd8dd1c2e4843cf0ad86cd6b99d6528aa47a62d3371",
+      "installedMaintenance": {
+        "passed": true,
+        "claimThrottlePreserved": true,
+        "version": "0.5.55",
+        "sharedCooldown": true,
+        "retryAfterHonored": true,
+        "responseBodyPrivate": true,
+        "heartbeatCoalesced": true,
+        "boundaryFetchedFresh": true,
+        "shutdownBounded": true,
+        "platform": "linux",
+        "node": "v22.22.1"
+      },
+      "node": "v22.22.1",
+      "platform": "linux",
+      "architecture": "x64",
+      "verifiedAt": "2026-11-02T10:36:02.425Z"
+    },
+    "sourcePreserved": true,
+    "binaryTargets": [
+      {
+        "name": "velocity-agent",
+        "inputs": [
+          "packages/agent/package.json",
+          "packages/agent/src/online-worker.ts",
+          "packages/agent/src/runner.ts",
+          "packages/agent/src/worker-maintenance.ts"
+        ]
+      }
+    ],
+    "workerVersion": "0.5.55",
+    "managementCliUnchanged": true,
+    "lockUnchanged": true,
+    "databaseMigrationRequired": false,
+    "githubCiWaivedByOwner": true,
+    "verificationScope": "Local Linux/Node 22 source and clean package smoke plus installed HTTP/admission fixtures. No macOS/Windows install matrix, paid inference or forty simultaneous native executions. General MCP capacity is separately ENGIN-768."
   },
   "limitations": [
     "GitHub Actions did not run because the account is out of budget.",
     "Local Linux checks; macOS and Windows installation matrices were not run.",
-    "Installed fixtures cover lifecycle polling, frozen ownership, backend protocols/factory, Git/process/HTTP delivery continuation and clean installs; paid inference, real provider provisioning and production browser approvals were not exercised."
+    "Fleet scheduling uses isolated worker instances, a controlled clock and fixture runtime/queue boundaries; installed retry behavior uses a loopback HTTP fixture. Paid inference and forty simultaneous native executions were not exercised. General MCP capacity remains ENGIN-768."
   ],
   "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }
