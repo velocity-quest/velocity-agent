@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.57",
-  "sourceSha": "5f9f3371fe6e4c159d4540161a4a538d0ae76543",
-  "treeSha": "11a7023903797de4f54536fc5d60a1b1af1274d4",
-  "archiveSha256": "547665fc36f07bb97e4723ffaa2ff7f32325b6be16d646c5537f1577871344e7",
-  "completedAt": "2026-11-02T13:17:12.637Z",
+  "version": "0.5.58",
+  "sourceSha": "01ba3376c02866e523783690d2eb17b5f9525102",
+  "treeSha": "cfdce4cdb6d18df6c16b596a8fee01e161f9492b",
+  "archiveSha256": "01a273bb5715d659751fdbed8a14fc017f7cdd0066f9ed387f3d0d445c239399",
+  "completedAt": "2026-11-02T16:38:19.689Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -15,42 +15,42 @@
     {
       "name": "agent-final",
       "passed": true,
-      "logSha256": "12b5c83fa122c737c22abb40de1ed68a217c306f09ab27c00de0e1979eecf2d1"
+      "logSha256": "e764991e4fa3d8a0730a30a19bfbac98f61a03a641cba561e1a2d1ecefa47723"
     },
     {
       "name": "server-final",
       "passed": true,
-      "logSha256": "f23dcd0032c0c35d95088824526f396d16c375f9aeb408c8d633e30b4c4c1968"
+      "logSha256": "fc56c6e6ea57f0641a384af7c8237505bbaf52d1ba5e1f4a7b04729c2a2d18a8"
     },
     {
       "name": "webtests-final",
       "passed": true,
-      "logSha256": "06d5b6e6a3c730e702978dc2b394dda2db22a62c7b3726667b95e9494c87adab"
+      "logSha256": "92d0e48166a1eb390b657b7f15d4fea1cbd920835272726fd0268f1b36f214c5"
     },
     {
       "name": "admin-final",
       "passed": true,
-      "logSha256": "47ce8b275d76471d7d17d73436c8c3c0a5d0751ad71a1b6d4d1d29d8137e3cc5"
+      "logSha256": "5fbb7fb88404e5c03026d26b44b0745c643d97bfacad9b46f848621bce30614a"
     },
     {
       "name": "cli-final",
       "passed": true,
-      "logSha256": "98b0eec6416e2d44ca3ea4e62adde537bef9da02ad7e2a001abdf697f82e38d2"
+      "logSha256": "c80efd6f8cd4dff6c4515f304d68559f0781e85a142124cbed7e012f39e2168e"
     },
     {
       "name": "core-final",
       "passed": true,
-      "logSha256": "c183891c2116decf909204eb0473105405406566489be1c32337c7b06c3b5df5"
+      "logSha256": "59d4b11e21cd58869f5e6eef02207b580321a6959001f21bcfc5171bd48de6d7"
     },
     {
       "name": "types-final",
       "passed": true,
-      "logSha256": "074074fa6b0f81353ea52b2af3cf659a02b13edb3b79f16fe1e9277002809643"
+      "logSha256": "de3e69986ae14aab393c226ebe9db773afa5cbec59cd9a6bb696135cc7792c41"
     },
     {
       "name": "lint-final",
       "passed": true,
-      "logSha256": "6a27871258225599c1a643bec49ba54dc73ec95c1e0d983ba1eb6156c37b0f15"
+      "logSha256": "29e6ad17f1cc52ce0a484751b18a08bc17277898a9dc0853964ca6001bde3199"
     },
     {
       "name": "audit-final",
@@ -60,134 +60,537 @@
     {
       "name": "agentbuild-final",
       "passed": true,
-      "logSha256": "70279460dd1a036ad6a174d74ae924e0a899cb9b8b23a01e9b15b09296f215d5"
+      "logSha256": "c332fe29732e20670aa49ca55a888498d9e04370ac19f143a0a05d1c8e8b1b1f"
     },
     {
       "name": "clibuild-final",
       "passed": true,
-      "logSha256": "c0339f69a8a56a28755d466ea6119d06c4654ce0c8f921aab1cb9ed9d663de38"
+      "logSha256": "4895bd3d4db004773ad64ab18a389c255bfd6d0fc5dee7f6fbb8a8e161a3931f"
     },
     {
       "name": "webbuild-final",
       "passed": true,
-      "logSha256": "02c1ced13f9ede34df11870ee537e1d00f9b5f52bbcaa4ecbc8ea080d5973034"
+      "logSha256": "a085298c8e0fb4ec83e86d36daade236ee2e19eb547d1568cc5565823c4f5fc8"
     },
     {
       "name": "adminbuild-final",
       "passed": true,
-      "logSha256": "ff898fddcc4a83652245976994720cc5a5bb6614007c7c77ae6daa90f66e7a3d"
+      "logSha256": "f0e00257c9eb1b0409bc2ddd6a1e1364728ea61c1a0bcf7220a3310e26e85dcf"
     },
     {
       "name": "docsbuild-final",
       "passed": true,
-      "logSha256": "a25b07fa6c0248b2dceb2271888799178a84d4f29e0ae655e2484c4524b88425"
+      "logSha256": "f0aff1ae290d81dbfcdae7ff55826608ed5c8da5ba3d8062ab4b3a90208922cf"
     },
     {
       "name": "bundle-final",
       "passed": true,
-      "logSha256": "59be1242c8a1fee71d876d1719678248d5f29273b95a76113ab34379df031425"
+      "logSha256": "a6ea4d9fff30fb1bc3a1f85bac55185219cab0ddb20e061a02842a0b1d2c9331"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "c4466d139bb3ad22094e480812cedda16987a4b65876e76b3a90caa841cd2cd3"
+      "logSha256": "b90cf05d7515cc54f266f355eda18f5372d6299fb7b5e4a0dcd3a35fdc12c0c6"
     },
     {
       "name": "package-cli-acceptance.json",
       "passed": true,
-      "logSha256": "e891d98cd9ac2fd3f984572c710e583f112f8fd86f7173b072e6562e3b723942"
+      "logSha256": "70b13022172eaf84b3ad86e8c4cb071f26e9cc606125a4f78bd2c9e4809b7ea2"
     },
     {
       "name": "linux-node-matrix-acceptance.json",
       "passed": true,
-      "logSha256": "c33d4b72a34b313bee9ed0b4ede48a13fa1c3fd163c678bbee037fda1325778b"
+      "logSha256": "973cad0768e649858b2a02cde8206c9b08f655bf22e412c90a78d0908e304b35"
     },
     {
       "name": "installed-dependencies-18.20.8.json",
       "passed": true,
-      "logSha256": "fbb841073deb38bd072328a3d590ce81888c00dabe4d4b8273230a94261d74d8"
+      "logSha256": "ebc89b914be2b40c8abee410b9006e7217600a8ba30692f30997d60a936ff211"
     },
     {
       "name": "installed-dependencies-20.20.2.json",
       "passed": true,
-      "logSha256": "eb42287c33aeefb685c13cf1f5d5a025322f47ca87031fdfdf434b5b4c2f9094"
+      "logSha256": "4f69e2de1c8819a09e620185a118d1e8d17bc09276dd6dd6770b6d6c287d9ce4"
     },
     {
       "name": "installed-dependencies-22.22.1.json",
       "passed": true,
-      "logSha256": "03d755f229f4876a0b5404bedaa89c905e9f8852fda0e43643c2b3b3eb2d6930"
+      "logSha256": "18d28bbe6fdbd3a0d7320acfbd35d964db859f3cd13ade6ab92fb8159c0da64d"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "908758e7593087e706f0ff38d922b93c27f0cce4d17f18298869eb42dcc9de7b"
+      "logSha256": "54eb18698df78a3584fb90ae3f526192664a3c701865c9c16abf3360078dbb60"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "9a077bf5968776f8c4e96508ca52291217269e457e0fd47bf86dd38ab5643063"
+      "logSha256": "f7d4ecfae58f473c9ba31275ecdf2699b4218b6ee79b3b083a91359aa9c17c16"
     },
     {
       "name": "sql-acceptance.json",
       "passed": true,
-      "logSha256": "6f9453078eff55c28d905962e14e1b36e205ae5165543861127abb45b9e4353d"
+      "logSha256": "d170afa3bf7aee64a4d393c763186f28eff91e2fab39686a39b7aa70873d1a01"
     },
     {
       "name": "sql-fresh-acceptance.json",
       "passed": true,
-      "logSha256": "904b6b2423f3a015099c540ca32917986260fa3d03819a8073da5c22f8c5eeb0"
+      "logSha256": "a0234cf4195b1b22b68e377e1b2e04c8e7643b00858c277115165cd4e7031da4"
     },
     {
       "name": "checks-input-equivalence.json",
       "passed": true,
-      "logSha256": "312e9ee474fc7b1ed78406d78693b501ed0f94a8e2478895ca8e759a58d82a68"
+      "logSha256": "9c3c6008c77b45cc462833881abe27355b339d790dfe5c4f0dee6278064be01e"
+    },
+    {
+      "name": "sql-source-provenance.json",
+      "passed": true,
+      "logSha256": "2f457d91809085d8c34374cda4273ccc1e894a87e4ecc8e9749b20170b2da8c4"
+    },
+    {
+      "name": "servermigration-final",
+      "passed": true,
+      "logSha256": "67a20d79455ebf1c52cd39f3968f1559d48d4ab61351a34f071972a3e348dc64"
+    },
+    {
+      "name": "webtypedfixtures-final",
+      "passed": true,
+      "logSha256": "3727b1034c43e57d63b5bc28f00606593c281f27da2d69c7ee0b124f73e7d954"
+    },
+    {
+      "name": "claim-refusal-negative",
+      "passed": true,
+      "logSha256": "d11233fb1525071190e7b2893d65b345dba5ab8b3f6564facb4d4cc33fdd68cf"
+    },
+    {
+      "name": "claim-refusal-positive",
+      "passed": true,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "installed-native-ownership-18.20.8.json",
+      "passed": true,
+      "logSha256": "2c28b5ee0deab829585b96fdffe9feda1e2cf6ad108e69fae6b31ca0287bf031"
+    },
+    {
+      "name": "installed-native-ownership-20.20.2.json",
+      "passed": true,
+      "logSha256": "623a9b4ec31a1b00282d690dd2d4d1ea727a72f1b180b750b303ba2b3589d169"
+    },
+    {
+      "name": "installed-native-ownership-22.22.1.json",
+      "passed": true,
+      "logSha256": "a87cd7590edf6d88ca34272aa5ab18cda6467b00c7ba719a36571e95508a2d15"
+    },
+    {
+      "name": "real-execve-acceptance.json",
+      "passed": true,
+      "logSha256": "7eb9b8e3c47c2d7461caa5aef9facff304801459d45138a3db70f7201b9e463e"
+    },
+    {
+      "name": "identical-binary-acceptance.json",
+      "passed": true,
+      "logSha256": "0337e5a51c81fec16f10ecc50ab40625de883f922ecce8c31b4541b0f1407356"
+    },
+    {
+      "name": "successor-retention-negative",
+      "passed": true,
+      "logSha256": "72781737c9f638a1bb96cbe9317629a66715015bce348d618ec804ab1412c731"
+    },
+    {
+      "name": "successor-retention-positive",
+      "passed": true,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "bab75d17f7c8d3a2811cd0718a9929590d339891de7788ab37bf4498034f1d51"
+      "logSha256": "f3b09f4c4e960550bbbf47f6a8369af3ce75de42cb533a1051e60a9d562f3373"
     }
   ],
   "buildScope": {
     "counts": {
-      "agent": 1184,
-      "server": 4303,
-      "webtests": 3894,
+      "agent": 1243,
+      "server": 4314,
+      "webtests": 3926,
       "cli": 102,
-      "core": 95,
+      "core": 117,
       "admin": 395
     },
-    "reusedChecksWithUnchangedInputs": [],
+    "reusedChecksWithUnchangedInputs": [
+      {
+        "check": "agentbuild",
+        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "agent",
+        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "server",
+        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "types",
+        "testedSourceSha": "7df8a0d4fef11d09f2769073d7e743d8079b1825",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "lint",
+        "testedSourceSha": "7df8a0d4fef11d09f2769073d7e743d8079b1825",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "audit",
+        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "webtests",
+        "testedSourceSha": "be286006e43e0d607d24ddfab0b0eac124f94016",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/native-continuation-policy.test.ts",
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "packages/agent/src/__tests__/claude-code-stream.test.ts",
+          "packages/graphql/src/integrations/__tests__/claude-cloud-agent-tools.test.ts",
+          "packages/graphql/src/resolvers/__tests__/notification-preference-recipients.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "All product JavaScript/TypeScript and unchanged test inputs are identical; the changed typed Web fixtures also passed on the current head. SQL has independent fresh/upgrade/race checks."
+      },
+      {
+        "check": "webbuild",
+        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "bundle",
+        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "cli",
+        "testedSourceSha": "be286006e43e0d607d24ddfab0b0eac124f94016",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/native-continuation-policy.test.ts",
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "packages/agent/src/__tests__/claude-code-stream.test.ts",
+          "packages/graphql/src/integrations/__tests__/claude-cloud-agent-tools.test.ts",
+          "packages/graphql/src/resolvers/__tests__/notification-preference-recipients.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "core",
+        "testedSourceSha": "be286006e43e0d607d24ddfab0b0eac124f94016",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/native-continuation-policy.test.ts",
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "packages/agent/src/__tests__/claude-code-stream.test.ts",
+          "packages/graphql/src/integrations/__tests__/claude-cloud-agent-tools.test.ts",
+          "packages/graphql/src/resolvers/__tests__/notification-preference-recipients.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "clibuild",
+        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "admin",
+        "testedSourceSha": "be286006e43e0d607d24ddfab0b0eac124f94016",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/native-continuation-policy.test.ts",
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "packages/agent/src/__tests__/claude-code-stream.test.ts",
+          "packages/graphql/src/integrations/__tests__/claude-cloud-agent-tools.test.ts",
+          "packages/graphql/src/resolvers/__tests__/notification-preference-recipients.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "adminbuild",
+        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "docsbuild",
+        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "webtypedfixtures",
+        "testedSourceSha": "7df8a0d4fef11d09f2769073d7e743d8079b1825",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+      },
+      {
+        "check": "agent clean package installation",
+        "kind": "agent",
+        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "archiveSha256": "01a273bb5715d659751fdbed8a14fc017f7cdd0066f9ed387f3d0d445c239399",
+        "repackedFromCurrentCandidate": true,
+        "byteIdentical": true,
+        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
+      },
+      {
+        "check": "cli clean package installation",
+        "kind": "cli",
+        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "archiveSha256": "03c336f21fbe8e11891d72ee3b0335638a3983d82ec918428bdae607ee584559",
+        "repackedFromCurrentCandidate": true,
+        "byteIdentical": true,
+        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
+      },
+      {
+        "check": "Linux clean install matrix",
+        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "archiveByteIdentity": true,
+        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
+      },
+      {
+        "check": "installed SDK contracts 18.20.8",
+        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "archiveByteIdentity": true,
+        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
+      },
+      {
+        "check": "installed native process ownership 18.20.8",
+        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "archiveByteIdentity": true,
+        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
+      },
+      {
+        "check": "installed SDK contracts 20.20.2",
+        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "archiveByteIdentity": true,
+        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
+      },
+      {
+        "check": "installed native process ownership 20.20.2",
+        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "archiveByteIdentity": true,
+        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
+      },
+      {
+        "check": "installed SDK contracts 22.22.1",
+        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "archiveByteIdentity": true,
+        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
+      },
+      {
+        "check": "installed native process ownership 22.22.1",
+        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "archiveByteIdentity": true,
+        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
+      },
+      {
+        "check": "Chromium guest editing/revocation",
+        "testedSourceSha": "be286006e43e0d607d24ddfab0b0eac124f94016",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "apps/web/app/api/__tests__/native-continuation-policy.test.ts",
+          "apps/web/app/api/__tests__/worker-operations.test.ts",
+          "packages/agent/src/__tests__/claude-code-stream.test.ts",
+          "packages/graphql/src/integrations/__tests__/claude-cloud-agent-tools.test.ts",
+          "packages/graphql/src/resolvers/__tests__/notification-preference-recipients.test.ts",
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "All browser harness, product, permission and browser test inputs are unchanged."
+      },
+      {
+        "check": "real execve",
+        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
+        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "changedPaths": [
+          "supabase/checks/native-continuations.sql",
+          "supabase/migrations/20261102143000_native_continuations.sql"
+        ],
+        "reason": "Installed worker process-replacement runtime inputs are unchanged."
+      }
+    ],
     "binaryTargets": [
       {
         "name": "velocity-agent",
         "inputs": [
           "packages/agent/package.json",
           "packages/agent/scripts/pack-release.mjs",
-          "packages/agent/src/doctor.ts",
-          "packages/agent/src/hosted/control-plane.ts",
-          "packages/agent/src/hosted/dispatcher-status.ts",
-          "packages/agent/src/hosted/distribution.ts",
-          "packages/agent/src/hosted/inventory.ts",
-          "packages/agent/src/hosted/maintenance-command.ts",
-          "packages/agent/src/hosted/upgrade.ts",
-          "packages/agent/src/hosted/worker.ts",
+          "packages/agent/src/claude-code.ts",
+          "packages/agent/src/codex.ts",
+          "packages/agent/src/delivery-config.ts",
+          "packages/agent/src/delivery-controller.ts",
+          "packages/agent/src/delivery-validation.ts",
+          "packages/agent/src/delivery-workflow.ts",
+          "packages/agent/src/deployment-coverage.ts",
+          "packages/agent/src/deployment-targets.ts",
+          "packages/agent/src/host-operations.ts",
           "packages/agent/src/index.ts",
+          "packages/agent/src/interruption.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-checkpoint.ts",
+          "packages/agent/src/native-continuation-contract.ts",
+          "packages/agent/src/native-json-lines.ts",
+          "packages/agent/src/native-process.ts",
+          "packages/agent/src/native-rpc.ts",
+          "packages/agent/src/native-turn.ts",
           "packages/agent/src/online-worker.ts",
-          "packages/agent/src/runtime-configuration.ts",
-          "packages/agent/src/worker-identities.ts",
-          "packages/agent/src/worker-restart-contract.ts",
-          "packages/agent/src/worker-restart.ts",
+          "packages/agent/src/runner.ts",
+          "packages/agent/src/session/checkpoint.ts",
+          "packages/agent/src/session/claude-agent-sdk.ts",
+          "packages/agent/src/session/client.ts",
+          "packages/agent/src/session/codex-app-server.ts",
+          "packages/agent/src/session/execution.ts",
+          "packages/agent/src/session/supervisor.ts",
+          "packages/agent/src/session/types.ts",
+          "packages/agent/src/task-checkout.ts",
+          "packages/agent/src/validation-output.ts",
           "packages/cli-core/package.json",
-          "packages/cli-core/src/worker-restart.ts"
+          "packages/cli-core/src/deployment-targets.ts",
+          "packages/cli-core/src/host-workflow.ts",
+          "packages/cli-core/src/native-continuation.ts"
         ]
       },
       {
         "name": "velocity-cli",
         "inputs": [
           "packages/cli-core/package.json",
-          "packages/cli-core/src/worker-restart.ts",
-          "packages/cli/package.json"
+          "packages/cli-core/src/deployment-targets.ts",
+          "packages/cli-core/src/host-workflow.ts",
+          "packages/cli-core/src/native-continuation.ts",
+          "packages/cli/package.json",
+          "packages/cli/src/coverage.generated.ts",
+          "packages/cli/src/rest.ts",
+          "packages/cli/src/schema.generated.ts"
         ]
       }
     ],
