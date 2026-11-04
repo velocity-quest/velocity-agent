@@ -1,11 +1,11 @@
 {
-  "dependencyTreeSha256": "6a4097110a8f6e654e02067ed6e471948e9e93a323679d05408c06cd387194c8",
-  "version": "0.5.61",
-  "sourceSha": "610c3eb11f4797c2f4b27831b2ffb602b6430da8",
-  "sha256": "2484524199a8ab6666c58f2334f4e8685544ec088f7435a86335ce1492f1cdbb",
+  "dependencyTreeSha256": "e6ccc76b96694f916bac3c7103d1128d119daed7d87fff3f8d5b7d9b71bced4f",
+  "version": "0.5.62",
+  "sourceSha": "1e5d48b608868119f210cc6081624920c6f2f1c8",
+  "sha256": "d16feef4f999462d055616dbf7a1598021dc91409d2a0bd6161bc7aad68d1e52",
   "localVerification": {
-    "approvalId": "d8a3ea4a-f973-4f54-9f10-5987675b1273",
-    "treeSha": "46c8e90589e0ab5590cb739cb0894a5d03d73def",
-    "manifestSha256": "3432a5a6e7b3adb50ae6f93c1c9b899b3b35db9b4eab4ef1fbcc6a69576c8b60"
+    "approvalId": "c8669da8-7768-4c00-b408-39a4bc70033c",
+    "treeSha": "f7361b60b69cab8e04f563babd686001621edf18",
+    "manifestSha256": "dc23c3011a1494be52acceb229677b5c3c284611b083de539c00991200334e47"
   }
 }

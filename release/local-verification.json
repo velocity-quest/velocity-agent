@@ -1,12 +1,12 @@
 {
-  "dependencyTreeSha256": "6a4097110a8f6e654e02067ed6e471948e9e93a323679d05408c06cd387194c8",
+  "dependencyTreeSha256": "e6ccc76b96694f916bac3c7103d1128d119daed7d87fff3f8d5b7d9b71bced4f",
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.61",
-  "sourceSha": "610c3eb11f4797c2f4b27831b2ffb602b6430da8",
-  "treeSha": "46c8e90589e0ab5590cb739cb0894a5d03d73def",
-  "archiveSha256": "2484524199a8ab6666c58f2334f4e8685544ec088f7435a86335ce1492f1cdbb",
-  "completedAt": "2026-11-04T09:32:02.506Z",
+  "version": "0.5.62",
+  "sourceSha": "1e5d48b608868119f210cc6081624920c6f2f1c8",
+  "treeSha": "f7361b60b69cab8e04f563babd686001621edf18",
+  "archiveSha256": "d16feef4f999462d055616dbf7a1598021dc91409d2a0bd6161bc7aad68d1e52",
+  "completedAt": "2026-11-04T10:29:56.070Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -16,80 +16,102 @@
     {
       "name": "source-acceptance.json",
       "passed": true,
-      "logSha256": "06117c5bf5594af5fe7048a94ae069f3bd1d644596127c2721b33ae7544cc1b7"
+      "logSha256": "d005549ca1ef4a8b1d2b3815d0192464f79260093134c511f3ad89376d2ecf24"
     },
     {
       "name": "local-waiver-final.json",
       "passed": true,
-      "logSha256": "af20f0c945489350f65bd48f0eb3c130f46b31504a94d0674bc07d8eea399391"
+      "logSha256": "dbf3aa6ba46a5424cf33eefefad9c264f052d6b8322778dabc0eabd00a4235d9"
     },
     {
       "name": "installation-acceptance.json",
       "passed": true,
-      "logSha256": "bb8301ac00c834cc98372ceb5e90012a93c71860a225df75c303bc3c4d8c5af0"
+      "logSha256": "b143ac1a51bf5c6c316636403d3b2863e412072e56c58a07782501e91ccf2301"
     },
     {
       "name": "closure-equivalence.json",
       "passed": true,
-      "logSha256": "115665a01607daf32e5866ae8b73480cbefadc190f84d401bd2d01f4b526082a"
+      "logSha256": "7220ae1c03e0840cc0bcb4daafa486ff235f773c1b1dafeace6aa6fcb68a55ce"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "d2ab3267786914499c876e3f2b06a54ce0c14ebec8f573fb547b9251c2f3ca89"
+      "logSha256": "ca7084738486360f7c6f3d3a3d9d40678de0743743ed37ec185879d3c81046a7"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "e6b658c12f1e1ca8c35a2ddfac7075046483277371c424fff003b88c46bd121e"
+      "logSha256": "79b33995f91a0a8c09f42abdc408260ece79627af50fd58ccab84891fe85128d"
     },
     {
-      "name": "Expected failure on the old behavior: negative-global-baseline.json",
+      "name": "Expected failure on the old behavior: negative-archive-baseline.json",
       "passed": true,
-      "logSha256": "ca94755c3a70f9b66f62125726f43df45594d87559de1638278113aa417d007b"
+      "logSha256": "cfd9575f5595fe320b74ac008434384df9a49fe33ae7bfef9be75872bac90334"
     },
     {
-      "name": "Expected failure on the old behavior: negative-global-baseline",
+      "name": "Expected failure on the old behavior: negative-archive-baseline",
       "passed": true,
-      "logSha256": "c13c431a3a6920e321d2edcb9d3ebd42fe094f485f4fef4d01025e14eaf75e16"
+      "logSha256": "2129419bb8d78a2760873d9fcbe583702423e5cc38c4129ea0a0adbb7abda661"
     },
     {
-      "name": "773-regressions",
+      "name": "Expected failure on the old behavior: negative-expanded-baseline.json",
       "passed": true,
-      "logSha256": "5ff433d2ec5c804c4160c03bdb97b61760d6f39847fdeb3e32f12cdcb7bf643b"
+      "logSha256": "d5a5322b82f6e1a501401580fd57d436eeff9f0b1d39888104798e974f706859"
     },
     {
-      "name": "773-types",
+      "name": "Expected failure on the old behavior: negative-expanded-baseline",
       "passed": true,
-      "logSha256": "83b92032b4e67db1d9842d5a65a9bde0b1c5c1b604130d2018c0ab6465dcd5f7"
+      "logSha256": "5accf5d70286a63f393c1755fdedb9130ffc4dd1188de70d9bf17030369e6269"
     },
     {
-      "name": "773-worker-build",
+      "name": "hosted-packaging-regressions-final",
       "passed": true,
-      "logSha256": "50ed86e16fe9702bb6417ca59eb52ac52bd2cae4ebf87193e3996f4d7910679b"
+      "logSha256": "5dea1545e26745bb1d455f9a7e59a68a44cba7d737ce6988a575aa87f3824006"
     },
     {
-      "name": "773-core-build",
+      "name": "expanded-tar-tests-final",
       "passed": true,
-      "logSha256": "4abbc7a0ea6ab851eb9d66165fd6fcc342ace646d989c6da4fbce1b63f35bcc9"
+      "logSha256": "2b4dfcd754fc90ccbbb4d8722dd0bbc921f59093a2f90b3e90e4729f34ce2897"
+    },
+    {
+      "name": "types-final",
+      "passed": true,
+      "logSha256": "123b02c6006b14ce5bbc224de1377272c16e52017469eb4b6229d0ce80ac84b2"
+    },
+    {
+      "name": "worker-build-final",
+      "passed": true,
+      "logSha256": "ffdc38e5150380d3667ef46b6cd9661175d0b14a7877c4e1f9b5bdcebe22f7f8"
+    },
+    {
+      "name": "core-build",
+      "passed": true,
+      "logSha256": "b644fa5d25d83987220144fd72bb9ee0ed08f2807d5f4065837f583aa370cf0e"
+    },
+    {
+      "name": "real-guest-acceptance.json",
+      "passed": true,
+      "logSha256": "a5a61e9e96470d4904b7379a9c684277e116c4179d882a0bf94f68b823a47370"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "0f323b8e619de036ae2489b0c77846155e2312a681c37ecf0945e8d8ce7a7893"
+      "logSha256": "f4aa7ce52b4c5f3c6fb3ae7cedc005c00d94eda4a36024dcd0d3612b90b632fc"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "671de2b5340b8dee2404075391ff8480cc43659c84cbc00f594e22d20dc3426f"
+      "logSha256": "c8a4e5ee99bd81d465157b4d34db2767453015861a0e8a7a98e868dd09af3ece"
     }
   ],
   "buildScope": {
     "counts": {
-      "packagingRegressions": 41,
+      "hostedPackagingRegressions": 115,
+      "newArchiveRegressions": 9,
       "portablePackages": 107,
       "nativeSdkRuntimes": 2
     },
+    "validationRetries": "The initial parallel matrix of prior source8d04f005 timed out at unchanged installed-smoke deadlines and is retained in prior-head-8d04f005/matrix and its original logs. Final exact archive matrix is serialized; no test timeout was increased.",
     "reusedChecksWithUnchangedInputs": {
       "sourceSha": "6b03b8e60ca594b2dc779d8416cb13410eee798d",
       "counts": {
@@ -101,8 +123,13 @@
         "core": 117,
         "utils": 276
       },
-      "scope": "Full runtime/app/CLI/database consumers unchanged. Package version and release packaging metadata are covered by the new installed archive checks; exact full global matrix remains a publication gate.",
-      "compiledRuntimeBytesUnchanged": true
+      "scope": "App, CLI, database and non-hosted runtime inputs unchanged from accepted batch. The two hosted JS modules are covered by new/hosted/packaging regressions, real archive verification and shipped guest execution; exact archive prefix/global matrix is required before publication.",
+      "unchangedAppCliDatabase": true,
+      "changedCompiledFiles": [
+        "hosted/distribution.d.ts",
+        "hosted/distribution.js",
+        "hosted/instabox-remote.js"
+      ]
     },
     "binaryTargets": [
       "velocity-agent"
@@ -118,11 +145,11 @@
       "macos",
       "windows"
     ],
-    "databaseMigrationRequired": true,
+    "databaseMigrationRequired": false,
     "githubCiWaivedByOwner": true
   },
   "limitations": [
-    "The old0.5.60 global installation failed native-package verification; the new immutable archive passes both prefix and global installs with native byte comparisons and actual native version commands.",
+    "The dispatcher and guest accept HTTPS archives up to32MiB, with independent expanded-tar inspection capped at256MiB; inline transport remains512KB. Actual shipped guest installation and native package checks passed locally without paid provisioning.",
     "GitHub Actions did not run because the account is out of budget.",
     "Linux x64 worker clean installs/runtime checks on Node18.20.8/20.20.2/22.22.1, both prefix and global worker installation; macOS/Windows were not tested.",
     "Installed fixtures cover real SDK stream/resume/wire contracts, imports, CLI parsers and the full package smoke scenarios. Paid inference, live billing requests and real paid provider provisioning were not performed."
