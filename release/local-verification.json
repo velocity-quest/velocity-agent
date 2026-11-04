@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.58",
-  "sourceSha": "01ba3376c02866e523783690d2eb17b5f9525102",
-  "treeSha": "cfdce4cdb6d18df6c16b596a8fee01e161f9492b",
-  "archiveSha256": "01a273bb5715d659751fdbed8a14fc017f7cdd0066f9ed387f3d0d445c239399",
-  "completedAt": "2026-11-02T16:38:19.689Z",
+  "version": "0.5.59",
+  "sourceSha": "e94cc00438d952ebb1f04cbc53e3a71433e34b36",
+  "treeSha": "788628d40f513ad8169ae24d35419383c97e4e36",
+  "archiveSha256": "fc3fd9d54c473b8fbf7760d68f19f12e6ac3aac3338685c5706e84e7b0506cee",
+  "completedAt": "2026-11-04T03:47:20.813Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -13,44 +13,104 @@
   },
   "checks": [
     {
+      "name": "local-waiver-final.json",
+      "passed": true,
+      "logSha256": "4bcd4865ebdbd415fd3070688e329f223ec73da3cb62140bd34d0269610bdeab"
+    },
+    {
+      "name": "agent-check.json",
+      "passed": true,
+      "logSha256": "7a9ecc991d3d472ee93aaca773b2db1577e9cfc574680e84d9532eef300a5b33"
+    },
+    {
+      "name": "server-check.json",
+      "passed": true,
+      "logSha256": "1aa822bd852b877099f4168178e0340b6e40c3ec1a2a3e1971a6c74bce42cc43"
+    },
+    {
+      "name": "webtests-check.json",
+      "passed": true,
+      "logSha256": "95285c518222b4380b262d6f46c1aa8d44a42a9f98c20542277e8cfc83858e16"
+    },
+    {
+      "name": "types-check.json",
+      "passed": true,
+      "logSha256": "1966ae436b3e46f0e4760c714fd68e5b4a2835afab5f9d91c93132658a843f3c"
+    },
+    {
+      "name": "agenttypes-final",
+      "passed": true,
+      "logSha256": "ca6ed2f64bb7745ed342d014e3c297b335adc181003db4bba0e878cced8bedef"
+    },
+    {
+      "name": "boundaries-final",
+      "passed": true,
+      "logSha256": "b468f231dd018be58095c7d313ed198bc7305435cffd780852d10431da164ed4"
+    },
+    {
+      "name": "webcontract-final",
+      "passed": true,
+      "logSha256": "45f11dcae95fc595cdd3872bc50a6153de510519da49877ab09dbc1588a635c8"
+    },
+    {
+      "name": "runtime-discovery-isolated",
+      "passed": true,
+      "logSha256": "69fb8a78c809577b5c000f7b82c39e17c258a320dc223af674f23038f6c91501"
+    },
+    {
+      "name": "duplicate-notice-negative",
+      "passed": true,
+      "logSha256": "37c50ec7c51cf8ece4ca8fa1f2c9d262056436efef65e1a4cd6e50539f729e1e"
+    },
+    {
+      "name": "duplicate-notice-positive",
+      "passed": true,
+      "logSha256": "ad191e173efc28a22dded42e7ce11a4385bd50b05806bad6a174860ba03d503d"
+    },
+    {
       "name": "agent-final",
       "passed": true,
-      "logSha256": "e764991e4fa3d8a0730a30a19bfbac98f61a03a641cba561e1a2d1ecefa47723"
+      "logSha256": "f90aebf2770786af3e8328128aeadb32e9511577877b0ecc83492030aa8b1bce"
     },
     {
       "name": "server-final",
       "passed": true,
-      "logSha256": "fc56c6e6ea57f0641a384af7c8237505bbaf52d1ba5e1f4a7b04729c2a2d18a8"
+      "logSha256": "bf51ba9c2e68f8df18ba5552221c799fd33da1d1265c398855e4d1281316c24a"
     },
     {
       "name": "webtests-final",
       "passed": true,
-      "logSha256": "92d0e48166a1eb390b657b7f15d4fea1cbd920835272726fd0268f1b36f214c5"
+      "logSha256": "a131fccad9e067d47312f5b88b2aec50ab4305b312443e35c43a302401d59834"
     },
     {
       "name": "admin-final",
       "passed": true,
-      "logSha256": "5fbb7fb88404e5c03026d26b44b0745c643d97bfacad9b46f848621bce30614a"
+      "logSha256": "0a6fe1bf7b71a13bbd756f623aa00b1aa3118d4e48ca3bb55118440f43e8158d"
     },
     {
       "name": "cli-final",
       "passed": true,
-      "logSha256": "c80efd6f8cd4dff6c4515f304d68559f0781e85a142124cbed7e012f39e2168e"
+      "logSha256": "33d851e4117729626575edd3c018bf1fe40492ed913ffb24fef93ed0e2fae64c"
     },
     {
       "name": "core-final",
       "passed": true,
-      "logSha256": "59d4b11e21cd58869f5e6eef02207b580321a6959001f21bcfc5171bd48de6d7"
+      "logSha256": "8e4e449301b512fbbc70e7b872c54dab56b0d6b5a164c63d399032f52a117a05"
+    },
+    {
+      "name": "utils-final",
+      "passed": true,
+      "logSha256": "721ad0cb5bbeff2c70e4bfda7727260ddccee9c56a2e3fd147a9af623bde5aa1"
     },
     {
       "name": "types-final",
       "passed": true,
-      "logSha256": "de3e69986ae14aab393c226ebe9db773afa5cbec59cd9a6bb696135cc7792c41"
+      "logSha256": "08a2d13ed10739f2064b1b652d9f0d05b7e7ac6b37336390a97632e99b654bb5"
     },
     {
       "name": "lint-final",
       "passed": true,
-      "logSha256": "29e6ad17f1cc52ce0a484751b18a08bc17277898a9dc0853964ca6001bde3199"
+      "logSha256": "761d1c689fa4ce00bdfaf4def254cd8316d4b17e22fdc763867adccedb0e5349"
     },
     {
       "name": "audit-final",
@@ -60,539 +120,464 @@
     {
       "name": "agentbuild-final",
       "passed": true,
-      "logSha256": "c332fe29732e20670aa49ca55a888498d9e04370ac19f143a0a05d1c8e8b1b1f"
+      "logSha256": "95b13d661ab2073c14d8827918310db0acff1ee7219b142792aff4245e6f1b80"
     },
     {
       "name": "clibuild-final",
       "passed": true,
-      "logSha256": "4895bd3d4db004773ad64ab18a389c255bfd6d0fc5dee7f6fbb8a8e161a3931f"
+      "logSha256": "e6b297d935be2fac2c41a048c07400ea7108b2da1b76f71c69c03da8cae16290"
     },
     {
       "name": "webbuild-final",
       "passed": true,
-      "logSha256": "a085298c8e0fb4ec83e86d36daade236ee2e19eb547d1568cc5565823c4f5fc8"
-    },
-    {
-      "name": "adminbuild-final",
-      "passed": true,
-      "logSha256": "f0e00257c9eb1b0409bc2ddd6a1e1364728ea61c1a0bcf7220a3310e26e85dcf"
-    },
-    {
-      "name": "docsbuild-final",
-      "passed": true,
-      "logSha256": "f0aff1ae290d81dbfcdae7ff55826608ed5c8da5ba3d8062ab4b3a90208922cf"
+      "logSha256": "0f89ab7ab1fe5e70af3840198bf57418e92cd5914212e6b7a7f25641a9c8119e"
     },
     {
       "name": "bundle-final",
       "passed": true,
-      "logSha256": "a6ea4d9fff30fb1bc3a1f85bac55185219cab0ddb20e061a02842a0b1d2c9331"
+      "logSha256": "48aa899127fb70fc86ac30a695277b42bd06d62c5bd82657a42309efe17114e9"
+    },
+    {
+      "name": "adminbuild-final",
+      "passed": true,
+      "logSha256": "a74ff858396e23596278e5b8840b9e0a769b774a8542d88c29b6114f23193438"
+    },
+    {
+      "name": "docsbuild-final",
+      "passed": true,
+      "logSha256": "e03bafa60e3a74e2e4b267e2491124150f1b8e0b084a1966bb97305ba5d88393"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "b90cf05d7515cc54f266f355eda18f5372d6299fb7b5e4a0dcd3a35fdc12c0c6"
+      "logSha256": "534708bf533c2e6dc23399e5cd2348505063359f73e6a6d395ea1db39fb248a7"
     },
     {
       "name": "package-cli-acceptance.json",
       "passed": true,
-      "logSha256": "70b13022172eaf84b3ad86e8c4cb071f26e9cc606125a4f78bd2c9e4809b7ea2"
+      "logSha256": "93d38b84c17ad6846bad9cd5fec8c008fd354eb1ebfc2ee94b084720479ccd6e"
     },
     {
       "name": "linux-node-matrix-acceptance.json",
       "passed": true,
-      "logSha256": "973cad0768e649858b2a02cde8206c9b08f655bf22e412c90a78d0908e304b35"
+      "logSha256": "06131ac69760a5ce2d5082e457a0aab5fe5a7c9b3897325b3c42060475d4e567"
     },
     {
       "name": "installed-dependencies-18.20.8.json",
       "passed": true,
-      "logSha256": "ebc89b914be2b40c8abee410b9006e7217600a8ba30692f30997d60a936ff211"
+      "logSha256": "92d0b4a5b1d05288b3df3edd1e81b8c9cff081569442636134cc89bc5be54a7a"
     },
     {
       "name": "installed-dependencies-20.20.2.json",
       "passed": true,
-      "logSha256": "4f69e2de1c8819a09e620185a118d1e8d17bc09276dd6dd6770b6d6c287d9ce4"
+      "logSha256": "b8278990080e382f1b321dbbc8df31c5d0a4ffcb4cad04fca58699c0f2745807"
     },
     {
       "name": "installed-dependencies-22.22.1.json",
       "passed": true,
-      "logSha256": "18d28bbe6fdbd3a0d7320acfbd35d964db859f3cd13ade6ab92fb8159c0da64d"
-    },
-    {
-      "name": "final-review-acceptance.json",
-      "passed": true,
-      "logSha256": "54eb18698df78a3584fb90ae3f526192664a3c701865c9c16abf3360078dbb60"
-    },
-    {
-      "name": "binary-scope.json",
-      "passed": true,
-      "logSha256": "f7d4ecfae58f473c9ba31275ecdf2699b4218b6ee79b3b083a91359aa9c17c16"
-    },
-    {
-      "name": "sql-acceptance.json",
-      "passed": true,
-      "logSha256": "d170afa3bf7aee64a4d393c763186f28eff91e2fab39686a39b7aa70873d1a01"
-    },
-    {
-      "name": "sql-fresh-acceptance.json",
-      "passed": true,
-      "logSha256": "a0234cf4195b1b22b68e377e1b2e04c8e7643b00858c277115165cd4e7031da4"
-    },
-    {
-      "name": "checks-input-equivalence.json",
-      "passed": true,
-      "logSha256": "9c3c6008c77b45cc462833881abe27355b339d790dfe5c4f0dee6278064be01e"
-    },
-    {
-      "name": "sql-source-provenance.json",
-      "passed": true,
-      "logSha256": "2f457d91809085d8c34374cda4273ccc1e894a87e4ecc8e9749b20170b2da8c4"
-    },
-    {
-      "name": "servermigration-final",
-      "passed": true,
-      "logSha256": "67a20d79455ebf1c52cd39f3968f1559d48d4ab61351a34f071972a3e348dc64"
-    },
-    {
-      "name": "webtypedfixtures-final",
-      "passed": true,
-      "logSha256": "3727b1034c43e57d63b5bc28f00606593c281f27da2d69c7ee0b124f73e7d954"
-    },
-    {
-      "name": "claim-refusal-negative",
-      "passed": true,
-      "logSha256": "d11233fb1525071190e7b2893d65b345dba5ab8b3f6564facb4d4cc33fdd68cf"
-    },
-    {
-      "name": "claim-refusal-positive",
-      "passed": true,
-      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "logSha256": "b662d09ef1f9239194f6fcdd475f094fb3402ffb972f85d13c18159957156471"
     },
     {
       "name": "installed-native-ownership-18.20.8.json",
       "passed": true,
-      "logSha256": "2c28b5ee0deab829585b96fdffe9feda1e2cf6ad108e69fae6b31ca0287bf031"
+      "logSha256": "9ab23bae084a09c98a44e2f8f8080542a3a377882b252424260fa3db23cca4e0"
     },
     {
       "name": "installed-native-ownership-20.20.2.json",
       "passed": true,
-      "logSha256": "623a9b4ec31a1b00282d690dd2d4d1ea727a72f1b180b750b303ba2b3589d169"
+      "logSha256": "f9350b95a3485320f7f9d09289874a2403cbdf2c467c5de2892f38b8dd7e64cf"
     },
     {
       "name": "installed-native-ownership-22.22.1.json",
       "passed": true,
-      "logSha256": "a87cd7590edf6d88ca34272aa5ab18cda6467b00c7ba719a36571e95508a2d15"
+      "logSha256": "918167a3e5117a3c04b6bfb1b066bf73e76cbf4b2c3f5e92117699d663a288b3"
     },
     {
-      "name": "real-execve-acceptance.json",
+      "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "7eb9b8e3c47c2d7461caa5aef9facff304801459d45138a3db70f7201b9e463e"
+      "logSha256": "a72bbe9732d583bad56c991a7949c3ba01612ea7e46c742008fcc319a96a477c"
     },
     {
-      "name": "identical-binary-acceptance.json",
+      "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "0337e5a51c81fec16f10ecc50ab40625de883f922ecce8c31b4541b0f1407356"
+      "logSha256": "81d1479aad5e18d32f184b95795878c894269f024438747f9eb312057ba752ae"
     },
     {
-      "name": "successor-retention-negative",
+      "name": "sql-acceptance.json",
       "passed": true,
-      "logSha256": "72781737c9f638a1bb96cbe9317629a66715015bce348d618ec804ab1412c731"
+      "logSha256": "c2bc339538de9752bf15b93ed322bdc9d84ca013be53c3b2e7c490d67e7a58ba"
     },
     {
-      "name": "successor-retention-positive",
+      "name": "checks-input-equivalence.json",
       "passed": true,
-      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "logSha256": "0982169817c602e7748f8bd0eeefdcf24a1e051a3ee45d8f98a7cd42ffcc2ad8"
+    },
+    {
+      "name": "release-contracts",
+      "passed": true,
+      "logSha256": "597505ca8104a7328f6a18930b937470a3a7c189eb3cee773c0b247cc90a3bdb"
+    },
+    {
+      "name": "negative-tool-failure-baseline",
+      "passed": true,
+      "logSha256": "fa819e7e557149a7e3cfffd924054910bf9486617c13be690563723a3eb33f99"
+    },
+    {
+      "name": "negative-sql-baseline",
+      "passed": true,
+      "logSha256": "2a4225f3d0411c6db1f1874306821a24a8ad47253ca14e5e8c9363e96a6eeee9"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "f3b09f4c4e960550bbbf47f6a8369af3ce75de42cb533a1051e60a9d562f3373"
+      "logSha256": "598ed30c95480f9b5beb7a184bb1f8d771f5fcba4be195c065f7f744b5302143"
     }
   ],
   "buildScope": {
     "counts": {
-      "agent": 1243,
-      "server": 4314,
-      "webtests": 3926,
+      "agent": 1261,
+      "boundaries": 20,
+      "server": 4317,
+      "webtests": 3927,
+      "admin": 395,
       "cli": 102,
       "core": 117,
-      "admin": 395
+      "utils": 276
+    },
+    "validationRetries": [
+      {
+        "node": "18.20.8",
+        "kind": "agent",
+        "firstAttempt": "Codex model settings could not be verified during the concurrent smoke run.",
+        "firstLog": "node-matrix/7df2889b/18.20.8/agent/smoke.log",
+        "isolatedRetryPassed": true,
+        "sourceUnchanged": true,
+        "relatedFixtureStabilityIssue": "ENGIN-753",
+        "rootCauseNotEstablished": true
+      }
+    ],
+    "fixtureBudgetNotes": {
+      "fullWorkerSuite": [
+        "pnpm",
+        "--filter",
+        "@velocity/agent",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2",
+        "--testTimeout=15000"
+      ],
+      "isolatedDiscoveryUsesOriginalDefaultTimeout": true,
+      "productionDeadlinesUnchanged": true
     },
     "reusedChecksWithUnchangedInputs": [
       {
-        "check": "agentbuild",
-        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
-        "check": "agent",
-        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
         "check": "server",
-        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
         "changedPaths": [
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
+          "packages/agent/README.md",
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/__tests__/session-tool-failures.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
         ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
-        "check": "types",
-        "testedSourceSha": "7df8a0d4fef11d09f2769073d7e743d8079b1825",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
-        "check": "lint",
-        "testedSourceSha": "7df8a0d4fef11d09f2769073d7e743d8079b1825",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
-        "check": "audit",
-        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
       },
       {
         "check": "webtests",
-        "testedSourceSha": "be286006e43e0d607d24ddfab0b0eac124f94016",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
         "changedPaths": [
-          "apps/web/app/api/__tests__/native-continuation-policy.test.ts",
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "packages/agent/src/__tests__/claude-code-stream.test.ts",
-          "packages/graphql/src/integrations/__tests__/claude-cloud-agent-tools.test.ts",
-          "packages/graphql/src/resolvers/__tests__/notification-preference-recipients.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
+          "packages/agent/README.md",
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/__tests__/session-tool-failures.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
         ],
-        "reason": "All product JavaScript/TypeScript and unchanged test inputs are identical; the changed typed Web fixtures also passed on the current head. SQL has independent fresh/upgrade/race checks."
-      },
-      {
-        "check": "webbuild",
-        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
-        "check": "bundle",
-        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
-        "check": "cli",
-        "testedSourceSha": "be286006e43e0d607d24ddfab0b0eac124f94016",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "apps/web/app/api/__tests__/native-continuation-policy.test.ts",
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "packages/agent/src/__tests__/claude-code-stream.test.ts",
-          "packages/graphql/src/integrations/__tests__/claude-cloud-agent-tools.test.ts",
-          "packages/graphql/src/resolvers/__tests__/notification-preference-recipients.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
-        "check": "core",
-        "testedSourceSha": "be286006e43e0d607d24ddfab0b0eac124f94016",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "apps/web/app/api/__tests__/native-continuation-policy.test.ts",
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "packages/agent/src/__tests__/claude-code-stream.test.ts",
-          "packages/graphql/src/integrations/__tests__/claude-cloud-agent-tools.test.ts",
-          "packages/graphql/src/resolvers/__tests__/notification-preference-recipients.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
-        "check": "clibuild",
-        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
       },
       {
         "check": "admin",
-        "testedSourceSha": "be286006e43e0d607d24ddfab0b0eac124f94016",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
         "changedPaths": [
-          "apps/web/app/api/__tests__/native-continuation-policy.test.ts",
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "packages/agent/src/__tests__/claude-code-stream.test.ts",
-          "packages/graphql/src/integrations/__tests__/claude-cloud-agent-tools.test.ts",
-          "packages/graphql/src/resolvers/__tests__/notification-preference-recipients.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
+          "packages/agent/README.md",
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/__tests__/session-tool-failures.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
         ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+      },
+      {
+        "check": "cli",
+        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
+        "changedPaths": [
+          "packages/agent/README.md",
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/__tests__/session-tool-failures.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
+        ],
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+      },
+      {
+        "check": "core",
+        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
+        "changedPaths": [
+          "packages/agent/README.md",
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/__tests__/session-tool-failures.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
+        ],
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+      },
+      {
+        "check": "utils",
+        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
+        "changedPaths": [
+          "packages/agent/README.md",
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/__tests__/session-tool-failures.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
+        ],
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+      },
+      {
+        "check": "types",
+        "testedSourceSha": "dc8f78e390e8a3e19f00cef9cc4eeba5e7039019",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
+        "changedPaths": [
+          "packages/agent/README.md",
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
+        ],
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+      },
+      {
+        "check": "lint",
+        "testedSourceSha": "dff5b8fa6fdec531e39532bf0bd7f3d543d679d3",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
+        "changedPaths": [
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
+        ],
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+      },
+      {
+        "check": "audit",
+        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
+        "changedPaths": [
+          "packages/agent/README.md",
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/__tests__/session-tool-failures.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
+        ],
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+      },
+      {
+        "check": "clibuild",
+        "testedSourceSha": "dff5b8fa6fdec531e39532bf0bd7f3d543d679d3",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
+        "changedPaths": [
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
+        ],
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+      },
+      {
+        "check": "webbuild",
+        "testedSourceSha": "dff5b8fa6fdec531e39532bf0bd7f3d543d679d3",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
+        "changedPaths": [
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/muse.ts",
+          "packages/agent/src/native-acp.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
+        ],
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+      },
+      {
+        "check": "bundle",
+        "testedSourceSha": "bdb74e9f475965fcb3291cfbcfecac257c4dceba",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
+        "changedPaths": [
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
+        ],
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
       },
       {
         "check": "adminbuild",
-        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "testedSourceSha": "bdb74e9f475965fcb3291cfbcfecac257c4dceba",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
         "changedPaths": [
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
         ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
       },
       {
         "check": "docsbuild",
-        "testedSourceSha": "bc24bf689d818a803a1d15f274c70040d0c6341d",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
+        "testedSourceSha": "bdb74e9f475965fcb3291cfbcfecac257c4dceba",
+        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
         "changedPaths": [
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
+          "packages/agent/src/__tests__/antigravity.test.ts",
+          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
+          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
+          "packages/agent/src/__tests__/muse.test.ts",
+          "packages/agent/src/__tests__/native-acp.test.ts",
+          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
+          "packages/agent/src/__tests__/progress.test.ts",
+          "packages/agent/src/antigravity.ts",
+          "packages/agent/src/native-mcp-bridge.ts",
+          "packages/agent/src/output.ts"
         ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
-        "check": "webtypedfixtures",
-        "testedSourceSha": "7df8a0d4fef11d09f2769073d7e743d8079b1825",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Only test fixtures and the independently replayed continuation SQL changed; this package and all its product JavaScript/TypeScript inputs are identical."
-      },
-      {
-        "check": "agent clean package installation",
-        "kind": "agent",
-        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "archiveSha256": "01a273bb5715d659751fdbed8a14fc017f7cdd0066f9ed387f3d0d445c239399",
-        "repackedFromCurrentCandidate": true,
-        "byteIdentical": true,
-        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
-      },
-      {
-        "check": "cli clean package installation",
-        "kind": "cli",
-        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "archiveSha256": "03c336f21fbe8e11891d72ee3b0335638a3983d82ec918428bdae607ee584559",
-        "repackedFromCurrentCandidate": true,
-        "byteIdentical": true,
-        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
-      },
-      {
-        "check": "Linux clean install matrix",
-        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "archiveByteIdentity": true,
-        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
-      },
-      {
-        "check": "installed SDK contracts 18.20.8",
-        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "archiveByteIdentity": true,
-        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
-      },
-      {
-        "check": "installed native process ownership 18.20.8",
-        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "archiveByteIdentity": true,
-        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
-      },
-      {
-        "check": "installed SDK contracts 20.20.2",
-        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "archiveByteIdentity": true,
-        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
-      },
-      {
-        "check": "installed native process ownership 20.20.2",
-        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "archiveByteIdentity": true,
-        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
-      },
-      {
-        "check": "installed SDK contracts 22.22.1",
-        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "archiveByteIdentity": true,
-        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
-      },
-      {
-        "check": "installed native process ownership 22.22.1",
-        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "archiveByteIdentity": true,
-        "reason": "Only continuation SQL changed; compiled binary inputs and exact pretested archive bytes are unchanged."
-      },
-      {
-        "check": "Chromium guest editing/revocation",
-        "testedSourceSha": "be286006e43e0d607d24ddfab0b0eac124f94016",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "apps/web/app/api/__tests__/native-continuation-policy.test.ts",
-          "apps/web/app/api/__tests__/worker-operations.test.ts",
-          "packages/agent/src/__tests__/claude-code-stream.test.ts",
-          "packages/graphql/src/integrations/__tests__/claude-cloud-agent-tools.test.ts",
-          "packages/graphql/src/resolvers/__tests__/notification-preference-recipients.test.ts",
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "All browser harness, product, permission and browser test inputs are unchanged."
-      },
-      {
-        "check": "real execve",
-        "testedSourceSha": "680b107603b07f974758089e7e4df3553ebe6d7f",
-        "currentSourceSha": "33f6c3717d157424568c3a36331568b2938a8bf6",
-        "changedPaths": [
-          "supabase/checks/native-continuations.sql",
-          "supabase/migrations/20261102143000_native_continuations.sql"
-        ],
-        "reason": "Installed worker process-replacement runtime inputs are unchanged."
+        "originalCheckProvenanceRetained": true,
+        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
       }
     ],
     "binaryTargets": [
-      {
-        "name": "velocity-agent",
-        "inputs": [
-          "packages/agent/package.json",
-          "packages/agent/scripts/pack-release.mjs",
-          "packages/agent/src/claude-code.ts",
-          "packages/agent/src/codex.ts",
-          "packages/agent/src/delivery-config.ts",
-          "packages/agent/src/delivery-controller.ts",
-          "packages/agent/src/delivery-validation.ts",
-          "packages/agent/src/delivery-workflow.ts",
-          "packages/agent/src/deployment-coverage.ts",
-          "packages/agent/src/deployment-targets.ts",
-          "packages/agent/src/host-operations.ts",
-          "packages/agent/src/index.ts",
-          "packages/agent/src/interruption.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-checkpoint.ts",
-          "packages/agent/src/native-continuation-contract.ts",
-          "packages/agent/src/native-json-lines.ts",
-          "packages/agent/src/native-process.ts",
-          "packages/agent/src/native-rpc.ts",
-          "packages/agent/src/native-turn.ts",
-          "packages/agent/src/online-worker.ts",
-          "packages/agent/src/runner.ts",
-          "packages/agent/src/session/checkpoint.ts",
-          "packages/agent/src/session/claude-agent-sdk.ts",
-          "packages/agent/src/session/client.ts",
-          "packages/agent/src/session/codex-app-server.ts",
-          "packages/agent/src/session/execution.ts",
-          "packages/agent/src/session/supervisor.ts",
-          "packages/agent/src/session/types.ts",
-          "packages/agent/src/task-checkout.ts",
-          "packages/agent/src/validation-output.ts",
-          "packages/cli-core/package.json",
-          "packages/cli-core/src/deployment-targets.ts",
-          "packages/cli-core/src/host-workflow.ts",
-          "packages/cli-core/src/native-continuation.ts"
-        ]
-      },
-      {
-        "name": "velocity-cli",
-        "inputs": [
-          "packages/cli-core/package.json",
-          "packages/cli-core/src/deployment-targets.ts",
-          "packages/cli-core/src/host-workflow.ts",
-          "packages/cli-core/src/native-continuation.ts",
-          "packages/cli/package.json",
-          "packages/cli/src/coverage.generated.ts",
-          "packages/cli/src/rest.ts",
-          "packages/cli/src/schema.generated.ts"
-        ]
-      }
+      "velocity-agent",
+      "velocity-cli"
     ],
     "installationMatrix": {
       "agent": [
