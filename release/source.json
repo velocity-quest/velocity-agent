@@ -1,10 +1,11 @@
 {
-  "version": "0.5.59",
-  "sourceSha": "e94cc00438d952ebb1f04cbc53e3a71433e34b36",
-  "sha256": "fc3fd9d54c473b8fbf7760d68f19f12e6ac3aac3338685c5706e84e7b0506cee",
+  "dependencyTreeSha256": "c8853753161a063ee74544c8d752a8158b0aada772e76213c80d2659928eabcf",
+  "version": "0.5.60",
+  "sourceSha": "6295677a9bbbb52186e8a7d93290a89fbeac6450",
+  "sha256": "77e35e7bcb8e2f9180079cc0cc0cf1501b8139c9ba638f1c5df48a558b76ebb2",
   "localVerification": {
-    "approvalId": "f7ce443b-19b9-40a8-b81a-1d43f870e989",
-    "treeSha": "788628d40f513ad8169ae24d35419383c97e4e36",
-    "manifestSha256": "407596e2335a61b55fec5a424d2956d42721a0c20efb57c4edd1d3077d2b7519"
+    "approvalId": "308cdd5e-5f8d-49a0-ab06-577017f6bc6a",
+    "treeSha": "3c0f0306917de3c158eabdd74b93e7d3453fdd07",
+    "manifestSha256": "a19e8bbcf858afacfaf549587e149b34def9d15687cdae5c652c24ef10d4b2e5"
   }
 }

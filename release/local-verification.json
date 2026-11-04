@@ -1,11 +1,12 @@
 {
+  "dependencyTreeSha256": "c8853753161a063ee74544c8d752a8158b0aada772e76213c80d2659928eabcf",
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.59",
-  "sourceSha": "e94cc00438d952ebb1f04cbc53e3a71433e34b36",
-  "treeSha": "788628d40f513ad8169ae24d35419383c97e4e36",
-  "archiveSha256": "fc3fd9d54c473b8fbf7760d68f19f12e6ac3aac3338685c5706e84e7b0506cee",
-  "completedAt": "2026-11-04T03:47:20.813Z",
+  "version": "0.5.60",
+  "sourceSha": "6295677a9bbbb52186e8a7d93290a89fbeac6450",
+  "treeSha": "3c0f0306917de3c158eabdd74b93e7d3453fdd07",
+  "archiveSha256": "77e35e7bcb8e2f9180079cc0cc0cf1501b8139c9ba638f1c5df48a558b76ebb2",
+  "completedAt": "2026-11-04T08:37:24.431Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -15,564 +16,152 @@
     {
       "name": "local-waiver-final.json",
       "passed": true,
-      "logSha256": "4bcd4865ebdbd415fd3070688e329f223ec73da3cb62140bd34d0269610bdeab"
+      "logSha256": "cef502bf7b73bdeca0c28556f601e21446608018e308cafbd2c3a2a9ffe6bd59"
     },
     {
-      "name": "agent-check.json",
+      "name": "local-acceptance.json",
       "passed": true,
-      "logSha256": "7a9ecc991d3d472ee93aaca773b2db1577e9cfc574680e84d9532eef300a5b33"
-    },
-    {
-      "name": "server-check.json",
-      "passed": true,
-      "logSha256": "1aa822bd852b877099f4168178e0340b6e40c3ec1a2a3e1971a6c74bce42cc43"
-    },
-    {
-      "name": "webtests-check.json",
-      "passed": true,
-      "logSha256": "95285c518222b4380b262d6f46c1aa8d44a42a9f98c20542277e8cfc83858e16"
-    },
-    {
-      "name": "types-check.json",
-      "passed": true,
-      "logSha256": "1966ae436b3e46f0e4760c714fd68e5b4a2835afab5f9d91c93132658a843f3c"
-    },
-    {
-      "name": "agenttypes-final",
-      "passed": true,
-      "logSha256": "ca6ed2f64bb7745ed342d014e3c297b335adc181003db4bba0e878cced8bedef"
-    },
-    {
-      "name": "boundaries-final",
-      "passed": true,
-      "logSha256": "b468f231dd018be58095c7d313ed198bc7305435cffd780852d10431da164ed4"
-    },
-    {
-      "name": "webcontract-final",
-      "passed": true,
-      "logSha256": "45f11dcae95fc595cdd3872bc50a6153de510519da49877ab09dbc1588a635c8"
-    },
-    {
-      "name": "runtime-discovery-isolated",
-      "passed": true,
-      "logSha256": "69fb8a78c809577b5c000f7b82c39e17c258a320dc223af674f23038f6c91501"
-    },
-    {
-      "name": "duplicate-notice-negative",
-      "passed": true,
-      "logSha256": "37c50ec7c51cf8ece4ca8fa1f2c9d262056436efef65e1a4cd6e50539f729e1e"
-    },
-    {
-      "name": "duplicate-notice-positive",
-      "passed": true,
-      "logSha256": "ad191e173efc28a22dded42e7ce11a4385bd50b05806bad6a174860ba03d503d"
-    },
-    {
-      "name": "agent-final",
-      "passed": true,
-      "logSha256": "f90aebf2770786af3e8328128aeadb32e9511577877b0ecc83492030aa8b1bce"
-    },
-    {
-      "name": "server-final",
-      "passed": true,
-      "logSha256": "bf51ba9c2e68f8df18ba5552221c799fd33da1d1265c398855e4d1281316c24a"
-    },
-    {
-      "name": "webtests-final",
-      "passed": true,
-      "logSha256": "a131fccad9e067d47312f5b88b2aec50ab4305b312443e35c43a302401d59834"
-    },
-    {
-      "name": "admin-final",
-      "passed": true,
-      "logSha256": "0a6fe1bf7b71a13bbd756f623aa00b1aa3118d4e48ca3bb55118440f43e8158d"
-    },
-    {
-      "name": "cli-final",
-      "passed": true,
-      "logSha256": "33d851e4117729626575edd3c018bf1fe40492ed913ffb24fef93ed0e2fae64c"
-    },
-    {
-      "name": "core-final",
-      "passed": true,
-      "logSha256": "8e4e449301b512fbbc70e7b872c54dab56b0d6b5a164c63d399032f52a117a05"
-    },
-    {
-      "name": "utils-final",
-      "passed": true,
-      "logSha256": "721ad0cb5bbeff2c70e4bfda7727260ddccee9c56a2e3fd147a9af623bde5aa1"
-    },
-    {
-      "name": "types-final",
-      "passed": true,
-      "logSha256": "08a2d13ed10739f2064b1b652d9f0d05b7e7ac6b37336390a97632e99b654bb5"
-    },
-    {
-      "name": "lint-final",
-      "passed": true,
-      "logSha256": "761d1c689fa4ce00bdfaf4def254cd8316d4b17e22fdc763867adccedb0e5349"
-    },
-    {
-      "name": "audit-final",
-      "passed": true,
-      "logSha256": "4d512afa467a972e3a8fb6fe774fdddaba50d6a03f67e3690d59a2a6cd552a5c"
-    },
-    {
-      "name": "agentbuild-final",
-      "passed": true,
-      "logSha256": "95b13d661ab2073c14d8827918310db0acff1ee7219b142792aff4245e6f1b80"
-    },
-    {
-      "name": "clibuild-final",
-      "passed": true,
-      "logSha256": "e6b297d935be2fac2c41a048c07400ea7108b2da1b76f71c69c03da8cae16290"
-    },
-    {
-      "name": "webbuild-final",
-      "passed": true,
-      "logSha256": "0f89ab7ab1fe5e70af3840198bf57418e92cd5914212e6b7a7f25641a9c8119e"
-    },
-    {
-      "name": "bundle-final",
-      "passed": true,
-      "logSha256": "48aa899127fb70fc86ac30a695277b42bd06d62c5bd82657a42309efe17114e9"
-    },
-    {
-      "name": "adminbuild-final",
-      "passed": true,
-      "logSha256": "a74ff858396e23596278e5b8840b9e0a769b774a8542d88c29b6114f23193438"
-    },
-    {
-      "name": "docsbuild-final",
-      "passed": true,
-      "logSha256": "e03bafa60e3a74e2e4b267e2491124150f1b8e0b084a1966bb97305ba5d88393"
-    },
-    {
-      "name": "package-agent-acceptance.json",
-      "passed": true,
-      "logSha256": "534708bf533c2e6dc23399e5cd2348505063359f73e6a6d395ea1db39fb248a7"
-    },
-    {
-      "name": "package-cli-acceptance.json",
-      "passed": true,
-      "logSha256": "93d38b84c17ad6846bad9cd5fec8c008fd354eb1ebfc2ee94b084720479ccd6e"
-    },
-    {
-      "name": "linux-node-matrix-acceptance.json",
-      "passed": true,
-      "logSha256": "06131ac69760a5ce2d5082e457a0aab5fe5a7c9b3897325b3c42060475d4e567"
-    },
-    {
-      "name": "installed-dependencies-18.20.8.json",
-      "passed": true,
-      "logSha256": "92d0b4a5b1d05288b3df3edd1e81b8c9cff081569442636134cc89bc5be54a7a"
-    },
-    {
-      "name": "installed-dependencies-20.20.2.json",
-      "passed": true,
-      "logSha256": "b8278990080e382f1b321dbbc8df31c5d0a4ffcb4cad04fca58699c0f2745807"
-    },
-    {
-      "name": "installed-dependencies-22.22.1.json",
-      "passed": true,
-      "logSha256": "b662d09ef1f9239194f6fcdd475f094fb3402ffb972f85d13c18159957156471"
-    },
-    {
-      "name": "installed-native-ownership-18.20.8.json",
-      "passed": true,
-      "logSha256": "9ab23bae084a09c98a44e2f8f8080542a3a377882b252424260fa3db23cca4e0"
-    },
-    {
-      "name": "installed-native-ownership-20.20.2.json",
-      "passed": true,
-      "logSha256": "f9350b95a3485320f7f9d09289874a2403cbdf2c467c5de2892f38b8dd7e64cf"
-    },
-    {
-      "name": "installed-native-ownership-22.22.1.json",
-      "passed": true,
-      "logSha256": "918167a3e5117a3c04b6bfb1b066bf73e76cbf4b2c3f5e92117699d663a288b3"
+      "logSha256": "cef502bf7b73bdeca0c28556f601e21446608018e308cafbd2c3a2a9ffe6bd59"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "a72bbe9732d583bad56c991a7949c3ba01612ea7e46c742008fcc319a96a477c"
+      "logSha256": "5eaf521398152e8d32541b5012fb25415f2b621970742a0088de0ca440e4a97c"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "81d1479aad5e18d32f184b95795878c894269f024438747f9eb312057ba752ae"
+      "logSha256": "45823938920bf4301fb35389c0c515d3376887ff7a8e9320b79d51be61d95d68"
     },
     {
       "name": "sql-acceptance.json",
       "passed": true,
-      "logSha256": "c2bc339538de9752bf15b93ed322bdc9d84ca013be53c3b2e7c490d67e7a58ba"
+      "logSha256": "78064057632042e8df63ca7bffa5476e9f90b2a8a0ec697037847105fc9c1ff5"
     },
     {
-      "name": "checks-input-equivalence.json",
+      "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "0982169817c602e7748f8bd0eeefdcf24a1e051a3ee45d8f98a7cd42ffcc2ad8"
+      "logSha256": "ef8af31aa6233782d661f0295745e11c5336fd9866839d9d9c2119bfec155be1"
     },
     {
-      "name": "release-contracts",
+      "name": "package-cli-acceptance.json",
       "passed": true,
-      "logSha256": "597505ca8104a7328f6a18930b937470a3a7c189eb3cee773c0b247cc90a3bdb"
+      "logSha256": "775ea43de0f97ffc05310bed3b7620c0ec021101e1ff2d6287ffa60af6849b26"
     },
     {
-      "name": "negative-tool-failure-baseline",
+      "name": "linux-node-matrix-acceptance.json",
       "passed": true,
-      "logSha256": "fa819e7e557149a7e3cfffd924054910bf9486617c13be690563723a3eb33f99"
+      "logSha256": "96fe38cc970aa6f2f5bee36aa1befd79f94b7e1f94d2eb57d6682e2c43c43a8c"
     },
     {
-      "name": "negative-sql-baseline",
+      "name": "dependency-closure-acceptance.json",
       "passed": true,
-      "logSha256": "2a4225f3d0411c6db1f1874306821a24a8ad47253ca14e5e8c9363e96a6eeee9"
+      "logSha256": "e7ffcd126cbf0fe915ef613d3f24926ce85b104d45429bf22562726ae567db7c"
+    },
+    {
+      "name": "layouts-acceptance.json",
+      "passed": true,
+      "logSha256": "a7605ee59c57e6c097306168308fbbac0cf4e0a71638b43bcd96855d7c86063d"
+    },
+    {
+      "name": "preservation-premerge.json",
+      "passed": true,
+      "logSha256": "5ace0a3cdc0255d26ff6104fdc4fd2fc3b099acd78c42315a5dd7e650faa8886"
+    },
+    {
+      "name": "ci-waiver-proof.json",
+      "passed": true,
+      "logSha256": "6211453ce1b4e82b4f2e1d50a8d4ee460a9d0b7ffb23e20996ffd2150c114245"
+    },
+    {
+      "name": "749-race",
+      "passed": true,
+      "logSha256": "de3b5f6c1e391489212038df8284102d81cf733915de839b1652435db7c66a63"
+    },
+    {
+      "name": "754-final-race",
+      "passed": true,
+      "logSha256": "4b2242808e0d0d685567073f33ba0aac9dd6770956c06819ee7bb466e6f981bc"
+    },
+    {
+      "name": "756-concurrent-proof-third",
+      "passed": true,
+      "logSha256": "7a3475661e03a5916526d33ac04e203546de4740b751509ec520afbd07e1c22b"
+    },
+    {
+      "name": "427-existing-races",
+      "passed": true,
+      "logSha256": "0effde83b043d64dcfc4ac8445f2b1ed6e784ad5f8c5a59c1019f541c1909125"
+    },
+    {
+      "name": "427-status-race",
+      "passed": true,
+      "logSha256": "072ca6b3b718e36a0d2cc274a7b8e4a70302308e60504a412e7830a6fb477ee2"
+    },
+    {
+      "name": "Expected failure on the old behavior: 693-release-tree-negative",
+      "passed": true,
+      "logSha256": "b1eafce13bfe63a75f83a183cd19dc08700541ddd9f6ddb69d26d97e288cc928"
+    },
+    {
+      "name": "693-release-tree-positive",
+      "passed": true,
+      "logSha256": "edf40eaa9694536b0a685facb9fd8cd6e658784acedc6b8dc41b7e3e5cf610eb"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "598ed30c95480f9b5beb7a184bb1f8d771f5fcba4be195c065f7f744b5302143"
+      "logSha256": "66a984f551308d1603c0fe2163382277b96f0d74e2c6bb20e7c47a7f2f9187e5"
     }
   ],
   "buildScope": {
     "counts": {
-      "agent": 1261,
-      "boundaries": 20,
-      "server": 4317,
-      "webtests": 3927,
+      "agent": 1360,
+      "server": 4388,
+      "web": 3991,
       "admin": 395,
-      "cli": 102,
+      "cli": 108,
       "core": 117,
       "utils": 276
-    },
-    "validationRetries": [
-      {
-        "node": "18.20.8",
-        "kind": "agent",
-        "firstAttempt": "Codex model settings could not be verified during the concurrent smoke run.",
-        "firstLog": "node-matrix/7df2889b/18.20.8/agent/smoke.log",
-        "isolatedRetryPassed": true,
-        "sourceUnchanged": true,
-        "relatedFixtureStabilityIssue": "ENGIN-753",
-        "rootCauseNotEstablished": true
-      }
-    ],
-    "fixtureBudgetNotes": {
-      "fullWorkerSuite": [
-        "pnpm",
-        "--filter",
-        "@velocity/agent",
-        "exec",
-        "vitest",
-        "run",
-        "--maxWorkers=2",
-        "--testTimeout=15000"
-      ],
-      "isolatedDiscoveryUsesOriginalDefaultTimeout": true,
-      "productionDeadlinesUnchanged": true
     },
     "reusedChecksWithUnchangedInputs": [
       {
         "check": "server",
-        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/README.md",
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/__tests__/session-tool-failures.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
+        "testedSource": "c6428e7c302c4593bcf62a21eca665cc41586763",
+        "currentSource": "6b03b8e60ca594b2dc779d8416cb13410eee798d",
+        "unchangedPaths": [
+          "packages/graphql",
+          "packages/ai",
+          "packages/auth",
+          "packages/db",
+          "packages/email",
+          "packages/types",
+          "packages/utils",
+          "packages/cli-core",
+          "package.json",
+          "pnpm-lock.yaml"
         ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "webtests",
-        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/README.md",
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/__tests__/session-tool-failures.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+        "originalReceiptRetained": true
       },
       {
         "check": "admin",
-        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/README.md",
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/__tests__/session-tool-failures.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
+        "testedSource": "c6428e7c302c4593bcf62a21eca665cc41586763",
+        "currentSource": "6b03b8e60ca594b2dc779d8416cb13410eee798d",
+        "unchangedPaths": [
+          "apps/admin",
+          "packages/graphql",
+          "packages/ai",
+          "packages/auth",
+          "packages/db",
+          "packages/email",
+          "packages/types",
+          "packages/utils",
+          "packages/cli-core",
+          "packages/ui",
+          "package.json",
+          "pnpm-lock.yaml"
         ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "cli",
-        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/README.md",
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/__tests__/session-tool-failures.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "core",
-        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/README.md",
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/__tests__/session-tool-failures.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "utils",
-        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/README.md",
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/__tests__/session-tool-failures.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "types",
-        "testedSourceSha": "dc8f78e390e8a3e19f00cef9cc4eeba5e7039019",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/README.md",
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "lint",
-        "testedSourceSha": "dff5b8fa6fdec531e39532bf0bd7f3d543d679d3",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "audit",
-        "testedSourceSha": "df9e8056a24530d5cc6568a268fe2bb25f5dde71",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/README.md",
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/__tests__/session-tool-failures.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "clibuild",
-        "testedSourceSha": "dff5b8fa6fdec531e39532bf0bd7f3d543d679d3",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "webbuild",
-        "testedSourceSha": "dff5b8fa6fdec531e39532bf0bd7f3d543d679d3",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/muse.ts",
-          "packages/agent/src/native-acp.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "bundle",
-        "testedSourceSha": "bdb74e9f475965fcb3291cfbcfecac257c4dceba",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "adminbuild",
-        "testedSourceSha": "bdb74e9f475965fcb3291cfbcfecac257c4dceba",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
-      },
-      {
-        "check": "docsbuild",
-        "testedSourceSha": "bdb74e9f475965fcb3291cfbcfecac257c4dceba",
-        "currentSourceSha": "7df2889b636124079910619eb83caba66366f506",
-        "changedPaths": [
-          "packages/agent/src/__tests__/antigravity.test.ts",
-          "packages/agent/src/__tests__/fixtures/muse-msp.cjs",
-          "packages/agent/src/__tests__/fixtures/native-acp.cjs",
-          "packages/agent/src/__tests__/muse.test.ts",
-          "packages/agent/src/__tests__/native-acp.test.ts",
-          "packages/agent/src/__tests__/native-mcp-bridge.test.ts",
-          "packages/agent/src/__tests__/progress.test.ts",
-          "packages/agent/src/antigravity.ts",
-          "packages/agent/src/native-mcp-bridge.ts",
-          "packages/agent/src/output.ts"
-        ],
-        "originalCheckProvenanceRetained": true,
-        "reason": "Application, schema, utility and CLI inputs are unchanged. Only private worker adapters/logger, their fixtures and worker documentation changed; current full worker tests, agent type checks, installed package acceptance and the Web/worker MCP contract suite cover those inputs. Application builds do not import the changed worker internals. The original source-change-guard receipt is retained even when its exit was zero."
+        "originalReceiptRetained": true
       }
     ],
     "binaryTargets": [
@@ -598,6 +187,7 @@
     "githubCiWaivedByOwner": true
   },
   "limitations": [
+    "Earlier concurrent fixture/smoke deadline failures remain in private source evidence; final sequential checks passed without changing deadlines.",
     "GitHub Actions did not run because the account is out of budget.",
     "Linux x64 worker clean installs/runtime checks on Node18.20.8/20.20.2/22.22.1 and management CLI on Node20.20.2/22.22.1; macOS/Windows were not tested.",
     "Installed fixtures cover real SDK stream/resume/wire contracts, imports, CLI parsers and the full package smoke scenarios. Paid inference, live billing requests and real paid provider provisioning were not performed."

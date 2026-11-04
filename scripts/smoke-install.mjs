@@ -14,6 +14,14 @@ const binary = resolve(prefix, 'node_modules/velocity-agent/dist/index.js');
 const manifest = JSON.parse(await readFile(resolve(prefix, 'node_modules/velocity-agent/package.json'), 'utf8'));
 assert.equal(manifest.version, version);
 assert.equal(manifest.private, false);
+// ENGIN-693: verify installed portable bytes, resolution edges and the exact
+// npm-integrity record for this host's optional runtime packages.
+const packageDir = resolve(prefix, 'node_modules/velocity-agent');
+const { verifyDependencyTree } = await import(pathToFileURL(resolve(packageDir, 'scripts/verify-dependency-tree.mjs')).href);
+const expectedTree = process.argv[4];
+if (expectedTree !== undefined) assert.match(expectedTree, /^[a-f0-9]{64}$/);
+const verifiedTree = await verifyDependencyTree(packageDir, { digest: expectedTree, exclusive: true, requireIntegrity: true });
+console.log(`Reviewed dependency tree: ${verifiedTree.digest}; ${verifiedTree.packages} portable packages.`);
 // Load every literal local lazy command from the actual installed entry point.
 // Startup/help alone cannot catch an unpublished workspace-only dependency.
 const entry = await readFile(binary, 'utf8');
@@ -26,6 +34,9 @@ for (const module of modules) {
 assert.ok((await readFile(resolve(prefix, 'node_modules/velocity-agent/README.md'), 'utf8'))
   .includes(`npm install --global https://github.com/velocity-quest/velocity-agent/releases/download/agent-v${version}/velocity-agent-${version}.tgz`),
   'Installed README must document this immutable package version');
+const skill = await readFile(resolve(prefix, 'node_modules/velocity-agent/skills/velocity-loop/SKILL.md'), 'utf8');
+assert.match(skill, /^---\nname: velocity-loop\ndescription: .+\n---\n/, 'The packaged loop skill needs host-discoverable metadata');
+assert.match(skill, /velocity-agent loop --once/, 'The packaged loop skill must invoke the installed loop engine');
 const config = join(prefix, 'smoke-config');
 const file = join(config, 'velocity', 'credentials.json');
 const code = 'a'.repeat(64);
@@ -252,6 +263,7 @@ try {
   await run(['hosted-worker', '--base-url', url, '--worker-archive', guestPath, '--worker-sha256', createHash('sha256').update(guest).digest('hex'), '--worker-version', version, '--once'], { hosted: true });
   assert.equal(hostedCalls, 2, 'The installed daemon must recover/claim without contacting a provider when no job exists');
   assert.match(await run(['run', '--help']), /--executor/);
+  assert.match(await run(['loop', '--help']), /--watch[\s\S]*--resume/);
   assert.match(await run(['run', '--help']), /--verbosity/);
   assert.match(await run(['login', '--help']), /--no-browser/);
   assert.match(await run(['run', '--help']), /--agent/);
@@ -287,11 +299,6 @@ try {
   await run(['status', '--workspace', 'second-workspace', '--base-url', url], {key:'vel_mcp_smoke_only'});
   await run(['run', '--once', '--executor', 'claude-code', '--workspace', '00000000-0000-4000-8000-000000000002', '--repo', prefix, '--team', 'TEST', '--base-url', url], {key:'vel_mcp_smoke_only'});
   assert.equal(calls,3);
-  const catalog = JSON.parse(await run(['codex', 'models', '--repo', prefix]));
-  assert.equal(catalog.entitlementVerified, false);
-  assert.ok(catalog.models.length > 0 && catalog.models.every(model => model.supportedEfforts.length > 0));
-  assert.deepEqual(Object.keys(catalog).sort(), ['configuredEffort', 'configuredModel', 'configuredModelListed', 'entitlementVerified', 'models']);
-  assert.equal(calls,3, 'Local catalog must never call Velocity');
   const repository = join(prefix, 'smoke-native-repo'); await mkdir(repository);
   const git = args => execFileSync('git', ['-C', repository, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
   git(['init']); git(['config', 'user.name', 'Smoke']); git(['config', 'user.email', 'smoke@example.test']);
@@ -312,6 +319,14 @@ else {require('node:assert/strict').ok(args.includes('--cd'));process.chdir(args
  for(const e of [{type:'thread.started',thread_id:'owned-thread'},{type:'turn.started'},{type:'item.completed',item:{id:'owned-message',type:'agent_message',text:'Owned Codex result'}},{type:'turn.completed',usage:{input_tokens:10,cached_input_tokens:3,cache_write_input_tokens:2,output_tokens:4,reasoning_output_tokens:1}},{type:'turn.started'},{type:'turn.completed',usage:{input_tokens:1,cached_input_tokens:3,cache_write_input_tokens:0,output_tokens:4,reasoning_output_tokens:5}}])console.log(JSON.stringify(e));
 });}
 `);await chmod(codex,0o700);nativePending=true;
+  // Clean-install smoke must use its own deterministic peer, not the host’s
+  // signed-in Codex runtime or current provider health (ENGIN-753).
+  const catalog = JSON.parse(await run(['codex', 'models', '--repo', prefix], { codex }));
+  assert.equal(catalog.entitlementVerified, false);
+  assert.ok(catalog.models.length > 0 && catalog.models.every(model => model.supportedEfforts.length > 0));
+  assert.deepEqual(Object.keys(catalog).sort(), ['configuredEffort', 'configuredModel', 'configuredModelListed', 'entitlementVerified', 'models']);
+  assert.equal(calls,3, 'Local catalog must never call Velocity');
+
   workerCommand='start';
   const before = git(['rev-parse', 'HEAD']); nativePending = true;
   workflowRejected=true;
