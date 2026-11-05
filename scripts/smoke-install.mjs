@@ -309,6 +309,7 @@ try {
 const fs=require('node:fs');const args=process.argv.slice(2);
 if(args.includes('--version'))console.log('codex-cli 0.160.0');
 else if(args[0]==='login'&&args[1]==='status')console.log('Logged in using ChatGPT');
+else if(args.includes('mcp')&&args.includes('list'))console.log('[]');
 else if(args.includes('app-server'))require('node:readline').createInterface({input:process.stdin}).on('line',line=>{
  const r=JSON.parse(line);if(r.id===undefined)return;
  const result=r.method==='config/read'?{config:{model:null,model_reasoning_effort:null,model_provider:'openai'}}:r.method==='model/list'?{data:[{model:'gpt-6.1-sol',isDefault:true,defaultReasoningEffort:'medium',supportedReasoningEfforts:[{reasoningEffort:'medium'}]}],nextCursor:null}:{};

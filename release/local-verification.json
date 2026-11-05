@@ -1,12 +1,12 @@
 {
-  "dependencyTreeSha256": "81f954a2f05780d8468a50b63bb45c7a4ceea938a3567dbc3f884ccb962af4e9",
+  "dependencyTreeSha256": "2bd44cace3ef96668835335c481f67744bc4900f19d7ebaa48e7024653bf9fe7",
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.63",
-  "sourceSha": "d7a940119cfb9ccedfa9f1971ee4ed16ad49affe",
-  "treeSha": "5fc3f52cc0c4e7015ff2f886f60423982aadd43d",
-  "archiveSha256": "0ee05603c9a6d26650416b54a3de813d9ea7f0cfba65a57acd5397ec2de41425",
-  "completedAt": "2026-11-04T14:26:15.755Z",
+  "version": "0.5.66",
+  "sourceSha": "aa72c687a5faaa2e955ab70127685b3a29f13822",
+  "treeSha": "7b5425c97b0cf1785197f5881949c132f8b4f5d2",
+  "archiveSha256": "bea56c70b561aca5a544e5add1a040595c98d62e58e83a5d52b0ed4b2ecdcdb6",
+  "completedAt": "2026-11-05T08:22:41.177Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -16,235 +16,130 @@
     {
       "name": "source-acceptance.json",
       "passed": true,
-      "logSha256": "36e67a0386b34c6eaaab630d52cbc4223a4c01e454c90c64b697fa610289afb6"
+      "logSha256": "a70ea094de89e5e80543643ac7703a85e2fc0b114a879c42527e1f157d5f3e26"
     },
     {
       "name": "local-waiver-final.json",
       "passed": true,
-      "logSha256": "36e67a0386b34c6eaaab630d52cbc4223a4c01e454c90c64b697fa610289afb6"
+      "logSha256": "a70ea094de89e5e80543643ac7703a85e2fc0b114a879c42527e1f157d5f3e26"
     },
     {
       "name": "installation-acceptance.json",
       "passed": true,
-      "logSha256": "6b224fd140b5d22db54e7f21cdda772b8f64d7b946236eb100ea3fbd23b96e1f"
-    },
-    {
-      "name": "closure-equivalence.json",
-      "passed": true,
-      "logSha256": "31d03a2f945b7c9ed256151382e6e70cb65376dc026428299f0120ed050fec41"
+      "logSha256": "0eb4f3564a6d908ab1de1c62281504cbf95b8d417d1108256b0e3825a0a8c39c"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "ecd51c0eac256a369e902ea4a67cfb6e25bb12a5825fad5ac891e60b8c486eb4"
+      "logSha256": "df2185f5b99a0c9dcdbd28bf0b23e97892fcfed270a9ebee77f562638ec29e7f"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "91a7228e548386bc3f08abbf5e30e1f1cc9aa00d640bc1f03a8d39ea914c2d85"
+      "logSha256": "3b40598a05730fd0011de516bc993fb014caecb31531ae2eed80bc53dd424bbb"
     },
     {
-      "name": "dependency-closure-acceptance.json",
+      "name": "native-transport-acceptance.json",
       "passed": true,
-      "logSha256": "e0ae5e44d62fc855b067a88abea6952052c0a7a25042184828002f0b33a221de"
+      "logSha256": "e774d39504e3a183611bfa4eb0b88d852c5542de97d62c94fe0f1b69e67d7e85"
     },
     {
-      "name": "776-installed-http-acceptance.json",
+      "name": "owned-inspection-acceptance.json",
       "passed": true,
-      "logSha256": "5badbf82d2c18a43e0b784dea57f8cb98c8617c9072396c797dab510c10971c0"
-    },
-    {
-      "name": "sql-acceptance.json",
-      "passed": true,
-      "logSha256": "72b04758d89c2320ec174a8c949a7613fba72e797a8900ce2a52426c42e0017e"
-    },
-    {
-      "name": "Expected failure on the old behavior: 633-negative-race.json",
-      "passed": true,
-      "logSha256": "6ecdc7ebfc90b8e924bd6d9ca998a9c88ebebbb326db211a349daa164324dedf"
-    },
-    {
-      "name": "Expected failure on the old behavior: 612-negative-backend.json",
-      "passed": true,
-      "logSha256": "caf853bbfd094091915a95c38dfa57df10074e54f78fb3ccb79e60f2adc4a08b"
-    },
-    {
-      "name": "Expected failure on the old behavior: 612-config-rejection-negative",
-      "passed": true,
-      "logSha256": "3edd8e4b9954a503fe293c1e103797b268ad6449ce7e882b01e9ac27dca739d1"
-    },
-    {
-      "name": "612-config-rejection-positive",
-      "passed": true,
-      "logSha256": "e7e91bfe28f11113dd0fcc04600da5d6e298962e37e293677635ce3c805894ff"
-    },
-    {
-      "name": "agent-serial-final",
-      "passed": true,
-      "logSha256": "797726c233b6b03eebebe7130e0fe68a9af8d8f810a22fd88c368f9bff40fab2"
-    },
-    {
-      "name": "agent-timing-isolated-final",
-      "passed": true,
-      "logSha256": "041f4f467c58a2bd8da33009071f5fb4dadeec3d43d47b3cd5875d527d7ddf65"
-    },
-    {
-      "name": "layouts-fixed-final",
-      "passed": true,
-      "logSha256": "5f20d1c5570438866f8890024d7426c9280e46870c4762b849a1ada59633eb57"
+      "logSha256": "d29cfc66bb8d134bf0f6a719088e39820ae7ed0bfb6373443cea15daa572e439"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "5867638790a3d9fa82b5a6a94a44397c392fa24d3c0ca4e99169000dbe418d7e"
+      "logSha256": "d3e69e05f6ec1568562e933d866b4678c9ed38409706090b345346eb92f8dcbf"
+    },
+    {
+      "name": "Expected failure on the old behavior: isolation-before",
+      "passed": true,
+      "logSha256": "01dbb7b3891dffd23b5cfe40f2d76dece5a45f36e9b07073d5a44c84119f3edc"
+    },
+    {
+      "name": "install-fixed-fixture",
+      "passed": true,
+      "logSha256": "cfca12c761243e19c1a17504c184633a5a97fae0a439688fdd8979c71e4e2936"
+    },
+    {
+      "name": "canonical-archive-acceptance.json",
+      "passed": true,
+      "logSha256": "0ee47f6fda4b5c86d957f095d5a8ec2a4df9dc8d10183b2337d4db5b15959c45"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "4332218c2499215b9e1593fe63766eb2f5f1849c42f1211e100371b504aa8f70"
+      "logSha256": "cfca12c761243e19c1a17504c184633a5a97fae0a439688fdd8979c71e4e2936"
     }
   ],
   "buildScope": {
     "counts": {
-      "workerCoverage": 1388,
-      "server": 4410,
-      "web": 4021,
-      "webNodeChecks": 8,
-      "admin": 406,
-      "cli": 108,
-      "cliNodeChecks": 12,
-      "core": 117,
-      "utils": 276,
-      "telemetry": 35,
-      "browser": 111,
-      "raycast": 15
+      "worker": 1408,
+      "testFiles": 95
     },
-    "validationRetries": [
-      {
-        "scope": "Worker suite timing cases",
-        "broadRun": {
-          "passed": 1385,
-          "failed": 3,
-          "exit": 1
-        },
-        "isolatedFiles": {
-          "passed": 63,
-          "failed": 0
-        },
-        "unchangedDeadlines": true,
-        "originalFailuresRetained": true,
-        "followUp": "ENGIN-779",
-        "note": "All 1,388 worker cases have passing coverage after isolated reruns; the broad run is not a clean first pass."
-      }
-    ],
-    "reusedChecksWithUnchangedInputs": [
-      {
-        "check": "admin",
-        "testedSource": "c64ce08de7c15fa89da88a7bcd636a0aa3055511",
-        "currentSource": "fa5d4124888ed0dd9ea94e3e4ded863e9e221be9",
-        "originalReceiptRetained": true,
-        "subsequentChanges": [
-          "apps/web/e2e/github-import-repair.layout.spec.tsx",
-          "packages/graphql/src/services/__tests__/hosted-agent-jobs.test.ts",
-          "packages/graphql/src/services/hosted-agent-jobs.ts"
-        ],
-        "note": "This package runtime, dependencies and tests are unchanged; the changed hosted service belongs to GraphQL/Web."
-      },
-      {
-        "check": "cli",
-        "testedSource": "c64ce08de7c15fa89da88a7bcd636a0aa3055511",
-        "currentSource": "fa5d4124888ed0dd9ea94e3e4ded863e9e221be9",
-        "originalReceiptRetained": true,
-        "subsequentChanges": [
-          "apps/web/e2e/github-import-repair.layout.spec.tsx",
-          "packages/graphql/src/services/__tests__/hosted-agent-jobs.test.ts",
-          "packages/graphql/src/services/hosted-agent-jobs.ts"
-        ],
-        "note": "This package runtime, dependencies and tests are unchanged; the changed hosted service belongs to GraphQL/Web."
-      },
-      {
-        "check": "core",
-        "testedSource": "c64ce08de7c15fa89da88a7bcd636a0aa3055511",
-        "currentSource": "fa5d4124888ed0dd9ea94e3e4ded863e9e221be9",
-        "originalReceiptRetained": true,
-        "subsequentChanges": [
-          "apps/web/e2e/github-import-repair.layout.spec.tsx",
-          "packages/graphql/src/services/__tests__/hosted-agent-jobs.test.ts",
-          "packages/graphql/src/services/hosted-agent-jobs.ts"
-        ],
-        "note": "This package runtime, dependencies and tests are unchanged; the changed hosted service belongs to GraphQL/Web."
-      },
-      {
-        "check": "utils",
-        "testedSource": "c64ce08de7c15fa89da88a7bcd636a0aa3055511",
-        "currentSource": "fa5d4124888ed0dd9ea94e3e4ded863e9e221be9",
-        "originalReceiptRetained": true,
-        "subsequentChanges": [
-          "apps/web/e2e/github-import-repair.layout.spec.tsx",
-          "packages/graphql/src/services/__tests__/hosted-agent-jobs.test.ts",
-          "packages/graphql/src/services/hosted-agent-jobs.ts"
-        ],
-        "note": "This package runtime, dependencies and tests are unchanged; the changed hosted service belongs to GraphQL/Web."
-      },
-      {
-        "check": "telemetry",
-        "testedSource": "c64ce08de7c15fa89da88a7bcd636a0aa3055511",
-        "currentSource": "fa5d4124888ed0dd9ea94e3e4ded863e9e221be9",
-        "originalReceiptRetained": true,
-        "subsequentChanges": [
-          "apps/web/e2e/github-import-repair.layout.spec.tsx",
-          "packages/graphql/src/services/__tests__/hosted-agent-jobs.test.ts",
-          "packages/graphql/src/services/hosted-agent-jobs.ts"
-        ],
-        "note": "This package runtime, dependencies and tests are unchanged; the changed hosted service belongs to GraphQL/Web."
-      },
-      {
-        "check": "coverage",
-        "testedSource": "c64ce08de7c15fa89da88a7bcd636a0aa3055511",
-        "currentSource": "fa5d4124888ed0dd9ea94e3e4ded863e9e221be9",
-        "originalReceiptRetained": true,
-        "subsequentChanges": [
-          "apps/web/e2e/github-import-repair.layout.spec.tsx",
-          "packages/graphql/src/services/__tests__/hosted-agent-jobs.test.ts",
-          "packages/graphql/src/services/hosted-agent-jobs.ts"
-        ],
-        "note": "This package runtime, dependencies and tests are unchanged; the changed hosted service belongs to GraphQL/Web."
-      },
-      {
-        "check": "web",
-        "testedSource": "c64ce08de7c15fa89da88a7bcd636a0aa3055511",
-        "currentSource": "fa5d4124888ed0dd9ea94e3e4ded863e9e221be9",
-        "originalReceiptRetained": true,
-        "subsequentChanges": [
-          "apps/web/e2e/github-import-repair.layout.spec.tsx",
-          "packages/graphql/src/services/__tests__/hosted-agent-jobs.test.ts",
-          "packages/graphql/src/services/hosted-agent-jobs.ts"
-        ],
-        "note": "Web product source is unchanged. The sole subsequent shared-runtime change is the pre-provisioning rejection flag, covered by the full final server suite and 16 final hosted-route cases."
-      }
-    ],
+    "reusedChecksWithUnchangedInputs": {
+      "testedSource": "c55b9d1969fe7abadf2da37ce3c04b3385a9e754",
+      "currentSource": "a02c72097c46e039ab9dbe6282b25be4be1349f1",
+      "onlySubsequentChange": "Installed-package fixture now handles the new read-only mcp list configuration inspection; no compiled/runtime/dependency/generated input changed.",
+      "fixtureFailedBefore": true,
+      "correctedFullInstalledSmokePassed": true
+    },
     "binaryTargets": [
       "velocity-agent"
     ],
-    "installationMatrix": {
-      "agent": [
-        "linux x64 Node18.20.8 prefix/global",
-        "linux x64 Node20.20.2 prefix/global",
-        "linux x64 Node22.22.1 prefix/global"
-      ]
-    },
+    "installationMatrix": [
+      {
+        "node": "v18.20.8",
+        "version": "0.5.66",
+        "sourceSha": "a02c72097c46e039ab9dbe6282b25be4be1349f1",
+        "tree": "7b5425c97b0cf1785197f5881949c132f8b4f5d2",
+        "archiveSha256": "bea56c70b561aca5a544e5add1a040595c98d62e58e83a5d52b0ed4b2ecdcdb6",
+        "dependencyTreeSha256": "2bd44cace3ef96668835335c481f67744bc4900f19d7ebaa48e7024653bf9fe7",
+        "prefixPassed": true,
+        "globalPassed": true,
+        "nativePackages": 2,
+        "actualNativeLaunchers": true,
+        "modelCalls": 0
+      },
+      {
+        "node": "v20.20.2",
+        "version": "0.5.66",
+        "sourceSha": "a02c72097c46e039ab9dbe6282b25be4be1349f1",
+        "tree": "7b5425c97b0cf1785197f5881949c132f8b4f5d2",
+        "archiveSha256": "bea56c70b561aca5a544e5add1a040595c98d62e58e83a5d52b0ed4b2ecdcdb6",
+        "dependencyTreeSha256": "2bd44cace3ef96668835335c481f67744bc4900f19d7ebaa48e7024653bf9fe7",
+        "prefixPassed": true,
+        "globalPassed": true,
+        "nativePackages": 2,
+        "actualNativeLaunchers": true,
+        "modelCalls": 0
+      },
+      {
+        "node": "v22.22.1",
+        "version": "0.5.66",
+        "sourceSha": "a02c72097c46e039ab9dbe6282b25be4be1349f1",
+        "tree": "7b5425c97b0cf1785197f5881949c132f8b4f5d2",
+        "archiveSha256": "bea56c70b561aca5a544e5add1a040595c98d62e58e83a5d52b0ed4b2ecdcdb6",
+        "dependencyTreeSha256": "2bd44cace3ef96668835335c481f67744bc4900f19d7ebaa48e7024653bf9fe7",
+        "prefixPassed": true,
+        "globalPassed": true,
+        "nativePackages": 3,
+        "actualNativeLaunchers": true,
+        "modelCalls": 0
+      }
+    ],
     "untestedPlatforms": [
       "macos",
       "windows"
     ],
-    "databaseMigrationRequired": true,
+    "databaseMigrationRequired": false,
     "githubCiWaivedByOwner": true
   },
   "limitations": [
-    "The broad worker run had three doctor timing failures; all 63 cases in the affected files pass in isolation at unchanged deadlines. Original failures are retained and ENGIN-779 tracks fixture isolation.",
-    "GitHub Actions did not run under the persistent owner budget waiver.",
-    "Linux x64 Node18.20.8,20.20.2,22.22.1 prefix/global installs and native SDK launchers are verified; macOS and Windows were not tested.",
-    "SDK fixtures and retry fixtures use local transports and executables; no paid inference or provider provisioning was performed."
+    "Native acceptance uses the actual pinned SDK and App Server with deterministic local model/MCP peers, not paid inference or a production issue outcome. Original failed production run and partial checkout remain unchanged.",
+    "macOS and Windows were not tested."
   ],
   "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }
