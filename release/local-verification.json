@@ -1,12 +1,12 @@
 {
-  "dependencyTreeSha256": "2bd44cace3ef96668835335c481f67744bc4900f19d7ebaa48e7024653bf9fe7",
+  "dependencyTreeSha256": "fa4f074ee5f4b7edafe8ee82ab6f7acc8ee082c19415953b28174dc0cf58a028",
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.66",
-  "sourceSha": "aa72c687a5faaa2e955ab70127685b3a29f13822",
-  "treeSha": "7b5425c97b0cf1785197f5881949c132f8b4f5d2",
-  "archiveSha256": "bea56c70b561aca5a544e5add1a040595c98d62e58e83a5d52b0ed4b2ecdcdb6",
-  "completedAt": "2026-11-05T08:22:41.177Z",
+  "version": "0.5.67",
+  "sourceSha": "9d217037837912c7021485ffc7e4d5e604b0f39b",
+  "treeSha": "554727ae03ebe3c9196d3e49800972ab433d4b1b",
+  "archiveSha256": "c2722d09224618b58f3765534720e612078035f13e4b0da230b4d6d842a8fdd2",
+  "completedAt": "2026-11-05T08:50:40.370Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -16,75 +16,83 @@
     {
       "name": "source-acceptance.json",
       "passed": true,
-      "logSha256": "a70ea094de89e5e80543643ac7703a85e2fc0b114a879c42527e1f157d5f3e26"
+      "logSha256": "ab3469c3b6a1608f2e64d21e368dcba8e8e276620f4ff04dd3502eac67d31401"
     },
     {
       "name": "local-waiver-final.json",
       "passed": true,
-      "logSha256": "a70ea094de89e5e80543643ac7703a85e2fc0b114a879c42527e1f157d5f3e26"
+      "logSha256": "5c84f8643882aaf4e1fe4076cc9f032c4dfbeecc607bd3911266f36ad7a9eba3"
     },
     {
       "name": "installation-acceptance.json",
       "passed": true,
-      "logSha256": "0eb4f3564a6d908ab1de1c62281504cbf95b8d417d1108256b0e3825a0a8c39c"
+      "logSha256": "f90cde8521a1a0c39115144eaa54d6feb7e41e3195e5d92e12975bda54b1a499"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "df2185f5b99a0c9dcdbd28bf0b23e97892fcfed270a9ebee77f562638ec29e7f"
+      "logSha256": "2ee8821dcf86694a23925a3917a0662473f557ecbd380a59690853e866f9d3a1"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "3b40598a05730fd0011de516bc993fb014caecb31531ae2eed80bc53dd424bbb"
+      "logSha256": "8c505ba1456440b9ee82deb07388495a2e3d0ad8c1256338eff5b83f637e2968"
     },
     {
       "name": "native-transport-acceptance.json",
       "passed": true,
-      "logSha256": "e774d39504e3a183611bfa4eb0b88d852c5542de97d62c94fe0f1b69e67d7e85"
+      "logSha256": "b6d3103eade2d0de55ee150b8c6027dad653a8acc879b23841c62646697ae713"
     },
     {
-      "name": "owned-inspection-acceptance.json",
+      "name": "native-transport-blocked-acceptance.json",
       "passed": true,
-      "logSha256": "d29cfc66bb8d134bf0f6a719088e39820ae7ed0bfb6373443cea15daa572e439"
+      "logSha256": "e407132e9dbd5765591c8f9ad54b59990f96cb0591b8c931cbc48b1e2d16c872"
+    },
+    {
+      "name": "native-transport-clarification-acceptance.json",
+      "passed": true,
+      "logSha256": "72cdd17a39dc8f4590ae35a2c9a875c7bbb5e8a7bd3af7dbf432c1bb01815bb4"
+    },
+    {
+      "name": "native-transport-no_changes-acceptance.json",
+      "passed": true,
+      "logSha256": "d73f6ee38a5a5faf1a6b4b3286e840a4d9d569660b3661b9dbdfea829221684e"
+    },
+    {
+      "name": "Expected failure on the old behavior: version-runtime-negative.json",
+      "passed": true,
+      "logSha256": "e8929ebaeb624274f28685d0fe07f17ce6c496c5c8682489340b7bf7c10917f1"
+    },
+    {
+      "name": "Expected failure on the old behavior: version-runtime-before",
+      "passed": true,
+      "logSha256": "50093530ae20182ca4adfd2ac53227745eaf122892f963192511b5175c71ccbf"
+    },
+    {
+      "name": "Expected failure on the old behavior: version-before",
+      "passed": true,
+      "logSha256": "bc6bd4515ff4673bb23c8315bba0e6838fa444ba322c2b0ad0569d0c0bd9c542"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "d3e69e05f6ec1568562e933d866b4678c9ed38409706090b345346eb92f8dcbf"
-    },
-    {
-      "name": "Expected failure on the old behavior: isolation-before",
-      "passed": true,
-      "logSha256": "01dbb7b3891dffd23b5cfe40f2d76dece5a45f36e9b07073d5a44c84119f3edc"
-    },
-    {
-      "name": "install-fixed-fixture",
-      "passed": true,
-      "logSha256": "cfca12c761243e19c1a17504c184633a5a97fae0a439688fdd8979c71e4e2936"
+      "logSha256": "5610ce28945c9166926ee4421c0acc022c8f2334bf0865584e947c53d615450c"
     },
     {
       "name": "canonical-archive-acceptance.json",
       "passed": true,
-      "logSha256": "0ee47f6fda4b5c86d957f095d5a8ec2a4df9dc8d10183b2337d4db5b15959c45"
+      "logSha256": "67ce4cd92ca0a642c73f843bfb6cfe497129b2532f4ae144c32925863e992529"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "cfca12c761243e19c1a17504c184633a5a97fae0a439688fdd8979c71e4e2936"
+      "logSha256": "c4570d384ff2465d36d999012fa0d7ce8590064d6f02b7e2d231e0928cae5723"
     }
   ],
   "buildScope": {
     "counts": {
-      "worker": 1408,
-      "testFiles": 95
-    },
-    "reusedChecksWithUnchangedInputs": {
-      "testedSource": "c55b9d1969fe7abadf2da37ce3c04b3385a9e754",
-      "currentSource": "a02c72097c46e039ab9dbe6282b25be4be1349f1",
-      "onlySubsequentChange": "Installed-package fixture now handles the new read-only mcp list configuration inspection; no compiled/runtime/dependency/generated input changed.",
-      "fixtureFailedBefore": true,
-      "correctedFullInstalledSmokePassed": true
+      "worker": 1426,
+      "testFiles": 96
     },
     "binaryTargets": [
       "velocity-agent"
@@ -92,24 +100,11 @@
     "installationMatrix": [
       {
         "node": "v18.20.8",
-        "version": "0.5.66",
-        "sourceSha": "a02c72097c46e039ab9dbe6282b25be4be1349f1",
-        "tree": "7b5425c97b0cf1785197f5881949c132f8b4f5d2",
-        "archiveSha256": "bea56c70b561aca5a544e5add1a040595c98d62e58e83a5d52b0ed4b2ecdcdb6",
-        "dependencyTreeSha256": "2bd44cace3ef96668835335c481f67744bc4900f19d7ebaa48e7024653bf9fe7",
-        "prefixPassed": true,
-        "globalPassed": true,
-        "nativePackages": 2,
-        "actualNativeLaunchers": true,
-        "modelCalls": 0
-      },
-      {
-        "node": "v20.20.2",
-        "version": "0.5.66",
-        "sourceSha": "a02c72097c46e039ab9dbe6282b25be4be1349f1",
-        "tree": "7b5425c97b0cf1785197f5881949c132f8b4f5d2",
-        "archiveSha256": "bea56c70b561aca5a544e5add1a040595c98d62e58e83a5d52b0ed4b2ecdcdb6",
-        "dependencyTreeSha256": "2bd44cace3ef96668835335c481f67744bc4900f19d7ebaa48e7024653bf9fe7",
+        "version": "0.5.67",
+        "sourceSha": "0921c59d9409025f7f41a6269e63120e84fcfbd7",
+        "tree": "554727ae03ebe3c9196d3e49800972ab433d4b1b",
+        "archiveSha256": "c2722d09224618b58f3765534720e612078035f13e4b0da230b4d6d842a8fdd2",
+        "dependencyTreeSha256": "fa4f074ee5f4b7edafe8ee82ab6f7acc8ee082c19415953b28174dc0cf58a028",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 2,
@@ -118,11 +113,11 @@
       },
       {
         "node": "v22.22.1",
-        "version": "0.5.66",
-        "sourceSha": "a02c72097c46e039ab9dbe6282b25be4be1349f1",
-        "tree": "7b5425c97b0cf1785197f5881949c132f8b4f5d2",
-        "archiveSha256": "bea56c70b561aca5a544e5add1a040595c98d62e58e83a5d52b0ed4b2ecdcdb6",
-        "dependencyTreeSha256": "2bd44cace3ef96668835335c481f67744bc4900f19d7ebaa48e7024653bf9fe7",
+        "version": "0.5.67",
+        "sourceSha": "0921c59d9409025f7f41a6269e63120e84fcfbd7",
+        "tree": "554727ae03ebe3c9196d3e49800972ab433d4b1b",
+        "archiveSha256": "c2722d09224618b58f3765534720e612078035f13e4b0da230b4d6d842a8fdd2",
+        "dependencyTreeSha256": "fa4f074ee5f4b7edafe8ee82ab6f7acc8ee082c19415953b28174dc0cf58a028",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 3,
@@ -138,8 +133,8 @@
     "githubCiWaivedByOwner": true
   },
   "limitations": [
-    "Native acceptance uses the actual pinned SDK and App Server with deterministic local model/MCP peers, not paid inference or a production issue outcome. Original failed production run and partial checkout remain unchanged.",
-    "macOS and Windows were not tested."
+    "Actual native SDK and App Server tool calls use deterministic owned local model/MCP peers. No paid inference or production issue outcomes are claimed. Original production failures and partial work remain unchanged.",
+    "Linux x64 installation checks cover Node18.20.8 and22.22.1. Node20 was checked for the preceding0.5.66 release; it was not repeated for0.5.67. macOS and Windows were not tested."
   ],
   "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }

@@ -133,6 +133,7 @@ const server = createServer(async (request, response) => {
     const rpc = JSON.parse(data);
     if (rpc.method === 'tools/list') return send({ jsonrpc: '2.0', id: rpc.id, result: { tools: [
       { name: 'get_issue', description: 'Read the owned issue', inputSchema: { type: 'object', properties: {} } },
+      { name: 'report_agent_outcome', description: 'Report the owned execution outcome', inputSchema: { type: 'object', properties: {} } },
     ] } });
     if (rpc.params.name === 'update_agent_run') { lifecycleWrites++; if(rpc.params.arguments.issueModelSettings)modelReceipts.push(rpc.params.arguments.issueModelSettings); }
     let result;
@@ -161,7 +162,7 @@ const server = createServer(async (request, response) => {
       }
       result={id:args.runId,status:args.status,metadata:{},...(args.nativeUsage?{nativeUsageRecorded:true}:{})};
     }
-    else if (nativePending && rpc.params.name === 'get_issue') result={identifier:'TEST-1'};
+    else if (nativePending && rpc.params.name === 'get_issue') result={id:'00000000-0000-4000-8000-000000000011',identifier:'TEST-1'};
     else if (nativePending && ['get_issue_context','link_commit','add_comment'].includes(rpc.params.name)) result={ok:true};
     else if (nativeClaudePending && rpc.params.name === 'update_agent_run') {
       claudeStatuses.push(rpc.params.arguments.status);
