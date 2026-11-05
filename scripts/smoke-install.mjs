@@ -61,7 +61,9 @@ const server = createServer(async (request, response) => {
     if (path === '/api/agent/hosted') {
       assert.equal(request.headers.authorization, 'Bearer smoke-hosted-private-dispatch-secret');
       const body = JSON.parse(data); assert.ok(['recover', 'claim'].includes(body.action));
-      assert.equal(body.backendProtocolVersion, 1);
+      assert.equal(body.backendProtocolVersion, 2);
+      assert.equal(body.capacityProtocolVersion, 2);
+      assert.deepEqual(body.implementedProviders, ['instabox', 'daytona']);
       hostedCalls++;
       return send(body.action === 'recover' ? { recovery: null } : { lease: null });
     }
