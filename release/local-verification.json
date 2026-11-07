@@ -1,12 +1,12 @@
 {
-  "dependencyTreeSha256": "14bff36c8e62bdaecb4d26b33842240faeb76e0e3705172ff2a7adb597f786ec",
+  "dependencyTreeSha256": "b86019fc7ce100c89db084a965b63961dad3349aa94c14986620eef2eb9424da",
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.68",
-  "sourceSha": "4e866f70914fc6cbd2f68af091e3fde0400614f6",
-  "treeSha": "b991bbb12c2ae0b274a87fccfd889625854131fd",
-  "archiveSha256": "8e6ed30a22e4a2f22a75b6d0d161833c8be70412e3931b30f3d04cf68b1d3c5b",
-  "completedAt": "2026-11-05T12:19:32.069Z",
+  "version": "0.5.69",
+  "sourceSha": "e6f0aadb28a3f93fbe8677b68bfa2382dad30ec8",
+  "treeSha": "b899892d39943bc5fadcdda2b69a2f71bbf7a0cb",
+  "archiveSha256": "8cba38152be62129dbc9d4fe2f2d09a049fb0657814f2c1ea969c228a2088ca7",
+  "completedAt": "2026-11-07T22:51:40.320Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -16,374 +16,611 @@
     {
       "name": "source-acceptance.json",
       "passed": true,
-      "logSha256": "011452d32ff2957be7c2b2e6a9143c9e339f85e9074d3ea4519e2a7cfbfdea8e"
+      "logSha256": "1585c4d7aa7f6a12fcef03caf7f8f7dff3c69bfd7869aa3f44989f0ea71e84c9"
     },
     {
       "name": "local-waiver-final.json",
       "passed": true,
-      "logSha256": "97fb9bf6dd9fe8fedbe2bef9c6bf5c866cbabf78092ee4adbf1e613ece74d006"
+      "logSha256": "85238ab39dde6226e13270177cc7c72ae5559b50ab01327ac58bff6304dd18f8"
     },
     {
       "name": "installation-acceptance.json",
       "passed": true,
-      "logSha256": "f2a974f8a9f03c28b6af8c3d850fc8bb3997a16e96ac3176d414a4e044fac5ff"
+      "logSha256": "eb7787fa67f7c315c85cc26009d60f20d6cde332b6f6e80b4807d89804607e8b"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "e9b947b648c76deac1c4909cbbbec031c1b829fa9979abfc12c6beb68dda5086"
+      "logSha256": "64a0a5452654891a31d286ef7eb6ee1fde587bf4571aa7c645f7be5b19965902"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "3986c31ef473dc9dc8581816ced3491c464e92d614a97dd49eeafbc696e6bcc8"
+      "logSha256": "4361527e4b49031bcc42d31a729add39866ade41cdded65174183f663bdbdc32"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "f95178a2016e50251ce75622397c5faef2ded2647ee45d853e0759d8a9708eac"
+      "logSha256": "816bc45ee9feb887140e4d767bb4530bb36a570391b1ef352bae24115c565e2f"
     },
     {
       "name": "canonical-archive-agent-acceptance.json",
       "passed": true,
-      "logSha256": "d108a5a982c84c5504d920201c434cf5aecdfe8c6ace1c25207486d693fec35b"
+      "logSha256": "c08829515048f58a400e702897a9367e3c36e3929e63f388bdb312e99613db95"
     },
     {
-      "name": "Expected failure on the old behavior: preparation-negative-control",
+      "name": "Expected failure on the old behavior: route-negative",
       "passed": true,
-      "logSha256": "d5117f7d9d1a4b1d11bfdfc0b3fac8bd909b2071f01843f7e4a46a39c7a2408e"
+      "logSha256": "d29c9a8f7ce2b0cdbb3b210069d44dea5967cfd90b89630efb026fd1773f34d3"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "f6d0b05dc0254c42c2663d30890f91bcf6118d709b14fc248ca6a69fecadf00f"
+      "logSha256": "76eb2e15b3173720c29782a7837a26868a129eb049e6e1560a618e86a9489bc4"
     }
   ],
   "buildScope": {
     "counts": {
-      "worker": 1523,
-      "web": "4101",
-      "server": 4516,
-      "finalHostedServerTests": 75
+      "worker": 1651,
+      "finalHostedRegressions": 174,
+      "web": 4107,
+      "server": 4532,
+      "admin": 449,
+      "core": 126,
+      "cli": 108,
+      "cliNode": 12,
+      "webScripts": 8
     },
-    "validationRetries": [
-      {
-        "passed": true,
-        "sourceSha": "705ee9968cda9346166f0d0da285495c886e84d2",
-        "tree": "b991bbb12c2ae0b274a87fccfd889625854131fd",
-        "assertionsCovered": 1523,
-        "fullRun": {
-          "passed": false,
-          "exit": 1,
-          "sourceSha": "705ee9968cda9346166f0d0da285495c886e84d2",
-          "tree": "b991bbb12c2ae0b274a87fccfd889625854131fd",
-          "startedAt": "2026-11-05T12:02:46.834Z",
-          "completedAt": "2026-11-05T12:08:55.542Z",
-          "command": [
-            "pnpm",
-            "--filter",
-            "@velocity/agent",
-            "exec",
-            "vitest",
-            "run",
-            "--maxWorkers=2",
-            "--testTimeout=15000"
-          ]
-        },
-        "fullRunPassed": false,
-        "fullRunAssertionFailures": 0,
-        "fullRunTimingFailures": 1,
-        "failedTest": "src/__tests__/delivery-controller.test.ts > legacy receipts waiting on a GitHub account outage (ENGIN-749) > records a real failure beside the earlier receipts and keeps waiting without spending repair budget",
-        "isolatedRetryPassed": true,
-        "retryLog": "/home/kevin/projects/velocity/reviews/daytona-recovery-20261105/worker-isolated-retry.log",
-        "retryTestTimeoutMs": 30000,
-        "changesToProductOrTests": false,
-        "reason": "All1522 other assertions passed; the only remaining full-run failure hit its15second wall-clock limit on this shared host. The unchanged exact test then passed alone with all its assertions. Earlier five-second timeout receipts remain retained.",
-        "verifiedAt": "2026-11-05T12:10:43.058Z"
-      }
-    ],
+    "validationRetries": [],
+    "fixtureBudgetNotes": "Full integrated worker/Web suites passed at original budgets. The final pure snapshot matcher change has174 focused passing regressions; the changed Admin page has449 full passing assertions and28 browser checks. Earlier ENGIN-806 timing failures/explicit diagnostics remain preserved. No blanket timeout increase or automatic test retry was added.",
     "reusedChecksWithUnchangedInputs": [
       {
         "passed": true,
         "exit": 0,
-        "sourceSha": "280dc0e3186f8ed5d32f76d9594e15d61faf7d12",
-        "tree": "f3fd36dc07d23807c08e59fd4ae92d2202a6b59f",
-        "startedAt": "2026-11-05T11:48:23.152Z",
-        "completedAt": "2026-11-05T11:48:29.876Z",
+        "sourceSha": "95149776b9c05216f33209c84fd5426d1ad04be0",
+        "tree": "a40a9e030d98c0037ab9e2c2a1a1df28ee65a3bc",
+        "startedAt": "2026-11-07T21:58:55.892Z",
+        "completedAt": "2026-11-07T22:00:21.489Z",
         "command": [
           "pnpm",
           "--filter",
-          "@velocity/cli-core",
-          "build"
-        ],
-        "reason": "Tested inputs unchanged; new server helper covered by final server/Web types and regression",
-        "inputPaths": [
-          "packages/agent/src",
-          "packages/cli",
-          "packages/cli-core",
-          "package.json",
-          "pnpm-lock.yaml"
-        ]
-      },
-      {
-        "passed": true,
-        "exit": 0,
-        "sourceSha": "280dc0e3186f8ed5d32f76d9594e15d61faf7d12",
-        "tree": "f3fd36dc07d23807c08e59fd4ae92d2202a6b59f",
-        "startedAt": "2026-11-05T11:48:29.883Z",
-        "completedAt": "2026-11-05T11:48:46.669Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/agent",
-          "build"
-        ],
-        "reason": "Tested inputs unchanged; new server helper covered by final server/Web types and regression",
-        "inputPaths": [
-          "packages/agent/src",
-          "packages/cli",
-          "packages/cli-core",
-          "package.json",
-          "pnpm-lock.yaml"
-        ]
-      },
-      {
-        "passed": true,
-        "exit": 0,
-        "sourceSha": "280dc0e3186f8ed5d32f76d9594e15d61faf7d12",
-        "tree": "f3fd36dc07d23807c08e59fd4ae92d2202a6b59f",
-        "startedAt": "2026-11-05T11:48:46.671Z",
-        "completedAt": "2026-11-05T11:48:54.377Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/cli",
-          "build"
-        ],
-        "reason": "Tested inputs unchanged; new server helper covered by final server/Web types and regression",
-        "inputPaths": [
-          "packages/agent/src",
-          "packages/cli",
-          "packages/cli-core",
-          "package.json",
-          "pnpm-lock.yaml"
-        ]
-      },
-      {
-        "passed": true,
-        "exit": 0,
-        "sourceSha": "280dc0e3186f8ed5d32f76d9594e15d61faf7d12",
-        "tree": "f3fd36dc07d23807c08e59fd4ae92d2202a6b59f",
-        "startedAt": "2026-11-05T11:50:00.805Z",
-        "completedAt": "2026-11-05T11:50:08.285Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/cli-core",
+          "@velocity/graphql",
           "typecheck"
         ],
-        "reason": "Tested inputs unchanged; new server helper covered by final server/Web types and regression",
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Web/server/shared/core/CLI inputs are byte-identical after the two isolated review fixes.",
         "inputPaths": [
-          "packages/agent/src",
+          "apps/web",
+          "packages/graphql",
+          "packages/types",
+          "packages/ai",
+          "packages/auth",
+          "packages/telemetry",
+          "packages/ui",
+          "packages/utils",
           "packages/cli",
           "packages/cli-core",
+          "scripts",
           "package.json",
-          "pnpm-lock.yaml"
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml",
+          ".npmrc",
+          ".github"
         ]
       },
       {
         "passed": true,
         "exit": 0,
-        "sourceSha": "280dc0e3186f8ed5d32f76d9594e15d61faf7d12",
-        "tree": "f3fd36dc07d23807c08e59fd4ae92d2202a6b59f",
-        "startedAt": "2026-11-05T11:50:08.287Z",
-        "completedAt": "2026-11-05T11:50:16.945Z",
+        "sourceSha": "95149776b9c05216f33209c84fd5426d1ad04be0",
+        "tree": "a40a9e030d98c0037ab9e2c2a1a1df28ee65a3bc",
+        "startedAt": "2026-11-07T22:01:26.392Z",
+        "completedAt": "2026-11-07T22:01:33.786Z",
         "command": [
           "pnpm",
           "--filter",
           "@velocity/cli",
           "typecheck"
         ],
-        "reason": "Tested inputs unchanged; new server helper covered by final server/Web types and regression",
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Web/server/shared/core/CLI inputs are byte-identical after the two isolated review fixes.",
         "inputPaths": [
-          "packages/agent/src",
+          "apps/web",
+          "packages/graphql",
+          "packages/types",
+          "packages/ai",
+          "packages/auth",
+          "packages/telemetry",
+          "packages/ui",
+          "packages/utils",
           "packages/cli",
           "packages/cli-core",
+          "scripts",
           "package.json",
-          "pnpm-lock.yaml"
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml",
+          ".npmrc",
+          ".github"
         ]
       },
       {
         "passed": true,
         "exit": 0,
-        "sourceSha": "280dc0e3186f8ed5d32f76d9594e15d61faf7d12",
-        "tree": "f3fd36dc07d23807c08e59fd4ae92d2202a6b59f",
-        "startedAt": "2026-11-05T11:50:16.946Z",
-        "completedAt": "2026-11-05T11:50:45.039Z",
+        "sourceSha": "95149776b9c05216f33209c84fd5426d1ad04be0",
+        "tree": "a40a9e030d98c0037ab9e2c2a1a1df28ee65a3bc",
+        "startedAt": "2026-11-07T22:01:33.789Z",
+        "completedAt": "2026-11-07T22:01:42.384Z",
         "command": [
           "pnpm",
           "--filter",
-          "@velocity/admin",
-          "type-check"
+          "@velocity/cli-core",
+          "typecheck"
         ],
-        "reason": "Tested inputs unchanged; new server helper covered by final server/Web types and regression",
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Web/server/shared/core/CLI inputs are byte-identical after the two isolated review fixes.",
         "inputPaths": [
-          "apps/admin"
-        ]
-      },
-      {
-        "passed": true,
-        "exit": 0,
-        "sourceSha": "280dc0e3186f8ed5d32f76d9594e15d61faf7d12",
-        "tree": "f3fd36dc07d23807c08e59fd4ae92d2202a6b59f",
-        "startedAt": "2026-11-05T11:48:54.379Z",
-        "completedAt": "2026-11-05T11:49:00.927Z",
-        "command": [
-          "pnpm",
-          "--filter",
-          "@velocity/cli",
-          "check:coverage"
-        ],
-        "reason": "Tested inputs unchanged; new server helper covered by final server/Web types and regression",
-        "inputPaths": [
-          "packages/agent/src",
+          "apps/web",
+          "packages/graphql",
+          "packages/types",
+          "packages/ai",
+          "packages/auth",
+          "packages/telemetry",
+          "packages/ui",
+          "packages/utils",
           "packages/cli",
           "packages/cli-core",
+          "scripts",
           "package.json",
-          "pnpm-lock.yaml"
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml",
+          ".npmrc",
+          ".github"
         ]
       },
       {
         "passed": true,
         "exit": 0,
-        "sourceSha": "280dc0e3186f8ed5d32f76d9594e15d61faf7d12",
-        "tree": "f3fd36dc07d23807c08e59fd4ae92d2202a6b59f",
-        "startedAt": "2026-11-05T11:49:00.929Z",
-        "completedAt": "2026-11-05T11:49:13.001Z",
-        "command": [
-          "bash",
-          "scripts/audit-gate.sh"
-        ],
-        "reason": "Tested inputs unchanged; new server helper covered by final server/Web types and regression",
-        "inputPaths": [
-          "package.json",
-          "pnpm-lock.yaml"
-        ]
-      },
-      {
-        "passed": true,
-        "exit": 0,
-        "sourceSha": "280dc0e3186f8ed5d32f76d9594e15d61faf7d12",
-        "tree": "f3fd36dc07d23807c08e59fd4ae92d2202a6b59f",
-        "startedAt": "2026-11-05T11:49:45.677Z",
-        "completedAt": "2026-11-05T11:49:53.742Z",
+        "sourceSha": "95149776b9c05216f33209c84fd5426d1ad04be0",
+        "tree": "a40a9e030d98c0037ab9e2c2a1a1df28ee65a3bc",
+        "startedAt": "2026-11-07T22:01:42.386Z",
+        "completedAt": "2026-11-07T22:02:18.497Z",
         "command": [
           "pnpm",
           "--filter",
-          "@velocity/admin",
+          "@velocity/web",
           "lint"
         ],
-        "reason": "Tested inputs unchanged; new server helper covered by final server/Web types and regression",
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Web/server/shared/core/CLI inputs are byte-identical after the two isolated review fixes.",
         "inputPaths": [
-          "apps/admin"
+          "apps/web",
+          "packages/graphql",
+          "packages/types",
+          "packages/ai",
+          "packages/auth",
+          "packages/telemetry",
+          "packages/ui",
+          "packages/utils",
+          "packages/cli",
+          "packages/cli-core",
+          "scripts",
+          "package.json",
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml",
+          ".npmrc",
+          ".github"
         ]
       },
       {
         "passed": true,
         "exit": 0,
-        "sourceSha": "7ab90df6e9150a84b24a9af25fa289aee6118836",
-        "tree": "3fb66f20442f9530e81cd06817032ca74ccf77e7",
-        "startedAt": "2026-11-05T11:08:14.643Z",
-        "completedAt": "2026-11-05T11:08:20.941Z",
+        "sourceSha": "95149776b9c05216f33209c84fd5426d1ad04be0",
+        "tree": "a40a9e030d98c0037ab9e2c2a1a1df28ee65a3bc",
+        "startedAt": "2026-11-07T22:02:28.245Z",
+        "completedAt": "2026-11-07T22:02:34.869Z",
         "command": [
           "pnpm",
           "--filter",
           "@velocity/cli-core",
-          "test"
+          "build"
         ],
-        "reason": "Package/runtime/test inputs unchanged; final typechecks cover shared generated RPC additions",
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Web/server/shared/core/CLI inputs are byte-identical after the two isolated review fixes.",
         "inputPaths": [
+          "apps/web",
+          "packages/graphql",
+          "packages/types",
+          "packages/ai",
+          "packages/auth",
+          "packages/telemetry",
+          "packages/ui",
+          "packages/utils",
+          "packages/cli",
           "packages/cli-core",
+          "scripts",
           "package.json",
-          "pnpm-lock.yaml"
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml",
+          ".npmrc",
+          ".github"
         ]
       },
       {
         "passed": true,
         "exit": 0,
-        "sourceSha": "7ab90df6e9150a84b24a9af25fa289aee6118836",
-        "tree": "3fb66f20442f9530e81cd06817032ca74ccf77e7",
-        "startedAt": "2026-11-05T11:08:20.942Z",
-        "completedAt": "2026-11-05T11:08:40.638Z",
+        "sourceSha": "95149776b9c05216f33209c84fd5426d1ad04be0",
+        "tree": "a40a9e030d98c0037ab9e2c2a1a1df28ee65a3bc",
+        "startedAt": "2026-11-07T22:02:54.050Z",
+        "completedAt": "2026-11-07T22:03:01.750Z",
         "command": [
           "pnpm",
           "--filter",
           "@velocity/cli",
-          "test"
+          "build"
         ],
-        "reason": "Package/runtime/test inputs unchanged; final typechecks cover shared generated RPC additions",
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Web/server/shared/core/CLI inputs are byte-identical after the two isolated review fixes.",
         "inputPaths": [
+          "apps/web",
+          "packages/graphql",
+          "packages/types",
+          "packages/ai",
+          "packages/auth",
+          "packages/telemetry",
+          "packages/ui",
+          "packages/utils",
           "packages/cli",
+          "packages/cli-core",
+          "scripts",
           "package.json",
-          "pnpm-lock.yaml"
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml",
+          ".npmrc",
+          ".github"
         ]
       },
       {
         "passed": true,
         "exit": 0,
-        "sourceSha": "7ab90df6e9150a84b24a9af25fa289aee6118836",
-        "tree": "3fb66f20442f9530e81cd06817032ca74ccf77e7",
-        "startedAt": "2026-11-05T11:07:46.901Z",
-        "completedAt": "2026-11-05T11:07:53.279Z",
+        "sourceSha": "95149776b9c05216f33209c84fd5426d1ad04be0",
+        "tree": "a40a9e030d98c0037ab9e2c2a1a1df28ee65a3bc",
+        "startedAt": "2026-11-07T22:05:42.723Z",
+        "completedAt": "2026-11-07T22:14:15.506Z",
         "command": [
           "pnpm",
           "--filter",
-          "@velocity/admin",
-          "test"
+          "@velocity/web",
+          "build"
         ],
-        "reason": "Package/runtime/test inputs unchanged; final typechecks cover shared generated RPC additions",
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Web/server/shared/core/CLI inputs are byte-identical after the two isolated review fixes.",
         "inputPaths": [
-          "apps/admin",
+          "apps/web",
+          "packages/graphql",
+          "packages/types",
+          "packages/ai",
+          "packages/auth",
+          "packages/telemetry",
+          "packages/ui",
+          "packages/utils",
+          "packages/cli",
+          "packages/cli-core",
+          "scripts",
           "package.json",
-          "pnpm-lock.yaml"
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml",
+          ".npmrc",
+          ".github"
         ]
       },
       {
         "passed": true,
         "exit": 0,
-        "sourceSha": "280dc0e3186f8ed5d32f76d9594e15d61faf7d12",
-        "tree": "f3fd36dc07d23807c08e59fd4ae92d2202a6b59f",
-        "startedAt": "2026-11-05T11:47:52.591Z",
-        "completedAt": "2026-11-05T11:50:13.968Z",
+        "sourceSha": "95149776b9c05216f33209c84fd5426d1ad04be0",
+        "tree": "a40a9e030d98c0037ab9e2c2a1a1df28ee65a3bc",
+        "startedAt": "2026-11-07T22:14:15.508Z",
+        "completedAt": "2026-11-07T22:16:41.919Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/web",
+          "typecheck"
+        ],
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Web/server/shared/core/CLI inputs are byte-identical after the two isolated review fixes.",
+        "inputPaths": [
+          "apps/web",
+          "packages/graphql",
+          "packages/types",
+          "packages/ai",
+          "packages/auth",
+          "packages/telemetry",
+          "packages/ui",
+          "packages/utils",
+          "packages/cli",
+          "packages/cli-core",
+          "scripts",
+          "package.json",
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml",
+          ".npmrc",
+          ".github"
+        ]
+      },
+      {
+        "passed": true,
+        "exit": 0,
+        "sourceSha": "95149776b9c05216f33209c84fd5426d1ad04be0",
+        "tree": "a40a9e030d98c0037ab9e2c2a1a1df28ee65a3bc",
+        "startedAt": "2026-11-07T22:16:41.922Z",
+        "completedAt": "2026-11-07T22:16:44.777Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/web",
+          "bundle-size"
+        ],
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Web/server/shared/core/CLI inputs are byte-identical after the two isolated review fixes.",
+        "inputPaths": [
+          "apps/web",
+          "packages/graphql",
+          "packages/types",
+          "packages/ai",
+          "packages/auth",
+          "packages/telemetry",
+          "packages/ui",
+          "packages/utils",
+          "packages/cli",
+          "packages/cli-core",
+          "scripts",
+          "package.json",
+          "pnpm-lock.yaml",
+          "pnpm-workspace.yaml",
+          ".npmrc",
+          ".github"
+        ]
+      },
+      {
+        "passed": true,
+        "exit": 0,
+        "sourceSha": "0ba19c6de2ba15e2e959f96ed9c4bf3f371811a9",
+        "tree": "fa5fed56f274f0020e6b3ec9cb156ec468e6f209",
+        "startedAt": "2026-11-07T21:40:38.659Z",
+        "completedAt": "2026-11-07T21:41:11.821Z",
         "command": [
           "pnpm",
           "--filter",
           "@velocity/graphql",
           "exec",
           "vitest",
-          "run",
-          "--maxWorkers=4"
+          "run"
         ],
-        "reason": "4516 full tests passed; one-line backend snapshot guard added afterwards, verified by75 final hosted tests and failing-before empty-snapshot regression",
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Only generated database types and isolated Admin/Agent provider files changed. These runtime/test inputs remain unchanged; final typechecks verify the generated database shape.",
         "changedPaths": [
-          "packages/graphql/src/services/__tests__/hosted-agent-jobs.test.ts",
-          "packages/graphql/src/services/hosted-backends.ts"
+          "apps/admin/app/(admin)/hosted-backends/page.tsx",
+          "apps/admin/app/components/__tests__/hosted-backends-page.test.tsx",
+          "packages/agent/src/__tests__/hosted-allocation-discovery.test.ts",
+          "packages/agent/src/__tests__/hosted-allocation-reconciliation.test.ts",
+          "packages/agent/src/hosted/daytona.ts",
+          "packages/types/src/database.generated.ts"
         ]
+      },
+      {
+        "passed": true,
+        "exit": 0,
+        "sourceSha": "0ba19c6de2ba15e2e959f96ed9c4bf3f371811a9",
+        "tree": "fa5fed56f274f0020e6b3ec9cb156ec468e6f209",
+        "startedAt": "2026-11-07T21:41:19.955Z",
+        "completedAt": "2026-11-07T21:41:26.696Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/cli-core",
+          "test"
+        ],
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Only generated database types and isolated Admin/Agent provider files changed. These runtime/test inputs remain unchanged; final typechecks verify the generated database shape.",
+        "changedPaths": [
+          "apps/admin/app/(admin)/hosted-backends/page.tsx",
+          "apps/admin/app/components/__tests__/hosted-backends-page.test.tsx",
+          "packages/agent/src/__tests__/hosted-allocation-discovery.test.ts",
+          "packages/agent/src/__tests__/hosted-allocation-reconciliation.test.ts",
+          "packages/agent/src/hosted/daytona.ts",
+          "packages/types/src/database.generated.ts"
+        ]
+      },
+      {
+        "passed": true,
+        "exit": 0,
+        "sourceSha": "0ba19c6de2ba15e2e959f96ed9c4bf3f371811a9",
+        "tree": "fa5fed56f274f0020e6b3ec9cb156ec468e6f209",
+        "startedAt": "2026-11-07T21:41:26.698Z",
+        "completedAt": "2026-11-07T21:41:48.736Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/cli",
+          "test"
+        ],
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Only generated database types and isolated Admin/Agent provider files changed. These runtime/test inputs remain unchanged; final typechecks verify the generated database shape.",
+        "changedPaths": [
+          "apps/admin/app/(admin)/hosted-backends/page.tsx",
+          "apps/admin/app/components/__tests__/hosted-backends-page.test.tsx",
+          "packages/agent/src/__tests__/hosted-allocation-discovery.test.ts",
+          "packages/agent/src/__tests__/hosted-allocation-reconciliation.test.ts",
+          "packages/agent/src/hosted/daytona.ts",
+          "packages/types/src/database.generated.ts"
+        ]
+      },
+      {
+        "passed": true,
+        "exit": 0,
+        "sourceSha": "0ba19c6de2ba15e2e959f96ed9c4bf3f371811a9",
+        "tree": "fa5fed56f274f0020e6b3ec9cb156ec468e6f209",
+        "startedAt": "2026-11-07T21:41:48.738Z",
+        "completedAt": "2026-11-07T21:41:54.491Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/cli",
+          "check:coverage"
+        ],
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Only generated database types and isolated Admin/Agent provider files changed. These runtime/test inputs remain unchanged; final typechecks verify the generated database shape.",
+        "changedPaths": [
+          "apps/admin/app/(admin)/hosted-backends/page.tsx",
+          "apps/admin/app/components/__tests__/hosted-backends-page.test.tsx",
+          "packages/agent/src/__tests__/hosted-allocation-discovery.test.ts",
+          "packages/agent/src/__tests__/hosted-allocation-reconciliation.test.ts",
+          "packages/agent/src/hosted/daytona.ts",
+          "packages/types/src/database.generated.ts"
+        ]
+      },
+      {
+        "passed": true,
+        "exit": 0,
+        "sourceSha": "0ba19c6de2ba15e2e959f96ed9c4bf3f371811a9",
+        "tree": "fa5fed56f274f0020e6b3ec9cb156ec468e6f209",
+        "startedAt": "2026-11-07T21:41:54.493Z",
+        "completedAt": "2026-11-07T21:42:07.269Z",
+        "command": [
+          "bash",
+          "scripts/audit-gate.sh"
+        ],
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Only generated database types and isolated Admin/Agent provider files changed. These runtime/test inputs remain unchanged; final typechecks verify the generated database shape.",
+        "changedPaths": [
+          "apps/admin/app/(admin)/hosted-backends/page.tsx",
+          "apps/admin/app/components/__tests__/hosted-backends-page.test.tsx",
+          "packages/agent/src/__tests__/hosted-allocation-discovery.test.ts",
+          "packages/agent/src/__tests__/hosted-allocation-reconciliation.test.ts",
+          "packages/agent/src/hosted/daytona.ts",
+          "packages/types/src/database.generated.ts"
+        ]
+      },
+      {
+        "passed": true,
+        "exit": 0,
+        "sourceSha": "0ba19c6de2ba15e2e959f96ed9c4bf3f371811a9",
+        "tree": "fa5fed56f274f0020e6b3ec9cb156ec468e6f209",
+        "startedAt": "2026-11-07T21:48:42.861Z",
+        "completedAt": "2026-11-07T21:57:54.670Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/web",
+          "exec",
+          "vitest",
+          "run"
+        ],
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Only generated database types and isolated Admin/Agent provider files changed. These runtime/test inputs remain unchanged; final typechecks verify the generated database shape.",
+        "changedPaths": [
+          "apps/admin/app/(admin)/hosted-backends/page.tsx",
+          "apps/admin/app/components/__tests__/hosted-backends-page.test.tsx",
+          "packages/agent/src/__tests__/hosted-allocation-discovery.test.ts",
+          "packages/agent/src/__tests__/hosted-allocation-reconciliation.test.ts",
+          "packages/agent/src/hosted/daytona.ts",
+          "packages/types/src/database.generated.ts"
+        ]
+      },
+      {
+        "passed": true,
+        "exit": 0,
+        "sourceSha": "0ba19c6de2ba15e2e959f96ed9c4bf3f371811a9",
+        "tree": "fa5fed56f274f0020e6b3ec9cb156ec468e6f209",
+        "startedAt": "2026-11-07T21:57:54.673Z",
+        "completedAt": "2026-11-07T21:57:57.821Z",
+        "command": [
+          "node",
+          "--test",
+          "apps/web/scripts/lint-warning-baseline.test.mjs",
+          "apps/web/scripts/check-bundle-size.test.mjs"
+        ],
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Only generated database types and isolated Admin/Agent provider files changed. These runtime/test inputs remain unchanged; final typechecks verify the generated database shape.",
+        "changedPaths": [
+          "apps/admin/app/(admin)/hosted-backends/page.tsx",
+          "apps/admin/app/components/__tests__/hosted-backends-page.test.tsx",
+          "packages/agent/src/__tests__/hosted-allocation-discovery.test.ts",
+          "packages/agent/src/__tests__/hosted-allocation-reconciliation.test.ts",
+          "packages/agent/src/hosted/daytona.ts",
+          "packages/types/src/database.generated.ts"
+        ]
+      },
+      {
+        "passed": true,
+        "exit": 0,
+        "sourceSha": "0ba19c6de2ba15e2e959f96ed9c4bf3f371811a9",
+        "tree": "fa5fed56f274f0020e6b3ec9cb156ec468e6f209",
+        "startedAt": "2026-11-07T21:42:29.033Z",
+        "completedAt": "2026-11-07T21:48:42.853Z",
+        "command": [
+          "pnpm",
+          "--filter",
+          "@velocity/agent",
+          "exec",
+          "vitest",
+          "run"
+        ],
+        "testDeadlinesUnchanged": true,
+        "heavyPackagesSerialized": true,
+        "acceptedForSourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+        "reason": "Full1651 worker assertions passed before a pure snapshot UUID matcher fix. All174 affected provider/discovery/reconciliation assertions, including9new cases, passed on the final source; the other worker code/tests are unchanged.",
+        "allowedChangedPaths": [
+          "packages/agent/src/__tests__/hosted-allocation-discovery.test.ts",
+          "packages/agent/src/__tests__/hosted-allocation-reconciliation.test.ts",
+          "packages/agent/src/hosted/daytona.ts"
+        ],
+        "supplementedBy": "hostedfocus"
       }
     ],
     "binaryTargets": [
-      "velocity-agent",
-      "velocity-cli"
+      "velocity-agent"
     ],
     "installationMatrix": {
       "agent": [
         {
           "node": "v18.20.8",
-          "version": "0.5.68",
-          "sourceSha": "705ee9968cda9346166f0d0da285495c886e84d2",
-          "tree": "b991bbb12c2ae0b274a87fccfd889625854131fd",
-          "archiveSha256": "8e6ed30a22e4a2f22a75b6d0d161833c8be70412e3931b30f3d04cf68b1d3c5b",
-          "dependencyTreeSha256": "14bff36c8e62bdaecb4d26b33842240faeb76e0e3705172ff2a7adb597f786ec",
+          "version": "0.5.69",
+          "sourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+          "tree": "b899892d39943bc5fadcdda2b69a2f71bbf7a0cb",
+          "archiveSha256": "8cba38152be62129dbc9d4fe2f2d09a049fb0657814f2c1ea969c228a2088ca7",
+          "dependencyTreeSha256": "b86019fc7ce100c89db084a965b63961dad3349aa94c14986620eef2eb9424da",
           "prefixPassed": true,
           "globalPassed": true,
           "nativePackages": 2,
@@ -392,11 +629,11 @@
         },
         {
           "node": "v20.20.2",
-          "version": "0.5.68",
-          "sourceSha": "705ee9968cda9346166f0d0da285495c886e84d2",
-          "tree": "b991bbb12c2ae0b274a87fccfd889625854131fd",
-          "archiveSha256": "8e6ed30a22e4a2f22a75b6d0d161833c8be70412e3931b30f3d04cf68b1d3c5b",
-          "dependencyTreeSha256": "14bff36c8e62bdaecb4d26b33842240faeb76e0e3705172ff2a7adb597f786ec",
+          "version": "0.5.69",
+          "sourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+          "tree": "b899892d39943bc5fadcdda2b69a2f71bbf7a0cb",
+          "archiveSha256": "8cba38152be62129dbc9d4fe2f2d09a049fb0657814f2c1ea969c228a2088ca7",
+          "dependencyTreeSha256": "b86019fc7ce100c89db084a965b63961dad3349aa94c14986620eef2eb9424da",
           "prefixPassed": true,
           "globalPassed": true,
           "nativePackages": 2,
@@ -405,72 +642,16 @@
         },
         {
           "node": "v22.22.1",
-          "version": "0.5.68",
-          "sourceSha": "705ee9968cda9346166f0d0da285495c886e84d2",
-          "tree": "b991bbb12c2ae0b274a87fccfd889625854131fd",
-          "archiveSha256": "8e6ed30a22e4a2f22a75b6d0d161833c8be70412e3931b30f3d04cf68b1d3c5b",
-          "dependencyTreeSha256": "14bff36c8e62bdaecb4d26b33842240faeb76e0e3705172ff2a7adb597f786ec",
+          "version": "0.5.69",
+          "sourceSha": "cf51b6b18bbdd74cc098218a07de8d8d4bcddfe9",
+          "tree": "b899892d39943bc5fadcdda2b69a2f71bbf7a0cb",
+          "archiveSha256": "8cba38152be62129dbc9d4fe2f2d09a049fb0657814f2c1ea969c228a2088ca7",
+          "dependencyTreeSha256": "b86019fc7ce100c89db084a965b63961dad3349aa94c14986620eef2eb9424da",
           "prefixPassed": true,
           "globalPassed": true,
           "nativePackages": 3,
           "actualNativeLaunchers": true,
           "modelCalls": 0
-        }
-      ],
-      "cli": [
-        {
-          "node": "v20.20.2",
-          "version": "0.2.52",
-          "sourceSha": "705ee9968cda9346166f0d0da285495c886e84d2",
-          "tree": "b991bbb12c2ae0b274a87fccfd889625854131fd",
-          "archiveSha256": "34d0702eb2b2c0d23518e9ffdd718b54e5921be854e17b3148a3349ea9788246",
-          "prefixFullSmokePassed": true,
-          "globalAliasesPassed": true,
-          "globalPackageBytesEqual": true,
-          "dependencyBytesEqual": true,
-          "dependencies": [
-            {
-              "name": "commander",
-              "files": 14
-            },
-            {
-              "name": "graphql",
-              "files": 397
-            },
-            {
-              "name": "marked",
-              "files": 12
-            }
-          ],
-          "fileCount": 86,
-          "paidModelCalls": 0
-        },
-        {
-          "node": "v22.22.1",
-          "version": "0.2.52",
-          "sourceSha": "705ee9968cda9346166f0d0da285495c886e84d2",
-          "tree": "b991bbb12c2ae0b274a87fccfd889625854131fd",
-          "archiveSha256": "34d0702eb2b2c0d23518e9ffdd718b54e5921be854e17b3148a3349ea9788246",
-          "prefixFullSmokePassed": true,
-          "globalAliasesPassed": true,
-          "globalPackageBytesEqual": true,
-          "dependencyBytesEqual": true,
-          "dependencies": [
-            {
-              "name": "commander",
-              "files": 14
-            },
-            {
-              "name": "graphql",
-              "files": 397
-            },
-            {
-              "name": "marked",
-              "files": 12
-            }
-          ],
-          "fileCount": 86,
-          "paidModelCalls": 0
         }
       ]
     },
@@ -486,11 +667,9 @@
     "githubCiWaivedByOwner": true
   },
   "limitations": [
-    "Linux x64 only; macOS and Windows were not tested.",
-    "Worker full run covered1522 passing assertions with one15second timing failure; its unchanged remaining assertion passed alone. Earlier five-second scheduling timeouts are retained in audit logs.",
-    "No liveDaytona lifecycle or private-repository acceptance is claimed without a dedicated execution organization/key; ENGIN-793/797 retain that acceptance gate. Daytona stays disabled and zero-slot.",
-    "Archive format permits2GiB; verified productionStorage/defaulteffective cap is50MiB.",
-    "UnknownDaytona creates keep capacity held until authoritative cleanup; reconciliation follow-upENGIN-805."
+    "Linux x64 Node18/20/22 installation matrix only; macOS/Windows untested.",
+    "No live paid Daytona lifecycle acceptance without a dedicated organization/key/snapshot; ENGIN-793/797 remain gated and backend stays disabled/zero capacity.",
+    "ENGIN-807 investigates lifecycle render/test-settle variance; diagnostics preserve earlier timing failures rather than asserting a cause."
   ],
   "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }
