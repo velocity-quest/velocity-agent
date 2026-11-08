@@ -1,12 +1,12 @@
 {
-  "dependencyTreeSha256": "9fb90534246c1763c0d030d7be30d3b98f85c8979e21d6812c9afc1042e5a48c",
+  "dependencyTreeSha256": "621e1e4b0c6425a20577cb112d4745e8480a1977754b995e7475e900b4e44c46",
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.71",
-  "sourceSha": "5a13f6f2531355f42d2bd2e1cde6a604b2058cad",
-  "treeSha": "d36d10fa30dac0b663e85c231d85eba977d1c35e",
-  "archiveSha256": "1992b3f92e7198dec4c69f22134929af63c786f586970208a19cf30f8329735a",
-  "completedAt": "2026-11-08T21:25:30.665Z",
+  "version": "0.5.72",
+  "sourceSha": "21f1d4404269cf351c61d4a1a986a9e737a1918c",
+  "treeSha": "3439550772b086581f57b758e9b803304e3211cb",
+  "archiveSha256": "e63864925a9517e6266860954d8c2dccedc7b254cf533044dd49f85b43f5e0b6",
+  "completedAt": "2026-11-08T22:17:52.692Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -16,70 +16,60 @@
     {
       "name": "source-acceptance.json",
       "passed": true,
-      "logSha256": "028617324aecd3a27efc89411c7e20f12114770afb75b707b9ec88ca46ca694f"
+      "logSha256": "39c635da1665d9512e12fd6e9bebd8ea8851efaa50b0a9a6b6543ab71c74376b"
     },
     {
       "name": "local-waiver-final.json",
       "passed": true,
-      "logSha256": "028617324aecd3a27efc89411c7e20f12114770afb75b707b9ec88ca46ca694f"
+      "logSha256": "39c635da1665d9512e12fd6e9bebd8ea8851efaa50b0a9a6b6543ab71c74376b"
     },
     {
       "name": "installation-acceptance.json",
       "passed": true,
-      "logSha256": "fd9c3101ad91637d3ff1e4e6e8c11eccb35709a41e8e65939685374c75abcbc6"
+      "logSha256": "e2f65a8c289238816b8edd0153f66aba88c063f0d7b28ae82181db6208d20849"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "7d26c19e5660773e3bf69a49d381b80f91371f98e58ba5045bd2ee41c6a68d39"
+      "logSha256": "fedbfad45728d92285eb1d2dd1bd8287e9f58ee747e48f73c2ea9e55f69b4926"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "936a2a5f9e5048faa72df88edc5fdc649a068c6ae7a3aaa87ef44c1affb69fbe"
+      "logSha256": "fb354b557011aa2834b827b4f5b54874b5fc103d6b917058f86d403a2bc5c5cf"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "325fb3d1cb60e33baaca27105b9b31dff24926bed0feba704e1e3ef87adaa779"
+      "logSha256": "1ad8ac3703a9cbc2a4ee448ffb137777faa9cb44ff85c5ad616e61f8c9255bb1"
     },
     {
       "name": "canonical-archive-agent-acceptance.json",
       "passed": true,
-      "logSha256": "e1c4c0cee7dfa1c4aee0eb416d1ab698b09c34bc4a9397d9e005e563b372a0a3"
+      "logSha256": "259a5784d0b18fbd1164175261b0a018cdd9913c0a2a883ca7b0580848ca9a9e"
     },
     {
-      "name": "Expected failure on the old behavior: negative-snapshot-resources",
+      "name": "Expected failure on the old behavior: engin-816-fail-before",
       "passed": true,
-      "logSha256": "4b16675fd9959e332ce48d251980c1fe3fabab51044b6bb5ab2d85f0b86683b8"
+      "logSha256": "f5d3eb4cf1ac1d986cb20a66685b094746e334a766c30b6c5707dd301b4a89d3"
     },
     {
-      "name": "Expected failure on the old behavior: negative-alias-tombstone",
+      "name": "engin-816-fixed",
       "passed": true,
-      "logSha256": "b8d26b4b52c95b619815780e7058f66af0f1ab493b5bd65be7804061931ed7a4"
-    },
-    {
-      "name": "Expected failure on the old behavior: provider-negative-acceptance.json",
-      "passed": true,
-      "logSha256": "29d07577942718a94b1ba440ca889d69eb105ffe98971f5d7369b86c81355d33"
-    },
-    {
-      "name": "probe-810-candidate-3/provider-lifecycle-acceptance.json",
-      "passed": true,
-      "logSha256": "8d35384191067946164ddd992cc4948c416f6b94847087ce1d31fdfbcace3d7c"
+      "logSha256": "5f2c811b930af5a9ee961ace3a96f5f2e7432bde7f951ab42f20f051ffba1614"
     },
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "be0e097c3fc91cb89390529532f7885fc4bb1b1fbd47a543118a106429056eb4"
+      "logSha256": "adbc2c8da2ac424384dd675efb1ef0a55ca31faa11dbc592fa3c420b8c35a961"
     }
   ],
   "buildScope": {
     "counts": {
-      "worker": 1769
+      "worker": 1770
     },
     "validationRetries": [],
-    "fixtureBudgetNotes": "The full committed worker suite passed at unchanged deadlines and unchanged setup-only contention policy. Expected fail-before runs are recorded separately; no test/assertion failure was retried to clear a gate.",
+    "fixtureBudgetNotes": "Full worker suite at existing deadlines and unchanged setup contention policy. Fail-before regression is deliberately separate; no assertion failure rerun to clear checks.",
     "reusedChecksWithUnchangedInputs": [],
     "binaryTargets": [
       "velocity-agent"
@@ -87,11 +77,11 @@
     "installationMatrix": [
       {
         "node": "v18.20.8",
-        "version": "0.5.71",
-        "sourceSha": "f8d0aa16617c5f6b709f94bc251656ef5fcbf806",
-        "tree": "d36d10fa30dac0b663e85c231d85eba977d1c35e",
-        "archiveSha256": "1992b3f92e7198dec4c69f22134929af63c786f586970208a19cf30f8329735a",
-        "dependencyTreeSha256": "9fb90534246c1763c0d030d7be30d3b98f85c8979e21d6812c9afc1042e5a48c",
+        "version": "0.5.72",
+        "sourceSha": "9ee21512cbd0335b207b7d7be040c253513c6569",
+        "tree": "3439550772b086581f57b758e9b803304e3211cb",
+        "archiveSha256": "e63864925a9517e6266860954d8c2dccedc7b254cf533044dd49f85b43f5e0b6",
+        "dependencyTreeSha256": "621e1e4b0c6425a20577cb112d4745e8480a1977754b995e7475e900b4e44c46",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 2,
@@ -100,11 +90,11 @@
       },
       {
         "node": "v20.20.2",
-        "version": "0.5.71",
-        "sourceSha": "f8d0aa16617c5f6b709f94bc251656ef5fcbf806",
-        "tree": "d36d10fa30dac0b663e85c231d85eba977d1c35e",
-        "archiveSha256": "1992b3f92e7198dec4c69f22134929af63c786f586970208a19cf30f8329735a",
-        "dependencyTreeSha256": "9fb90534246c1763c0d030d7be30d3b98f85c8979e21d6812c9afc1042e5a48c",
+        "version": "0.5.72",
+        "sourceSha": "9ee21512cbd0335b207b7d7be040c253513c6569",
+        "tree": "3439550772b086581f57b758e9b803304e3211cb",
+        "archiveSha256": "e63864925a9517e6266860954d8c2dccedc7b254cf533044dd49f85b43f5e0b6",
+        "dependencyTreeSha256": "621e1e4b0c6425a20577cb112d4745e8480a1977754b995e7475e900b4e44c46",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 2,
@@ -113,11 +103,11 @@
       },
       {
         "node": "v22.22.1",
-        "version": "0.5.71",
-        "sourceSha": "f8d0aa16617c5f6b709f94bc251656ef5fcbf806",
-        "tree": "d36d10fa30dac0b663e85c231d85eba977d1c35e",
-        "archiveSha256": "1992b3f92e7198dec4c69f22134929af63c786f586970208a19cf30f8329735a",
-        "dependencyTreeSha256": "9fb90534246c1763c0d030d7be30d3b98f85c8979e21d6812c9afc1042e5a48c",
+        "version": "0.5.72",
+        "sourceSha": "9ee21512cbd0335b207b7d7be040c253513c6569",
+        "tree": "3439550772b086581f57b758e9b803304e3211cb",
+        "archiveSha256": "e63864925a9517e6266860954d8c2dccedc7b254cf533044dd49f85b43f5e0b6",
+        "dependencyTreeSha256": "621e1e4b0c6425a20577cb112d4745e8480a1977754b995e7475e900b4e44c46",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 3,
@@ -137,10 +127,9 @@
     "githubCiWaivedByOwner": true
   },
   "limitations": [
-    "Only Linux x64 Node18/20/22 prefix/global installations and real native launchers were tested; macOS/Windows remain untested.",
-    "Real provider lifecycle/restore/cancellation/timeout/failing-test acceptance uses a synthetic probe capability and private local fixture artifact store. It is not a production run, model, cloud-storage or delivery attestation.",
-    "The lifecycle probe provider is this unchanged runtime before the commit, and its guest is the published0.5.70 package. The standalone0.5.71 runtime/package are verified separately in the install matrix; production private-repository acceptance remains ENGIN-793/797.",
-    "No Web/Admin/database/management CLI inputs changed. No application deployment or migration is required for these three worker fixes."
+    "Linux x64 Node18/20/22 prefix/global installations and actual native launchers tested; macOS/Windows untested.",
+    "Real production private-repository delivery/cloud checkpoint/dispatcher-crash acceptance is still ENGIN-793/797, not claimed by local checks.",
+    "Only worker identity handling changed; no Web/Admin/database/management CLI deployment required."
   ],
   "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }
