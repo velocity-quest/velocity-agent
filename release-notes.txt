@@ -1,3 +1,3 @@
-ENGIN-805 / ENGIN-806: velocity-agent 0.5.69
+ENGIN-809: velocity-agent 0.5.70
 
-Owner-approved local release from e6f0aadb28a3f93fbe8677b68bfa2382dad30ec8. Locally verified tree b899892d39943bc5fadcdda2b69a2f71bbf7a0cb. See local-verification.json for checks and actual platform scope. GitHub Actions was not run.
+Owner-approved local release from 21e810ce07e48a130fe72d8f9fe8b2fafeff43c5. Locally verified tree f7da42b6b2178c7f71fe3cf45cb70539365c11cc. See local-verification.json for checks and actual platform scope. GitHub Actions was not run.
