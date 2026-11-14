@@ -1,12 +1,12 @@
 {
-  "dependencyTreeSha256": "e088c1ee885e43e54071da852d8cd01a11c9609ab3c36f694994fa5a945e5b4f",
+  "dependencyTreeSha256": "eee52e5b53444519d8d3eba19e2f3b222f869c69f87c95386c4714ba2037fed2",
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.73",
-  "sourceSha": "00c60b64bc7f21ff5d9fd845712a41ccdd524ae6",
-  "treeSha": "301548b344f3d545f2a11eb9709c3cfa56381033",
-  "archiveSha256": "6f06e625ed12505da153e96f2f75dd72beeb6e682fb232e7e7adec705ac47d11",
-  "completedAt": "2026-11-14T07:47:10.289Z",
+  "version": "0.5.74",
+  "sourceSha": "41116c61bef57d746319452b11734f9a4cf4361e",
+  "treeSha": "08701e5d61ad44ff2eddede0ddf221f6cd0ce3e9",
+  "archiveSha256": "c0180908f8595e69f46d0c135ad263e6c321d4e513ece4fa54c062612a130cf3",
+  "completedAt": "2026-11-14T09:49:59.109Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -16,77 +16,102 @@
     {
       "name": "source-acceptance.json",
       "passed": true,
-      "logSha256": "b33e13ccccb4852aaaf28afed81db5e381a9ec32e4e5386a31eb0335afc14264"
+      "logSha256": "004bfae230caaecf33152e6eeb22eca933afe943fab34a3eeea3425030a5053c"
     },
     {
       "name": "local-waiver-final.json",
       "passed": true,
-      "logSha256": "b33e13ccccb4852aaaf28afed81db5e381a9ec32e4e5386a31eb0335afc14264"
+      "logSha256": "004bfae230caaecf33152e6eeb22eca933afe943fab34a3eeea3425030a5053c"
     },
     {
       "name": "installation-acceptance.json",
       "passed": true,
-      "logSha256": "5d5c42b1dca14ed78b03d4417b0a84159fdcb65fc0f85d325bfef0c9353431ba"
+      "logSha256": "99bf1179a53e0756d5f42b6c9fb6962c6eba0cc106dba09da66d7c5ea4c989e7"
     },
     {
       "name": "package-agent-acceptance.json",
       "passed": true,
-      "logSha256": "b36c7e9bc2738ef44a73fa4c75b73217f899b91459b85667f17f819fa1d406ef"
+      "logSha256": "671a4b1a49716c3a1a03dc1240f6cea86fbc790d89b46c10dd74c8644e025d41"
     },
     {
       "name": "unchanged-worker-inputs.json",
       "passed": true,
-      "logSha256": "48279192aca2ceaab9f9e4148cd1fed5ac1d8db4a41e5ba65fe69a3955454904"
+      "logSha256": "aac08adad4d1f1015baf5a54bc1d7ad7a5723ff24fb6a0390cdd69aeb2a4e47a"
     },
     {
       "name": "binary-scope.json",
       "passed": true,
-      "logSha256": "e2b61a8f8a2d828e67cd2658ed6ea4714c0ed7301bcc732b8a26be1dee21c3f0"
+      "logSha256": "a7dd7b483534407b63b75734406b532d737a08034c566119610a329ed3d27f13"
     },
     {
       "name": "final-review-acceptance.json",
       "passed": true,
-      "logSha256": "2b175a4e1d4db0f0d88c18497b5aaa3c5d54be51e871303a4e741bc245c0e73f"
+      "logSha256": "33ffe24d804e9b654410d09cdec07b4ad218a720d7e99678be3b20d1cc1b4beb"
     },
     {
       "name": "canonical-archive-agent-acceptance.json",
       "passed": true,
-      "logSha256": "42f4382644a4c18c1e77b2978bcfdc63de8e15fe3757a0975f13ff322bd28e1b"
+      "logSha256": "fb0b0169e4fe3891d27b3105a18566f0b837f24cd6459f96c681040831723c83"
     },
     {
-      "name": "current-contract-final",
+      "name": "hosted-contract-final",
       "passed": true,
-      "logSha256": "d1b62299e17bb1ecabb9592fbb325a928b5b16346284bf7951cb6af212e328f3"
+      "logSha256": "bd07b559295ceb24b35ced74a83f91b9f0963d5055edd22ec75aa6a8362ec7e3"
     },
     {
-      "name": "historical-controls-final.json",
+      "name": "Expected failure on the old behavior: 801-before",
       "passed": true,
-      "logSha256": "567471e6abd4060d9a535296d7fc5ddf2312955d5259aa9d6f6a45f7cd3383de"
+      "logSha256": "9315843c3bd63f65dafdc97b55acb41cc896bcc0ffaea6292ae7e00d5e60acba"
     },
     {
-      "name": "Expected failure on the old behavior: pre-816-final",
+      "name": "Expected failure on the old behavior: 836-before",
       "passed": true,
-      "logSha256": "71205245bfdd70a8116a604c76e1b9884c737dc061ca583f4192618cfa34c061"
+      "logSha256": "e95c703851aaafaebc107f704c03a24c7cc7c2f755cb7f61bf91a2683b5a5936"
     },
     {
-      "name": "Expected failure on the old behavior: pre-820-final",
+      "name": "Expected failure on the old behavior: discovery-lock-before",
       "passed": true,
-      "logSha256": "38033a5dd880e555319ad430351447e72e783113e22cfdb2bc3f4314d02a8941"
-    },
-    {
-      "name": "Expected failure on the old behavior: pre-835-final",
-      "passed": true,
-      "logSha256": "e930a2beb138d81af9f288917cca940e537658ef17f9b58ce68eefbbd1664b6e"
+      "logSha256": "0dda5a7377d38e8320a733c9f6e78956833aa38512377b1dd007e9587c564ffc"
     },
     {
       "name": "worker-union-acceptance.json",
       "passed": true,
-      "logSha256": "38f00bbd7a514f4b19698f7cc2800c4d6a5e7e211e4aecf2bb4cbc90924f4bc8"
+      "logSha256": "30fbf7701658384f11e1b146adbc412b394f933a71e84d1cd687a361b385d376"
+    },
+    {
+      "name": "mcp-union-acceptance.json",
+      "passed": true,
+      "logSha256": "4303d1a06831adfa1df71d30bc8ed326afc9c6ec3f3b115a9e5c89e734b9a049"
     },
     {
       "name": "agent-timeout-recheck",
       "passed": true,
-      "logSha256": "63350e3ce51dc32845f26f14293c2a2779fd9d2fdf6cec754c9cde77bb97743d"
+      "logSha256": "886734dbddd834eeb8d0532c7d66672d1da88af5dec54aa1023cd38c2b4fbd9f"
+    },
+    {
+      "name": "runner-final",
+      "passed": true,
+      "logSha256": "42cf62871b5bea0f2855af3bc46aa35e995001178728953026e3d75b19c1e50d"
+    },
+    {
+      "name": "upgrade-final",
+      "passed": true,
+      "logSha256": "b4098cc5584b95d3064bd2027164163b79d6a1d5040090d52127602726fbaccf"
+    },
+    {
+      "name": "801-races-final",
+      "passed": true,
+      "logSha256": "067bcf2ef32c5c95774f3af8c2d5ba15c822419a4ebbf206c32438c5440eec7e"
+    },
+    {
+      "name": "web-build-configured",
+      "passed": true,
+      "logSha256": "93a1aea671ae43a28330bbcbf24449238c234259b8a29f33c554ae787091f9fd"
+    },
+    {
+      "name": "web-lint",
+      "passed": true,
+      "logSha256": "b002588e33c7bf39fbabdb8349ac48962ed98aefe7774d137de1a3722e17c22e"
     },
     {
       "name": "dependency-audit",
@@ -96,40 +121,43 @@
     {
       "name": "agent clean package install and smoke",
       "passed": true,
-      "logSha256": "987f9051282668ed2fb7d048e48a8e7fe926b3cb0eb264ce5fd63d833f73c8d9"
+      "logSha256": "5cc730d347d9e95cb547960f9099e62d082e7ad6404da9b3ef8d60501d5cd138"
     }
   ],
   "buildScope": {
     "counts": {
-      "worker": 1770,
+      "worker": 1771,
       "workerFiles": 104,
-      "cleanupFailurePaths": 2,
-      "hostedMigrations": 248,
-      "historicalControls": 3,
+      "mcpAndWorkstream": 435,
+      "graphqlWorkstream": 40,
+      "hostedMigrations": 249,
+      "functionsCompared": 640,
+      "postgresConcurrencyCases": 6,
       "linuxInstallations": 6
     },
     "validationRetries": [
       {
-        "kind": "existing five-second timeouts under concurrent build/pack load",
-        "tests": [
-          "src/__tests__/native-repositories.test.ts > native shared controls > codex preserves an in-flight diff when stopped before commit/delivery",
-          "src/__tests__/runtime-discovery.test.ts > bounded local inventory > does not advertise adapter capabilities merely because a binary is installed and signed in"
-        ],
-        "recheck": "Both files passed serially: 38 tests, existing assertions and deadlines unchanged."
+        "kind": "Existing five-second timeout under concurrent build/package load",
+        "test": "delivery-merge-repair: stops before merging when the base changed after provider confirmation",
+        "recheck": "Four-test file passes serially with unchanged assertions and timeout."
+      },
+      {
+        "kind": "Scope transport fixture needed new prerequisite RPC",
+        "tests": 10,
+        "recheck": "All14scope tests pass on current source; broader435outcomes verified."
       }
     ],
-    "fixtureBudgetNotes": "Only external transports are fixtures. No paid model/provider calls, production fixtures, release CI or GitHub Actions. A setup HTTP failure and private diagnostic wording mismatch were investigated separately; only the three causally verified historical failures count.",
+    "fixtureBudgetNotes": "Owned disposable PostgreSQL/Docker/HTTPS fixtures only. Real routes, SQL, packaged native SDK, validation, PR handoff, artifacts and cleanup; external model/provider/GitHub/storage transports are deterministic fixtures. No production fixtures, paid model/provider calls, fake CI receipts or GitHub Actions.",
     "reusedChecksWithUnchangedInputs": [
       {
-        "kind": "worker unit/types/build and npm prefix/global native installation matrix",
-        "executedSource": "7365010e82f4ed673a4c3b5b576150906b8914fa",
-        "verifiedForSource": "a4cf3f4584a7a1506ac3fbb315ede69ef69ff441",
-        "artifact": "6f06e625ed12505da153e96f2f75dd72beeb6e682fb232e7e7adec705ac47d11",
+        "kind": "Worker package and Node18/20/22 prefix/global installation matrix",
+        "executedSource": "2a3ce956f4d65520477102b16b7cb9b74496de88",
+        "verifiedForSource": "260e4df98870ade0b69ea0e8d4ba6831f4bf878f",
         "inputEquality": [
           {
             "path": "packages/agent",
-            "from": "fca581b21dfb1de2af309089fc4496042d640eef",
-            "to": "fca581b21dfb1de2af309089fc4496042d640eef"
+            "from": "58451ee1802f5f4b6ba41c19632691dd825b3a95",
+            "to": "58451ee1802f5f4b6ba41c19632691dd825b3a95"
           },
           {
             "path": "packages/cli-core",
@@ -156,14 +184,9 @@
             "from": "61768ad82f38c6769e70c9a4a526ad93e5e230f1",
             "to": "61768ad82f38c6769e70c9a4a526ad93e5e230f1"
           }
-        ]
-      },
-      {
-        "kind": "historical controls",
-        "executedSource": "a5546c61b81c745e0a91421ce1d8acb98fb5c45d",
-        "verifiedForSource": "a4cf3f4584a7a1506ac3fbb315ede69ef69ff441",
-        "identicalTryBodySha256": "a237e950706f2c1324a5a5e70bb6c96d64e36b277499f8bc03304bc7c7320947",
-        "fixtureSourcesIdentical": true
+        ],
+        "allWorkerSharedLockAndToolchainInputsIdentical": true,
+        "archiveSha256": "c0180908f8595e69f46d0c135ad263e6c321d4e513ece4fa54c062612a130cf3"
       }
     ],
     "binaryTargets": [
@@ -172,11 +195,11 @@
     "installationMatrix": [
       {
         "node": "v18.20.8",
-        "version": "0.5.73",
-        "sourceSha": "7365010e82f4ed673a4c3b5b576150906b8914fa",
-        "tree": "0b53ff2a2dc23b87bd9e3145811c969d3533abef",
-        "archiveSha256": "6f06e625ed12505da153e96f2f75dd72beeb6e682fb232e7e7adec705ac47d11",
-        "dependencyTreeSha256": "e088c1ee885e43e54071da852d8cd01a11c9609ab3c36f694994fa5a945e5b4f",
+        "version": "0.5.74",
+        "sourceSha": "2a3ce956f4d65520477102b16b7cb9b74496de88",
+        "tree": "be7a7834f61715170fc52fa17ebbd9eeff07bde2",
+        "archiveSha256": "c0180908f8595e69f46d0c135ad263e6c321d4e513ece4fa54c062612a130cf3",
+        "dependencyTreeSha256": "eee52e5b53444519d8d3eba19e2f3b222f869c69f87c95386c4714ba2037fed2",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 2,
@@ -185,11 +208,11 @@
       },
       {
         "node": "v20.20.2",
-        "version": "0.5.73",
-        "sourceSha": "7365010e82f4ed673a4c3b5b576150906b8914fa",
-        "tree": "0b53ff2a2dc23b87bd9e3145811c969d3533abef",
-        "archiveSha256": "6f06e625ed12505da153e96f2f75dd72beeb6e682fb232e7e7adec705ac47d11",
-        "dependencyTreeSha256": "e088c1ee885e43e54071da852d8cd01a11c9609ab3c36f694994fa5a945e5b4f",
+        "version": "0.5.74",
+        "sourceSha": "2a3ce956f4d65520477102b16b7cb9b74496de88",
+        "tree": "be7a7834f61715170fc52fa17ebbd9eeff07bde2",
+        "archiveSha256": "c0180908f8595e69f46d0c135ad263e6c321d4e513ece4fa54c062612a130cf3",
+        "dependencyTreeSha256": "eee52e5b53444519d8d3eba19e2f3b222f869c69f87c95386c4714ba2037fed2",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 2,
@@ -198,11 +221,11 @@
       },
       {
         "node": "v22.22.1",
-        "version": "0.5.73",
-        "sourceSha": "7365010e82f4ed673a4c3b5b576150906b8914fa",
-        "tree": "0b53ff2a2dc23b87bd9e3145811c969d3533abef",
-        "archiveSha256": "6f06e625ed12505da153e96f2f75dd72beeb6e682fb232e7e7adec705ac47d11",
-        "dependencyTreeSha256": "e088c1ee885e43e54071da852d8cd01a11c9609ab3c36f694994fa5a945e5b4f",
+        "version": "0.5.74",
+        "sourceSha": "2a3ce956f4d65520477102b16b7cb9b74496de88",
+        "tree": "be7a7834f61715170fc52fa17ebbd9eeff07bde2",
+        "archiveSha256": "c0180908f8595e69f46d0c135ad263e6c321d4e513ece4fa54c062612a130cf3",
+        "dependencyTreeSha256": "eee52e5b53444519d8d3eba19e2f3b222f869c69f87c95386c4714ba2037fed2",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 3,
@@ -214,17 +237,19 @@
       "macos",
       "windows"
     ],
-    "databaseMigrationRequired": false,
+    "databaseMigrationRequired": true,
     "deploymentTargets": [
+      "database",
+      "web",
       "local-workers",
       "hosted-dispatcher"
     ],
     "githubCiWaivedByOwner": true
   },
   "limitations": [
-    "Linux x64 Node18/20/22 prefix/global npm installs and native launchers tested; macOS/Windows untested.",
-    "The local contract uses real product routes/SQL/native SDK/host delivery with external transport fixtures. It does not claim a new paid production Daytona canary or close ENGIN-797 observability/cutover evidence.",
-    "Worker/shared package inputs and server/schema code are unchanged by later harness-only commits. No Web/Admin/database application deployment is needed."
+    "Linux x64 Node18/20/22 prefix/global installations and actual native launchers tested; macOS/Windows untested.",
+    "Controlled hosted contract uses external transport fixtures; it does not claim a new paid production Daytona canary or close ENGIN-797 Honeycomb acceptance.",
+    "The initial full worker test run had one5-second timeout; the unchanged file passed serially. The MCP scope fixture recheck is recorded transparently. The first Web build lacked public Supabase build variables; configured replay uses the existing CI placeholders."
   ],
   "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
 }
