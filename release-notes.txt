@@ -1,3 +1,3 @@
-ENGIN-801 and ENGIN-836: velocity-agent 0.5.74
+ENGIN-785 and ENGIN-779: velocity-agent 0.5.75
 
-Owner-approved local release from 41116c61bef57d746319452b11734f9a4cf4361e. Locally verified tree 08701e5d61ad44ff2eddede0ddf221f6cd0ce3e9. See local-verification.json for checks and actual platform scope. GitHub Actions was not run.
+Worker renewal refusal diagnostics and isolated/drained doctor fixtures. Locally verified source 0430aa4dc820b7145b4383a2d717f74cd75ec25b, tree 905d16cb376877a33e92702da77a6313a9779297; exact tested archives and Linux Node install matrices are recorded in local-verification.json. Owner approved PR426 and the one-time unavailable-Cursor-review exception. No GitHub Actions was run. macOS/Windows are untested.

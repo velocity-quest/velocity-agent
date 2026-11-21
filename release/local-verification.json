@@ -1,12 +1,12 @@
 {
-  "dependencyTreeSha256": "eee52e5b53444519d8d3eba19e2f3b222f869c69f87c95386c4714ba2037fed2",
   "schemaVersion": 1,
   "target": "velocity-agent",
-  "version": "0.5.74",
-  "sourceSha": "41116c61bef57d746319452b11734f9a4cf4361e",
-  "treeSha": "08701e5d61ad44ff2eddede0ddf221f6cd0ce3e9",
-  "archiveSha256": "c0180908f8595e69f46d0c135ad263e6c321d4e513ece4fa54c062612a130cf3",
-  "completedAt": "2026-11-14T09:49:59.109Z",
+  "version": "0.5.75",
+  "sourceSha": "0430aa4dc820b7145b4383a2d717f74cd75ec25b",
+  "treeSha": "905d16cb376877a33e92702da77a6313a9779297",
+  "archiveSha256": "16fc7895c1c4d5317651760500140fce1059e2e8b0b059dbf673ad1f22085cad",
+  "dependencyTreeSha256": "20f0379921b90b45bd3f86f621b2c9f687bbecf24a5111a227416687e20dd4b5",
+  "completedAt": "2026-11-21T03:08:58.105Z",
   "environment": {
     "os": "linux",
     "architecture": "x64",
@@ -14,104 +14,99 @@
   },
   "checks": [
     {
-      "name": "source-acceptance.json",
+      "name": "Expected old-behavior failure: refusal-before",
       "passed": true,
-      "logSha256": "004bfae230caaecf33152e6eeb22eca933afe943fab34a3eeea3425030a5053c"
+      "logSha256": "f374c0b02d109135a024ce72f1d635b136b269ae5e47f848729d345570c71630"
     },
     {
-      "name": "local-waiver-final.json",
+      "name": "Expected old-behavior failure: doctor-before",
       "passed": true,
-      "logSha256": "004bfae230caaecf33152e6eeb22eca933afe943fab34a3eeea3425030a5053c"
+      "logSha256": "4b94294a7cb82ef0e6b15e3f0239b5d8c0eade8bf6fd2dfdfcba29602ba63a4b"
     },
     {
-      "name": "installation-acceptance.json",
+      "name": "doctor-drain-after",
       "passed": true,
-      "logSha256": "99bf1179a53e0756d5f42b6c9fb6962c6eba0cc106dba09da66d7c5ea4c989e7"
+      "logSha256": "9a366a058e4e158fca85d44715564de9af2be5c039c63d4ed1d0c8719e80ef5e"
     },
     {
-      "name": "package-agent-acceptance.json",
+      "name": "agent-full",
       "passed": true,
-      "logSha256": "671a4b1a49716c3a1a03dc1240f6cea86fbc790d89b46c10dd74c8644e025d41"
+      "logSha256": "13a5f593e12c9f119f79b51e0358dcac8f8e9951e7baed456bf5de73e596797f"
     },
     {
-      "name": "unchanged-worker-inputs.json",
+      "name": "agent-shim-final",
       "passed": true,
-      "logSha256": "aac08adad4d1f1015baf5a54bc1d7ad7a5723ff24fb6a0390cdd69aeb2a4e47a"
+      "logSha256": "fe1f3cf430dfb523d66ed8dd8b02da9a0ef505ac55d51b6d9ab5036b155e25d9"
     },
     {
-      "name": "binary-scope.json",
+      "name": "doctor-final",
       "passed": true,
-      "logSha256": "a7dd7b483534407b63b75734406b532d737a08034c566119610a329ed3d27f13"
+      "logSha256": "430eb61200215273e06727009ba45cb87ed9e83393f8b3a9834c5535ce551b0f"
     },
     {
-      "name": "final-review-acceptance.json",
+      "name": "core-tests-final",
       "passed": true,
-      "logSha256": "33ffe24d804e9b654410d09cdec07b4ad218a720d7e99678be3b20d1cc1b4beb"
+      "logSha256": "dd15cd039b2e7b0a5c2d11ef3f8899da5704fbd6270f64d5f1b9072e16441968"
     },
     {
-      "name": "canonical-archive-agent-acceptance.json",
+      "name": "history-api-final",
       "passed": true,
-      "logSha256": "fb0b0169e4fe3891d27b3105a18566f0b837f24cd6459f96c681040831723c83"
+      "logSha256": "9de32622818a33c1e5a32628b9967ae070f09fb23f0fafa1ac7b36ae671f21b2"
     },
     {
-      "name": "hosted-contract-final",
+      "name": "history-ui-final",
       "passed": true,
-      "logSha256": "bd07b559295ceb24b35ced74a83f91b9f0963d5055edd22ec75aa6a8362ec7e3"
+      "logSha256": "1a18ac5be7b8c282ca12d8071dc3d448e4520ed8113e0e24d45a4acda15d6dda"
     },
     {
-      "name": "Expected failure on the old behavior: 801-before",
+      "name": "graphql-full-final",
       "passed": true,
-      "logSha256": "9315843c3bd63f65dafdc97b55acb41cc896bcc0ffaea6292ae7e00d5e60acba"
+      "logSha256": "646f2e62ef3d31bd35b7c4f7610efc517006c181b7c09e8acaf28726641a1e2d"
     },
     {
-      "name": "Expected failure on the old behavior: 836-before",
+      "name": "graphql-types-final",
       "passed": true,
-      "logSha256": "e95c703851aaafaebc107f704c03a24c7cc7c2f755cb7f61bf91a2683b5a5936"
+      "logSha256": "f3edd12f58d2099bba946ec4b0382efc910525b558d503d5d5ed53a6b553555b"
     },
     {
-      "name": "Expected failure on the old behavior: discovery-lock-before",
+      "name": "web-types-final",
       "passed": true,
-      "logSha256": "0dda5a7377d38e8320a733c9f6e78956833aa38512377b1dd007e9587c564ffc"
+      "logSha256": "3659ca4c8847f0283432a3bbdcf0f0248ff8b68f3878636e9487dc72b649b596"
     },
     {
-      "name": "worker-union-acceptance.json",
+      "name": "web-lint-final",
       "passed": true,
-      "logSha256": "30fbf7701658384f11e1b146adbc412b394f933a71e84d1cd687a361b385d376"
+      "logSha256": "e481cf8239b1da29d270a5255a3c8ecd9c889fdaae9aadf57e6af0f9f7ab1a47"
     },
     {
-      "name": "mcp-union-acceptance.json",
+      "name": "web-build-final-configured",
       "passed": true,
-      "logSha256": "4303d1a06831adfa1df71d30bc8ed326afc9c6ec3f3b115a9e5c89e734b9a049"
+      "logSha256": "dc8cc825d9f1c9ec05fc47ea790d0d8795d7603756c61d612d0a4e6a5e68d85b"
     },
     {
-      "name": "agent-timeout-recheck",
+      "name": "web-bundle-final",
       "passed": true,
-      "logSha256": "886734dbddd834eeb8d0532c7d66672d1da88af5dec54aa1023cd38c2b4fbd9f"
+      "logSha256": "448ebf59527911cb787b9f4a89db83bdc6277bc7a8a2e693b7bef4ed9fba8726"
     },
     {
-      "name": "runner-final",
+      "name": "cli-coverage-final",
       "passed": true,
-      "logSha256": "42cf62871b5bea0f2855af3bc46aa35e995001178728953026e3d75b19c1e50d"
+      "logSha256": "df34107c57424933fbb15fc2aceb9b9fc0fb750928daffe76f0c3b1c6ce96821"
     },
     {
-      "name": "upgrade-final",
+      "name": "cli-types-final",
       "passed": true,
-      "logSha256": "b4098cc5584b95d3064bd2027164163b79d6a1d5040090d52127602726fbaccf"
+      "logSha256": "7c26c690a5b2b6480da66d5ea56fc9d781e4c353c2b1affc30b6e44da0d044d8"
     },
     {
-      "name": "801-races-final",
+      "name": "agent-types-final",
       "passed": true,
-      "logSha256": "067bcf2ef32c5c95774f3af8c2d5ba15c822419a4ebbf206c32438c5440eec7e"
+      "logSha256": "c68de7a0d24b2e34a11707f40ff7b2113f56892d0e4fa4d01085bfa4893ef638"
     },
     {
-      "name": "web-build-configured",
+      "name": "mcp-full",
       "passed": true,
-      "logSha256": "93a1aea671ae43a28330bbcbf24449238c234259b8a29f33c554ae787091f9fd"
-    },
-    {
-      "name": "web-lint",
-      "passed": true,
-      "logSha256": "b002588e33c7bf39fbabdb8349ac48962ed98aefe7774d137de1a3722e17c22e"
+      "logSha256": "304132a231d4dd348133a5811380a2f363f2535591e8b300d59be88909e9d02d"
     },
     {
       "name": "dependency-audit",
@@ -119,87 +114,74 @@
       "logSha256": "4d512afa467a972e3a8fb6fe774fdddaba50d6a03f67e3690d59a2a6cd552a5c"
     },
     {
-      "name": "agent clean package install and smoke",
+      "name": "worker-artifact-equivalence",
       "passed": true,
-      "logSha256": "5cc730d347d9e95cb547960f9099e62d082e7ad6404da9b3ef8d60501d5cd138"
+      "logSha256": "e549c292a117eec69e3b26dc1347975733fa062ed2f3af2938920218fcda45c7"
+    },
+    {
+      "name": "source-acceptance",
+      "passed": true,
+      "logSha256": "354bee30ef965613b5fd5b0136812e0053436d75811563a99d98c931609fdd21"
+    },
+    {
+      "name": "database-final-acceptance",
+      "passed": true,
+      "logSha256": "92f90361534487d6d7390dcb5c64ef0a34477ba3e868e5c296bc20860b56c52e"
+    },
+    {
+      "name": "production-migration-acceptance",
+      "passed": true,
+      "logSha256": "ed80da0d8f331e02a63b0b1bd7d0f6920d949a98bb584ff6c69b47e165c0fc9d"
+    },
+    {
+      "name": "package-agent-acceptance",
+      "passed": true,
+      "logSha256": "8292cdcd7bb5cf6c55f1bc86bee23ecbbad7ee5a3ea3e0c67850da1cd67bfcbf"
+    },
+    {
+      "name": "installation-acceptance",
+      "passed": true,
+      "logSha256": "8a3ea8b7fcb6ea76b45dcf666c8383daccb9f3b8150fe10dc4784a0cd17f03b5"
+    },
+    {
+      "name": "canonical-archive-agent-acceptance",
+      "passed": true,
+      "logSha256": "1b435581291585c250ffa32b85fd75e3037b4989c62cfefb0f233692e787c043"
+    },
+    {
+      "name": "final-review-acceptance",
+      "passed": true,
+      "logSha256": "fc3c9bcf2832f71e682c3e9b6f5903a0682cb182bf3bdce8f25538e1cd837fe4"
     }
   ],
   "buildScope": {
     "counts": {
-      "worker": 1771,
-      "workerFiles": 104,
-      "mcpAndWorkstream": 435,
-      "graphqlWorkstream": 40,
-      "hostedMigrations": 249,
-      "functionsCompared": 640,
-      "postgresConcurrencyCases": 6,
-      "linuxInstallations": 6
+      "graphql": 4603,
+      "existingSkipped": 10,
+      "workerFullSuite": 1775,
+      "workerFinalImportRegression": 34,
+      "doctor": 21,
+      "core": 150,
+      "historyApi": 54,
+      "historyUi": 48,
+      "mcp": 561,
+      "databaseFreshAndUpgradeContracts": 8,
+      "webTypesLintBuildBundle": true,
+      "dependencyAudit": true,
+      "generatedCliCoverage": true
     },
-    "validationRetries": [
-      {
-        "kind": "Existing five-second timeout under concurrent build/package load",
-        "test": "delivery-merge-repair: stops before merging when the base changed after provider confirmation",
-        "recheck": "Four-test file passes serially with unchanged assertions and timeout."
-      },
-      {
-        "kind": "Scope transport fixture needed new prerequisite RPC",
-        "tests": 10,
-        "recheck": "All14scope tests pass on current source; broader435outcomes verified."
-      }
-    ],
-    "fixtureBudgetNotes": "Owned disposable PostgreSQL/Docker/HTTPS fixtures only. Real routes, SQL, packaged native SDK, validation, PR handoff, artifacts and cleanup; external model/provider/GitHub/storage transports are deterministic fixtures. No production fixtures, paid model/provider calls, fake CI receipts or GitHub Actions.",
-    "reusedChecksWithUnchangedInputs": [
-      {
-        "kind": "Worker package and Node18/20/22 prefix/global installation matrix",
-        "executedSource": "2a3ce956f4d65520477102b16b7cb9b74496de88",
-        "verifiedForSource": "260e4df98870ade0b69ea0e8d4ba6831f4bf878f",
-        "inputEquality": [
-          {
-            "path": "packages/agent",
-            "from": "58451ee1802f5f4b6ba41c19632691dd825b3a95",
-            "to": "58451ee1802f5f4b6ba41c19632691dd825b3a95"
-          },
-          {
-            "path": "packages/cli-core",
-            "from": "6d6e41ae9b430fe30433463787ef41a32c326149",
-            "to": "6d6e41ae9b430fe30433463787ef41a32c326149"
-          },
-          {
-            "path": "pnpm-lock.yaml",
-            "from": "33d16ca1d3c998a865c1c895399ee245b9f64c29",
-            "to": "33d16ca1d3c998a865c1c895399ee245b9f64c29"
-          },
-          {
-            "path": "package.json",
-            "from": "e11fe2a5801ea052d6155acd8915ce88e9bd9ee0",
-            "to": "e11fe2a5801ea052d6155acd8915ce88e9bd9ee0"
-          },
-          {
-            "path": "pnpm-workspace.yaml",
-            "from": "3ff5faaaf5f139c707e338e7e89e51606e9e0ace",
-            "to": "3ff5faaaf5f139c707e338e7e89e51606e9e0ace"
-          },
-          {
-            "path": ".npmrc",
-            "from": "61768ad82f38c6769e70c9a4a526ad93e5e230f1",
-            "to": "61768ad82f38c6769e70c9a4a526ad93e5e230f1"
-          }
-        ],
-        "allWorkerSharedLockAndToolchainInputsIdentical": true,
-        "archiveSha256": "c0180908f8595e69f46d0c135ad263e6c321d4e513ece4fa54c062612a130cf3"
-      }
-    ],
     "binaryTargets": [
-      "velocity-agent"
+      "velocity-agent",
+      "velocity-cli"
     ],
     "installationMatrix": [
       {
         "node": "v18.20.8",
-        "version": "0.5.74",
-        "sourceSha": "2a3ce956f4d65520477102b16b7cb9b74496de88",
-        "tree": "be7a7834f61715170fc52fa17ebbd9eeff07bde2",
-        "archiveSha256": "c0180908f8595e69f46d0c135ad263e6c321d4e513ece4fa54c062612a130cf3",
-        "dependencyTreeSha256": "eee52e5b53444519d8d3eba19e2f3b222f869c69f87c95386c4714ba2037fed2",
+        "version": "0.5.75",
+        "sourceSha": "1afe517094e924c4cedf93bd8e73367fee48815f",
+        "tree": "4ab3234f1ded5716c8e853cc1507c42287a277e2",
+        "archiveSha256": "16fc7895c1c4d5317651760500140fce1059e2e8b0b059dbf673ad1f22085cad",
+        "dependencyTreeSha256": "20f0379921b90b45bd3f86f621b2c9f687bbecf24a5111a227416687e20dd4b5",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 2,
@@ -208,11 +190,11 @@
       },
       {
         "node": "v20.20.2",
-        "version": "0.5.74",
-        "sourceSha": "2a3ce956f4d65520477102b16b7cb9b74496de88",
-        "tree": "be7a7834f61715170fc52fa17ebbd9eeff07bde2",
-        "archiveSha256": "c0180908f8595e69f46d0c135ad263e6c321d4e513ece4fa54c062612a130cf3",
-        "dependencyTreeSha256": "eee52e5b53444519d8d3eba19e2f3b222f869c69f87c95386c4714ba2037fed2",
+        "version": "0.5.75",
+        "sourceSha": "1afe517094e924c4cedf93bd8e73367fee48815f",
+        "tree": "4ab3234f1ded5716c8e853cc1507c42287a277e2",
+        "archiveSha256": "16fc7895c1c4d5317651760500140fce1059e2e8b0b059dbf673ad1f22085cad",
+        "dependencyTreeSha256": "20f0379921b90b45bd3f86f621b2c9f687bbecf24a5111a227416687e20dd4b5",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 2,
@@ -221,11 +203,11 @@
       },
       {
         "node": "v22.22.1",
-        "version": "0.5.74",
-        "sourceSha": "2a3ce956f4d65520477102b16b7cb9b74496de88",
-        "tree": "be7a7834f61715170fc52fa17ebbd9eeff07bde2",
-        "archiveSha256": "c0180908f8595e69f46d0c135ad263e6c321d4e513ece4fa54c062612a130cf3",
-        "dependencyTreeSha256": "eee52e5b53444519d8d3eba19e2f3b222f869c69f87c95386c4714ba2037fed2",
+        "version": "0.5.75",
+        "sourceSha": "1afe517094e924c4cedf93bd8e73367fee48815f",
+        "tree": "4ab3234f1ded5716c8e853cc1507c42287a277e2",
+        "archiveSha256": "16fc7895c1c4d5317651760500140fce1059e2e8b0b059dbf673ad1f22085cad",
+        "dependencyTreeSha256": "20f0379921b90b45bd3f86f621b2c9f687bbecf24a5111a227416687e20dd4b5",
         "prefixPassed": true,
         "globalPassed": true,
         "nativePackages": 3,
@@ -233,23 +215,124 @@
         "modelCalls": 0
       }
     ],
-    "untestedPlatforms": [
-      "macos",
-      "windows"
-    ],
+    "workerArchiveReuse": {
+      "passed": true,
+      "from": "1afe517094e924c4cedf93bd8e73367fee48815f",
+      "fromTree": "4ab3234f1ded5716c8e853cc1507c42287a277e2",
+      "to": "6c6c5db16aeec19d47295935693c0a714af951a8",
+      "toTree": "905d16cb376877a33e92702da77a6313a9779297",
+      "inputPaths": [
+        "packages/agent",
+        "packages/cli-core",
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "patches",
+        "tsconfig.json",
+        "tsconfig.base.json"
+      ],
+      "archivePath": "/home/kevin/projects/velocity/reviews/finish-open-20261119/package-final-6c6c5db1/agent/velocity-agent-0.5.75.tgz",
+      "archiveSha256": "16fc7895c1c4d5317651760500140fce1059e2e8b0b059dbf673ad1f22085cad",
+      "dependencyTreeSha256": "20f0379921b90b45bd3f86f621b2c9f687bbecf24a5111a227416687e20dd4b5",
+      "exactBytesMatchTestedArchive": true,
+      "actualInstallationMatrix": [
+        {
+          "node": "v18.20.8",
+          "version": "0.5.75",
+          "sourceSha": "1afe517094e924c4cedf93bd8e73367fee48815f",
+          "tree": "4ab3234f1ded5716c8e853cc1507c42287a277e2",
+          "archiveSha256": "16fc7895c1c4d5317651760500140fce1059e2e8b0b059dbf673ad1f22085cad",
+          "dependencyTreeSha256": "20f0379921b90b45bd3f86f621b2c9f687bbecf24a5111a227416687e20dd4b5",
+          "prefixPassed": true,
+          "globalPassed": true,
+          "nativePackages": 2,
+          "actualNativeLaunchers": true,
+          "modelCalls": 0
+        },
+        {
+          "node": "v20.20.2",
+          "version": "0.5.75",
+          "sourceSha": "1afe517094e924c4cedf93bd8e73367fee48815f",
+          "tree": "4ab3234f1ded5716c8e853cc1507c42287a277e2",
+          "archiveSha256": "16fc7895c1c4d5317651760500140fce1059e2e8b0b059dbf673ad1f22085cad",
+          "dependencyTreeSha256": "20f0379921b90b45bd3f86f621b2c9f687bbecf24a5111a227416687e20dd4b5",
+          "prefixPassed": true,
+          "globalPassed": true,
+          "nativePackages": 2,
+          "actualNativeLaunchers": true,
+          "modelCalls": 0
+        },
+        {
+          "node": "v22.22.1",
+          "version": "0.5.75",
+          "sourceSha": "1afe517094e924c4cedf93bd8e73367fee48815f",
+          "tree": "4ab3234f1ded5716c8e853cc1507c42287a277e2",
+          "archiveSha256": "16fc7895c1c4d5317651760500140fce1059e2e8b0b059dbf673ad1f22085cad",
+          "dependencyTreeSha256": "20f0379921b90b45bd3f86f621b2c9f687bbecf24a5111a227416687e20dd4b5",
+          "prefixPassed": true,
+          "globalPassed": true,
+          "nativePackages": 3,
+          "actualNativeLaunchers": true,
+          "modelCalls": 0
+        }
+      ],
+      "at": "2026-11-19T22:19:55.290Z"
+    },
     "databaseMigrationRequired": true,
     "deploymentTargets": [
       "database",
       "web",
-      "local-workers",
+      "public-worker-release",
+      "public-cli-release",
+      "host-install",
       "hosted-dispatcher"
     ],
-    "githubCiWaivedByOwner": true
+    "githubCiWaivedByOwner": true,
+    "untestedPlatforms": [
+      "macos",
+      "windows"
+    ]
+  },
+  "review": {
+    "acceptedUnderOwnerException": true,
+    "pr": 426,
+    "reviewedHead": "6c6c5db16aeec19d47295935693c0a714af951a8",
+    "ownerId": "c6451b2c-e5b4-450c-8a44-7193fd88c144",
+    "ownerReply": "Yes",
+    "scope": "One-time unavailable Cursor reviews. No new findings are waived.",
+    "reviewers": [
+      {
+        "reviewer": "Cursor Bugbot",
+        "status": "missing",
+        "conclusion": null,
+        "analysisRan": false,
+        "ownerException": true,
+        "checkId": null
+      },
+      {
+        "reviewer": "Cursor Security Agent: Security Reviewer",
+        "status": "completed",
+        "conclusion": "neutral",
+        "analysisRan": false,
+        "ownerException": true,
+        "checkId": 135922367727
+      },
+      {
+        "reviewer": "Cursor Approval Agent: Pull Request Router and Approver",
+        "status": "completed",
+        "conclusion": "neutral",
+        "analysisRan": false,
+        "ownerException": true,
+        "checkId": 135922368824
+      }
+    ]
   },
   "limitations": [
-    "Linux x64 Node18/20/22 prefix/global installations and actual native launchers tested; macOS/Windows untested.",
-    "Controlled hosted contract uses external transport fixtures; it does not claim a new paid production Daytona canary or close ENGIN-797 Honeycomb acceptance.",
-    "The initial full worker test run had one5-second timeout; the unchanged file passed serially. The MCP scope fixture recheck is recorded transparently. The first Web build lacked public Supabase build variables; configured replay uses the existing CI placeholders."
+    "Linux x64 installation matrices only; macOS and Windows untested.",
+    "Worker full suite precedes the import-only packaging correction; final host/interruption regressions and actual final archive equivalence/install tests cover that correction.",
+    "Historical original 403 fence was not retained and has not been guessed.",
+    "Cursor Security/Approval reviews failed to start due quota; Bugbot missing. Owner explicitly approved this PR and the one-time exception on November21.",
+    "No GitHub Actions or fake CI/delivery receipts. Source-based tests and exact final archive byte equivalence are recorded."
   ],
-  "authorization": "Owner explicitly authorized using local checks instead of GitHub CI on 2026-10-30. Owner instruction: Ignore GitHub CI for now because there is no budget; local testing should eliminate the need for it for now."
+  "authorization": "Owner directed local tests instead of GitHub Actions and explicitly approved PR426 for merge/deployment and the one-time unavailable-Cursor-review exception."
 }
